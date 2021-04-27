@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# munchbox
-=======
+
 # MunchBox
 MunchBox is an online platform for food lovers who want to exchange their ideas!
 
@@ -47,4 +45,3 @@ You will also see any lint errors in the console.
 
 
 #Class Diagram
->>>>>>> origin/main
