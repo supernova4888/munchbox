@@ -1,6 +1,10 @@
 HELP.md
 .gradle
+<<<<<<< HEAD
+/.idea
+=======
 .idae
+>>>>>>> origin/main
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
