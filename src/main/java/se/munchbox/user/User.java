@@ -3,6 +3,7 @@ package se.munchbox.user;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
+import se.munchbox.userPref.UserPreference;
 
 
 import javax.persistence.*;
@@ -30,6 +31,9 @@ public class User {
     @Length(min = 3, max=100, message = "Name must be between 3-100 characters")
     @Column(name = "name")
     private String name;
+
+    @OneToOne
+    private UserPreference userPreference;
 
 
     public User() {}
