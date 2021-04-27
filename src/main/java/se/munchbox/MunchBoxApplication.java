@@ -1,4 +1,4 @@
-package com.se.munchbox.recipe;
+package se.munchbox;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
