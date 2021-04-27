@@ -8,7 +8,7 @@ MunchBox is an online platform for food lovers who want to exchange their ideas!
 
 
 
-#User Guide
+##User Guide
 To run the application locally, the user needs to clone the repository and install the support for NodeJS and Java.
 This application was developed using Intellij IDE(using Spring Web Framework) and VisualStudio Code.It is recommended 
 for the user to build the project using the gradle.build file, to ensure that all the dependencies are installed correctly.
