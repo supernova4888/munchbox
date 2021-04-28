@@ -5,65 +5,48 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.munchbox.ResourceNotFoundException;
+import se.munchbox.auth.AuthService;
 import se.munchbox.recipe.RecipePost;
 import se.munchbox.recipe.RecipePostRepository;
+import se.munchbox.user.User;
+import se.munchbox.user.UserRepository;
 
-import java.security.Principal;
-import java.util.HashMap;
-import java.util.List;
+import javax.validation.Valid;
 
 @RestController
 public class ReviewController {
 
-
-    ReviewRepository commentsRepository;
     RecipePostRepository recipePostRepository;
+    ReviewService reviewService;
+    UserRepository userRepository;
+    AuthService authService;
 
-        HashMap<Long, String> commentBysEmailID = new HashMap<>();
-
-        @Autowired
-        public ReviewController(ReviewRepository commentsRepository, RecipePostRepository recipePostRepository) {
-            this.commentsRepository = commentsRepository;
-            this.recipePostRepository = recipePostRepository;
-           // this.userRepository = userRepository;
-        }
-
-        @PostMapping("/posts/{postsId}/comments")
-        public ResponseEntity<Review> createComment(@PathVariable Long postsId, @RequestBody Review comments, Principal principal){
-            RecipePost posts = recipePostRepository.findById(postsId).orElseThrow(ResourceNotFoundException::new);
-            /*String userName = principal.getName();
-
-            comments.setEmail(userName);
-            System.out.println("String 123:" + comments.getEmail());
-            comments.setPosts(posts);*/
-
-            commentsRepository.save(comments);
-            return ResponseEntity.status(HttpStatus.CREATED).body(comments);
-        }
-
-        @DeleteMapping("/comments/{id}")
-        public ResponseEntity<Review> deleteComment(@PathVariable Long id, Principal principal){
-            Review comments = commentsRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
-
-           // if(comments.getEmail().equalsIgnoreCase(principal.getName())) {
-                commentsRepository.delete(comments);
-                return ResponseEntity.ok(comments);
-           // }
-           // else {
-                //throw new ResourceNotFoundException();
-            }
-
-
-
-        @GetMapping("/posts/{postsId}/comments")
-        public ResponseEntity<List<Review>>  getAllCommentsToParticularArticle(@PathVariable Long postsId  )  {
-            RecipePost posts = recipePostRepository.findById(postsId).orElseThrow(ResourceNotFoundException::new);
-            return ResponseEntity.ok( posts.getComments());
-        }
-
-
-
+    @Autowired
+    public ReviewController(RecipePostRepository recipePostRepository, ReviewService reviewService, UserRepository userRepository, AuthService authService) {
+        this.recipePostRepository = recipePostRepository;
+        this.reviewService = reviewService;
+        this.userRepository = userRepository;
+        this.authService = authService;
     }
+
+    /**
+    *Create a review to a specific RecipePost by his ID.
+     *
+     * @param postId  the id of the post
+     * @param review the comment to create
+     * @return status of the action
+     */
+    @PostMapping("/posts/{postId}/reviews")
+    public ResponseEntity<Review> createReview(@PathVariable Long postId, @Valid @RequestBody Review review){
+        RecipePost recipePost = recipePostRepository.findById(postId).orElseThrow(ResourceNotFoundException::new);
+        String email = authService.getLoggedInUserEmail();
+        User user = userRepository.findByEmail(email);
+        user.getReviews().add(review);
+        review.setUser(user);
+        review.setPosts(recipePost);
+        return ResponseEntity.status(HttpStatus.CREATED).body(reviewService.createReview(review));
+    }
+}
 
 
 
