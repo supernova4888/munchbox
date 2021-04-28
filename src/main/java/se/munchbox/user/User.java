@@ -3,12 +3,15 @@ package se.munchbox.user;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
+import se.munchbox.reviews.*;
 import se.munchbox.userPref.UserPreference;
 
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+
+import java.util.List;
 
 @Entity
 @Table(name="account")
@@ -34,6 +37,9 @@ public class User {
 
     @OneToOne
     private UserPreference userPreference;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    List<Review> reviews;
 
 
     public User() {}
@@ -77,5 +83,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 }
