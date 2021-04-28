@@ -21,8 +21,8 @@ public class RecipePost {
         private String title;
         @Column(nullable = false)
         private String body;
-        /*@Column(nullable = false)
-        private String email;*/
+        @Column(nullable = false)
+        private String email;
 
         @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
         public List<Review> reviews = new ArrayList<>();
@@ -46,21 +46,21 @@ public class RecipePost {
             this.body = body;
         }
 
-        public List<Review> getComments() {
-            return reviews;
-        }
+    public List<Review> getReviews() {
+        return reviews;
+    }
 
-        public void setComments(List<Review> reviews) {
-            this.reviews = reviews;
-        }
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
 
-        /*public String getEmail() {
+        public String getEmail() {
             return email;
         }
 
         public void setEmail(String email) {
             this.email = email;
-        }*/
+        }
 
     public String getTitle() {
         return title;

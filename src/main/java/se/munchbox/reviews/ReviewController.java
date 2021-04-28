@@ -58,7 +58,7 @@ public class ReviewController {
         @GetMapping("/posts/{postsId}/comments")
         public ResponseEntity<List<Review>>  getAllCommentsToParticularArticle(@PathVariable Long postsId  )  {
             RecipePost posts = recipePostRepository.findById(postsId).orElseThrow(ResourceNotFoundException::new);
-            return ResponseEntity.ok( posts.getComments());
+            return ResponseEntity.ok( posts.getReviews());
         }
 
 
