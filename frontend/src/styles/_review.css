@@ -1,0 +1,14 @@
+/* Star rating */
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 36pt;
+}
+.on {
+    color: var(--color-pink);
+}
+.off {
+    color: var(--color-offwhite);
+}

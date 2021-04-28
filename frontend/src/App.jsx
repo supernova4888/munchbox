@@ -19,7 +19,6 @@ export default function App() {
         <div>
             Hello welcome to MunchBox
             <BrowserRouter>
-
                 <Switch>
                     <Route exact component={HomePage} path="/home" />
                     <Route exact component={PostPage} path="/post" />
