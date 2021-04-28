@@ -24,4 +24,9 @@ public class ReviewService {
         updatedReview.setId(id);
         return  reviewRepository.save(updatedReview);
     }
+
+    public void deleteReview(Long id) {
+        Review review = reviewRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+        reviewRepository.delete(review);
+    }
 }
