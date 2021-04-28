@@ -15,7 +15,7 @@ export default function App() {
     <div className="App">
       <header className="App-header">
         <div>
-
+            Hello welcome to MunchBox
         </div>
       </header>
     </div>
