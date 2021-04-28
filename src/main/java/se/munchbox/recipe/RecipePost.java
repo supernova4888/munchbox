@@ -46,11 +46,11 @@ public class RecipePost {
             this.body = body;
         }
 
-        public List<Review> reviews() {
+        public List<Review> getReviews() {
             return reviews;
         }
 
-        public void reviews(List<Review> reviews) {
+        public void setReviews(List<Review> reviews) {
             this.reviews = reviews;
         }
 
