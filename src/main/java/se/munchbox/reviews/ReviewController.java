@@ -12,6 +12,7 @@ import se.munchbox.user.User;
 import se.munchbox.user.UserRepository;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 public class ReviewController {
@@ -46,6 +47,19 @@ public class ReviewController {
         review.setPosts(recipePost);
         return ResponseEntity.status(HttpStatus.CREATED).body(reviewService.createReview(review));
     }
+
+    /**
+     * get all reviews related to a specific post by his ID
+     *
+     * @param postId the id of the post
+     * @return all comments related to that post, throw ResourceNotFoundException if post is not found
+     */
+    @GetMapping("/posts/{postId}/reviews")
+    public ResponseEntity<List<Review>> listAllReviews(@PathVariable Long postId) {
+        RecipePost recipePost = recipePostRepository.findById(postId).orElseThrow(ResourceNotFoundException::new);
+        return ResponseEntity.ok(recipePost.getReviews());
+    }
+
 }
 
 

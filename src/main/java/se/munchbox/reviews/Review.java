@@ -2,6 +2,7 @@ package se.munchbox.reviews;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import se.munchbox.recipe.RecipePost;
 import se.munchbox.user.User;
@@ -11,7 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.*;
 
 @Entity
-
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Review {
 
         @Id
@@ -28,6 +29,7 @@ public class Review {
         @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
         @JsonIdentityReference(alwaysAsId = true)
         @JoinColumn(nullable = false)
+        @JsonIgnore
         private RecipePost posts;
 
         @ManyToOne
@@ -36,16 +38,13 @@ public class Review {
         @JoinColumn(nullable = false)
         private User user;
 
-
         public void setId (Long id) {
             this.id = id;
         }
 
-
         public Long getId() {
             return id;
         }
-
 
         public String getBody() {
             return body;
