@@ -60,7 +60,7 @@ public class ReviewController {
         return ResponseEntity.ok(recipePost.getReviews());
     }
 
-    @PutMapping("/reviews/{reviewId}")
+        @PutMapping("/review/{reviewId}")
     public ResponseEntity<Review> updateComment(@PathVariable Long reviewId, @RequestBody Review updatedReview) {
         Review review = reviewService.updateReview(reviewId, updatedReview);
         return ResponseEntity.ok(review);

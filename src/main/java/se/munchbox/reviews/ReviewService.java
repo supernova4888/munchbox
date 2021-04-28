@@ -10,6 +10,10 @@ public class ReviewService {
     @Autowired
     private ReviewRepository reviewRepository;
 
+    public ReviewService(ReviewRepository reviewRepository) {
+        this.reviewRepository = reviewRepository;
+    }
+
     public Review createReview(Review newReview){
         return reviewRepository.save(newReview);
     }
