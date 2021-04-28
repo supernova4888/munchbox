@@ -34,7 +34,7 @@ public class ReviewController {
     *Create a review to a specific RecipePost by his ID.
      *
      * @param postId  the id of the post
-     * @param review the comment to create
+     * @param review the review to create
      * @return status of the action
      */
     @PostMapping("/posts/{postId}/reviews")
@@ -52,7 +52,7 @@ public class ReviewController {
      * get all reviews related to a specific post by his ID
      *
      * @param postId the id of the post
-     * @return all comments related to that post, throw ResourceNotFoundException if post is not found
+     * @return all reviews related to that post, throw ResourceNotFoundException if post is not found
      */
     @GetMapping("/posts/{postId}/reviews")
     public ResponseEntity<List<Review>> listAllReviews(@PathVariable Long postId) {
@@ -60,11 +60,30 @@ public class ReviewController {
         return ResponseEntity.ok(recipePost.getReviews());
     }
 
+    /**
+     * update a review to a specific review by ID
+     *
+     * @param reviewId      the id of the review
+     * @param updatedReview the new review
+     * @return status of the action
+     */
         @PutMapping("/review/{reviewId}")
-    public ResponseEntity<Review> updateComment(@PathVariable Long reviewId, @RequestBody Review updatedReview) {
+    public ResponseEntity<Review> updateReview(@PathVariable Long reviewId, @RequestBody Review updatedReview) {
         Review review = reviewService.updateReview(reviewId, updatedReview);
         return ResponseEntity.ok(review);
     }
+
+    /**
+     * deleting a review by ID
+     *
+     * @param reviewId the id of the review
+     */
+    @DeleteMapping("/review/{reviewId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteReview(@PathVariable Long reviewId) {
+        reviewService.deleteReview(reviewId);
+    }
+
 
 }
 
