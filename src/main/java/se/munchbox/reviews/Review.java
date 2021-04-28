@@ -61,13 +61,13 @@ public class Review {
             this.posts = posts;
         }
 
-        /*public String getEmail() {
+        public String getEmail() {
             return email;
         }
 
         public void setEmail(String email) {
             this.email = email;
-        }*/
+        }
     }
 
 

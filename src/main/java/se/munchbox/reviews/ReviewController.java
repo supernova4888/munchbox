@@ -28,26 +28,26 @@ public class ReviewController {
            // this.userRepository = userRepository;
         }
 
-        @PostMapping("/posts/{postsId}/comments")
-        public ResponseEntity<Review> createComment(@PathVariable Long postsId, @RequestBody Review comments, Principal principal){
+        @PostMapping("/posts/{postsId}/reviews")
+        public ResponseEntity<Review> createComment(@PathVariable Long postsId, @RequestBody Review reviews, Principal principal){
             RecipePost posts = recipePostRepository.findById(postsId).orElseThrow(ResourceNotFoundException::new);
-            /*String userName = principal.getName();
+            String userName = principal.getName();
 
-            comments.setEmail(userName);
-            System.out.println("String 123:" + comments.getEmail());
-            comments.setPosts(posts);*/
+            reviews.setEmail(userName);
+            System.out.println("String 123:" + reviews.getEmail());
+            reviews.setPosts(posts);
 
-            commentsRepository.save(comments);
-            return ResponseEntity.status(HttpStatus.CREATED).body(comments);
+            commentsRepository.save(reviews);
+            return ResponseEntity.status(HttpStatus.CREATED).body(reviews);
         }
 
-        @DeleteMapping("/comments/{id}")
+        @DeleteMapping("/reviews/{id}")
         public ResponseEntity<Review> deleteComment(@PathVariable Long id, Principal principal){
-            Review comments = commentsRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+            Review reviews = commentsRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
 
            // if(comments.getEmail().equalsIgnoreCase(principal.getName())) {
-                commentsRepository.delete(comments);
-                return ResponseEntity.ok(comments);
+                commentsRepository.delete(reviews);
+                return ResponseEntity.ok(reviews);
            // }
            // else {
                 //throw new ResourceNotFoundException();
@@ -55,7 +55,7 @@ public class ReviewController {
 
 
 
-        @GetMapping("/posts/{postsId}/comments")
+        @GetMapping("/posts/{postsId}/reviews")
         public ResponseEntity<List<Review>>  getAllCommentsToParticularArticle(@PathVariable Long postsId  )  {
             RecipePost posts = recipePostRepository.findById(postsId).orElseThrow(ResourceNotFoundException::new);
             return ResponseEntity.ok( posts.getReviews());
