@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import HomePage from "./pages/home";
 import PostPage from "./pages/post";
 import ProfilePage from "./pages/profile.jsx";
-import Navbar from "./components/navbar.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 export default function App() {
   // State

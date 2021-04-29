@@ -1,6 +1,6 @@
 import React from "react";
 
-import StarRating from "../components/star-rating";
+import StarRating from "../components/StarRating";
 import logo from "../resources/logo.png";
 
 export default function HomePage() {
