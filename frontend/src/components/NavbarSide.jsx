@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import pot from "../resources/pan.svg";
-import home from "../resources/home.svg";
-import spinner from "../resources/pinwheel.svg";
-import profile from "../resources/profile-user.svg";
+import pot from "../resources/navbar/pan.svg";
+import home from "../resources/navbar/home.svg";
+import spinner from "../resources/navbar/pinwheel.svg";
+import profile from "../resources/navbar/profile-user.svg";
 import squarelogo from "../resources/logo_transparent_square.png";
 
 export default function NavbarSide() {
