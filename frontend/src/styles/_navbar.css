@@ -1,0 +1,8 @@
+.navbarFooter {
+    background-color: var(--color-offwhite);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 20px;
+
+}

@@ -4,7 +4,8 @@ import React, { useState } from "react";
 // Project files
 import HomePage from "./pages/home";
 import PostPage from "./pages/post";
-import ProfilePage from "./pages/profile";
+import ProfilePage from "./pages/profile.jsx";
+import Navbar from "./components/navbar.jsx";
 
 export default function App() {
   // State
@@ -14,19 +15,16 @@ export default function App() {
   // Methods
 
   return (
-    <div className="App">
-      <header className="App-header">
         <div>
-            Hello welcome to MunchBox
+            some text
             <BrowserRouter>
                 <Switch>
                     <Route exact component={HomePage} path="/home" />
                     <Route exact component={PostPage} path="/post" />
                     <Route exact component={ProfilePage} path="/profile" />
                 </Switch>
+                <Navbar/>
             </BrowserRouter>
         </div>
-      </header>
-    </div>
   );
 }
