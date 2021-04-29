@@ -1,32 +1,9 @@
-.navbarFooter {
-    background: rgb(227,227,227);
-    background: linear-gradient(180deg, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 40%);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-
-}
-
-.navbarFooter ul {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    padding-inline-start: 1px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.navbarFooter li {
-    margin-left: auto;
-    margin-right: auto;
-    text-decoration: none;
-}
 
 .svgIconLg{
     max-height: 30px;
 }
 
+/* for NavbarSide */
 .navbarSide {
     background-color: var(--color-purple);
     height: 100%;
@@ -52,16 +29,12 @@
     display: block;
     text-align: center;
     margin: 18px;
-
-    /*height: 48px;*/
-    /*background-color: white;*/
 }
-
 
 .navIcon{
     display: block;
-
 }
+
 .navLogo{
     max-width: 50px;
 }
@@ -69,16 +42,52 @@
 .navLabel{
     display: block;
 }
+
 @media (min-width: 1px) {
     .svgIcon{
         max-height: 20px;
         padding-top: 5px;
     }
+    .navbarFooter {
+        background: rgb(227,227,227);
+        background: linear-gradient(180deg, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 40%);
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .navbarFooter ul {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: center;
+        padding-inline-start: 1px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .navbarFooter li {
+        margin-left: auto;
+        margin-right: auto;
+        text-decoration: none;
+    }
 }
-
 
 @media (min-width: 600px) {
     .svgIcon{
         max-height: 30px;
+    }
+    .navbarFooter {
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(196,196,196,1) 100%);
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 96px;
+    }
+    .navbarFooter ul {
+        display: block;
+    }
+    .navbarFooter li {
+        margin-top: 20px;
+        margin-left: 30px;
     }
 }
