@@ -3,12 +3,15 @@ package se.munchbox.user;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
+import se.munchbox.reviews.*;
 import se.munchbox.userPref.UserPreference;
 
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+
+import java.util.List;
 
 @Entity
 @Table(name="account")
@@ -30,6 +33,7 @@ public class User {
     @Length(min = 3, max=100, message = "Name must be between 3-100 characters")
     @Column(name = "name")
     private String name;
+
 
     public User() {}
 
@@ -72,5 +76,4 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-
 }
