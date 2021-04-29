@@ -15,3 +15,4 @@ class RecipePostApi{
     }
 
 }
+export default new RecipePostApi();
