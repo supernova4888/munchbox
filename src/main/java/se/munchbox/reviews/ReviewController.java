@@ -5,14 +5,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.munchbox.ResourceNotFoundException;
-import se.munchbox.auth.AuthService;
 import se.munchbox.recipe.RecipePost;
 import se.munchbox.recipe.RecipePostRepository;
-import se.munchbox.user.User;
 import se.munchbox.user.UserRepository;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.security.Principal;
 
 @RestController
 public class ReviewController {
@@ -20,14 +19,12 @@ public class ReviewController {
     RecipePostRepository recipePostRepository;
     ReviewService reviewService;
     UserRepository userRepository;
-    AuthService authService;
 
     @Autowired
-    public ReviewController(RecipePostRepository recipePostRepository, ReviewService reviewService, UserRepository userRepository, AuthService authService) {
+    public ReviewController(RecipePostRepository recipePostRepository, ReviewService reviewService, UserRepository userRepository) {
         this.recipePostRepository = recipePostRepository;
         this.reviewService = reviewService;
         this.userRepository = userRepository;
-        this.authService = authService;
     }
 
     /**
@@ -38,12 +35,11 @@ public class ReviewController {
      * @return status of the action
      */
     @PostMapping("/posts/{postId}/reviews")
-    public ResponseEntity<Review> createReview(@PathVariable Long postId, @Valid @RequestBody Review review){
+    public ResponseEntity<Review> createReview(@PathVariable Long postId, @Valid @RequestBody Review review,Principal principal){
         RecipePost recipePost = recipePostRepository.findById(postId).orElseThrow(ResourceNotFoundException::new);
-        String email = authService.getLoggedInUserEmail();
-        User user = userRepository.findByEmail(email);
-        user.getReviews().add(review);
-        review.setUser(user);
+        String userEmail = principal.getName();
+        String userName = userRepository.findByEmail(userEmail).getName();
+        review.setUserName(userName);
         review.setPosts(recipePost);
         return ResponseEntity.status(HttpStatus.CREATED).body(reviewService.createReview(review));
     }
