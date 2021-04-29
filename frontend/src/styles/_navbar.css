@@ -1,7 +1,5 @@
 
-.svgIconLg{
-    max-height: 30px;
-}
+
 
 /* for NavbarSide */
 .navbarSide {
@@ -48,6 +46,12 @@
         max-height: 20px;
         padding-top: 5px;
     }
+    .svgIconLg{
+        max-height: 30px;
+    }
+    .svgIconSide{
+        display: none;
+    }
     .navbarFooter {
         background: rgb(227,227,227);
         background: linear-gradient(180deg, rgba(227,227,227,1) 0%, rgba(255,255,255,1) 40%);
@@ -73,11 +77,19 @@
 
 @media (min-width: 600px) {
     .svgIcon{
+        display: none;
+        max-height: 30px;
+    }
+    .svgIconLg{
+        display: none;
+    }
+    .svgIconSide{
+        display: block;
         max-height: 30px;
     }
     .navbarFooter {
-        background: rgb(255,255,255);
-        background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(196,196,196,1) 100%);
+        background: rgb(106,66,92);
+        background: linear-gradient(90deg, rgba(106,66,92,1) 60%, rgba(74,46,64,1) 100%);
         left: 0;
         top: 0;
         height: 100%;
