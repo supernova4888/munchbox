@@ -44,14 +44,14 @@ export default function NavbarSide() {
                 </Link>
             </div>
             <div className="navItem">
-                <Link to="/post">
+
                     <div className="navIcon">
                         <img className="svgIcon" src={spinner}/>
                     </div>
                     <div className="navLabel">
                         Spinner
                     </div>
-                </Link>
+                
             </div>
         </div>
     );
