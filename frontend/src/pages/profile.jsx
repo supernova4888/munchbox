@@ -1,7 +1,9 @@
 import React from 'react'
 
-// how to bring info from 
+// user Preference
+// create imgs for person to select - user clicks "I eat all" > save that in variable ("user pref")> POST to back end endpoint > choice persists in the FE for the user (recoil).
 
+// variable userPref is a set of predefined string 
 
 export default function Profile() {
     return (
