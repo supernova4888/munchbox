@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.munchbox.ResourceNotFoundException;
+import se.munchbox.user.UserRepository;
 
 
 import java.security.Principal;
@@ -13,9 +14,11 @@ import java.util.List;
 @RestController
 public class RecipePostController {
     RecipePostRepository recipePostRepository;
+    UserRepository userRepository;
     @Autowired
-    public RecipePostController(RecipePostRepository recipePostRepository) {
+    public RecipePostController(RecipePostRepository recipePostRepository, UserRepository userRepository) {
         this.recipePostRepository = recipePostRepository;
+        this.userRepository = userRepository;
 
     }
     @GetMapping("/posts")
@@ -44,8 +47,9 @@ public class RecipePostController {
 
     @PostMapping("/post")
     public ResponseEntity<RecipePost> createPost(@RequestBody RecipePost post, Principal principal) {
-        String userName = principal.getName();
-       // post.setEmail(userName);
+        String userEmail = principal.getName();
+        String userName = userRepository.findByEmail(userEmail).getName();
+        post.setUserName(userName);
         recipePostRepository.save(post);
         return ResponseEntity.status(HttpStatus.CREATED).body(post);
     }
