@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
     return (
         <footer className="navbarFooter">
-            <p>Navbar text here</p>
+            <ul>
+                <li><Link to="/home">Home</Link></li>
+                <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/post">Post</Link></li>
+            </ul>
         </footer>
     );
 }

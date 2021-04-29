@@ -4,5 +4,18 @@
     bottom: 0;
     width: 100%;
     font-size: 20px;
+}
 
+.navbarFooter ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding-inline-start: 1px;
+}
+
+.navbarFooter li {
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 8px;
+    text-decoration: none;
 }
