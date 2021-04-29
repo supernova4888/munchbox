@@ -27,7 +27,7 @@ export default function App() {
                     <Route exact component={SpinnerPage} path="/spinner" />
                 </Switch>
 
-                <NavbarSide />
+                <Navbar />
             </BrowserRouter>
         </div>
   );
