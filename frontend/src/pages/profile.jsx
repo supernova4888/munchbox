@@ -1,14 +1,22 @@
 import React from 'react'
+import FoodPref from '../components/FoodPref'
 
-// user Preference
-// create imgs for person to select - user clicks "I eat all" > save that in variable ("user pref")> POST to back end endpoint > choice persists in the FE for the user (recoil).
+// this page brings all the components for the user profile and renders it
+// import FoodPreg
 
-// variable userPref is a set of predefined string 
+
+// username
+// email
+// profile img (cat, dog...)
+// userPref ("i eat all", "sthlm vegetarian"..)
+// myrecipes
+// following
+
 
 export default function Profile() {
     return (
         <div>
-            
+        <FoodPref />    
         </div>
     )
 }
