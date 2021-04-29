@@ -6,5 +6,12 @@ class RecipePostApi{
     createPost(post) {
         return Api.post('/post', post);
     }
+    updatePost(post) {
+        return Api.put('/posts', post);
+    }
+
+    deletePost(id) {
+        return Api.delete('/posts/'+id);
+    }
 
 }
