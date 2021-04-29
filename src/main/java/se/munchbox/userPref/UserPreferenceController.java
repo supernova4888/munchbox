@@ -4,46 +4,56 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-
-@RestController
-@RequestMapping("/userPreferences")
-public class UserPreferenceController {
-        @Autowired
-        private UserPreferenceService userPreferenceService;
-
-        @GetMapping("/userid")
-        public List<UserPreference> getAllByUserId(@RequestParam(required = false) Long userId) {
-            if (userId == null) {
-                return userPreferenceService.getAll( );
-            } else {
-                return userPreferenceService.getAllByUserId(userId);
-            }
-        }
-        @PostMapping("")
-        public UserPreference create(@RequestBody UserPreference newUserPreference){
-            return userPreferenceService.create(newUserPreference);
-        }
-
-        /*@PostMapping("/user/{userid}/userPreferences")
-        public ResponseEntity<UserPreference> createUserPreference(@PathVariable Long userId, @RequestBody UserPreference userPreference){
-            UserPreferenceService.createUserPreference(userId, userPreference);
-            return ResponseEntity.status(HttpStatus.CREATED).body(userPreference);
-        }*/
+import se.munchbox.ResourceNotFoundException;
+import se.munchbox.user.UserRepository;
+import java.security.Principal;
 
 
+    @RestController
+    public class UserPreferenceController {
+         UserPreferenceRepository userPreferenceRepository;
+         UserRepository userRepository;
 
-        @PutMapping("")
-        public UserPreference update(@RequestBody UserPreference newUserPreference){
-            return userPreferenceService.update(newUserPreference);
+    @Autowired
+    public UserPreferenceController(UserPreferenceRepository userPreferenceRepository, UserRepository userRepository)
+     {
+        this.userPreferenceRepository = userPreferenceRepository;
+        this.userRepository = userRepository;
+    }
+
+    public UserPreferenceController(){
+    }
+
+        @GetMapping("userPreference/{id}")
+        public ResponseEntity<UserPreference> getByUserId(@PathVariable Long id){
+        UserPreference userPreference = userPreferenceRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+        return ResponseEntity.ok(userPreference);
         }
 
-        @DeleteMapping("/{id}")
-        public void delete(@PathVariable Long id) {
-            userPreferenceService.delete(id);
+        @PutMapping("userPreference/{id}")
+        public ResponseEntity<UserPreference> updateUserPreference(@PathVariable Long id,@RequestBody UserPreference updatedUserPreference){
+           userPreferenceRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+           updatedUserPreference.setId(id);
+           UserPreference userPreference = userPreferenceRepository.save(updatedUserPreference);
+            return ResponseEntity.ok(updatedUserPreference);
         }
 
+        @DeleteMapping("userPreference/{id}")
+        public ResponseEntity<UserPreference> deleteUserPreference(@PathVariable Long id) {
+            UserPreference userPreference = userPreferenceRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+            userPreferenceRepository.delete(userPreference);
+            return new ResponseEntity<UserPreference>(HttpStatus.OK);
+        }
+
+          @PostMapping("/userPreference")
+          public ResponseEntity<UserPreference> createUserPreference(@RequestBody UserPreference userPreference,Principal principal){
+              String userEmail = principal.getName( );
+              userPreference.setUserEmail(userEmail);
+              String userName = userRepository.findByEmail(userEmail).getName();
+              userPreference.setUserName(userName);
+              userPreferenceRepository.save(userPreference);
+              return ResponseEntity.status(HttpStatus.CREATED).body(userPreference);
+          }
         }
 
 

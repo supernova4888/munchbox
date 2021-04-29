@@ -1,38 +1,53 @@
 package se.munchbox.userPref;
 
 
-import se.munchbox.user.User;
-
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import javax.persistence.*;
 
 @Entity
 public class UserPreference {
+
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(nullable = false)
     private String userPrefBody;
-    @Column(columnDefinition = "TEXT")
-    private String userPrefTitle;
 
-    @OneToOne
-    private User user;
+    @Column(nullable = false)
+    private String userEmail;
+    @Column(nullable = false)
+    private String userName;
 
-    public UserPreference(Long id, String userPrefBody, String userPrefTitle, User user) {
+
+    public UserPreference(){
+    }
+
+    public UserPreference(Long id, String userPrefBody, String userName, String userEmail) {
         this.id = id;
         this.userPrefBody = userPrefBody;
-        this.userPrefTitle = userPrefTitle;
-        this.user = user;
+        this.userName = userName;
+        this.userEmail = userEmail;
     }
 
-    public User getUser() {
-        return user;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
 
     public Long getId() {
         return id;
@@ -48,14 +63,6 @@ public class UserPreference {
 
     public void setUserPrefBody(String userPrefBody) {
         this.userPrefBody = userPrefBody;
-    }
-
-    public String getUserPrefTitle() {
-        return userPrefTitle;
-    }
-
-    public void setUserPrefTitle(String userPrefTitle) {
-        this.userPrefTitle = userPrefTitle;
     }
 }
 

@@ -26,7 +26,6 @@ public class User {
     @Column(name = "email", unique = true)
     private String email;
 
-
     @Length(min = 5, max=100, message = "Password length most be between 5-100 characters")
     @Column(name = "password")
     private String password;
@@ -34,12 +33,6 @@ public class User {
     @Length(min = 3, max=100, message = "Name must be between 3-100 characters")
     @Column(name = "name")
     private String name;
-
-    @OneToOne
-    private UserPreference userPreference;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    List<Review> reviews;
 
 
     public User() {}
@@ -49,7 +42,6 @@ public class User {
         this.password = password;
         this.name = name;
     }
-
 
     public Long getId() {
         return id;
@@ -83,13 +75,5 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Review> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
     }
 }
