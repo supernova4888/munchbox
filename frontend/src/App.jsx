@@ -6,6 +6,7 @@ import HomePage from "./pages/home";
 import PostPage from "./pages/post";
 import ProfilePage from "./pages/profile.jsx";
 import Navbar from "./components/Navbar.jsx";
+import NavbarSide from "./components/NavbarSide";
 
 export default function App() {
   // State
@@ -23,7 +24,8 @@ export default function App() {
                     <Route exact component={PostPage} path="/post" />
                     <Route exact component={ProfilePage} path="/profile" />
                 </Switch>
-                <Navbar/>
+
+                <NavbarSide />
             </BrowserRouter>
         </div>
   );
