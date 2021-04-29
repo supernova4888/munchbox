@@ -1,0 +1,62 @@
+.recipeCard {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    max-width: 300px;
+    margin-bottom: 16px;
+}
+
+.recipeImageBox {
+
+}
+
+.recipeTitleBox {
+    font-weight: bold;
+    padding: 8px;
+}
+
+.recipeImage {
+    max-width: 64px;
+    border-radius: 50%;
+    filter: drop-shadow(0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.5));
+}
+
+.recipeCardLarge {
+    display: block;
+    max-width: 300px;
+}
+
+.recipeImageLarge {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    filter: drop-shadow(0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.5));
+}
+
+.recipePostedBy {
+    display: flex;
+    align-items:center;
+}
+
+.userProfilePicSmall {
+    max-width: 48px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.userNameSmall {
+    padding: 8px;
+
+}
+
+.recipeContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px;
+    justify-items: center;
+}
