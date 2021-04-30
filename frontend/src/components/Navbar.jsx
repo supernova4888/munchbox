@@ -10,6 +10,8 @@ import houseW from "../resources/navbar/house-white.png";
 import plateW from "../resources/navbar/dinner-white.png";
 import spinnerW from "../resources/navbar/hurricane-white.png";
 import userW from "../resources/navbar/user-white.png";
+/* nav logo */
+import navLogo from "../resources/logo_transparent_square.png";
 
 
 export default function Navbar() {
@@ -52,6 +54,9 @@ export default function Navbar() {
                             <span className="tooltiptext">Post</span>
                         </div>
                     </Link>
+                </li>
+                <li>
+                    <img className="svgIconSide2" src={navLogo}/>
                 </li>
             </ul>
         </footer>

@@ -35,6 +35,9 @@
     .tooltip .tooltiptext {
         display: none;
     }
+    .svgIconSide2 {
+        display: none;
+    }
 }
 
 @media (min-width: 600px) {
@@ -68,7 +71,6 @@
         position: relative;
         display: inline-block;
     }
-
     .tooltip .tooltiptext {
         visibility: hidden;
         display: block;
@@ -87,5 +89,12 @@
     }
     .tooltip:hover .tooltiptext {
         visibility: visible;
+    }
+    .svgIconSide2{
+        display: block;
+        max-height: 50px;
+        position: fixed;
+        bottom: 24px;
+        left: 20px;
     }
 }
