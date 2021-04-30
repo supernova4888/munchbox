@@ -7,7 +7,7 @@ import PostPage from "./pages/post.jsx";
 import ProfilePage from "./pages/profile.jsx";
 import SpinnerPage from "./pages/spinner.jsx";
 import Navbar from "./components/Navbar.jsx";
-import NavbarSide from "./components/NavbarSide";
+
 
 export default function App() {
   // State
@@ -18,7 +18,6 @@ export default function App() {
 
   return (
         <div>
-            some text
             <BrowserRouter>
                 <Switch>
                     <Route exact component={HomePage} path="/home" />

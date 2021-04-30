@@ -1,46 +1,5 @@
 
 
-
-/* for NavbarSide */
-.navbarSide {
-    background-color: var(--color-purple);
-    height: 100%;
-    width: 96px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-    color: var(--color-offwhite);
-
-}
-.navbarSide a {
-    text-decoration: none;
-    color: var(--color-offwhite);
-}
-.navbarSide a:hover {
-    text-decoration: underline;
-}
-
-.navItem{
-    display: block;
-    text-align: center;
-    margin: 18px;
-}
-
-.navIcon{
-    display: block;
-}
-
-.navLogo{
-    max-width: 50px;
-}
-
-.navLabel{
-    display: block;
-}
-
 @media (min-width: 1px) {
     .svgIcon{
         max-height: 20px;
