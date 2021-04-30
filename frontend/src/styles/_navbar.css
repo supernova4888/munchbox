@@ -32,6 +32,9 @@
         margin-right: auto;
         text-decoration: none;
     }
+    .tooltip .tooltiptext {
+        display: none;
+    }
 }
 
 @media (min-width: 600px) {
@@ -60,5 +63,29 @@
     .navbarFooter li {
         margin-top: 20px;
         margin-left: 30px;
+    }
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        display: block;
+        width: 100px;
+        background-color: #4a2e40;
+        color: var(--color-offwhite);
+        font-weight: bolder;
+        font-size: large;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom-right-radius: 6px;
+        border-top-right-radius: 6px;
+        position: absolute;
+        top: -5px;
+        left: 210%;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
     }
 }

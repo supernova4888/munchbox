@@ -16,11 +16,43 @@ export default function Navbar() {
     return (
         <footer className="navbarFooter">
             <ul>
-                <li><Link to="/home"><img className="svgIcon" src={house}/><img className="svgIconSide" src={houseW}/></Link></li>
-                <li><Link to="/profile"><img className="svgIcon" src={user}/><img className="svgIconSide" src={userW}/></Link></li>
+                <li>
+                    <Link to="/home">
+                        <img className="svgIcon" src={house}/>
+                        <div className="tooltip">
+                            <img className="svgIconSide" src={houseW}/>
+                            <span className="tooltiptext">Home</span>
+                        </div>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/profile">
+                        <img className="svgIcon" src={user}/>
+                        <div className="tooltip">
+                            <img className="svgIconSide" src={userW}/>
+                            <span className="tooltiptext">Profile</span>
+                        </div>
+                    </Link>
+                </li>
                 <li><Link to="/post"><img className="svgIconLg" src={pluspurple}/></Link></li>
-                <li><Link to="/spinner"><img className="svgIcon" src={spinner}/><img className="svgIconSide" src={spinnerW}/></Link></li>
-                <li><Link to="/post"><img className="svgIcon" src={plate}/><img className="svgIconSide" src={plateW}/></Link></li>
+                <li>
+                    <Link to="/spinner">
+                        <img className="svgIcon" src={spinner}/>
+                        <div className="tooltip">
+                            <img className="svgIconSide" src={spinnerW}/>
+                            <span className="tooltiptext">Spinner</span>
+                        </div>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/post">
+                        <img className="svgIcon" src={plate}/>
+                        <div className="tooltip">
+                            <img className="svgIconSide" src={plateW}/>
+                            <span className="tooltiptext">Post</span>
+                        </div>
+                    </Link>
+                </li>
             </ul>
         </footer>
     );
