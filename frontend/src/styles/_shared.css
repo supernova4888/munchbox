@@ -7,6 +7,18 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
 }
+.buttonRegister{
+    background-color: var(--color-purple);
+    border: var(--color-offwhite);
+    outline: var(--color-offwhite);
+    font-size: 16px;
+    padding: 8px;
+    font-family: 'Oxygen', sans-serif;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: var(--color-offwhite);
+
+}
 
 @media (min-width: 1px) {
 }

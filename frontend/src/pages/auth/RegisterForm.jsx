@@ -17,7 +17,7 @@ return (
             className="form-control"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Name"
+            placeholder="Choose a username"
             />
         </div>
 
@@ -28,7 +28,7 @@ return (
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="form-control"
-            placeholder="Email"
+            placeholder="Enter your email"
             />
         </div>
 
@@ -36,7 +36,7 @@ return (
             <label>Password:</label>
             <input
             type="password"
-            placeholder="Password"
+            placeholder="Choose a password"
             className="form-control"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -45,7 +45,7 @@ return (
 
         <div className="form-group">
             <button
-            className="btn btn-success"
+            className="buttonRegister"
             onClick={(e) => onSubmit({ name, email, password })}
             >
             Create account
