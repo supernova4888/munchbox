@@ -18,7 +18,7 @@
 .recipeImage {
     max-width: 64px;
     border-radius: 50%;
-    filter: drop-shadow(0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.5));
+    box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
 }
 
 .recipeCardLarge {
@@ -30,7 +30,8 @@
     max-width: 100%;
     height: auto;
     border-radius: 50%;
-    filter: drop-shadow(0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.5));
+    /*filter: drop-shadow(0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.5));*/
+    box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
 }
 
 .recipePostedBy {

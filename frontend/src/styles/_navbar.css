@@ -58,6 +58,9 @@
     .tooltip .tooltiptext {
         display: none;
     }
+    .tooltipLogout .tooltiptext {
+        display: none;
+    }
     .svgIconSide2 {
         display: none;
     }
