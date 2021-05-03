@@ -4,11 +4,12 @@ import React, { useEffect, useState } from "react";
 import ReviewApi from"../../api/ReviewApi";
 import RecipeCardLarge from "../components/RecipeCardLarge";
 import StarRating from "../../components/StarRating";
+import {builders as posts} from "prettier/doc";
 
 export default function ReviewPage()
 
 { //Local state
-    const [posts,setposts]= useState([]);
+    const [reviews,setReviews]= useState([]);
     //Methods
     async function createReview(postData) {
         try {
@@ -16,7 +17,7 @@ export default function ReviewPage()
             const reviews = response.data;
             const newReview = posts.concat(reviews);
 
-            setReview(newReview);
+            setReviews(newReview);
         } catch (e) {
             console.error(e);
         }
@@ -40,8 +41,7 @@ export default function ReviewPage()
                 <div className="review-ratings"><h5>MYRATING</h5>
                     <StarRating/>
                 </div>
-                <div>
-                    <h5>COMMENTS:</h5>
+                <div><h5>COMMENTS:</h5>
 
                 </div>
             </div>
