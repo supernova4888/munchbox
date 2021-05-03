@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React, { useState } from "react";
 // Project files
 import HomePage from "./pages/home";
-import PostPage from "./pages/post";
+import PostPage from "./pages/RecipePost/recipePost";
 import ProfilePage from "./pages/profile";
 
 export default function App() {
