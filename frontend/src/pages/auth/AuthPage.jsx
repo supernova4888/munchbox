@@ -40,7 +40,7 @@ export default function AuthPage() {
             </div>
             <div className="imageBlockContainer">
                 <Link to="/login">
-                    <button className="buttonLogin">Login</button>
+                    <button className="buttonLogin">Log in</button>
                 </Link>
                 <Link to="/register">
                     <button className="buttonRegister">Register</button>
