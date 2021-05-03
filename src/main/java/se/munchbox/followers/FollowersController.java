@@ -46,4 +46,12 @@ public class FollowersController {
         User user = userRepository.findById(userId).orElseThrow(ResourceNotFoundException::new);
         return ResponseEntity.ok(user.getFollowers());
     }
+
+    @DeleteMapping("follow/{id}")
+    public ResponseEntity<Followers> deleteFollower(@PathVariable Long id) {
+        Followers followers = followersRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+        followersRepository.delete(followers);
+        return new ResponseEntity<Followers>(HttpStatus.OK);
+    }
+
 }
