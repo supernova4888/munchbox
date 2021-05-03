@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../../resources/logo.png";
 
 export default function RegisterForm({ onSubmit }) {
 const [name, setName] = useState("");
@@ -8,10 +9,9 @@ const [password, setPassword] = useState("");
 return (
 <div className="card">
     <div className="card-body">
-        <h4 className="card-title">Sign up</h4>
+        <img className="logoSmall" src={logo} /><h2>Sign Up</h2>
         <div>
         <div className="form-group">
-            <label>Name:</label>
             <input
             type="text"
             className="form-control"
@@ -22,7 +22,6 @@ return (
         </div>
 
         <div className="form-group">
-            <label>Email:</label>
             <input
             type="email"
             value={email}
@@ -33,7 +32,6 @@ return (
         </div>
 
         <div className="form-group">
-            <label>Password:</label>
             <input
             type="password"
             placeholder="Choose a password"

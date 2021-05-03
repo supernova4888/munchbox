@@ -42,28 +42,40 @@ body {
     margin-right: 2px;
 
 }
-/* Login and Register forms */
+/* Back arrow icons on register/login pages */
+a {
+    color: var(--color-purple);
+}
+
+.iconLink {
+    margin-left: 20px;
+    margin-top: 40px;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+    /* Login and Register forms */
 .card {
     display: flex;
     justify-content: center;
-    margin-top: 64px;
 }
 .card-body {
     width: 400px;
-    border: 1px dotted var(--color-purple);
+    /*border: 1px dotted var(--color-purple);*/
     border-radius: 8px;
     text-align: center;
     padding: 8px;
-    margin: 8px;
-}
 
+}
+.form-control {
+    font-family: 'Oxygen', sans-serif;
+    width: 90%;
+    padding: 8px;
+    font-size: 16px;
+}
 .form-group {
-    text-align: right;
     font-weight: bolder;
     letter-spacing: 0.5px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-column-gap: 12px;
     margin-top: 8px;
     margin-bottom: 8px;
 }
@@ -72,8 +84,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 
@@ -114,6 +126,14 @@ body {
         margin-right: auto;
         margin-left: auto;
         margin-top: 50px;
+    }
+    .logoSmall {
+        max-width: 40%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 50%;
+        filter: drop-shadow(0.15rem 0.15rem 0.2rem rgba(0, 0, 0, 0.5));
     }
     .logoText{
         max-width: 50%;
