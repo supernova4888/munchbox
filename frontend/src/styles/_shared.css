@@ -19,7 +19,10 @@ body {
     border-radius: 8px;
     text-transform: uppercase;
     color: var(--color-offwhite);
-    width: 200px;
+    width: 150px;
+    height: 50px;
+    margin-left: 2px;
+    margin-right: 2px;
 
 }
 .buttonLogin {
@@ -33,7 +36,10 @@ body {
     border-radius: 8px;
     text-transform: uppercase;
     color: var(--color-purple);
-    width: 200px;
+    width: 150px;
+    height: 50px;
+    margin-left: 2px;
+    margin-right: 2px;
 
 }
 /* Login and Register forms */

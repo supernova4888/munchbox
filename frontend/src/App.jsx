@@ -9,6 +9,8 @@ import PostPage from "./pages/post.jsx";
 import ProfilePage from "./pages/profile.jsx";
 import SpinnerPage from "./pages/spinner.jsx";
 import Navbar from "./components/Navbar.jsx";
+import RegisterPage from "./pages/registerpage.jsx";
+import LoginPage from "./pages/loginpage.jsx";
 
 
 export default function App() {
@@ -20,14 +22,16 @@ export default function App() {
     /*const loggedInRouter = (*/
     return (
         <BrowserRouter>
-            <Navbar onLogout={() => Auth.logout()} />
+            <Navbar  />
 
             <Switch>
-                <Route component={AuthPage} path="/" />
+                <Route component={AuthPage} path="/mobile" />
                 <Route exact component={HomePage} path="/home" />
-                <Route exact component={PostPage} path="/post" />
-                <Route exact component={ProfilePage} path="/profile" />
-                <Route exact component={SpinnerPage} path="/spinner" />
+                <Route component={PostPage} path="/post" />
+                <Route component={ProfilePage} path="/profile" />
+                <Route component={SpinnerPage} path="/spinner" />
+                <Route component={LoginPage} path="/login" />
+                <Route component={RegisterPage} path="/register" />
             </Switch>
 
 

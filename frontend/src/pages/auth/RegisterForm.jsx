@@ -48,7 +48,7 @@ return (
             className="buttonRegister"
             onClick={(e) => onSubmit({ name, email, password })}
             >
-            Create account
+            Register
             </button>
         </div>
         </div>
