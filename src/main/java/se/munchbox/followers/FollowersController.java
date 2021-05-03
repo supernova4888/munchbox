@@ -41,4 +41,9 @@ public class FollowersController {
         return ResponseEntity.status(HttpStatus.CREATED).body(followers);
     }
 
+    @GetMapping("/follow/{userId}")
+    public ResponseEntity<List<Followers>> listAllFollowers(@PathVariable Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(ResourceNotFoundException::new);
+        return ResponseEntity.ok(user.getFollowers());
+    }
 }
