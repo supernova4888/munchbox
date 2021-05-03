@@ -1,8 +1,8 @@
 package se.munchbox.user;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import org.hibernate.validator.constraints.Length;
+import se.munchbox.followers.Followers;
 import se.munchbox.reviews.*;
 import se.munchbox.userPref.UserPreference;
 
@@ -10,7 +10,9 @@ import se.munchbox.userPref.UserPreference;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -33,6 +35,9 @@ public class User {
     @Length(min = 3, max=100, message = "Name must be between 3-100 characters")
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Followers> followers = new ArrayList<>();
 
 
     public User() {}
@@ -75,5 +80,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Followers> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(List<Followers> followers) {
+        this.followers = followers;
     }
 }
