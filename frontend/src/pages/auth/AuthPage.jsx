@@ -12,14 +12,14 @@ export default function LoginPage() {
     async function login(loginData) {
         const loginSuccess = await Auth.login(loginData);
         if (!loginSuccess) {
-            alert("Invalid credentials");
+            alert("Invalid credentials. Check email and password and try again.");
         }
     }
 
     async function register(registrationData) {
         const registerSuccess = await Auth.register(registrationData);
         if (!registerSuccess) {
-            alert("Couldn't register check credentials and try again");
+            alert("Registration failed. Check credentials and try again.");
         }
     }
 
