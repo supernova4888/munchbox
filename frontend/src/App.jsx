@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React, { useState } from "react";
 // Project files
 import Auth from "./services/Auth";
-import AuthPage from "./pages/auth/AuthPage";
+import WelcomePage from "./pages/auth/AuthPage";
 import HomePage from "./pages/home.jsx";
 import PostPage from "./pages/post.jsx";
 import ProfilePage from "./pages/profile.jsx";
@@ -25,7 +25,7 @@ export default function App() {
             <Navbar  />
 
             <Switch>
-                <Route component={AuthPage} path="/mobile" />
+                <Route component={WelcomePage} path="/welcome" />
                 <Route exact component={HomePage} path="/home" />
                 <Route component={PostPage} path="/post" />
                 <Route component={ProfilePage} path="/profile" />
@@ -33,7 +33,6 @@ export default function App() {
                 <Route component={LoginPage} path="/login" />
                 <Route component={RegisterPage} path="/register" />
             </Switch>
-
 
         </BrowserRouter>
     ); }

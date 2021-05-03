@@ -1,5 +1,5 @@
 // NPM Packages
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 // Project files
 import RegisterForm from "./auth/RegisterForm";
@@ -16,8 +16,11 @@ export default function RegisterPage() {
 
     return (
         <div>
-            <Link to="/mobile">
-            <h1 className="iconLink"><i className="fas fa-arrow-circle-left"></i></h1></Link>
+            <Link to="/welcome">
+                <h1 className="iconLink">
+                    <i className="fas fa-arrow-circle-left"></i>
+                </h1>
+            </Link>
         <RegisterForm onSubmit={register} />
         </div>
     );

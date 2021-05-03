@@ -1,16 +1,11 @@
 // NPM Packages
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// Project files
-import LoginForm from "./LoginForm";
-import RegisterForm from "./RegisterForm";
-import Auth from "../../services/Auth";
 // Images
 import munchText from "../../resources/munchbox-text-transparent.png";
 import munchLogo from "../../resources/logo_transparent_square.png";
 
 export default function AuthPage() {
-
 
     return (
         <div>

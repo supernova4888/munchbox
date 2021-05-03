@@ -16,7 +16,11 @@ export default function LoginPage() {
 
     return (
         <div>
-            <Link to="/mobile"><h1 className="iconLink"><i className="fas fa-arrow-circle-left"></i></h1></Link>
+            <Link to="/welcome">
+                <h1 className="iconLink">
+                    <i className="fas fa-arrow-circle-left"></i>
+                </h1>
+            </Link>
         <LoginForm onSubmit={login} />
         </div>
     )
