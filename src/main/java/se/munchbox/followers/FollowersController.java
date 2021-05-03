@@ -23,7 +23,7 @@ public class FollowersController {
     private UserService userService;
 
 
-    public FollowersController(FollowersRepository followersRepository, FollowersService followersService, UserRepository userRepository,UserService userService) {
+    public FollowersController(FollowersRepository followersRepository, FollowersService followersService, UserRepository userRepository, UserService userService) {
         this.followersRepository = followersRepository;
         this.followersService = followersService;
         this.userRepository = userRepository;
@@ -53,5 +53,4 @@ public class FollowersController {
         followersRepository.delete(followers);
         return new ResponseEntity<Followers>(HttpStatus.OK);
     }
-
 }

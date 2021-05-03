@@ -1,6 +1,5 @@
 package se.munchbox.followers;
 
-
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -20,12 +19,12 @@ public class Followers {
     @Column(nullable = false)
     private String followUserName;
 
-   @ManyToOne
-   @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-   @JsonIdentityReference(alwaysAsId = true)
-   @JoinColumn(nullable = false)
-   @JsonIgnore
-   private User user;
+    @ManyToOne
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+    @JsonIdentityReference(alwaysAsId = true)
+    @JoinColumn(nullable = false)
+    @JsonIgnore
+    private User user;
 
     public Followers(String followUserName) {
         this.followUserName = followUserName;
