@@ -24,7 +24,7 @@ export default function App() {
     const guestRouter = (
         <BrowserRouter>
             <Navbar  />
-            <LogoutButton onLogout={() => Auth.logout()} />
+
             <Switch>
                 <Route component={WelcomePage} path="/welcome" />
                 <Route exact component={HomePage} path="/home" />
@@ -40,15 +40,14 @@ export default function App() {
     const loggedInRouter = (
         <BrowserRouter>
             <Navbar  />
-
+            <LogoutButton onLogout={() => Auth.logout()} />
             <Switch>
-                <Route component={WelcomePage} path="/welcome" />
+
                 <Route exact component={HomePage} path="/home" />
                 <Route component={PostPage} path="/post" />
                 <Route component={ProfilePage} path="/profile" />
                 <Route component={SpinnerPage} path="/spinner" />
-                <Route component={LoginPage} path="/login" />
-                <Route component={RegisterPage} path="/register" />
+
             </Switch>
 
         </BrowserRouter>
