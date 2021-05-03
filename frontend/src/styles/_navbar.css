@@ -98,8 +98,9 @@
         visibility: hidden;
         display: block;
         width: 100px;
-        background-color: #4a2e40;
+        background-color: var(--color-purpledark);
         color: var(--color-offwhite);
+        font-family: 'Oxygen', sans-serif;
         font-weight: bolder;
         font-size: large;
         text-align: center;
@@ -111,6 +112,30 @@
         left: 210%;
     }
     .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+    .tooltipLogout {
+        position: relative;
+        display: inline-block;
+    }
+    .tooltipLogout .tooltiptext {
+        visibility: hidden;
+        display: block;
+        width: 100px;
+        background-color: var(--color-purple);
+        color: var(--color-offwhite);
+        font-family: 'Oxygen', sans-serif;
+        font-weight: bolder;
+        font-size: large;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom-left-radius: 6px;
+        border-top-left-radius: 6px;
+        position: absolute;
+        top: -8px;
+        right: 105%;
+    }
+    .tooltipLogout:hover .tooltiptext {
         visibility: visible;
     }
     .svgIconSide2{

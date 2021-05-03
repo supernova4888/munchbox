@@ -8,7 +8,10 @@ export default function LogoutButton({ onLogout }) {
                 className="logoutButton"
                 onClick={onLogout}
             >
+                <div className="tooltipLogout">
                 <img className="svgIconExit" src={exit} />
+                <span className="tooltiptext">Log Out</span>
+                </div>
             </button>
             </div>
         </div>
