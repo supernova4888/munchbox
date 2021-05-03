@@ -7,16 +7,32 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
 }
-.buttonRegister{
+.buttonRegister {
     background-color: var(--color-purple);
-    border: var(--color-offwhite);
-    outline: var(--color-offwhite);
-    font-size: 16px;
-    padding: 8px;
+    border: 2px solid var(--color-purple);
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 16px;
     font-family: 'Oxygen', sans-serif;
     border-radius: 8px;
     text-transform: uppercase;
     color: var(--color-offwhite);
+    width: 200px;
+
+}
+.buttonLogin {
+    background-color: var(--color-offwhite);
+    border: 2px solid var(--color-purple);
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 16px;
+    font-family: 'Oxygen', sans-serif;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: var(--color-purple);
+    width: 200px;
 
 }
 
