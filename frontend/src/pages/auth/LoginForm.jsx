@@ -31,7 +31,7 @@ return (
             />
         </div>
 
-        <div className="form-group">
+        <div className="form-group-button">
             <button
             className="buttonLogin"
             onClick={() => onSubmit({ email, password })}

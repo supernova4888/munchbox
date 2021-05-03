@@ -43,7 +43,7 @@ return (
             />
         </div>
 
-        <div className="form-group">
+        <div className="form-group-button">
             <button
             className="buttonRegister"
             onClick={(e) => onSubmit({ name, email, password })}
