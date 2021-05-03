@@ -11,16 +11,33 @@ import SpinnerPage from "./pages/spinner.jsx";
 import Navbar from "./components/Navbar.jsx";
 import RegisterPage from "./pages/registerpage.jsx";
 import LoginPage from "./pages/loginpage.jsx";
+import LogoutButton from "./components/LogoutButton";
 
 
 export default function App() {
   // State
-    /*const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());*/
+    const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
   // Constants
-    /*Auth.bindLoggedInStateSetter(setLoggedIn);*/
+    Auth.bindLoggedInStateSetter(setLoggedIn);
   // Components
-    /*const loggedInRouter = (*/
-    return (
+
+    const guestRouter = (
+        <BrowserRouter>
+            <Navbar  />
+            <LogoutButton onLogout={() => Auth.logout()} />
+            <Switch>
+                <Route component={WelcomePage} path="/welcome" />
+                <Route exact component={HomePage} path="/home" />
+                <Route component={PostPage} path="/post" />
+
+                <Route component={SpinnerPage} path="/spinner" />
+                <Route component={LoginPage} path="/login" />
+                <Route component={RegisterPage} path="/register" />
+            </Switch>
+
+        </BrowserRouter>
+    );
+    const loggedInRouter = (
         <BrowserRouter>
             <Navbar  />
 
@@ -35,8 +52,9 @@ export default function App() {
             </Switch>
 
         </BrowserRouter>
-    ); }
-
+    );
+    return loggedIn ? loggedInRouter : guestRouter;
+}
 
 /*  return loggedIn ? loggedInRouter : <AuthPage />;
 }*/
