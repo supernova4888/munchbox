@@ -26,8 +26,8 @@ export default function App() {
             <Navbar  />
 
             <Switch>
-                <Route component={WelcomePage} path="/welcome" />
-                <Route exact component={HomePage} path="/home" />
+                <Route exact component={WelcomePage} path="/" />
+                <Route component={HomePage} path="/home" />
                 <Route component={PostPage} path="/post" />
 
                 <Route component={SpinnerPage} path="/spinner" />
@@ -54,6 +54,3 @@ export default function App() {
     );
     return loggedIn ? loggedInRouter : guestRouter;
 }
-
-/*  return loggedIn ? loggedInRouter : <AuthPage />;
-}*/

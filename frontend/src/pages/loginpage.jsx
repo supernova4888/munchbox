@@ -16,7 +16,7 @@ export default function LoginPage() {
 
     return (
         <div>
-            <Link to="/welcome">
+            <Link to="/">
                 <h1 className="iconLink">
                     <i className="fas fa-arrow-circle-left"></i>
                 </h1>
