@@ -1,10 +1,11 @@
 // NPM Packages
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 // Images
 import munchText from "../../resources/munchbox-text-transparent.png";
 import munchLogo from "../../resources/logo_transparent_square.png";
 
+//referred to as Welcome page in browser router
 export default function AuthPage() {
 
     return (
