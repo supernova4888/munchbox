@@ -1,5 +1,6 @@
 import Api from "./Api";
 class ReviewApi{
+
     createReview(id,reviews){
         return Api.post('/posts/'+id+'/reviews',reviews)
     }
@@ -13,4 +14,9 @@ class ReviewApi{
     deleteReview(id){
         return Api.delete('reviews/'+id);
     }
+
+
+
+
 }
+export default new ReviewApi();
