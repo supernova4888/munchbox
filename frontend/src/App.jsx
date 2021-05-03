@@ -13,25 +13,27 @@ import Navbar from "./components/Navbar.jsx";
 
 export default function App() {
   // State
-    const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
+    /*const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());*/
   // Constants
-    Auth.bindLoggedInStateSetter(setLoggedIn);
+    /*Auth.bindLoggedInStateSetter(setLoggedIn);*/
   // Components
-    const loggedInRouter = (
+    /*const loggedInRouter = (*/
+    return (
         <BrowserRouter>
             <Navbar onLogout={() => Auth.logout()} />
 
             <Switch>
+                <Route component={AuthPage} path="/" />
                 <Route exact component={HomePage} path="/home" />
                 <Route exact component={PostPage} path="/post" />
                 <Route exact component={ProfilePage} path="/profile" />
                 <Route exact component={SpinnerPage} path="/spinner" />
             </Switch>
 
-            <Navbar />
+
         </BrowserRouter>
-    );
+    ); }
 
 
-  return loggedIn ? loggedInRouter : <AuthPage />;
-}
+/*  return loggedIn ? loggedInRouter : <AuthPage />;
+}*/

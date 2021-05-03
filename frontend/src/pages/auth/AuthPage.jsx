@@ -5,7 +5,10 @@ import React from "react";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import Auth from "../../services/Auth";
-// add logo
+// Images
+import background from "../../resources/images/jenn-kosar-rzPVSqQjjqs-unsplash_gauss30.jpg";
+import munchText from "../../resources/munchbox-text-transparent.png";
+import munchLogo from "../../resources/logo_transparent_square.png";
 
 export default function LoginPage() {
     // Methods
@@ -24,11 +27,15 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="wrapper">
-            <div className="container">
-                    <h1 className="card-title">Register Page</h1>
-                    <p>Sign up or log in to get started.</p>
+        <div>
+            <div className="imageBlockContainer">
+                <div className="imageBlock">
+                    <h1 className="imageBlockTitle">
+                    <img className="logo" src={munchLogo} />
+                    <img className="logoText" src={munchText} /></h1>
+                </div>
             </div>
+
             <div className="login">
             <LoginForm onSubmit={login}/>
             </div>
