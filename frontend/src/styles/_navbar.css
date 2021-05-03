@@ -54,7 +54,7 @@
     }
     .navbarFooter {
         background: rgb(106,66,92);
-        background: linear-gradient(90deg, rgba(106,66,92,1) 60%, rgba(74,46,64,1) 100%);
+        background: linear-gradient(90deg, rgba(106,66,92,1) 60%, rgb(74, 46, 64) 100%);
         left: 0;
         top: 0;
         height: 100%;

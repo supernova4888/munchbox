@@ -1,6 +1,11 @@
 :root {
     /* Colours */
     --color-purple: #6A425C;
+    --color-purplemid: #5f3b52;
+    --color-purpledark: #4A2E40;
     --color-pink: #FFA9A9;
     --color-offwhite: #FFFBE3;
+    --color-offwhitelight: #fffcec;
+    --color-offwhitedark: #FFF9D6;
+    --color-nearlyblack: #3B362B;
 }

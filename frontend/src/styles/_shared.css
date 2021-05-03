@@ -3,6 +3,7 @@
 body {
     margin: 0;
     font-family: 'Oxygen', sans-serif;
+    color: var(--color-nearlyblack);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -42,5 +43,13 @@ body {
 @media (min-width: 600px) {
     body {
         margin-left: 100px;
+    }
+    .buttonRegister:hover {
+        background-color: var(--color-purplemid);
+        text-decoration: underline;
+    }
+    .buttonLogin:hover {
+        background-color: var(--color-offwhitelight);
+        text-decoration: underline;
     }
 }
