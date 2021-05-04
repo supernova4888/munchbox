@@ -1,6 +1,7 @@
 import React from "react";
 import Axios from "axios";
 import { useState } from "react";
+import { Image } from "cloudinary-react";
 
 // link from the button to here
 
@@ -20,6 +21,11 @@ export default function PostPage() {
         });
     };
 
+    // upload is working, but it uploads twice if i click twice.
+    // also, uuid is unique
+
+    // grabbing the img
+
 
     return (
         <div>
@@ -28,6 +34,9 @@ export default function PostPage() {
             <input type="file" onChange={(event) => setImageSelected(event.target.files[0])}/>
 
             <button onClick={uploadImage}> Upload Image</button>
+
+            <Image 
+            style={{width: 200}} cloudName="dt0zgbuyg" publicId="https://res.cloudinary.com/dt0zgbuyg/image/upload/v1620122494/munchbox/qislbl7qg1gsb7pfmqpd.png" />
 
         </div>
     )
