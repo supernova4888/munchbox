@@ -11,7 +11,7 @@ export default function RecipeCardLarge({ recipePost }) {
             <div className="recipeTitleBox">{recipePost.title}</div>
             <div className="recipePostedBy">
                 <img className="userProfilePicSmall" src={sampleProfile}/>
-                <div className="userNameSmall">user</div>
+                <div className="userNameSmall">{recipePost.userName}</div>
 
             </div>
         </div>
