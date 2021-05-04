@@ -6,9 +6,13 @@ import { Image } from "cloudinary-react";
 // link from the button to here
 
 export default function PostPage() {
-
+    const [recipes, setRecipes] = useState([]);
     const [imageSelected, setImageSelected] = useState("");
     const [imageURL, setImageURL] = useState("");
+    const [title, setTitle] = useState("");
+    const [link, setLink] = useState("");
+    // TODO: add dropdown menu to choose pre-defined ingredient
+    const [ingredient, setIngredient] = useState ("");
 
     const uploadImage = () => {
         // constructs the formData
@@ -16,30 +20,25 @@ export default function PostPage() {
         formData.append("file", imageSelected)
         // upload presets - public (connects to cloudinary)
         formData.append("upload_preset", "blp4p8lu")
-        
         // post request
         Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.secure_url);
         });
     };
 
-    useEffect(() => {
-        fetch("https://localhost:8080/recipe", {
+    function createRecipe () {
+         fetch("https://localhost:8080/recipe", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(p)
-
+            body: JSON.stringify(imageURL)
         })
-        return () => {
-            cleanup
+        .then((response) => response.json())
+        .then((imageURL) => setRecipes([...recipes, imageURL]))
         }
-    }, [input])
-
-    // another post to save to api.
-    // seems to take a while to get the data from the api.
-
-
+    }
+    
+    // Check that info was send correctly? no empty fields ?
     // id
     // imageString -- nonull
     // title - not null
@@ -52,13 +51,20 @@ export default function PostPage() {
         <div>
             <h1>PostPage - Add a new recipe</h1>
             <p>You are on the post page now.</p>
-            <input type="file" onChange={(event) => setImageSelected(event.target.files[0])}/>
+            <form onSubmit={createRecipe}>
 
-            <button onClick={uploadImage}> Upload Image</button>
+                <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
+                <button onClick={uploadImage}> Upload Image</button>
 
-            <Image 
-            style={{width: 200}} cloudName="dt0zgbuyg" publicId="https://res.cloudinary.com/dt0zgbuyg/image/upload/v1620122494/munchbox/qislbl7qg1gsb7pfmqpd.png" />
+                <input type="text" onChange={(e) => setNewPersonName(e.target.value)}/>
+                Age:
+                <input type="text" onChange={(e) => setNewPersonAge(e.target.value)}/>
+                <button type="submit">Submit</button>
+            </form>
 
+            
+            {/* <Image 
+            style={{width: 200}} cloudName="dt0zgbuyg" publicId="https://res.cloudinary.com/dt0zgbuyg/image/upload/v1620122494/munchbox/qislbl7qg1gsb7pfmqpd.png" /> */}
         </div>
     )
 }
