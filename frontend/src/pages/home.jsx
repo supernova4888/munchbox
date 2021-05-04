@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import RecipePostApi from "../api/RecipePostApi";
 import RecipeCardSmall from "../components/RecipeCardSmall";
 import RecipeCardLarge from "../components/RecipeCardLarge";
-
+import RecipePostApi from "../api/RecipePostApi";
 
 export default function HomePage() {
     //Const
@@ -18,10 +17,7 @@ export default function HomePage() {
     const RecipesArray = recipes.map((recipePost) => (
         <RecipeCardLarge key={recipePost.id} recipePost={recipePost}/>
 
-));
-
-console.log(recipes)
-
+    ));
 return (
     <div className="pageBody">
         <h1>HomePage</h1>
@@ -29,7 +25,6 @@ return (
 
         <div className="recipeContainer">
             {RecipesArray}
-
         </div>
     </div>
 )
