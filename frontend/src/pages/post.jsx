@@ -3,8 +3,7 @@ import Axios from "axios";
 import { useState } from "react";
 import { Image } from "cloudinary-react";
 
-// link from the button to here
-// in the UI, add a button or the menu nav so user can return
+// In the UI, add a button or the menu nav so user can return. Copy from loginPage
 
 export default function PostPage() {
     const [recipes, setRecipes] = useState([]);
@@ -48,6 +47,9 @@ export default function PostPage() {
     // Check that info was send correctly? no empty fields ?
     // id, imageString, title, recipe link, ingredient !=== nonull
 
+    // check if the recipe URL already exists (?).
+    // get all recipes (BE) -> find newRecipe URL -> if true, then throw error.
+
     return (
         <div>
             <h1>PostPage - Add a new recipe</h1>
@@ -64,7 +66,6 @@ export default function PostPage() {
                 <input type="text" onChange={(e) => setLink(e.target.value)}/>
                 <h2>Select recipe main ingredient:</h2>
                 <input type="text" onChange={(e) => setIngredient(e.target.value)}/>
-
                 <button type="submit">Submit</button>
             </form>
 
