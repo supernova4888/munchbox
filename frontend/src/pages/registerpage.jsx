@@ -11,6 +11,8 @@ export default function RegisterPage() {
         const registerSuccess = await Auth.register(registrationData);
         if (!registerSuccess) {
             alert("Registration failed. Check credentials and try again.");
+        } else if (registerSuccess) {
+            alert("Account created!")
         }
     }
 

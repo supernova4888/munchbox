@@ -11,6 +11,8 @@ export default function LoginPage() {
         const loginSuccess = await Auth.login(loginData);
         if (!loginSuccess) {
             alert("Invalid credentials. Check email and password and try again.");
+        } else if (loginSuccess) {
+            alert("Logged in!")
         }
     }
 
