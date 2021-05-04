@@ -1,11 +1,13 @@
 // NPM Packages
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 // Project files
 import RegisterForm from "./auth/RegisterForm";
 import Auth from "../services/Auth";
 
 export default function RegisterPage() {
+    let history = useHistory();
+
     // Methods
     async function register(registrationData) {
         const registerSuccess = await Auth.register(registrationData);
@@ -13,6 +15,7 @@ export default function RegisterPage() {
             alert("Registration failed. Check credentials and try again.");
         } else if (registerSuccess) {
             alert("Account created!")
+            history.push("/home");
         }
     }
 
