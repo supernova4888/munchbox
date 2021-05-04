@@ -8,7 +8,6 @@ import ProfilePage from "./pages/profile.jsx";
 import SpinnerPage from "./pages/spinner.jsx";
 import Navbar from "./components/Navbar.jsx";
 
-
 export default function App() {
   // State
 
