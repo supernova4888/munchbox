@@ -39,13 +39,7 @@ export default function PostPage() {
     }
     
     // Check that info was send correctly? no empty fields ?
-    // id
-    // imageString -- nonull
-    // title - not null
-    // body (recipe link) - notnull
-    // username - notnull
-    // then upload success (unless recipe link exists already ?)
-
+    // id, imageString, title, recipe link, ingredient !=== nonull
 
     return (
         <div>
@@ -53,12 +47,17 @@ export default function PostPage() {
             <p>You are on the post page now.</p>
             <form onSubmit={createRecipe}>
 
+                <h2>Add recipe image</h2>
                 <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
                 <button onClick={uploadImage}> Upload Image</button>
 
-                <input type="text" onChange={(e) => setNewPersonName(e.target.value)}/>
-                Age:
-                <input type="text" onChange={(e) => setNewPersonAge(e.target.value)}/>
+                <h2>Add recipe title:</h2>
+                <input type="text" onChange={(e) => setTitle(e.target.value)}/>
+                <h2>Add recipe link:</h2>
+                <input type="text" onChange={(e) => setLink(e.target.value)}/>
+                <h2>Select recipe main ingredient:</h2>
+                <input type="text" onChange={(e) => setIngredient(e.target.value)}/>
+
                 <button type="submit">Submit</button>
             </form>
 
