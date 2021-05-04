@@ -8,9 +8,14 @@ import RecipeCardLarge from "../../components/RecipeCardLarge";
 import ReviewCardLarge from "../../components/ReviewCardLarge";
 import recipeImageGeneral from "../../resources/recipe-03.jpg";
 import CommentBar from "../../components/CommentBar";
-export default function ReviewPage()
 
-{ //Local state
+
+
+export default function ReviewPage(){
+
+
+
+    //Local state
     /*const [reviews,setReviews]= useState([]);
     //Methods
     async function createReview(postData) {
@@ -38,7 +43,7 @@ export default function ReviewPage()
         return (
             <div>
                 <div className="User-profile">
-                    <h4>Posted By:Anna</h4>
+                    <h4>Posted By:</h4>
 
                     {/*<img className="UserImage" src={cookie_monster}/>*/}
 
