@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import RecipeCardSmall from "../components/RecipeCardSmall";
-import RecipeCardLarge from "../components/RecipeCardLarge";
+
+import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
 
 export default function HomePage() {
@@ -15,7 +15,7 @@ export default function HomePage() {
     }, [setRecipes]);
 
     const RecipesArray = recipes.map((recipePost) => (
-        <RecipeCardLarge key={recipePost.id} recipePost={recipePost}/>
+        <RecipeCardMedium key={recipePost.id} recipePost={recipePost}/>
 
     ));
 return (

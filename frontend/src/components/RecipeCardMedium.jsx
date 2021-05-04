@@ -2,7 +2,7 @@ import React from "react";
 import recipeImageGeneral from "../resources/recipe-03.jpg"
 import sampleProfile from "../resources/profilepic200px-05.jpg";
 
-export default function RecipeCardLarge({ recipePost }) {
+export default function RecipeCardMedium({ recipePost }) {
     return (
         <div className="recipeCardLarge">
             <div className="recipeImageBox">
