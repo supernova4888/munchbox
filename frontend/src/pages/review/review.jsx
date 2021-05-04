@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react";
 
 
 import ReviewApi from"../../api/ReviewApi";
-import RecipeCardLarge from "../components/RecipeCardLarge";
 import StarRating from "../../components/StarRating";
-import {builders as posts} from "prettier/doc";
-
+import cookie_monster from "../../resources/images/cookie_monster.jpeg"
+import RecipeCardLarge from "../../components/RecipeCardLarge";
+import ReviewCardLarge from "../../components/ReviewCardLarge";
+import recipeImageGeneral from "../../resources/recipe-03.jpg";
+import CommentBar from "../../components/CommentBar";
 export default function ReviewPage()
 
 { //Local state
-    const [reviews,setReviews]= useState([]);
+    /*const [reviews,setReviews]= useState([]);
     //Methods
     async function createReview(postData) {
         try {
@@ -31,22 +33,25 @@ export default function ReviewPage()
             } catch (e) {
                 console.error(e);
             }
-        }
+        }*/
 
         return (
             <div>
-                <h6>Posted By</h6>
-                <RecipeCardLarge/>
-                <h6>Chicken Pizza</h6>
-                <div className="review-ratings"><h5>MYRATING</h5>
-                    <StarRating/>
-                </div>
-                <div><h5>COMMENTS:</h5>
+                <div className="User-profile">
+                    <h4>Posted By:Anna</h4>
 
+                    {/*<img className="UserImage" src={cookie_monster}/>*/}
+
+                </div>
+                <div className="User-image"><ReviewCardLarge/></div>
+                <div className="review-ratings"><h5>MYRATING</h5><StarRating/>
+                </div>
+                <div className="Comments"><h5>COMMENTS:</h5>
+                    <CommentBar/>
                 </div>
             </div>
         );
-    }}
+    }
 
 
 
