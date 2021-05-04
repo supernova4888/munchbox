@@ -1,5 +1,11 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import FoodPref from '../components/FoodPref'
+import Follower from "./FollowerPage";
+import { Link } from "react-router-dom";
+import FollowerPage from './FollowerPage';
+
+
 
 // this page brings all the components for the user profile and renders it
 // import FoodPref
@@ -18,7 +24,10 @@ export default function Profile() {
         <div>
             <h1>ProfilePage</h1>
             <p>You are on the profile page now.</p>
-
+            <Link to="/profile/follower">
+            <h2>Followers</h2> 
+            </Link> 
+            
         </div>
     )
 }
