@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import logo from "../../resources/logo.png";
+
 export default function LoginForm({ onSubmit }) {
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
@@ -7,10 +9,9 @@ const [password, setPassword] = useState("");
 return (
 <div className="card">
     <div className="card-body">
-    <h4 className="card-title">Login</h4>
+        <img className="logoSmall" src={logo} /><h2>Login</h2>
         <div>
         <div className="form-group">
-            <label>Email:</label>
             <input
             type="email"
             className="form-control"
@@ -21,7 +22,6 @@ return (
         </div>
 
         <div className="form-group">
-            <label>Password:</label>
             <input
             type="password"
             placeholder="Password"
@@ -31,14 +31,16 @@ return (
             />
         </div>
 
-        <div className="form-group">
+        <div className="form-group-button">
             <button
-            className="btn btn-info"
+            className="buttonRegister"
             onClick={() => onSubmit({ email, password })}
             >
             Login
             </button>
+
         </div>
+
         </div>
     </div>
     </div>

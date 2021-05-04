@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import StarRating from "../components/StarRating";
 import logo from "../resources/logo.png";
@@ -17,14 +17,7 @@ return (
         <Form />
         
         <div className="recipeContainer">
-            <RecipeCardLarge/>
-            <RecipeCardLarge/>
-            <RecipeCardLarge/>
-            <RecipeCardLarge/>
-            <RecipeCardSmall />
-            <RecipeCardSmall />
-            <RecipeCardSmall />
-            <RecipeCardSmall />
+            {RecipesArray}
         </div>
     </div>
 )
