@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 
 export default function HomePage() {
 
-    // take in recipe LINK and save to variable
+// take in recipe LINK and save to variable
 // get the link from the user
 
 const RAPID_API_URL = "https://mycookbook-io1.p.rapidapi.com/recipes/rapidapi";
