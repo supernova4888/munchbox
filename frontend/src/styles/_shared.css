@@ -8,6 +8,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
 }
+.pageBody {
+    padding: 8px;
+}
 .buttonRegister {
     background-color: var(--color-purple);
     border: 2px solid var(--color-purple);

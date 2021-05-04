@@ -23,9 +23,9 @@ export default function HomePage() {
 console.log(recipes)
 
 return (
-    <div>
+    <div className="pageBody">
         <h1>HomePage</h1>
-        <p>You are on the home page now. Below you'll see a sample recipes.</p>
+        <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
 
         <div className="recipeContainer">
             {RecipesArray}
