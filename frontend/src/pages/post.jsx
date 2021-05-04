@@ -8,6 +8,7 @@ import { Image } from "cloudinary-react";
 export default function PostPage() {
 
     const [imageSelected, setImageSelected] = useState("");
+    const [imageURL, setImageURL] = useState("");
 
     const uploadImage = () => {
         // constructs the formData
@@ -17,14 +18,34 @@ export default function PostPage() {
         formData.append("upload_preset", "blp4p8lu")
         
         // post request
-        Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {console.log(response);
+        Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.secure_url);
         });
     };
 
-    // upload is working, but it uploads twice if i click twice.
-    // also, uuid is unique
+    useEffect(() => {
+        fetch("https://localhost:8080/recipe", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(p)
 
-    // grabbing the img
+        })
+        return () => {
+            cleanup
+        }
+    }, [input])
+
+    // another post to save to api.
+    // seems to take a while to get the data from the api.
+
+
+    // id
+    // imageString -- nonull
+    // title - not null
+    // body (recipe link) - notnull
+    // username - notnull
+    // then upload success (unless recipe link exists already ?)
 
 
     return (
