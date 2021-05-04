@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Image } from "cloudinary-react";
 
 // link from the button to here
+// in the UI, add a button or the menu nav so user can return
 
 export default function PostPage() {
     const [recipes, setRecipes] = useState([]);
@@ -25,18 +26,24 @@ export default function PostPage() {
         });
     };
 
-    function createRecipe () {
-         fetch("https://localhost:8080/recipe", {
+    // check if fields are available in the BE.
+    function createRecipe (event) {
+        event.preventDefault();
+        const newRecipe = {
+            title: title,
+            body: link,
+        }
+        fetch("https://localhost:8080/post", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(imageURL)
+            body: JSON.stringify(newRecipe)
         })
         .then((response) => response.json())
-        .then((imageURL) => setRecipes([...recipes, imageURL]))
+        .then((newRecipe) => setRecipes([...recipes, newRecipe]))
         }
-    }
+    
     
     // Check that info was send correctly? no empty fields ?
     // id, imageString, title, recipe link, ingredient !=== nonull
@@ -61,8 +68,7 @@ export default function PostPage() {
                 <button type="submit">Submit</button>
             </form>
 
-            
-            {/* <Image 
+            {/* For getting the image in the Recipe Card <Image 
             style={{width: 200}} cloudName="dt0zgbuyg" publicId="https://res.cloudinary.com/dt0zgbuyg/image/upload/v1620122494/munchbox/qislbl7qg1gsb7pfmqpd.png" /> */}
         </div>
     )
