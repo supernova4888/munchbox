@@ -21,6 +21,18 @@
     box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
 }
 
+.recipeCardMedium {
+    display: block;
+    max-width: 300px;
+}
+
+.recipeImageMedium {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
+}
+
 .recipeCardLarge {
     display: block;
     max-width: 300px;
