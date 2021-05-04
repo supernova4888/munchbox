@@ -28,7 +28,7 @@ public class User {
     @Column(name = "email", unique = true)
     private String email;
 
-    @Length(min = 5, max=100, message = "Password length most be between 5-100 characters")
+    @Length(min = 5, max=100, message = "Password length must be between 5-100 characters")
     @Column(name = "password")
     private String password;
 

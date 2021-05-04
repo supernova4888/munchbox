@@ -1,0 +1,86 @@
+/* Login and Register forms */
+.card {
+    display: flex;
+    justify-content: center;
+}
+.card-body {
+    width: 400px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 8px;
+
+}
+.form-control {
+    font-family: 'Oxygen', sans-serif;
+    width: 90%;
+    padding: 8px;
+    font-size: 16px;
+}
+.form-group {
+    font-weight: bolder;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.form-group-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+@media (min-width: 1px) {
+    .imageBlockContainer {
+        display: flex;
+        justify-content: center;
+    }
+    .imageBlock {
+        margin: 10px;
+        width: 300px;
+        height: 500px;
+        float: left;
+        background: url('../resources/images/jenn-kosar-rzPVSqQjjqs-unsplash_gauss30.jpg');
+        background-size: cover;
+    }
+    .imageBlockTitle {
+        background: rgba(35, 32, 26, 0.65);
+        padding: 8px;
+        margin-top: 125px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .logo {
+        max-width: 50%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 50px;
+    }
+    .logoText{
+        max-width: 50%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 40px;
+    }
+}
+@media (min-width: 600px) {
+    .imageBlock {
+        margin: 10px;
+        width: 800px;
+        height: 800px;
+    }
+    .imageBlockTitle {
+        margin-top: 175px;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .logo {
+        max-width: 40%;
+        margin-top: 70px;
+    }
+    .logoText{
+        max-width: 40%;
+        margin-bottom: 60px;
+    }
+}

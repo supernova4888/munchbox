@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../../resources/logo.png";
 
 export default function RegisterForm({ onSubmit }) {
 const [name, setName] = useState("");
@@ -8,47 +9,44 @@ const [password, setPassword] = useState("");
 return (
 <div className="card">
     <div className="card-body">
-        <h4 className="card-title">Sign up</h4>
+        <img className="logoSmall" src={logo} /><h2>Sign Up</h2>
         <div>
         <div className="form-group">
-            <label>Name:</label>
             <input
             type="text"
             className="form-control"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Name"
+            placeholder="Choose a username"
             />
         </div>
 
         <div className="form-group">
-            <label>Email:</label>
             <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="form-control"
-            placeholder="Email"
+            placeholder="Enter your email"
             />
         </div>
 
         <div className="form-group">
-            <label>Password:</label>
             <input
             type="password"
-            placeholder="Password"
+            placeholder="Choose a password"
             className="form-control"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             />
         </div>
 
-        <div className="form-group">
+        <div className="form-group-button">
             <button
-            className="btn btn-success"
+            className="buttonRegister"
             onClick={(e) => onSubmit({ name, email, password })}
             >
-            Create account
+            Register
             </button>
         </div>
         </div>
