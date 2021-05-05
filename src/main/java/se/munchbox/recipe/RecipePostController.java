@@ -15,6 +15,7 @@ import java.util.List;
 public class RecipePostController {
     RecipePostRepository recipePostRepository;
     UserRepository userRepository;
+
     @Autowired
     public RecipePostController(RecipePostRepository recipePostRepository, UserRepository userRepository) {
         this.recipePostRepository = recipePostRepository;

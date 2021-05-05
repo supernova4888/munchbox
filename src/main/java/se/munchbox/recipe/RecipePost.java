@@ -6,9 +6,9 @@ import se.munchbox.reviews.Review;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
 @Entity
 public class RecipePost {
-
 
 
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -19,30 +19,52 @@ public class RecipePost {
 
         @Column(nullable = false)
         private String title;
+
+        // the body will hold the recipe URL
         @Column(nullable = false)
         private String body;
         @Column(nullable = false)
         private String UserName;
+        @Column(nullable = false)
+        private String imgURL;
+        @Column(nullable = false)
+        private String mainIngredient;
 
-        @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
+    }
+
+    public String getMainIngredient() {
+        return mainIngredient;
+    }
+
+    public void setMainIngredient(String mainIngredient) {
+        this.mainIngredient = mainIngredient;
+    }
+
+    @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
         public List<Review> reviews = new ArrayList<>();
 
 
 
 
-        public Long getId() {
+    public Long getId() {
             return id;
         }
 
-        public void setId(Long id) {
+    public void setId(Long id) {
             this.id = id;
         }
 
-        public String getBody() {
+    public String getBody() {
             return body;
         }
 
-        public void setBody(String body) {
+    public void setBody(String body) {
             this.body = body;
         }
 
@@ -54,11 +76,11 @@ public class RecipePost {
         UserName = userName;
     }
 
-        public List<Review> getReviews() {
+    public List<Review> getReviews() {
             return reviews;
         }
 
-        public void setReviews(List<Review> reviews) {
+    public void setReviews(List<Review> reviews) {
             this.reviews = reviews;
         }
 
