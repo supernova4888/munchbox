@@ -11,6 +11,7 @@ body {
 .pageBody {
     padding: 8px;
 }
+/* purple */
 .buttonRegister {
     background-color: var(--color-purple);
     border: 2px solid var(--color-purple);
@@ -28,6 +29,7 @@ body {
     margin-right: 2px;
 
 }
+/* white */
 .buttonLogin {
     background-color: var(--color-offwhite);
     border: 2px solid var(--color-purple);
