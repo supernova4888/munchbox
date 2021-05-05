@@ -48,7 +48,8 @@ export default function PostPage() {
     // id, imageString, title, recipe link, ingredient !=== nonull
 
     // check if the recipe URL already exists (?).
-    // get all recipes (BE) -> find newRecipe URL -> if true, then throw error.
+    // solution option 1: get all recipes from BE -> find newRecipe URL -> if true, then throw error.
+    // solution option 2: transform the body field into unique in BE (how to transmit the error back to FE ?)
 
     return (
         <div>
