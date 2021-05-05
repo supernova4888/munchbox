@@ -1,0 +1,13 @@
+.followers--heading{
+    font-size: 35px;
+    margin-left: 40px;
+}
+
+.followers--title{
+    font-size: 25px;
+    margin-left: 40px;
+    font-weight: bold;
+}
+.grid{
+    padding: auto;
+}
