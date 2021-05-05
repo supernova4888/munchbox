@@ -11,7 +11,6 @@ import java.util.List;
 public class RecipePost {
 
 
-
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 
         @Id
@@ -30,25 +29,41 @@ public class RecipePost {
         private String imgURL;
         private String mainIngredient;
 
-        @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
+    }
+
+    public String getMainIngredient() {
+        return mainIngredient;
+    }
+
+    public void setMainIngredient(String mainIngredient) {
+        this.mainIngredient = mainIngredient;
+    }
+
+    @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
         public List<Review> reviews = new ArrayList<>();
 
 
 
 
-        public Long getId() {
+    public Long getId() {
             return id;
         }
 
-        public void setId(Long id) {
+    public void setId(Long id) {
             this.id = id;
         }
 
-        public String getBody() {
+    public String getBody() {
             return body;
         }
 
-        public void setBody(String body) {
+    public void setBody(String body) {
             this.body = body;
         }
 
@@ -60,11 +75,11 @@ public class RecipePost {
         UserName = userName;
     }
 
-        public List<Review> getReviews() {
+    public List<Review> getReviews() {
             return reviews;
         }
 
-        public void setReviews(List<Review> reviews) {
+    public void setReviews(List<Review> reviews) {
             this.reviews = reviews;
         }
 
