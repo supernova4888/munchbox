@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
-import Form from "../components/Form";
-import StarRating from "../components/StarRating";
-import logo from "../resources/logo.png";
-import RecipeCardSmall from "../components/RecipeCardSmall";
-import RecipeCardLarge from "../components/RecipeCardLarge";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
@@ -21,24 +16,13 @@ export default function HomePage() {
             <RecipeCardMedium key={recipePost.id} recipePost={recipePost}/>
         ));
 return (
-    <div>
+    <div className="pageBody">
         <h1>HomePage</h1>
-
-        <p>You are on the home page now. Below you'll see a sample recipes.</p>
-
+        <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
+            <Link className = "LinkToReviewPage"  to="/review">Review</Link>
         <div className="recipeContainer">
+                {RecipesArray}
 
-            <Link className = "LinkToReviewPage"  to="/review">
-                <RecipeCardLarge/>
-
-            <RecipeCardLarge/>
-            <RecipeCardLarge/>
-            <RecipeCardLarge/>
-            <RecipeCardSmall />
-            <RecipeCardSmall />
-            <RecipeCardSmall />
-            <RecipeCardSmall />
-            </Link>
         </div>
     </div>
 )

@@ -21,20 +21,17 @@ export default function UserCard({ user }) {
     
     return (
         <div className="usercard">
-            
             <img className="userFollowPicSmall" src={sampleProfile} alt = "userPic"/>
-            
-            <div className="userFollowName">{user.name}
-            </div>
-                <div className="btn-plus-follow">             
+            <div className="userFollowName">{user.name}</div>
+
             <button> 
                  <Link path to="/profile/follower/youfollow">
-                <img className="pluspurplefollowimage" src={pluspurple} alt= "followsign" />
+                <img className="plus-follow" src={pluspurple} alt= "followsign" />
                 
                 {/* <CreateFollower/> */}
                 </Link>
                 </button>
-        </div>
+
         </div>
         
     )
