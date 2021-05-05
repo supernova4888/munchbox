@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import FollowerApi from "../api/FollowerApi";
+import FollowerCard from "../components/FollowerCard";
 
 export default function FollowerPage() {
     const [follower, setFollower] = useState([]);
+    
+
 
 useEffect(() => {
     FollowerApi.listAllFollowers()
@@ -13,7 +16,9 @@ useEffect(() => {
 
 return (
     <div>
-        <h1 className= "followers--heading">People you Follow</h1>
+        <h1 className= "user-followers--heading">People you Follow</h1>
+        <br/>
+        <FollowerCard/>
     </div>
 );
 }

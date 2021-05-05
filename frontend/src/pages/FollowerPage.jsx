@@ -1,37 +1,41 @@
 import React, { useState, useEffect } from "react";
 import UserApi from "../api/UserApi";
-import pluspurple from "../resources/mobile_navbar/pluspurple.png";
-import { Link } from "react-router-dom";
+/* import FollowerApi from "../api/FollowerApi";
+import CreateFollower from "../components/CreateFollower" */
+
+import UserCard from "../components/UserCard";
 
 export default function FollowerPage() {
-const [users, setUsers] = useState([]);
-const[follower, setFollower] = useState([false]);
+ 
+const [user, setUser] = useState([]);
+const UsersArray = user.map((user) => (
+        <UserCard key={user.id} user={user}/>
+    ));
 
-useEffect(() => {
+
+
+ useEffect(() => {
     UserApi.getAllUsers()
-    .then(({data}) => setUsers(data))
+    .then(({data}) => setUser(data))
     .catch((err) => console.error(err));
-}, [setUsers]);
+}, [setUser]);
 
-const handleClickCreate = () => {
-        setFollower(!follower)
-        setUsers(false)  
-    }
-    
+
 
 return (
     <div>
         <h1 className= "followers--heading">Followers</h1>
         <p className="followers--title">Suggestions to Follow</p>
+        <br/>
+        <div className = "grid">
+                {UsersArray}
+    </div>
 
+    
+    
 
-        <div className="container d-flex justify-content-around mb-4">
-            <button
-                    className="btn btn-sm btn-info"
-                    onClick={handleClickCreate} aria-pressed="true">
-                <img className="pluspurple" src={pluspurple} />
-                </button>
         </div>
-        </div>
+        
 );
 }
+

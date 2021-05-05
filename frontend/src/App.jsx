@@ -13,6 +13,7 @@ import RegisterPage from "./pages/registerpage.jsx";
 import LoginPage from "./pages/loginpage.jsx";
 import LogoutButton from "./components/LogoutButton";
 import FollowerPage from "./pages/FollowerPage";
+import UserFollowerPage from "./pages/UserFollowerPage";
 
 export default function App() {
   // State
@@ -47,6 +48,7 @@ export default function App() {
                     <Route exact component={ProfilePage} path="/profile" />
                     <Route exact component={SpinnerPage} path="/spinner" />
                     <Route exact component={FollowerPage} path="/profile/follower"/>
+                    <Route exact component={UserFollowerPage} path="/profile/follower/youfollow"/>
                 </Switch>
 
         </BrowserRouter>

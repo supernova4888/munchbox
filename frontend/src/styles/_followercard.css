@@ -1,0 +1,19 @@
+.followerCard{
+    display: flex;
+    align-items:center;
+}
+
+.userFollowerPicSmall {
+    max-width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    margin-left: 40px;
+
+}
+
+.userFollowerName {
+    padding-left: 100px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
