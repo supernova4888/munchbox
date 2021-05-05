@@ -5,5 +5,7 @@
 @import url("_variables.css");
 @import url("_navbar.css");
 @import url("_forms.css");
-
-
+@import url("_usercard.css");
+@import url("_followercard.css");
+@import url("_follower.css");
+@import url("_userfollower.css");
