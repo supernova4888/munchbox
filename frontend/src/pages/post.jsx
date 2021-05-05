@@ -32,11 +32,11 @@ export default function PostPage() {
     // 2. run by postman to figure out what is wrong.
 
      // to be used when we wanna update our people list
-    useEffect(() => {
-        fetch("https://localhost:8080/posts")
-            .then((response) => response.json())
-            .then((json) => setRecipes(json))
-        }, [setRecipes] )
+    // useEffect(() => {
+    //     fetch("http://localhost:8080/posts")
+    //         .then((response) => response.json())
+    //         .then((json) => setRecipes(json))
+    //     }, [setRecipes] )
 
     function createRecipe (event) {
         event.preventDefault();
@@ -47,7 +47,7 @@ export default function PostPage() {
             imgURL: imageURL,
             mainIngredient: ingredient
         }
-        fetch("https://localhost:8080/post", {
+        fetch("http://localhost:8080/post", {
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -55,12 +55,12 @@ export default function PostPage() {
             body: JSON.stringify(newRecipe)
         })
             .then((response) => response.json())
-            .then((newRecipe) => setRecipes([...recipes, newRecipe]));
+            .then((newRecipe) => setRecipes([newRecipe]));
     }
     
-    const recipeList = recipes.map((recipe) => {
-        return <RecipeCardMedium key= {recipe.id} recipe ={recipe} />
-    })
+    // const recipeList = recipes.map((recipe) => {
+    //     return <RecipeCardMedium key= {recipe.id} recipe ={recipe} />
+    // })
     
     
     // Check that info was send correctly? no empty fields ?
@@ -69,6 +69,8 @@ export default function PostPage() {
     // check if the recipe URL already exists (?).
     // solution option 1: get all recipes from BE -> find newRecipe URL -> if true, then throw error.
     // solution option 2: transform the body field into unique in BE (how to transmit the error back to FE ?)
+
+     // <ul>{recipeList}</ul> 
 
 
     return (
@@ -89,7 +91,6 @@ export default function PostPage() {
                 <input type="text" onChange={(e) => setIngredient(e.target.value)}/>
                 <button type="submit">Submit</button>
 
-                <ul>{recipeList}</ul>
             </form>
 
             {/* <Image 
