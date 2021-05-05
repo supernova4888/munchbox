@@ -10,13 +10,14 @@ export default function HomePage() {
 return (
     <div>
         <h1>HomePage</h1>
-        <Link className = "LinkToReviewPage"  to="/review">
-            Click here to review Your recipe
-        </Link>
+
         <p>You are on the home page now. Below you'll see a sample recipes.</p>
 
         <div className="recipeContainer">
-            <RecipeCardLarge/>
+
+            <Link className = "LinkToReviewPage"  to="/review">
+                <RecipeCardLarge/>
+
             <RecipeCardLarge/>
             <RecipeCardLarge/>
             <RecipeCardLarge/>
@@ -24,6 +25,7 @@ return (
             <RecipeCardSmall />
             <RecipeCardSmall />
             <RecipeCardSmall />
+            </Link>
         </div>
     </div>
 )
