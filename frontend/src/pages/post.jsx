@@ -1,7 +1,8 @@
 import React from "react";
 import Axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
+import RecipeCardMedium from "../components/RecipeCardMedium";
 
 // In the UI, add a button or the menu nav so user can return. Copy from loginPage
 
@@ -30,6 +31,13 @@ export default function PostPage() {
     // 1. check the api code 
     // 2. run by postman to figure out what is wrong.
 
+     // to be used when we wanna update our people list
+    useEffect(() => {
+        fetch("https://localhost:8080/posts")
+            .then((response) => response.json())
+            .then((json) => setRecipes(json))
+        }, [setRecipes] )
+
     function createRecipe (event) {
         event.preventDefault();
         console.log(imageURL);
@@ -40,16 +48,19 @@ export default function PostPage() {
             mainIngredient: ingredient
         }
         fetch("https://localhost:8080/post", {
-            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
+            method: "POST",
             body: JSON.stringify(newRecipe)
         })
-        .then((response) => response.json())
-        
-        .then((newRecipe) => setRecipes([...recipes, newRecipe]))
-        }
+            .then((response) => response.json())
+            .then((newRecipe) => setRecipes([...recipes, newRecipe]));
+    }
+    
+    const recipeList = recipes.map((recipe) => {
+        return <RecipeCardMedium key= {recipe.id} recipe ={recipe} />
+    })
     
     
     // Check that info was send correctly? no empty fields ?
@@ -77,6 +88,8 @@ export default function PostPage() {
                 <h2>Select recipe main ingredient:</h2>
                 <input type="text" onChange={(e) => setIngredient(e.target.value)}/>
                 <button type="submit">Submit</button>
+
+                <ul>{recipeList}</ul>
             </form>
 
             {/* <Image 
