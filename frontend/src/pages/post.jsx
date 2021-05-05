@@ -93,29 +93,17 @@ export default function PostPage() {
                 <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
                 <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
 
-                <h2>Add recipe title:</h2>
-                <input type="text" onChange={(e) => setTitle(e.target.value)}/>
-                <h2>Add recipe link:</h2>
-                <input type="text" onChange={(e) => setLink(e.target.value)}/>
-                <h2>Select recipe main ingredient:</h2>
-                <input type="text" onChange={(e) => setIngredient(e.target.value)}/>
-                <button type="submit">Submit</button>
-
-            </form>
-
-            {/* <Image 
-
-
                 <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/>
 
                 <input className="form-control" placeholder="Paste Link Here" type="text" onChange={(e) => setLink(e.target.value)}/>
                 <h3>Select recipe main ingredient:</h3>
                 <input className="form-control" type="text" onChange={(e) => setIngredient(e.target.value)}/>
                 <button className="buttonRegister" type="submit">Submit</button>
+
             </form>
-            </div>
-            {/* For getting the image in the Recipe Card <Image 
-            style={{width: 200}} cloudName="dt0zgbuyg" publicId="https://res.cloudinary.com/dt0zgbuyg/image/upload/v1620122494/munchbox/qislbl7qg1gsb7pfmqpd.png" /> */}
+
+
         </div>
-    )
+        </div>
+    );
 }
