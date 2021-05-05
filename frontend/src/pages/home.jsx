@@ -14,7 +14,6 @@ export default function HomePage() {
 
         const RecipesArray = recipes.map((recipePost) => (
             <RecipeCardMedium key={recipePost.id} recipePost={recipePost}/>
-
         ));
 return (
     <div className="pageBody">
