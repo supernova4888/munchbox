@@ -52,6 +52,7 @@ export default function ReviewPage(){
                 </div>
                 <div className="User-image"><ReviewCardLarge/></div>
                 <div className="review-ratings"><h5>MYRATING</h5><StarRating/>
+                    <img  className="svgIconExit" src={UpdateButton}/>
                 </div>
                 <div className="Comments"><h5>COMMENTS:</h5>
                     <CommentBar/>
