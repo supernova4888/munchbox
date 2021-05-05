@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
-import Form from "../components/Form";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
         //Const
@@ -17,13 +17,12 @@ export default function HomePage() {
         ));
 return (
     <div className="pageBody">
-            <h1>HomePage</h1>
-            <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
-
-        <Form />
-
+        <h1>HomePage</h1>
+        <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
+            <Link className = "LinkToReviewPage"  to="/review">Review</Link>
         <div className="recipeContainer">
-            {RecipesArray}
+                {RecipesArray}
+
         </div>
     </div>
 )

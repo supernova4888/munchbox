@@ -73,6 +73,8 @@ Navbar icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</
 
 Filled plus symbol icon made by <a href="https://www.flaticon.com/authors/vectors-market">Vectors Market</a> from <a href="https://www.flaticon.com/">Flaticon</a> and recolored
 
+Toggle icon made by <a href="https://www.flaticon.com/authors/pixel-perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a></div>
+
 ## Other Credits
 
 Font 'Oxygen' from <a href="https://fonts.google.com/specimen/Oxygen">Google Fonts</a>
