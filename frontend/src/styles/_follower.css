@@ -1,13 +1,4 @@
-.followers--heading{
-    font-size: 35px;
-    margin-left: 40px;
-}
-
-.followers--title{
-    font-size: 25px;
-    margin-left: 40px;
-    font-weight: bold;
-}
+/* FollowerPage, UserFollowerPage */
 .followerContainer {
     display: grid;
     grid-template-columns: 1fr;
@@ -16,14 +7,39 @@
     margin-right: auto;
     grid-row-gap: 24px;
 }
-.followerCard{
-    display: flex;
-    align-items:center;
-}
-
-.userFollowerName {
-    padding-left: 100px;
-    font-size: xx-large;
+.followerSuggestion{
+    font-size: 25px;
     font-weight: bold;
+    text-align: center;
 }
 
+/* UserCard */
+.usercard{
+    display: grid;
+    grid-template-columns: 80px 1fr 50px;
+    align-items:center;
+    max-width: 400px;
+}
+
+.userFollowPicSmall {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.userFollowName {
+    font-size: 16pt;
+    font-weight: bold;
+    padding: 16px;
+}
+
+.plus-follow{
+    width: 35px;
+    height: 35px;
+}
+
+/* FollowerCard */
+.followerCard{
+     display: flex;
+     align-items:center;
+ }

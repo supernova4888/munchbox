@@ -15,10 +15,11 @@ useEffect(() => {
 
 
 return (
-    <div>
-        <h1 className= "user-followers--heading">People you Follow</h1>
-        <br/>
+    <div className="pageBody">
+        <h1>People you Follow</h1>
+        <div className = "followerContainer">
         <FollowerCard/>
+        </div>
     </div>
 );
 }

@@ -10,10 +10,8 @@ export default function FollowerCard({ follower }) {
     
     return (
         <div className = "followerCard">
-            <img className="userFollowerPicSmall" src={sampleProfile} alt = "userPic"/>
-            {/* {follower.name} */}
-            <div className="userFollowerName">username</div>
-            
+            <img className="userFollowPicSmall" src={sampleProfile} alt = "userPic"/>
+            <div className="userFollowName">user.name</div>
         </div>
         
     )
