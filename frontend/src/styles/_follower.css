@@ -8,6 +8,22 @@
     margin-left: 40px;
     font-weight: bold;
 }
-.grid{
-    padding: auto;
+.followerContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-row-gap: 24px;
 }
+.followerCard{
+    display: flex;
+    align-items:center;
+}
+
+.userFollowerName {
+    padding-left: 100px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+

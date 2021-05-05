@@ -1,31 +1,26 @@
 .usercard{
-    display: flex;
+    display: grid;
+    grid-template-columns: 80px 1fr 50px;
     align-items:center;
+    max-width: 400px;
 }
 
 .userFollowPicSmall {
-    max-width: 8%;
-    height: 5%;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    margin-left: 40px;
 
 }
 
 .userFollowName {
-    padding-left: 100px;
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: bold;
-}
-
-.btn-plus-follow{
-    margin-left: -80px;
+    padding: 16px;
 }
 
 
-.pluspurplefollowimage{
-width: 10%;
-height: 10%;
-display: inline-flex;
-padding: 1px, 6px;
+.plus-follow{
+width: 35px;
+height: 35px;
 
 }

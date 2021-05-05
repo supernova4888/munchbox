@@ -23,18 +23,14 @@ const UsersArray = user.map((user) => (
 
 
 return (
-    <div>
+    <div className="pageBody">
         <h1 className= "followers--heading">Followers</h1>
         <p className="followers--title">Suggestions to Follow</p>
-        <br/>
-        <div className = "grid">
+
+        <div className = "followerContainer">
                 {UsersArray}
-    </div>
-
-    
-    
-
         </div>
+    </div>
         
 );
 }
