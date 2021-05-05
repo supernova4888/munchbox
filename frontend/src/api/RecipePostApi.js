@@ -1,5 +1,7 @@
 import Api from "./Api";
+
 class RecipePostApi {
+
     getAllRecipes() {
         return Api.get("/posts");
     }
