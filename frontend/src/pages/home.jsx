@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
 import Form from "../components/Form";
-import StarRating from "../components/StarRating";
+import StarRating from "../components/review/StarRating";
 import logo from "../resources/logo.png";
 import RecipeCardSmall from "../components/RecipeCardSmall";
 import RecipeCardLarge from "../components/RecipeCardLarge";
@@ -20,26 +20,15 @@ export default function HomePage() {
         const RecipesArray = recipes.map((recipePost) => (
             <RecipeCardMedium key={recipePost.id} recipePost={recipePost}/>
         ));
-return (
-    <div>
-        <h1>HomePage</h1>
 
-        <p>You are on the home page now. Below you'll see a sample recipes.</p>
-
-        <div className="recipeContainer">
-
-            <Link className = "LinkToReviewPage"  to="/review">
-                <RecipeCardLarge/>
-
-            <RecipeCardLarge/>
-            <RecipeCardLarge/>
-            <RecipeCardLarge/>
-            <RecipeCardSmall />
-            <RecipeCardSmall />
-            <RecipeCardSmall />
-            <RecipeCardSmall />
-            </Link>
+    return (
+        <div className="pageBody">
+            <h1>HomePage</h1>
+            <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
+            <Link className = "LinkToReviewPage"  to="/review">Review</Link>
+            <div className="recipeContainer">
+                {RecipesArray}
+            </div>
         </div>
-    </div>
-)
+    )
 }

@@ -2,15 +2,11 @@ import React, { useEffect, useState } from "react";
 
 
 
-import ReviewApi from"../../api/ReviewApi";
-import StarRating from "../../components/StarRating";
+import StarRating from "../../components/review/StarRating";
 import cookie_monster from "../../resources/images/cookie_monster.jpeg"
 import RecipeCardLarge from "../../components/RecipeCardLarge";
-import ReviewCardLarge from "../../components/ReviewCardLarge";
-import recipeImageGeneral from "../../resources/recipe-03.jpg";
-import CommentBar from "../../components/CommentBar";
-import UpdateButton from "../../resources/images/UpdateButton.png"
 import "../../styles/_review.css";
+import ReviewComponent from "../../components/review/ReviewComponent";
 
 export default function ReviewPage(){
 
@@ -42,20 +38,11 @@ export default function ReviewPage(){
         }*/
 
         return (
-            <div>
-                <div className="User-profile">
-                    <h4>Posted By:</h4>
+            <div className="Review-Class">
 
-                    {/*<img className="UserImage" src={cookie_monster}/>*/}
 
-                </div>
-                <div className="User-image"><ReviewCardLarge/></div>
-                <div className="review-ratings"><h5>MYRATING:</h5><StarRating/>
-                    <img  className="svgIconExit" src={UpdateButton}/>
-                </div>
-                <div className="Comments"><h5>COMMENTS:</h5>
-                    <CommentBar/>
-                    <img  className="svgIconExit" src={UpdateButton}/>
+                <div className="Review-subclass">
+                    <ReviewComponent/>
                 </div>
             </div>
         );

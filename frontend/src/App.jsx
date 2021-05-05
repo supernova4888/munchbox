@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar.jsx";
 import RegisterPage from "./pages/registerpage.jsx";
 import LoginPage from "./pages/loginpage.jsx";
 import LogoutButton from "./components/LogoutButton";
+import ReviewPage from "./pages/review/review";
 
 export default function App() {
   // State
@@ -43,6 +44,7 @@ export default function App() {
             <Switch>
 
                 <Route exact component={HomePage} path="/home" />
+                <Route exact component={ReviewPage} path="/review" />
                 <Route component={PostPage} path="/post" />
                 <Route component={ProfilePage} path="/profile" />
                 <Route component={SpinnerPage} path="/spinner" />
