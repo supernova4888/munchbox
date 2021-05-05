@@ -3,6 +3,7 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
+import RecipePostApi from "../api/RecipePostApi";
 
 // In the UI, add a button or the menu nav so user can return. Copy from loginPage
 
@@ -31,31 +32,38 @@ export default function PostPage() {
     // 1. check the api code 
     // 2. run by postman to figure out what is wrong.
 
-     // to be used when we wanna update our people list
-    // useEffect(() => {
-    //     fetch("http://localhost:8080/posts")
-    //         .then((response) => response.json())
-    //         .then((json) => setRecipes(json))
-    //     }, [setRecipes] )
+    // to be used when we wanna update our people list
+    useEffect(() => {
+        RecipePostApi.getAllRecipes()
+        .then((response) => setRecipes(response.json))
+        .catch((err) => console.log(err));
+        }, []);
 
-    function createRecipe (event) {
+
+    // async function createRecipe(event){
+    //     event.preventDefault();
+    //     console.log(title);
+    //     console.log(link);
+    //     console.log(ingredient);
+    // }
+    
+
+    async function createRecipe (event) {
         event.preventDefault();
-        console.log(imageURL);
+        console.log("inside createRecipe function");
         const newRecipe = {
             title: title,
             body: link,
             imgURL: imageURL,
             mainIngredient: ingredient
         }
-        fetch("http://localhost:8080/post", {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            method: "POST",
-            body: JSON.stringify(newRecipe)
-        })
-            .then((response) => response.json())
-            .then((newRecipe) => setRecipes([newRecipe]));
+        try {
+            const response = await RecipePostApi.createRecipe(newRecipe);
+            console.log(response.data);
+            setRecipes(response.data);
+        } catch (e) {
+            console.error(e);
+        }
     }
     
     // const recipeList = recipes.map((recipe) => {
