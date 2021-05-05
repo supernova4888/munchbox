@@ -6,6 +6,7 @@ import se.munchbox.reviews.Review;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
 @Entity
 public class RecipePost {
 
@@ -19,10 +20,15 @@ public class RecipePost {
 
         @Column(nullable = false)
         private String title;
+
+        // the body will hold the recipe URL
         @Column(nullable = false)
         private String body;
         @Column(nullable = false)
         private String UserName;
+
+        private String imgURL;
+        private String mainIngredient;
 
         @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
         public List<Review> reviews = new ArrayList<>();
