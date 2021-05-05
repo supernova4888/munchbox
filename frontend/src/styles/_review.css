@@ -12,3 +12,7 @@ button {
 .off {
     color: var(--color-offwhite);
 }
+.svgIconExit{
+    max-width: 25px;
+
+}

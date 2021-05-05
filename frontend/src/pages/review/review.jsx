@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 
+
 import ReviewApi from"../../api/ReviewApi";
 import StarRating from "../../components/StarRating";
 import cookie_monster from "../../resources/images/cookie_monster.jpeg"
@@ -9,7 +10,7 @@ import ReviewCardLarge from "../../components/ReviewCardLarge";
 import recipeImageGeneral from "../../resources/recipe-03.jpg";
 import CommentBar from "../../components/CommentBar";
 import UpdateButton from "../../resources/images/UpdateButton.png"
-
+import "../../styles/_review.css";
 
 
 export default function ReviewPage(){
@@ -54,7 +55,7 @@ export default function ReviewPage(){
                 </div>
                 <div className="Comments"><h5>COMMENTS:</h5>
                     <CommentBar/>
-                    <img className="Update-image-icon" src={UpdateButton}/>
+                    <img  className="svgIconExit" src={UpdateButton}/>
                 </div>
             </div>
         );
