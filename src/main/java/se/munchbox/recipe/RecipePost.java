@@ -25,8 +25,9 @@ public class RecipePost {
         private String body;
         @Column(nullable = false)
         private String UserName;
-
+        @Column(nullable = false)
         private String imgURL;
+        @Column(nullable = false)
         private String mainIngredient;
 
     public String getImgURL() {

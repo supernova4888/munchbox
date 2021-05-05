@@ -21,16 +21,23 @@ export default function PostPage() {
         // upload presets - public (connects to cloudinary)
         formData.append("upload_preset", "blp4p8lu")
         // post request
-        Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.secure_url);
+        Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url)
         });
     };
 
+    //setImageURL(response.data.secure_url)
     // check if fields are available in the BE.
+    // 1. check the api code 
+    // 2. run by postman to figure out what is wrong.
+
     function createRecipe (event) {
         event.preventDefault();
+        console.log(imageURL);
         const newRecipe = {
             title: title,
             body: link,
+            imgURL: imageURL,
+            mainIngredient: ingredient
         }
         fetch("https://localhost:8080/post", {
             method: "POST",
@@ -40,6 +47,7 @@ export default function PostPage() {
             body: JSON.stringify(newRecipe)
         })
         .then((response) => response.json())
+        
         .then((newRecipe) => setRecipes([...recipes, newRecipe]))
         }
     
@@ -50,6 +58,7 @@ export default function PostPage() {
     // check if the recipe URL already exists (?).
     // solution option 1: get all recipes from BE -> find newRecipe URL -> if true, then throw error.
     // solution option 2: transform the body field into unique in BE (how to transmit the error back to FE ?)
+
 
     return (
         <div>
@@ -70,7 +79,7 @@ export default function PostPage() {
                 <button type="submit">Submit</button>
             </form>
 
-            {/* For getting the image in the Recipe Card <Image 
+            {/* <Image 
             style={{width: 200}} cloudName="dt0zgbuyg" publicId="https://res.cloudinary.com/dt0zgbuyg/image/upload/v1620122494/munchbox/qislbl7qg1gsb7pfmqpd.png" /> */}
         </div>
     )
