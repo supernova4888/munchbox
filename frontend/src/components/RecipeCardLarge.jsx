@@ -1,19 +1,22 @@
-import logo from "../resources/logo.png";
+import React from "react";
 import recipeImageGeneral from "../resources/recipe-03.jpg"
 import sampleProfile from "../resources/profilepic200px-05.jpg";
 
-export default function RecipeCardLarge() {
+export default function RecipeCardLarge({ recipePost }) {
     return (
         <div className="recipeCardLarge">
+            <div className="userPosterContainer">
+                <div className="postedBy">Posted by: </div>
+                <img className="userProfilePicSmall" src={sampleProfile}/>
+                <div className="userNameSmall">{recipePost.userName}</div>
+            </div>
+
             <div className="recipeImageBox">
                 <img className="recipeImageLarge" src={recipeImageGeneral}/>
             </div>
-            <div className="recipeTitleBox">Title box recipe title, this title is a little bit longer than before</div>
-            <div className="recipePostedBy">
-                <img className="userProfilePicSmall" src={sampleProfile}/>
-                <div className="userNameSmall">username</div>
+            <div className="recipeTitleBoxLg">{recipePost.title}</div>
+            <div className="recipeBody">{recipePost.body}</div>
 
-            </div>
         </div>
     );
 }
