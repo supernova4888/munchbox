@@ -1,1 +1,1 @@
-import Api from "./Api";
+ "./Api";

@@ -8,6 +8,7 @@ import RecipeCardLarge from "../../components/RecipeCardLarge";
 import ReviewCardLarge from "../../components/ReviewCardLarge";
 import recipeImageGeneral from "../../resources/recipe-03.jpg";
 import CommentBar from "../../components/CommentBar";
+import UpdateButton from "../../resources/images/UpdateButton.png"
 
 
 
@@ -53,6 +54,7 @@ export default function ReviewPage(){
                 </div>
                 <div className="Comments"><h5>COMMENTS:</h5>
                     <CommentBar/>
+                    <img className="Update-image-icon" src={UpdateButton}/>
                 </div>
             </div>
         );
