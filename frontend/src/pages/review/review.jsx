@@ -12,7 +12,6 @@ import CommentBar from "../../components/CommentBar";
 import UpdateButton from "../../resources/images/UpdateButton.png"
 import "../../styles/_review.css";
 
-
 export default function ReviewPage(){
 
 
@@ -51,7 +50,7 @@ export default function ReviewPage(){
 
                 </div>
                 <div className="User-image"><ReviewCardLarge/></div>
-                <div className="review-ratings"><h5>MYRATING</h5><StarRating/>
+                <div className="review-ratings"><h5>MYRATING:</h5><StarRating/>
                     <img  className="svgIconExit" src={UpdateButton}/>
                 </div>
                 <div className="Comments"><h5>COMMENTS:</h5>

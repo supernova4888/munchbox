@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CommentBar = ({keyword,setKeyword}) => {
-    const BarStyling = {width:"20rem",background:"#F2F1F9", border:"black", padding:"1rem"};
+    const BarStyling = {width:"15rem",background:"#F2F1F9", border:"black", padding:"1rem"};
     return (
         <input
             style={BarStyling}
