@@ -56,17 +56,17 @@ export default function PostPage() {
             <p>You are on the post page now.</p>
 
             <div className="card">
-            <form onSubmit={createRecipe}>
+            <form className="recipeForm" onSubmit={createRecipe}>
 
-                <h2>Add recipe image</h2>
+                <h3>Add recipe image</h3>
                 <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
-                <button className="buttonLogin" onClick={uploadImage}> Upload Image</button>
+                <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
 
-                <h2>Add recipe title:</h2>
-                <input className="form-control" placeholder="Title" type="text" onChange={(e) => setTitle(e.target.value)}/>
-                <h2>Add recipe link:</h2>
-                <input className="form-control" placeholder="Link" type="text" onChange={(e) => setLink(e.target.value)}/>
-                <h2>Select recipe main ingredient:</h2>
+
+                <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/>
+
+                <input className="form-control" placeholder="Paste Link Here" type="text" onChange={(e) => setLink(e.target.value)}/>
+                <h3>Select recipe main ingredient:</h3>
                 <input className="form-control" type="text" onChange={(e) => setIngredient(e.target.value)}/>
                 <button className="buttonRegister" type="submit">Submit</button>
             </form>
