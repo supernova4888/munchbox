@@ -1,7 +1,6 @@
 import React from "react";
 import Axios from "axios";
 import { useState } from "react";
-import { Image } from "cloudinary-react";
 
 // In the UI, add a button or the menu nav so user can return. Copy from loginPage
 
