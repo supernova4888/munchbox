@@ -15,6 +15,7 @@ import LogoutButton from "./components/LogoutButton";
 import FollowerPage from "./pages/FollowerPage";
 import UserFollowerPage from "./pages/UserFollowerPage";
 
+
 export default function App() {
   // State
     const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
