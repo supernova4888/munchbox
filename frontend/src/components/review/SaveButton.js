@@ -1,21 +1,13 @@
 import React, { Component } from 'react';
-import ReactDOM  from 'react-dom';
+import { Link } from "react-router-dom";
 
-class SaveButton extends React.Component {
-    handleSave(event) {
-        console.log(this, event);
-    }
-    render() {
-        return React.createElement(
-            "div",
-            null,
-            React.createElement(
-                "button",
-                { onClick: this.handleSave.bind(this) },
-                "Save"
-            )
-        );
-    }
+
+export default function SaveButton(){
+    const BarStyling = {width:"8rem",background:"#6A425C", border:"black", padding:".5rem",text:"white"};
+    return(
+        <Link to="/save">
+            <button className="buttonSave"
+                    style={BarStyling}>Save Review</button>
+        </Link>
+    );
 }
-
-export default SaveButton;

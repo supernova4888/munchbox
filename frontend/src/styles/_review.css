@@ -49,3 +49,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.SaveButton{
+    text-align: center;
+    position:absolute;
+    left: 150px;
+}
