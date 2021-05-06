@@ -25,6 +25,9 @@ export default function AuthPage() {
                     <button className="buttonRegister">Register</button>
                 </Link>
             </div>
+            <div className="imageBlockContainer">
+            <Link to="/home">...or continue as a guest</Link>
+            </div>
         </div>
     );
 }
