@@ -14,6 +14,7 @@ import LoginPage from "./pages/loginpage.jsx";
 import LogoutButton from "./components/LogoutButton";
 import FollowerPage from "./pages/FollowerPage";
 import UserFollowerPage from "./pages/UserFollowerPage";
+import NavbarGuest from "./components/NavbarGuest.jsx";
 import ReviewPage from "./pages/review/review";
 
 
@@ -27,7 +28,7 @@ export default function App() {
 
     const guestRouter = (
         <BrowserRouter>
-            <Navbar  />
+            <NavbarGuest  />
 
             <Switch>
                 <Route exact component={WelcomePage} path="/" />

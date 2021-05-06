@@ -46,10 +46,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         // Whitelist
+        //line 53 .antMatchers("/posts").permitAll() added to allow viewing recipes on homepage without login
         http
                 .authorizeRequests().antMatchers("/authenticate", "/register").permitAll()
                 .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .antMatchers("/posts").permitAll()
                 .anyRequest().authenticated();
+
+
 
         // Register filters
         http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
