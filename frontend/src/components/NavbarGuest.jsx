@@ -7,6 +7,7 @@ import user from "../resources/mobile_navbar/user.svg";
 import pluspurple from "../resources/mobile_navbar/pluspurple.png";
 import usergrey from "../resources/mobile_navbar/user-grey.svg";
 import plateGrey from "../resources/mobile_navbar/dinner-grey.svg";
+import plusgrey from "../resources/mobile_navbar/plusgrey.png";
 /* new sidenav */
 import houseW from "../resources/navbar/house-white.png";
 import plateW from "../resources/navbar/dinner-white.png";
@@ -32,7 +33,7 @@ export default function NavbarGuest() {
                 <li>
                         <img className="svgIcon" src={usergrey}/>
                 </li>
-                <li><img className="svgIconLg" src={pluspurple}/></li>
+                <li><img className="svgIconLg" src={plusgrey}/></li>
                 <li>
                     <Link to="/spinner">
                         <img className="svgIcon" src={spinner}/>
