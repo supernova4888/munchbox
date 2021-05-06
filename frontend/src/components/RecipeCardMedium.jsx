@@ -12,6 +12,7 @@ export default function RecipeCardMedium({ recipePost }) {
             <div className="recipePostedBy">
                 <img className="userProfilePicSmall" src={sampleProfile}/>
                 <div className="userNameSmall">{recipePost.userName}</div>
+                <di>{recipePost.mainIngredient}</di>
 
             </div>
         </div>
