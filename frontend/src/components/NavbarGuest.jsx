@@ -32,7 +32,7 @@ export default function NavbarGuest() {
                 <li>
                         <img className="svgIcon" src={usergrey}/>
                 </li>
-                <li><Link to="/post"><img className="svgIconLg" src={pluspurple}/></Link></li>
+                <li><img className="svgIconLg" src={pluspurple}/></li>
                 <li>
                     <Link to="/spinner">
                         <img className="svgIcon" src={spinner}/>
