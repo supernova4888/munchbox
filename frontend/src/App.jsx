@@ -14,6 +14,8 @@ import LoginPage from "./pages/loginpage.jsx";
 import LogoutButton from "./components/LogoutButton";
 import FollowerPage from "./pages/FollowerPage";
 import UserFollowerPage from "./pages/UserFollowerPage";
+import ReviewPage from "./pages/review/review";
+
 
 
 export default function App() {
@@ -45,6 +47,7 @@ export default function App() {
             <LogoutButton onLogout={() => Auth.logout()} />
             <Switch>
                     <Route exact component={HomePage} path="/home" />
+                <Route exact component={ReviewPage} path="/review/:id" />
                     <Route exact component={PostPage} path="/post" />
                     <Route exact component={ProfilePage} path="/profile" />
                     <Route exact component={SpinnerPage} path="/spinner" />
