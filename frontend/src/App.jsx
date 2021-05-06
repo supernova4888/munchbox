@@ -49,7 +49,7 @@ export default function App() {
                     <Route exact component={ProfilePage} path="/profile" />
                     <Route exact component={SpinnerPage} path="/spinner" />
                     <Route exact component={FollowerPage} path="/profile/follower"/>
-                    <Route exact component={UserFollowerPage} path="/profile/follower/youfollow"/>
+                    <Route exact component={UserFollowerPage} path="/profile/youfollow"/>
                 </Switch>
 
         </BrowserRouter>

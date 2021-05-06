@@ -4,6 +4,7 @@ import FoodPref from '../components/FoodPref'
 import Follower from "./FollowerPage";
 import { Link } from "react-router-dom";
 import FollowerPage from './FollowerPage';
+import UserFollowerPage from "./UserFollowerPage";
 
 
 
@@ -26,6 +27,9 @@ export default function Profile() {
             <p>You are on the profile page now.</p>
             <Link to="/profile/follower">
             <h2>Followers</h2> 
+            </Link> 
+            <Link to="/profile/youfollow">
+            <h2>UserFollowerPage</h2> 
             </Link> 
             
         </div>

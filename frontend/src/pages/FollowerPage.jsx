@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserApi from "../api/UserApi";
-/* import FollowerApi from "../api/FollowerApi";
-import CreateFollower from "../components/CreateFollower" */
+ //import FollowerApi from "../api/FollowerApi";
+import CreateFollower from "../components/CreateFollower" 
 
 import UserCard from "../components/UserCard";
 
@@ -11,7 +11,9 @@ const [user, setUser] = useState([]);
 const UsersArray = user.map((user) => (
         <UserCard key={user.id} user={user}/>
     ));
-
+const follower = user.map((user) => (
+        <CreateFollower key={user.id} user={user}/>
+    ));
 
 
  useEffect(() => {
@@ -29,6 +31,7 @@ return (
         <br/>
         <div className = "grid">
                 {UsersArray}
+                {follower}         
     </div>
 
     
