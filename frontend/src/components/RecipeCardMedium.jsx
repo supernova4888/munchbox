@@ -11,7 +11,8 @@ export default function RecipeCardMedium({ recipePost }) {
                 <Link to={`post/${recipePost.id}`}>
                     <img 
                     className="recipeImageMedium" 
-                    src={recipeImageGeneral}
+                    // src={recipeImageGeneral}
+                    src={recipePost.imgURL}
                     />
                 </Link>
             </div>
