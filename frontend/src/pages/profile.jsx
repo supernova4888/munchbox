@@ -36,19 +36,22 @@ export default function Profile() {
 
 
     return (
-        <div>
+        <div className="pageBody">
             <h1>ProfilePage</h1>
-            <p>You are on the profile page now.</p>
-            <Link to="/profile/follower">
-            <h2>Followers</h2> 
-            </Link>
+            <div className="card">
+                <div className="card-body">
+                    <div className="profileBox">
+                        <ProfilePicCurrent />
+                        <h2>{user.name}</h2>
+                    </div>
 
-            <p>Hello {user.name} !</p>
-            <p>Your pic ID is {user.profileId}</p>
-
-            <ProfilePicCurrent />
-
-
+                    <div className="profileInfo">
+                        <p>Hello {user.name} !</p>
+                        <p>Your pic ID is {user.profileId}</p>
+                        <Link to="/profile/follower">Followers</Link>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
