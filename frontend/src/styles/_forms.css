@@ -120,6 +120,10 @@
         display: flex;
         justify-content: center;
     }
+    .loginBlockContainer {
+        display: flex;
+        justify-content: center;
+    }
     .imageBlock {
         margin: 10px;
         width: 300px;
@@ -173,6 +177,11 @@
         background-color: var(--color-offwhitelight);
         text-decoration: underline;
     }
+
+    .loginBlockContainer {
+        display: flex;
+        justify-content: left;
+
     .buttonProfilePic1:hover {
         border: 5px solid var(--color-pinklight);
     }
@@ -187,5 +196,6 @@
     }
     .buttonProfilePic5:hover {
         border: 5px solid var(--color-pinklight);
+
     }
 }
