@@ -8,7 +8,7 @@ export default function SpinnerPage() {
         return Math.floor(Math.random() * max);
     }
     const [recipes, setRecipes] = useState([]);
-    const [random, setRandom] = useState(2);
+    const [random, setRandom] = useState(null);
     const [recipe, setRecipe] = useState([]);
 
     useEffect(() => {
@@ -24,13 +24,7 @@ export default function SpinnerPage() {
     const max = RecipesArray.length
 
     const handleClick = () => setRandom(getRandomInt(max)+1);
-    console.log("random" + random);
 
-   /* useEffect(() => {
-        RecipePostApi.getRecipeById(random)
-            .then(({data}) => setRecipe(data))
-            .catch((err) => console.error(err));
-    }, [setRecipe]);*/
 
     async function showRandom (event) {
         event.preventDefault();
@@ -45,15 +39,20 @@ export default function SpinnerPage() {
     }
 
     return (
-        <div>
+        <div className="pageBody">
             <h1>SpinnerPage</h1>
-            <p>You are on the spinner page now.</p>
-            <button className="buttonLogin" onClick={handleClick}>spin</button>
-            <p>Random: {random}</p>
-            <p>Max: {max}</p>
-            {console.log(recipe)}
-            <button className="buttonLogin" onClick={showRandom}>show recipe</button>
-            <RecipeCardMedium recipePost={recipe} />
+            <div className="card">
+                <div className="card-body">
+                    <p>Wondering what you should cook for dinner?</p>
+                    <button className="buttonLogin" onClick={handleClick}>spin</button>
+                    <p>Recipe #{random}</p>
+
+                    <button className="buttonLogin" onClick={showRandom}>show recipe</button>
+                    <div className="spinner">
+                        <RecipeCardMedium recipePost={recipe} />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
