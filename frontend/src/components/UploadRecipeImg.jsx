@@ -3,13 +3,13 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
 import ReactImageUploadComponent from "react-images-upload";
+import { useRecoilState } from "recoil";
+import { recipeImgState } from "../state/recipeImgState";
 
 export default function UploadRecipeImg({uploadImg}) {
 
-    // use recoil here
-    const [imageURL, setImageURL] = useState(null);
-    const [imageSelected, setImageSelected] = useState("");
-
+    // Global state
+    const [imageURL, setImageURL] = useRecoilState(recipeImgState);
 
     const uploadImage = (e) => {
         // constructs the formData

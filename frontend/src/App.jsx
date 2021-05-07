@@ -1,6 +1,9 @@
 // NPM packages
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React, { useState } from "react";
+// State
+import { RecoilRoot } from "recoil";
+
 // Project files
 import Auth from "./services/Auth";
 import WelcomePage from "./pages/auth/AuthPage";
@@ -47,6 +50,7 @@ export default function App() {
             <Navbar />
             <LogoutButton onLogout={() => Auth.logout()} />
             <Switch>
+                    <RecoilRoot>
                     <Route exact component={HomePage} path="/home" />
                 <Route exact component={ReviewPage} path="/review/:id" />
                     <Route exact component={PostPage} path="/post" />
@@ -54,6 +58,7 @@ export default function App() {
                     <Route exact component={SpinnerPage} path="/spinner" />
                     <Route exact component={FollowerPage} path="/profile/follower"/>
                     <Route exact component={UserFollowerPage} path="/profile/follower/youfollow"/>
+                    </RecoilRoot>
                 </Switch>
 
         </BrowserRouter>
