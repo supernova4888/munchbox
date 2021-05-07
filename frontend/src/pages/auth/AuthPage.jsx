@@ -1,6 +1,7 @@
 // NPM Packages
 import React from "react";
 import { Link } from "react-router-dom";
+import LoginRegister from "../../components/LoginRegisterSticky"
 // Images
 import munchText from "../../resources/munchbox-text-transparent.png";
 import munchLogo from "../../resources/logo_transparent_square.png";
@@ -17,17 +18,8 @@ export default function AuthPage() {
                     <img className="logoText" src={munchText} /></h1>
                 </div>
             </div>
-            <div className="imageBlockContainer">
-                <Link to="/login">
-                    <button className="buttonLogin">Log in</button>
-                </Link>
-                <Link to="/register">
-                    <button className="buttonRegister">Register</button>
-                </Link>
-            </div>
-            <div className="imageBlockContainer">
-            <Link to="/home">...or continue as a guest</Link>
-            </div>
+            
+            <LoginRegister />
         </div>
     );
 }

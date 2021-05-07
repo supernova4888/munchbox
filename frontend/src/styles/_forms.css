@@ -59,6 +59,10 @@
         display: flex;
         justify-content: center;
     }
+    .loginBlockContainer {
+        display: flex;
+        justify-content: center;
+    }
     .imageBlock {
         margin: 10px;
         width: 300px;
@@ -111,5 +115,9 @@
     .buttonUpload:hover {
         background-color: var(--color-offwhitelight);
         text-decoration: underline;
+    }
+    .loginBlockContainer {
+        display: flex;
+        justify-content: left;
     }
 }
