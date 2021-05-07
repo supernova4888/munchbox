@@ -13,8 +13,7 @@ export default function ReviewPage() {
     const [recipes, setRecipes] = useState([]);
     const {id} = useParams();
 
-    console.log( "id",id );
-    console.log("recipe", recipes);
+
 
 
     async function getAllRecipes(recipePost) {
