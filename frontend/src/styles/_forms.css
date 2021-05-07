@@ -173,4 +173,19 @@
         background-color: var(--color-offwhitelight);
         text-decoration: underline;
     }
+    .buttonProfilePic1:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic2:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic3:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic4:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic5:hover {
+        border: 5px solid var(--color-pinklight);
+    }
 }
