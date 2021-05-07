@@ -4,29 +4,17 @@ import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
+import UploadRecipeImg from "../components/UploadRecipeImg";
 
-// In the UI, add a button or the menu nav so user can return. Copy from loginPage
 
 export default function PostPage() {
     const [recipes, setRecipes] = useState([]);
-    const [imageSelected, setImageSelected] = useState("");
-    const [imageURL, setImageURL] = useState("");
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
     // TODO: add dropdown menu to choose pre-defined ingredient
     const [ingredient, setIngredient] = useState ("");
 
-    const uploadImage = () => {
-        // constructs the formData
-        const formData = new FormData()
-        formData.append("file", imageSelected)
-        // upload presets - public (connects to cloudinary)
-        formData.append("upload_preset", "blp4p8lu")
-        // post request
-        Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url)
-        });
-    };
-
+    
     //setImageURL(response.data.secure_url)
     // check if fields are available in the BE.
     // 1. check the api code 
@@ -54,7 +42,7 @@ export default function PostPage() {
         const newRecipe = {
             title: title,
             body: link,
-            imgURL: imageURL,
+            // imgURL: imageURL,
             mainIngredient: ingredient
         }
         try {
@@ -89,15 +77,15 @@ export default function PostPage() {
             <div className="card">
             <form className="recipeForm" onSubmit={createRecipe}>
 
-                <h3>Add recipe image</h3>
-                <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
-                <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
+                <UploadRecipeImg />
 
                 <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/>
 
                 <input className="form-control" placeholder="Paste Link Here" type="text" onChange={(e) => setLink(e.target.value)}/>
+
                 <h3>Select recipe main ingredient:</h3>
                 <input className="form-control" type="text" onChange={(e) => setIngredient(e.target.value)}/>
+
                 <button className="buttonRegister" type="submit">Submit</button>
 
             </form>
