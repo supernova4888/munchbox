@@ -22,7 +22,7 @@ export default function StarRating() {
                     );
                 })}
             </div>
-            {/*<p>Your rating is {rating}</p>*/}
+            <p>Your rating is {rating}</p>
         </div>
     );
 };
