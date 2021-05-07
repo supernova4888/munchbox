@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
-
+import { Link } from "react-router-dom";
 // In the UI, add a button or the menu nav so user can return. Copy from loginPage
 
 export default function PostPage() {
@@ -96,7 +96,7 @@ export default function PostPage() {
                 <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/>
 
                 <input className="form-control" placeholder="Paste Link Here" type="text" onChange={(e) => setLink(e.target.value)}/>
-               
+
                 <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
                     <option value="0">Select main ingredient:</option>
                     <option value="1">Meat</option>
@@ -105,8 +105,11 @@ export default function PostPage() {
                     <option value="4">Vegetarian</option>
                     <option value="5">Vegan</option>
                 </select>
-                <button className="buttonRegister" type="submit">Submit</button>
-
+                <button className="buttonPost" type="submit">
+                    <span className="vis">Post it</span>
+                    <span className="invis">Done</span>
+                </button>
+                <Link to="/home">Home</Link>
             </form>
 
 
