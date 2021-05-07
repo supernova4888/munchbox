@@ -57,13 +57,19 @@
 }
 
 .recipePostedBy {
-    display: flex;
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
     align-items:center;
 }
 
 .userProfilePicSmall {
     max-width: 48px;
-    height: auto;
+    height: 48px;
+    border-radius: 50%;
+}
+.ingredientPicSmall {
+    max-width: 48px;
+    height: 48px;
     border-radius: 50%;
 }
 
