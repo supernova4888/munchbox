@@ -57,6 +57,7 @@ export default function Profile() {
             </Link>
 
             <p>Hello {user.name} !</p>
+            <p>Your pic ID is {user.profileId}</p>
         </div>
     )
 }
