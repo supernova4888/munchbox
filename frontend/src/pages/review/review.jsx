@@ -14,11 +14,13 @@ export default function ReviewPage() {
     const [recipes, setRecipes] = useState([]);
     const {id} = useParams();
     const [body, setBody] = useState("");
-    const [rating, setRating] = useState("");
+    const [rating, setRating] = useState(0);
     const [UserName, SetUserName] = useState("");
 
 
-
+    function changeRating(rating) {
+        setRating(rating);
+    }
 
     async function getAllRecipes(recipePost) {
         try {
@@ -36,6 +38,8 @@ export default function ReviewPage() {
                 .then(({data}) => setRecipes(data))
                 .catch((err) => console.error(err));
         }, [setRecipes]);
+
+
 //Function to save a review to backend
     async function createReview (event) {
         event.preventDefault();
@@ -44,7 +48,7 @@ export default function ReviewPage() {
 
             body: body,
             rating :rating,
-userName:UserName,
+            userName:UserName,
         }
         try {
             const response = await ReviewApi.createReview(id,newReview);
@@ -65,6 +69,8 @@ userName:UserName,
                     <div> {recipes.title}</div>
                     <div>{recipes.body}</div>
                     <div className="recipeContainer">
+                    <p>Your rating is {rating}</p>
+
                     </div>
 
                 </div>
@@ -73,7 +79,7 @@ userName:UserName,
 
                 <div>
                     <form className="recipeForm" onSubmit={createReview}>
-                        <StarRating  onChange ={(e) => setRating(e.target.value)}/>
+                        <StarRating onChangeRating ={changeRating} rating={rating} />
                         <input className="form-control" placeholder="write your comment here" type="text" onChange={(e) => setBody(e.target.value)}/>
                         <button className="buttonRegister" type="submit">Save Review </button>
                     </form>
