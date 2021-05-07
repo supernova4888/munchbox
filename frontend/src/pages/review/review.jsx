@@ -70,15 +70,13 @@ userName:UserName,
                 </div>
                 <div className="review-ratings"><h5>MYRATING:</h5><StarRating/>
                 </div>
-                <div className="Comments"><h5>COMMENTS:</h5>
-                    <CommentBar/>
 
-
-                </div>
 
                 <div>
                     <form className="recipeForm" onSubmit={createReview}>
-                <button className="buttonRegister" type="submit">Save Review </button>
+
+                        <input className="form-control" placeholder="write your comment here" type="text" onChange={(e) => setBody(e.target.value)}/>
+                        <button className="buttonRegister" type="submit">Save Review </button>
                     </form>
                 </div>
             </div>

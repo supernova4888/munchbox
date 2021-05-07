@@ -1,6 +1,9 @@
+/*
 import React from 'react';
 
-const CommentBar = ({keyword,setKeyword}) => {
+
+export default function CommentBar = ({keyword,setKeyword}) => {
+    const[body,SetBody]=
     const BarStyling = {width:"15rem",background:"#F2F1F9", border:"black", padding:"1rem"};
     return (
         <input
@@ -13,4 +16,4 @@ const CommentBar = ({keyword,setKeyword}) => {
     );
 }
 
-export default CommentBar
+*/
