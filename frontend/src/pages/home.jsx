@@ -15,8 +15,7 @@ export default function HomePage() {
         const RecipesArray = recipes.map((recipePost) => (
 
         <Link className = "LinkToReviewPage"  to={{
-                pathname: `/review
-                /${recipePost.id}`,
+                pathname: `/review/${recipePost.id}`,
         }}><RecipeCardMedium key={recipePost.id} recipePost={recipePost}/></Link>
         ));
         // functions that selects the recipe by user click

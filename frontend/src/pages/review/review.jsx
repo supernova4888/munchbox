@@ -4,6 +4,7 @@ import StarRating from "../../components/StarRating";
 import CommentBar from "../../components/CommentBar";
 import "../../styles/_review.css";
 import RecipePostApi from "../../api/RecipePostApi";
+import ReviewApi from "../../api/ReviewApi";
 
 
 
@@ -12,6 +13,9 @@ export default function ReviewPage() {
 
     const [recipes, setRecipes] = useState([]);
     const {id} = useParams();
+    const [body, setBody] = useState("");
+    const [rating, setRating] = useState("");
+    const [UserName, SetUserName] = useState("");
 
 
 
@@ -27,15 +31,29 @@ export default function ReviewPage() {
             console.error(e);
         }
     }
-
-
-
-        useEffect(() => {
+    useEffect(() => {
             RecipePostApi.getRecipeById(id)
                 .then(({data}) => setRecipes(data))
                 .catch((err) => console.error(err));
         }, [setRecipes]);
+//Function to save a review to backend
+    async function createReview (event) {
+        event.preventDefault();
+        console.log("inside createReview function");
+        const newReview = {
 
+            body: body,
+            rating :rating,
+userName:UserName,
+        }
+        try {
+            const response = await ReviewApi.createReview(id,newReview);
+            console.log(response.data);
+            setRecipes(response.data);
+        } catch (e) {
+            console.error(e);
+        }
+    }
 
 
 
@@ -55,6 +73,13 @@ export default function ReviewPage() {
                 <div className="Comments"><h5>COMMENTS:</h5>
                     <CommentBar/>
 
+
+                </div>
+
+                <div>
+                    <form className="recipeForm" onSubmit={createReview}>
+                <button className="buttonRegister" type="submit">Save Review </button>
+                    </form>
                 </div>
             </div>
         );
