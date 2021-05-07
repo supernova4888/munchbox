@@ -12,16 +12,16 @@ export default function MainIngredientPic({ recipePost }) {
                 <img className="ingredientPicSmall" src={meat} />
             )}
             {recipePost.mainIngredient === "2" && (
-                <img src={chicken} />
+                <img className="ingredientPicSmall" src={chicken} />
             )}
             {recipePost.mainIngredient === "3" && (
-                <img src={fish} />
+                <img className="ingredientPicSmall" src={fish} />
             )}
             {recipePost.mainIngredient === "4" && (
-                <img src={egg} />
+                <img className="ingredientPicSmall" src={egg} />
             )}
             {recipePost.mainIngredient === "5" && (
-                <img src={carrot} />
+                <img className="ingredientPicSmall" src={carrot} />
             )}
         </div>
         

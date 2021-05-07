@@ -100,3 +100,13 @@
     justify-items: center;
     margin-bottom: 24px;
 }
+select {
+    color: #3B362B;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: 'Oxygen';
+}
