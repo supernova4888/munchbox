@@ -17,11 +17,20 @@ export default function ProfilePicCurrent() {
 
     return (
         <div>
-            {user.profileId === "2" && (
+            {user.profileId === "1" && (
                 <img src={pic1} />
             )}
-            {user.profileId === "4" && (
+            {user.profileId === "2" && (
                 <img src={pic2} />
+            )}
+            {user.profileId === "3" && (
+                <img src={pic3} />
+            )}
+            {user.profileId === "4" && (
+                <img src={pic4} />
+            )}
+            {user.profileId === "5" && (
+                <img src={pic5} />
             )}
         </div>
 

@@ -42,8 +42,11 @@ return (
             />
         </div>
             <div className="form-group">
-                <button className="buttonLogin" value="2" onClick={(e) => setProfileId(e.target.value)}>2</button>
-                <button className="buttonLogin" value="3" onClick={(e) => setProfileId(e.target.value)}>3</button>
+                <button className="buttonProfilePic1" value="1" onClick={(e) => setProfileId(e.target.value)}></button>
+                <button className="buttonProfilePic2" value="2" onClick={(e) => setProfileId(e.target.value)}></button>
+                <button className="buttonProfilePic3" value="3" onClick={(e) => setProfileId(e.target.value)}></button>
+                <button className="buttonProfilePic4" value="4" onClick={(e) => setProfileId(e.target.value)}></button>
+                <button className="buttonProfilePic5" value="5" onClick={(e) => setProfileId(e.target.value)}></button>
                 {console.log(profileId)}
             </div>
         <div className="form-group-button">
