@@ -84,7 +84,6 @@ export default function PostPage() {
     return (
         <div className="pageBody">
             <h1>PostPage - Add a new recipe</h1>
-            <p>You are on the post page now.</p>
 
             <div className="card">
             <form className="recipeForm" onSubmit={createRecipe}>
@@ -105,15 +104,16 @@ export default function PostPage() {
                     <option value="4">Vegetarian</option>
                     <option value="5">Vegan</option>
                 </select>
+                <div className="cardButton">
                 <button className="buttonPost" type="submit">
                     <span className="vis">Post it</span>
                     <span className="invis">Done</span>
-                </button>
-                <Link to="/home">Home</Link>
+                </button></div>
             </form>
-
-
         </div>
+            <div className="cardButton">
+            <Link to="/home"><button className="buttonLogin">Home</button></Link>
+            </div>
         </div>
     );
 }
