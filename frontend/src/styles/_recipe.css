@@ -35,7 +35,7 @@
 .recipeImageMedium {
     max-width: 100%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 30%;
     box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
 }
 
