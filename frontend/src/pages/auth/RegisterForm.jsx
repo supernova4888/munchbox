@@ -51,9 +51,15 @@ return (
                 {console.log(profileId)}
             </div>
             <div className="form-group">
-                <button className="buttonLogin" value="2" onClick={(e) => setFoodId(e.target.value)}>2</button>
-                <button className="buttonLogin" value="3" onClick={(e) => setFoodId(e.target.value)}>3</button>
-                {console.log(profileId)}
+                <select id = "dropdown" onChange={(e) => setFoodId(e.target.value)}>
+                    <option value="0">Select your food preference:</option>
+                    <option value="1">Meat</option>
+                    <option value="2">Chicken</option>
+                    <option value="3">Fish</option>
+                    <option value="4">Vegetarian</option>
+                    <option value="5">Vegan</option>
+                </select>
+                {console.log("foodId :"+foodId)}
             </div>
         <div className="form-group-button">
             <button
