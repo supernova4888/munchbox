@@ -5,6 +5,7 @@ import Follower from "./FollowerPage";
 import { Link } from "react-router-dom";
 import FollowerPage from './FollowerPage';
 import UserApi from "../api/UserApi";
+import ProfilePicCurrent from "../components/ProfilePic";
 
 
 
@@ -23,18 +24,7 @@ import UserApi from "../api/UserApi";
 export default function Profile() {
     const [user, setUser] = useState([]);
 
-    /*async function showUser (event) {
-        event.preventDefault();
-        console.log("inside showRandom function");
-        try {
-            const response = await UserApi.getCurrentUser();
-            console.log("response.data" + response.data)
-            setUser(response.data)
-        } catch (e) {
-            console.error(e);
-        }
-    }
-    console.log(user)*/
+
 
     useEffect(() => {
        UserApi.getCurrentUser()
@@ -42,10 +32,7 @@ export default function Profile() {
             .catch((err) => console.error(err));
     }, [setUser]);
 
-    /*const RecipesArray = recipes.map((recipePost) => (
 
-        <RecipeCardMedium key={recipePost.id} recipePost={recipePost}/>
-    ));*/
 
 
     return (
@@ -58,6 +45,11 @@ export default function Profile() {
 
             <p>Hello {user.name} !</p>
             <p>Your pic ID is {user.profileId}</p>
+
+            <ProfilePicCurrent />
+
+
+
         </div>
     )
 }
