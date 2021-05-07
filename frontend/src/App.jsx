@@ -49,8 +49,8 @@ export default function App() {
         <BrowserRouter>
             <Navbar />
             <LogoutButton onLogout={() => Auth.logout()} />
-            <Switch>
-                    <RecoilRoot>
+            <RecoilRoot>
+                <Switch>  
                     <Route exact component={HomePage} path="/home" />
                 <Route exact component={ReviewPage} path="/review/:id" />
                     <Route exact component={PostPage} path="/post" />
@@ -58,9 +58,8 @@ export default function App() {
                     <Route exact component={SpinnerPage} path="/spinner" />
                     <Route exact component={FollowerPage} path="/profile/follower"/>
                     <Route exact component={UserFollowerPage} path="/profile/follower/youfollow"/>
-                    </RecoilRoot>
                 </Switch>
-
+            </RecoilRoot>
         </BrowserRouter>
     );
     return loggedIn ? loggedInRouter : guestRouter;

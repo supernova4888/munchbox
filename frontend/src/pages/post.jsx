@@ -5,6 +5,8 @@ import { Image } from "cloudinary-react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
 import UploadRecipeImg from "../components/UploadRecipeImg";
+import { useRecoilState } from "recoil";
+import { recipeImgState } from "../state/recipeImgState";
 
 
 export default function PostPage() {
@@ -13,6 +15,7 @@ export default function PostPage() {
     const [link, setLink] = useState("");
     // TODO: add dropdown menu to choose pre-defined ingredient
     const [ingredient, setIngredient] = useState ("");
+    const [imageURL, setImageURL] = useRecoilState(recipeImgState);
 
     
     //setImageURL(response.data.secure_url)
@@ -42,7 +45,7 @@ export default function PostPage() {
         const newRecipe = {
             title: title,
             body: link,
-            // imgURL: imageURL,
+            imgURL: {imageURL},
             mainIngredient: ingredient
         }
         try {

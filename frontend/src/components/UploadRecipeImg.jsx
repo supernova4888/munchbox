@@ -6,7 +6,7 @@ import ReactImageUploadComponent from "react-images-upload";
 import { useRecoilState } from "recoil";
 import { recipeImgState } from "../state/recipeImgState";
 
-export default function UploadRecipeImg({uploadImg}) {
+export default function UploadRecipeImg() {
 
     // Global state
     const [imageURL, setImageURL] = useRecoilState(recipeImgState);
