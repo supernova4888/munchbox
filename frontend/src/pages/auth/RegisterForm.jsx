@@ -5,6 +5,7 @@ export default function RegisterForm({ onSubmit }) {
 const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
+const [profileId, setProfileId] = useState("4");
 
 return (
 <div className="card">
@@ -40,11 +41,18 @@ return (
             onChange={(e) => setPassword(e.target.value)}
             />
         </div>
-
+            <div className="form-group">
+                <button className="buttonProfilePic1" value="1" onClick={(e) => setProfileId(e.target.value)}></button>
+                <button className="buttonProfilePic2" value="2" onClick={(e) => setProfileId(e.target.value)}></button>
+                <button className="buttonProfilePic3" value="3" onClick={(e) => setProfileId(e.target.value)}></button>
+                <button className="buttonProfilePic4" value="4" onClick={(e) => setProfileId(e.target.value)}></button>
+                <button className="buttonProfilePic5" value="5" onClick={(e) => setProfileId(e.target.value)}></button>
+                {console.log(profileId)}
+            </div>
         <div className="form-group-button">
             <button
             className="buttonRegister"
-            onClick={(e) => onSubmit({ name, email, password })}
+            onClick={(e) => onSubmit({ name, email, password, profileId })}
             >
             Register
             </button>
