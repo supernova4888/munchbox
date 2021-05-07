@@ -181,7 +181,7 @@
     .loginBlockContainer {
         display: flex;
         justify-content: left;
-
+    }
     .buttonProfilePic1:hover {
         border: 5px solid var(--color-pinklight);
     }
