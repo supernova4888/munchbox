@@ -5,8 +5,8 @@ class AuthApi {
         return Api.post('/authenticate', {email, password});
     }
 
-    register ({name, email, password, profileId}) {
-        return Api.post('/register', {name, email, password, profileId});
+    register ({name, email, password, profileId, foodId}) {
+        return Api.post('/register', {name, email, password, profileId, foodId});
     }
 }
 

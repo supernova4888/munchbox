@@ -45,6 +45,7 @@ export default function Profile() {
 
             <p>Hello {user.name} !</p>
             <p>Your pic ID is {user.profileId}</p>
+            <p>Your food pref is {user.foodId}</p>
 
             <ProfilePicCurrent />
 
