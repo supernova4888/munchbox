@@ -1,0 +1,21 @@
+.profileMain {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
+
+}
+.profileBox {
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: center;
+    justify-items: left;
+}
+.profileImageBox {
+
+}
+
+.profileInfo {
+    text-align: left;
+}

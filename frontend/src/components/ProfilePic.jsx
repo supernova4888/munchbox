@@ -16,21 +16,21 @@ export default function ProfilePicCurrent() {
 
 
     return (
-        <div>
+        <div className="profileImageBox">
             {user.profileId === "1" && (
-                <img src={pic1} />
+                <img className="profileMain" src={pic1} />
             )}
             {user.profileId === "2" && (
-                <img src={pic2} />
+                <img className="profileMain" src={pic2} />
             )}
             {user.profileId === "3" && (
-                <img src={pic3} />
+                <img className="profileMain" src={pic3} />
             )}
             {user.profileId === "4" && (
-                <img src={pic4} />
+                <img className="profileMain" src={pic4} />
             )}
             {user.profileId === "5" && (
-                <img src={pic5} />
+                <img className="profileMain" src={pic5} />
             )}
         </div>
 
