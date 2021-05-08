@@ -4,19 +4,11 @@ import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
-import UploadRecipeImg from "../components/UploadRecipeImg";
-import { useRecoilState, useRecoilValue, selector } from "recoil";
-import { recipeImgState } from "../state/recipeImgState";
+import SubmitForm from "../components/SubmitForm";
 import ReactImageUploadComponent from "react-images-upload";
-import { atom } from "recoil";
 
 
 export default function PostPage() {
-
-//     const recipeImgState = atom ({ 
-//     key: "recipeImgState",
-//     default: "No img url"
-// });
 
 // PostPage:
 // 1. get img upload
@@ -25,39 +17,90 @@ export default function PostPage() {
 // 4. inside Form you take cloud URL + user input and then submit button
 // 5.   - still inside Form i post to the back end
 
-    const [recipes, setRecipes] = useState([]);
-    const [title, setTitle] = useState("");
-    const [link, setLink] = useState("");
-    // TODO: add dropdown menu to choose pre-defined ingredient
-    const [ingredient, setIngredient] = useState ("");
-    const [imageURL, setImageURL] = useRecoilState(recipeImgState);
+const uploadImage = (e) => {
+        // constructs the formData
+        // const imageFile = e[0];
+        const formData = new FormData()
+        formData.append("file", imageSelected)
+        // upload presets - public (connects to cloudinary)
+        formData.append("upload_preset", "blp4p8lu")
+        // post request
+        console.log("before setImageURL", formData);
+        setImageURL(formData);
+        console.log("after imgURL");
+    };
 
-    useEffect(() => {
-        RecipePostApi.getAllRecipes()
-        .then((response) => setRecipes(response.json))
-        .catch((err) => console.log(err));
-        }, []);
+    useEffect(()=> {
+          postToCloud();
+       //to fire postToCloude after the image has been uploaded/changed
+    },[imageURL]);
+
+    const postToCloud = async() => {
+        try {
+            if (imageURL !== null) {
+              const response = await Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", imageURL);
+              //await axios will send a response
+              console.log("received response from cloud");
+              console.log(response.data.url);
+              //simulate the event object so its doesn’t clash with handleChange
+              // TODO: understand this one?
+            //   uploadImg({
+            //     target: {
+            //       name: 'imageURL',
+            //       value: response.data.url,
+            //     },
+            //   });
+            }
+          } catch (error) {
+            console.log(error);
+          }
+    }
+    // need selector to be able to use in PostPage
+    // const imgCloudURL = selector({
+    //     key: "imgCloudURL",
+    //     get: ({get}) => {
+    //         const imageURL = get(recipeImgState)
+
+    //         return imageURL
+    //     }
+    // })
+
+// Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url)
+//         });
+
+    // const [recipes, setRecipes] = useState([]);
+    // const [title, setTitle] = useState("");
+    // const [link, setLink] = useState("");
+    // // TODO: add dropdown menu to choose pre-defined ingredient
+    // const [ingredient, setIngredient] = useState ("");
+    // const [imageURL, setImageURL] = useRecoilState(recipeImgState);
+
+    // useEffect(() => {
+    //     RecipePostApi.getAllRecipes()
+    //     .then((response) => setRecipes(response.json))
+    //     .catch((err) => console.log(err));
+    //     }, []);
 
     
 
-    async function createRecipe (event) {
-        event.preventDefault();
-        console.log("inside createRecipe function");
-        const newRecipe = {
-            title: title,
-            body: link,
-            imgURL: imageURL,
-            mainIngredient: ingredient
-        }
-        console.log(newRecipe);
-        try {
-            const response = await RecipePostApi.createRecipe(newRecipe);
-            console.log(response.data);
-            setRecipes(response.data);
-        } catch (e) {
-            console.error(e);
-        }
-    }
+    // async function createRecipe (event) {
+    //     event.preventDefault();
+    //     console.log("inside createRecipe function");
+    //     const newRecipe = {
+    //         title: title,
+    //         body: link,
+    //         imgURL: imageURL,
+    //         mainIngredient: ingredient
+    //     }
+    //     console.log(newRecipe);
+    //     try {
+    //         const response = await RecipePostApi.createRecipe(newRecipe);
+    //         console.log(response.data);
+    //         setRecipes(response.data);
+    //     } catch (e) {
+    //         console.error(e);
+    //     }
+    // }
     
     // const recipeList = recipes.map((recipe) => {
     //     return <RecipeCardMedium key= {recipe.id} recipe ={recipe} />
@@ -83,22 +126,12 @@ export default function PostPage() {
 
             {/* <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
             <button className="buttonUpload" onClick={uploadImage}> Upload Image</button> */}
+
+             <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
+                <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
             
-            <UploadRecipeImg />
-
-            <form className="recipeForm" onSubmit={createRecipe}>
-
-                <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/>
-
-                <input className="form-control" placeholder="Paste Link Here" type="text" onChange={(e) => setLink(e.target.value)}/>
-
-                <h3>Select recipe main ingredient:</h3>
-                <input className="form-control" type="text" onChange={(e) => setIngredient(e.target.value)}/>
-
-                <button className="buttonRegister" type="submit">Submit</button>
-
-            </form>
-
+            {/* Send imgURL as props */}
+            <SubmitForm />
 
         </div>
         </div>
