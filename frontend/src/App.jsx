@@ -34,10 +34,7 @@ export default function App() {
             <Switch>
                 <Route exact component={WelcomePage} path="/" />
                 <Route component={HomePage} path="/home" />
-<<<<<<< HEAD
                 <Route component={PostPage} path="/post" />
-=======
->>>>>>> 251cce29a8ac83d303402139ee32dac538f8c4be
                 <Route component={SpinnerPage} path="/spinner" />
                 <Route component={SearchResults} path="/results/:query" />
                 <Route component={LoginPage} path="/login" />
@@ -51,10 +48,6 @@ export default function App() {
             <LogoutButton onLogout={() => Auth.logout()} />
                 <Switch>  
                     <Route exact component={HomePage} path="/home" />
-<<<<<<< HEAD
-=======
-                    <Route exact component={SearchResults} path="/results/:query" />
->>>>>>> 251cce29a8ac83d303402139ee32dac538f8c4be
                     <Route exact component={ReviewPage} path="/review/:id" />
                     <Route exact component={PostPage} path="/post" />
                     <Route exact component={ProfilePage} path="/profile" />
