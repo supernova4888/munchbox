@@ -41,6 +41,13 @@
         bottom: 0;
         width: 100%;
     }
+    .loginRegister{
+        background-color: white;
+        position: fixed;
+        width: 100%;
+        bottom: 53px;
+        padding: 4px;
+    }
     .navbarFooter ul {
         list-style-type: none;
         display: grid;
@@ -147,5 +154,13 @@
         position: fixed;
         bottom: 24px;
         left: 20px;
+    }
+    .loginRegister{
+        background-color: white;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        padding: 12px;
+        text-align: left;
     }
 }

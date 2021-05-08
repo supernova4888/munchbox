@@ -3,6 +3,11 @@
     display: flex;
     justify-content: center;
 }
+.cardButton {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
 .card-body {
     width: 400px;
     border-radius: 8px;
@@ -54,8 +59,14 @@
     margin-top: 16px;
     margin-bottom: 16px;
 }
+
+
 @media (min-width: 1px) {
     .imageBlockContainer {
+        display: flex;
+        justify-content: center;
+    }
+    .loginBlockContainer {
         display: flex;
         justify-content: center;
     }
@@ -111,5 +122,26 @@
     .buttonUpload:hover {
         background-color: var(--color-offwhitelight);
         text-decoration: underline;
+    }
+
+    .loginBlockContainer {
+        display: flex;
+        justify-content: left;
+    }
+    .buttonProfilePic1:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic2:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic3:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic4:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic5:hover {
+        border: 5px solid var(--color-pinklight);
+
     }
 }

@@ -39,6 +39,11 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Followers> followers = new ArrayList<>();
 
+    @Column
+    private String profileId;
+    
+    @Column
+    private String foodId;
 
     public User() {}
 
@@ -46,6 +51,8 @@ public class User {
         this.email = email;
         this.password = password;
         this.name = name;
+        this.profileId = profileId;
+        this.foodId = foodId;
     }
 
     public Long getId() {
@@ -88,5 +95,21 @@ public class User {
 
     public void setFollowers(List<Followers> followers) {
         this.followers = followers;
+    }
+
+    public String getProfileId() {
+        return profileId;
+    }
+
+    public void setProfileId(String profileId) {
+        this.profileId = profileId;
+    }
+
+    public String getFoodId() {
+        return foodId;
+    }
+
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
     }
 }

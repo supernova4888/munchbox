@@ -47,7 +47,9 @@ export default function NavbarGuest() {
                         <img className="svgIcon" src={plateGrey}/>
                 </li>
                 <li>
-                    <img className="svgIconSide2" src={navLogo}/>
+                    <Link to="/">
+                        <img className="svgIconSide2" src={navLogo}/>
+                    </Link>
                 </li>
             </ul>
         </footer>
