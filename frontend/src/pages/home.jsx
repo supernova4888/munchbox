@@ -33,11 +33,11 @@ return (
         <h1>HomePage</h1>
         <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
 
+            <div className="card">
+                <form onSubmit={onSearch}>
 
-            <form onSubmit={onSearch} className="search-bar">
-            <div className="form-group">
-                    <p>Filter recipes...</p>
-                    <select id = "dropdown" onChange={(e) => setQuery(e.target.value)}>
+                    <p>Filter recipes by...</p>
+                    <select onChange={(e) => setQuery(e.target.value)}>
                             <option>Choose...</option>
                             <option value="Meat">Meat</option>
                             <option value="Chicken">Chicken</option>
@@ -46,11 +46,10 @@ return (
                             <option value="Vegan">Vegan</option>
                     </select>
                     <button className="buttonLogin" type="submit" value="Search">Filter</button>
-
                     {console.log("query :"+query)}
-            </div>
-            </form>
 
+                </form>
+            </div>
 
 
         <div className="recipeContainer">
