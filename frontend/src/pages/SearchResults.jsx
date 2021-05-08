@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RecipePostApi from "../api/RecipePostApi";
 import RecipeCardMedium from "../components/RecipeCardMedium";
+import { Link } from "react-router-dom";
 
 export default function SearchResults({ match }) {
   // State
@@ -29,20 +30,23 @@ export default function SearchResults({ match }) {
 
   return (
       <div className="pageBody">
-    <div id="results" className="container">
+        <Link to="/home">
+          <h1 className="iconLink">
+            <i className="fas fa-arrow-circle-left"></i>
+          </h1>
+        </Link>
+
       {/* Search options */}
 
         <h1>Results for {query} recipes</h1>
-      
+
         <button onClick={() => setSortKey("mainIngredient")}>
           MainIngredient
         </button>
-      {console.log(query)}
-
 
       {/* Content */}
       <div className="recipeContainer">{RecipeCardsArray}</div>
-    </div>
+
       </div>
   );
 }
