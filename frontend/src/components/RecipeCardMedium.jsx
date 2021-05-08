@@ -9,7 +9,7 @@ export default function RecipeCardMedium({ recipePost }) {
             <div className="recipeImageBox">
                 {/* <img className="recipeImageMedium" src={recipeImageGeneral}/> */}
                 {/* // this is working. So I need to make sure that recipePost.imgURL constains the correct image cloud link */}
-                <Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId="https://res.cloudinary.com/dt0zgbuyg/image/upload/v1620495963/munchbox/fqdvd3pn1y3kclwuzmks.png"/>
+                <Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
             </div>
             <div className="recipeTitleBox">{recipePost.title}</div>
             <div className="recipePostedBy">
