@@ -5,11 +5,19 @@ import { Image } from "cloudinary-react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
 import UploadRecipeImg from "../components/UploadRecipeImg";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, selector } from "recoil";
 import { recipeImgState } from "../state/recipeImgState";
+import ReactImageUploadComponent from "react-images-upload";
+import { atom } from "recoil";
 
 
 export default function PostPage() {
+
+    const recipeImgState = atom ({ 
+    key: "recipeImgState",
+    default: "No img url"
+});
+
     const [recipes, setRecipes] = useState([]);
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
@@ -17,7 +25,7 @@ export default function PostPage() {
     const [ingredient, setIngredient] = useState ("");
     const [imageURL, setImageURL] = useRecoilState(recipeImgState);
 
-    
+
     //setImageURL(response.data.secure_url)
     // check if fields are available in the BE.
     // 1. check the api code 
@@ -30,13 +38,6 @@ export default function PostPage() {
         .catch((err) => console.log(err));
         }, []);
 
-
-    // async function createRecipe(event){
-    //     event.preventDefault();
-    //     console.log(title);
-    //     console.log(link);
-    //     console.log(ingredient);
-    // }
     
 
     async function createRecipe (event) {
@@ -45,9 +46,10 @@ export default function PostPage() {
         const newRecipe = {
             title: title,
             body: link,
-            imgURL: {imageURL},
+            imgURL: imageURL,
             mainIngredient: ingredient
         }
+        console.log(newRecipe);
         try {
             const response = await RecipePostApi.createRecipe(newRecipe);
             console.log(response.data);
@@ -78,9 +80,13 @@ export default function PostPage() {
             <p>You are on the post page now.</p>
 
             <div className="card">
-            <form className="recipeForm" onSubmit={createRecipe}>
 
-                <UploadRecipeImg />
+            {/* <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
+            <button className="buttonUpload" onClick={uploadImage}> Upload Image</button> */}
+            
+            <UploadRecipeImg {...recipeImgState}/>
+
+            <form className="recipeForm" onSubmit={createRecipe}>
 
                 <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/>
 

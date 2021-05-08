@@ -3,19 +3,22 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
 import ReactImageUploadComponent from "react-images-upload";
-import { useRecoilState } from "recoil";
-import { recipeImgState } from "../state/recipeImgState";
+import { useRecoilState, selector } from "recoil";
+// State
+import { recipeImgState } from "../pages/post";
+
 
 export default function UploadRecipeImg() {
 
     // Global state
-    const [imageURL, setImageURL] = useRecoilState(recipeImgState);
+    const [imageURL, setImageURL] = useState("");
+    const [imageSelected, setImageSelected] = useState("");
 
     const uploadImage = (e) => {
         // constructs the formData
-        const imageFile = e[0];
+        // const imageFile = e[0];
         const formData = new FormData()
-        formData.append("file", imageFile)
+        formData.append("file", imageSelected)
         // upload presets - public (connects to cloudinary)
         formData.append("upload_preset", "blp4p8lu")
         // post request
@@ -23,6 +26,11 @@ export default function UploadRecipeImg() {
         setImageURL(formData);
         console.log("after imgURL");
     };
+
+    useEffect(()=> {
+          postToCloud();
+       //to fire postToCloude after the image has been uploaded/changed
+    },[imageURL]);
 
     const postToCloud = async() => {
         try {
@@ -44,11 +52,15 @@ export default function UploadRecipeImg() {
             console.log(error);
           }
     }
+    // need selector to be able to use in PostPage
+    // const imgCloudURL = selector({
+    //     key: "imgCloudURL",
+    //     get: ({get}) => {
+    //         const imageURL = get(recipeImgState)
 
-    useEffect(()=> {
-          postToCloud();
-       //to fire postToCloude after the imgURL changed
-    },[imageURL]);
+    //         return imageURL
+    //     }
+    // })
 
 // Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url)
 //         });
@@ -57,18 +69,22 @@ export default function UploadRecipeImg() {
         <div>
             <h3>Add recipe image</h3>
 
-            <ReactImageUploadComponent
+                {/* <ReactImageUploadComponent
             singleImage={true}
-            onChange={uploadImage}
+            onChange={imageURL}/>}
             buttonText= 'Choose images'
             withLabel={false}
             withIcon={false}
             imgExtension={['.jpg', '.gif', '.png', '.gif']}
-            buttonClassName=''
-            />
+            buttonClassName='' /> */}
+{/* 
+            <input type="file" onChange={(e) => uploadImage(e)}/>
 
-                {/* <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
-                <button className="buttonUpload" onClick={uploadImage}> Upload Image</button> */}
+            <button className="buttonUpload" onClick={uploadImage}> Upload Image</button> */}
+
+
+                <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
+                <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
         </div>
     )
 }
