@@ -28,18 +28,21 @@ export default function SearchResults({ match }) {
   ));
 
   return (
+      <div className="pageBody">
     <div id="results" className="container">
       {/* Search options */}
-      <section>
-        Filter results by:
+
+        <h1>Results for {query} recipes</h1>
+      
         <button onClick={() => setSortKey("mainIngredient")}>
           MainIngredient
         </button>
-      </section>
+      {console.log(query)}
 
-      <hr />
+
       {/* Content */}
-      <section className="grid">{RecipeCardsArray}</section>
+      <div className="recipeContainer">{RecipeCardsArray}</div>
     </div>
+      </div>
   );
 }
