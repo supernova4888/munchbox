@@ -42,6 +42,14 @@ return (
             onChange={(e) => setPassword(e.target.value)}
             />
         </div>
+            Choose your food preference: ({foodId})
+            <div className="form-group">
+                <button className="buttonFoodPic1" value="Red Meat" onClick={(e) => setFoodId(e.target.value)}></button>
+                <button className="buttonFoodPic2" value="White Meat" onClick={(e) => setFoodId(e.target.value)}></button>
+                <button className="buttonFoodPic3" value="Fish" onClick={(e) => setFoodId(e.target.value)}></button>
+                <button className="buttonFoodPic4" value="Vegetarian" onClick={(e) => setFoodId(e.target.value)}></button>
+                <button className="buttonFoodPic5" value="Vegan" onClick={(e) => setFoodId(e.target.value)}></button>
+            </div>
             Choose a profile picture: ({profileId})
             <div className="form-group">
                 <button className="buttonProfilePic1" value="1" onClick={(e) => setProfileId(e.target.value)}></button>
@@ -50,14 +58,7 @@ return (
                 <button className="buttonProfilePic4" value="4" onClick={(e) => setProfileId(e.target.value)}></button>
                 <button className="buttonProfilePic5" value="5" onClick={(e) => setProfileId(e.target.value)}></button>
             </div>
-            Choose your food preference: ({foodId})
-            <div className="form-group">
-                <button className="buttonFoodPic1" value="Red Meat" onClick={(e) => setFoodId(e.target.value)}></button>
-                <button className="buttonFoodPic2" value="White Meat" onClick={(e) => setFoodId(e.target.value)}></button>
-                <button className="buttonFoodPic3" value="Fish" onClick={(e) => setFoodId(e.target.value)}></button>
-                <button className="buttonFoodPic4" value="Vegetarian" onClick={(e) => setFoodId(e.target.value)}></button>
-                <button className="buttonFoodPic5" value="Vegan" onClick={(e) => setFoodId(e.target.value)}></button>
-        </div>
+
         <div className="form-group-button">
             <button
             className="buttonRegister"
