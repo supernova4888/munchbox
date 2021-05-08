@@ -5,7 +5,6 @@ import { Image } from "cloudinary-react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
 import SubmitForm from "../components/SubmitForm";
-import ReactImageUploadComponent from "react-images-upload";
 
 
 export default function PostPage() {
@@ -21,6 +20,7 @@ const [imageURL, setImageURL] = useState("");
 const [imageSelected, setImageSelected] = useState("");
 
 const uploadImage = (e) => {
+        // e.preventDefault();
         // constructs the formData
         // const imageFile = e[0];
         const formData = new FormData()
@@ -39,13 +39,13 @@ const uploadImage = (e) => {
 
     useEffect(()=> {
           postToCloud();
-       //to fire postToCloude after the image has been uploaded/changed
+       //to fire postToCloude after the image has been uploaded uploadimg()
     },[imageURL]);
 
     const postToCloud = async() => {
         try {
             if (imageURL !== null) {
-              const response = await Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData);
+              const response = await Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", imageURL);
 
 // Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url)
 //         });
@@ -125,21 +125,13 @@ const uploadImage = (e) => {
 
             <div className="card">
 
-            {/* <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
-            <button className="buttonUpload" onClick={uploadImage}> Upload Image</button> */}
-            
-            <ReactImageUploadComponent
-            singleImage={true}
-            onChange={imageURL}
-            buttonText= 'Choose images'
-            withLabel={false}
-            withIcon={false}
-            imgExtension={['.jpg', '.gif', '.png', '.gif']}
-            buttonClassName='' 
-            />
+            <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
+            <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
+        
 
             {/* Send imageURL as props */}
-            <SubmitForm />
+            {/* <SubmitForm cloudImgURL={imageURL}/> */}
+            <SubmitForm cloudURL={imageURL}/>
 
             </div>
         </div>
