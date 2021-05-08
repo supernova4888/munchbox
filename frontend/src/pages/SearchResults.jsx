@@ -38,7 +38,7 @@ export default function SearchResults({ match }) {
 
       {/* Search options */}
 
-        <h1>Results for {query} recipes</h1>
+          <h1>Results for <u>{query.toLowerCase()}</u> recipes</h1>
 
         <button onClick={() => setSortKey("mainIngredient")}>
           MainIngredient
