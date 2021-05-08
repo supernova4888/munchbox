@@ -17,13 +17,20 @@ export default function PostPage() {
 // 4. inside Form you take cloud URL + user input and then submit button
 // 5.   - still inside Form i post to the back end
 
+const [imageURL, setImageURL] = useState("");
+const [imageSelected, setImageSelected] = useState("");
+
 const uploadImage = (e) => {
         // constructs the formData
         // const imageFile = e[0];
         const formData = new FormData()
+        console.log(imageSelected);
         formData.append("file", imageSelected)
         // upload presets - public (connects to cloudinary)
         formData.append("upload_preset", "blp4p8lu")
+        
+        // TODO: check if imgSelected is correct
+
         // post request
         console.log("before setImageURL", formData);
         setImageURL(formData);
@@ -38,10 +45,16 @@ const uploadImage = (e) => {
     const postToCloud = async() => {
         try {
             if (imageURL !== null) {
-              const response = await Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", imageURL);
+              const response = await Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData);
+
+// Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url)
+//         });
+
+              setImageURL(response.data.url);
               //await axios will send a response
               console.log("received response from cloud");
               console.log(response.data.url);
+              console.log(imageURL);
               //simulate the event object so its doesn’t clash with handleChange
               // TODO: understand this one?
             //   uploadImg({
@@ -55,18 +68,6 @@ const uploadImage = (e) => {
             console.log(error);
           }
     }
-    // need selector to be able to use in PostPage
-    // const imgCloudURL = selector({
-    //     key: "imgCloudURL",
-    //     get: ({get}) => {
-    //         const imageURL = get(recipeImgState)
-
-    //         return imageURL
-    //     }
-    // })
-
-// Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url)
-//         });
 
     // const [recipes, setRecipes] = useState([]);
     // const [title, setTitle] = useState("");
@@ -126,14 +127,21 @@ const uploadImage = (e) => {
 
             {/* <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
             <button className="buttonUpload" onClick={uploadImage}> Upload Image</button> */}
-
-             <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
-                <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
             
-            {/* Send imgURL as props */}
+            <ReactImageUploadComponent
+            singleImage={true}
+            onChange={imageURL}
+            buttonText= 'Choose images'
+            withLabel={false}
+            withIcon={false}
+            imgExtension={['.jpg', '.gif', '.png', '.gif']}
+            buttonClassName='' 
+            />
+
+            {/* Send imageURL as props */}
             <SubmitForm />
 
-        </div>
+            </div>
         </div>
     );
 }
