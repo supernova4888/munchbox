@@ -78,6 +78,19 @@ a {
     margin-top: 24px;
 }
 
+
+select {
+    color: #3B362B;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: 'Oxygen';
+}
+
+
 .buttonPost {
     background-color: var(--color-purple);
     border: 2px solid var(--color-purple);
@@ -108,6 +121,7 @@ a {
 .buttonPost:focus .invis {
     display: block;
 }
+
 @media (min-width: 1px) {
     body {
         margin-bottom: 60px;

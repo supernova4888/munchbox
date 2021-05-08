@@ -6,6 +6,7 @@ const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [profileId, setProfileId] = useState("4");
+const [foodId, setFoodId] = useState("1");
 
 return (
 <div className="card">
@@ -49,10 +50,21 @@ return (
                 <button className="buttonProfilePic5" value="5" onClick={(e) => setProfileId(e.target.value)}></button>
                 {console.log(profileId)}
             </div>
+            <div className="form-group">
+                <select id = "dropdown" onChange={(e) => setFoodId(e.target.value)}>
+                    <option value="0">Select your food preference:</option>
+                    <option value="1">Meat</option>
+                    <option value="2">Chicken</option>
+                    <option value="3">Fish</option>
+                    <option value="4">Vegetarian</option>
+                    <option value="5">Vegan</option>
+                </select>
+                {console.log("foodId :"+foodId)}
+            </div>
         <div className="form-group-button">
             <button
             className="buttonRegister"
-            onClick={(e) => onSubmit({ name, email, password, profileId })}
+            onClick={(e) => onSubmit({ name, email, password, profileId, foodId })}
             >
             Register
             </button>

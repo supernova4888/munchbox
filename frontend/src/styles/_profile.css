@@ -19,3 +19,15 @@
 .profileInfo {
     text-align: left;
 }
+.profileFood{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+}
+.foodIdBox {
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    align-items: center;
+    justify-items: right;
+}

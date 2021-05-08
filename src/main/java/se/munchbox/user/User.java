@@ -41,6 +41,9 @@ public class User {
 
     @Column
     private String profileId;
+    
+    @Column
+    private String foodId;
 
     public User() {}
 
@@ -49,6 +52,7 @@ public class User {
         this.password = password;
         this.name = name;
         this.profileId = profileId;
+        this.foodId = foodId;
     }
 
     public Long getId() {
@@ -99,5 +103,13 @@ public class User {
 
     public void setProfileId(String profileId) {
         this.profileId = profileId;
+    }
+
+    public String getFoodId() {
+        return foodId;
+    }
+
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
     }
 }
