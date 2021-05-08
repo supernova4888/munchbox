@@ -13,10 +13,17 @@ import { atom } from "recoil";
 
 export default function PostPage() {
 
-    const recipeImgState = atom ({ 
-    key: "recipeImgState",
-    default: "No img url"
-});
+//     const recipeImgState = atom ({ 
+//     key: "recipeImgState",
+//     default: "No img url"
+// });
+
+// PostPage:
+// 1. get img upload
+// 2. get img cloud URL + upload img button
+// 3. Call Form and pass cloud URL as props
+// 4. inside Form you take cloud URL + user input and then submit button
+// 5.   - still inside Form i post to the back end
 
     const [recipes, setRecipes] = useState([]);
     const [title, setTitle] = useState("");
@@ -25,13 +32,6 @@ export default function PostPage() {
     const [ingredient, setIngredient] = useState ("");
     const [imageURL, setImageURL] = useRecoilState(recipeImgState);
 
-
-    //setImageURL(response.data.secure_url)
-    // check if fields are available in the BE.
-    // 1. check the api code 
-    // 2. run by postman to figure out what is wrong.
-
-    // to be used when we wanna update our people list
     useEffect(() => {
         RecipePostApi.getAllRecipes()
         .then((response) => setRecipes(response.json))
@@ -84,7 +84,7 @@ export default function PostPage() {
             {/* <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
             <button className="buttonUpload" onClick={uploadImage}> Upload Image</button> */}
             
-            <UploadRecipeImg {...recipeImgState}/>
+            <UploadRecipeImg />
 
             <form className="recipeForm" onSubmit={createRecipe}>
 
