@@ -32,16 +32,27 @@ return (
     <div className="pageBody">
         <h1>HomePage</h1>
         <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
-        <h1>Filter by Ingredient</h1>
-        <form onSubmit={onSearch} className="search-bar">
-        <input
-          type="text"
-          placeholder="Search"
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-        />
-        <input type="submit" value="Search" />
-      </form>
+
+
+            <form onSubmit={onSearch} className="search-bar">
+            <div className="form-group">
+                    <p>Filter recipes...</p>
+                    <select id = "dropdown" onChange={(e) => setQuery(e.target.value)}>
+                            <option>Choose...</option>
+                            <option value="Meat">Meat</option>
+                            <option value="Chicken">Chicken</option>
+                            <option value="Fish">Fish</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                    </select>
+                    <button className="buttonLogin" type="submit" value="Search">Filter</button>
+
+                    {console.log("query :"+query)}
+            </div>
+            </form>
+
+
+
         <div className="recipeContainer">
                 {RecipesArray}
 
