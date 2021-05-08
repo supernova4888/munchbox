@@ -7,7 +7,6 @@ export default function SubmitForm({cloudURL}) {
     const [recipes, setRecipes] = useState([]);
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
-    // TODO: add dropdown menu to choose pre-defined ingredient
     const [ingredient, setIngredient] = useState ("");
 
     useEffect(() => {
@@ -16,8 +15,6 @@ export default function SubmitForm({cloudURL}) {
         .catch((err) => console.log(err));
         }, []);
 
-    // img posted to cloud
-    // not being creted in the BE    
     async function createRecipe (event) {
         event.preventDefault();
         const newRecipe = {
@@ -46,7 +43,7 @@ export default function SubmitForm({cloudURL}) {
                 <input className="form-control" placeholder="Paste Link Here" type="text" onChange={(e) => setLink(e.target.value)}/>
 
                 <h3>Select recipe main ingredient:</h3>
-                
+
                 <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
                     <option value="N/A">Select main ingredient:</option>
                     <option value="1">Meat</option>
