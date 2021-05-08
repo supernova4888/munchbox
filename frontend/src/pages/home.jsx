@@ -39,8 +39,8 @@ return (
                     <p>Filter recipes by...</p>
                     <select onChange={(e) => setQuery(e.target.value)}>
                             <option>Choose...</option>
-                            <option value="Meat">Meat</option>
-                            <option value="Chicken">Chicken</option>
+                            <option value="Red Meat">Red Meat</option>
+                            <option value="White Meat">White Meat</option>
                             <option value="Fish">Fish</option>
                             <option value="Vegetarian">Vegetarian</option>
                             <option value="Vegan">Vegan</option>
