@@ -38,12 +38,15 @@ return (
 
                     <p>Filter recipes by...</p>
                     <select onChange={(e) => setQuery(e.target.value)}>
-                            <option>Choose...</option>
-                            <option value="Red Meat">Red Meat</option>
-                            <option value="White Meat">White Meat</option>
-                            <option value="Fish">Fish</option>
-                            <option value="Vegetarian">Vegetarian</option>
-                            <option value="Vegan">Vegan</option>
+                        <option>Choose...</option>
+                        <option value="Beef">Beef</option>
+                        <option value="Veal">Veal</option>
+                        <option value="Pork">Pork</option>
+                        <option value="Lamb & Mutton">Lamb & Mutton</option>
+                        <option value="Poultry">Poultry</option>
+                        <option value="Seafood">Seafood</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Vegan">Vegan</option>
                     </select>
                     <button className="buttonLogin" type="submit" value="Search">Filter</button>
                     {console.log("query :"+query)}
