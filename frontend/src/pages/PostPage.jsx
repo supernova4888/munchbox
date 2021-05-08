@@ -19,17 +19,13 @@ const uploadImage = (e) => {
         formData.append("file", imageSelected)
         // upload presets - public (connects to cloudinary)
         formData.append("upload_preset", "blp4p8lu")
-        
-        // TODO: check if imgSelected is correct
-
-        // post request
         console.log("before setImageURL", formData);
         setImageURL(formData);
         console.log("after imgURL");
     };
 
     useEffect(()=> {
-          postToCloud();
+        postToCloud();
        //to fire postToCloude after the image has been uploaded uploadimg()
     },[imageURL]);
 
@@ -37,9 +33,6 @@ const uploadImage = (e) => {
         try {
             if (imageURL !== null) {
                 const response = await Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", imageURL);
-
-// Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url) });
-
                 setImageURL(response.data.url);
                 //await axios will send a response
                 console.log("received response from cloud");
@@ -50,16 +43,6 @@ const uploadImage = (e) => {
             console.log(error);
         }
     }
-
-    // Check that info was send correctly? no empty fields ?
-    // id, imageString, title, recipe link, ingredient !=== nonull
-
-    // check if the recipe URL already exists (?).
-    // solution option 1: get all recipes from BE -> find newRecipe URL -> if true, then throw error.
-    // solution option 2: transform the body field into unique in BE (how to transmit the error back to FE ?)
-
-     // <ul>{recipeList}</ul> 
-
 
     return (
         <div className="pageBody">
