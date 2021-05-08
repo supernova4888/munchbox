@@ -8,9 +8,11 @@ export default function RecipeCardMedium({ recipePost }) {
     return (
         <div className="recipeCardMedium">
             <div className="recipeImageBox">
-                {/* <img className="recipeImageMedium" src={recipeImageGeneral}/> */}
+                <Link to={{pathname: `/review/${recipePost.id}`,}}>
+                <img className="recipeImageMedium" src={recipeImageGeneral}/>
                 {/* // this is working. Check at home is img is fetched and formatted*/}
                 {/*<Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>*/}
+                </Link>
             </div>
             <div className="recipeTitleBox">{recipePost.title}</div>
             <div className="recipePostedBy">

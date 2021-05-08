@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {useParams} from "react-router";
 import StarRating from "../../components/StarRating";
-
+import RecipeCardLarge from "../../components/RecipeCardLarge";
 import "../../styles/_review.css";
 import RecipePostApi from "../../api/RecipePostApi";
 import ReviewApi from "../../api/ReviewApi";
@@ -62,25 +62,16 @@ export default function ReviewPage() {
 
 
         return (
-            <div>
-                <div className="User-profile">
-                    <h4>Posted By: {recipes.userName}</h4>
-
-                    <div> {recipes.title}</div>
-                    <div>{recipes.body}</div>
-                    <div className="recipeContainer">
-                    <p>Your rating is {rating}</p>
-
-                    </div>
-
+            <div className="pageBody">
+                <div className="card">
+                    <RecipeCardLarge recipePost={recipes} />
                 </div>
 
+                <div className="card">
 
-
-                <div>
                     <form className="recipeForm" onSubmit={createReview}>
                         <StarRating onChangeRating ={changeRating} rating={rating} />
-                        <input className="form-control" placeholder="write your comment here" type="text" onChange={(e) => setBody(e.target.value)}/>
+                        <input className="form-control" placeholder="Write your comment here" type="text" onChange={(e) => setBody(e.target.value)}/>
                         <button className="buttonRegister" type="submit">Save Review </button>
                     </form>
                 </div>
