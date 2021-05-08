@@ -78,6 +78,7 @@ a {
     margin-top: 24px;
 }
 
+
 select {
     color: #3B362B;
     display: block;
@@ -87,6 +88,38 @@ select {
     font-size: 16px;
     margin-bottom: 30px;
     font-family: 'Oxygen';
+}
+
+
+.buttonPost {
+    background-color: var(--color-purple);
+    border: 2px solid var(--color-purple);
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 16px;
+    font-family: 'Oxygen', sans-serif;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: var(--color-offwhite);
+    width: 150px;
+    height: 50px;
+    margin-left: 2px;
+    margin-right: 2px;
+
+}
+.buttonPost .invis {
+    display: none;
+}
+.buttonPost .vis {
+    display: inline-block;
+}
+
+.buttonPost:focus .vis {
+    display: none;
+}
+.buttonPost:focus .invis {
+    display: block;
 }
 
 @media (min-width: 1px) {
@@ -100,6 +133,11 @@ select {
         margin-left: 100px;
     }
     .buttonRegister:hover {
+        background-color: var(--color-purplemid);
+        border: 2px solid var(--color-purplemid);
+        text-decoration: underline;
+    }
+    .buttonPost:hover {
         background-color: var(--color-purplemid);
         border: 2px solid var(--color-purplemid);
         text-decoration: underline;

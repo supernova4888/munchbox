@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
 import RecipeCardMedium from "../components/RecipeCardMedium";
 import RecipePostApi from "../api/RecipePostApi";
-
+import { Link } from "react-router-dom";
 // In the UI, add a button or the menu nav so user can return. Copy from loginPage
 
 export default function PostPage() {
@@ -84,7 +84,6 @@ export default function PostPage() {
     return (
         <div className="pageBody">
             <h1>PostPage - Add a new recipe</h1>
-            <p>You are on the post page now.</p>
 
             <div className="card">
             <form className="recipeForm" onSubmit={createRecipe}>
@@ -96,14 +95,25 @@ export default function PostPage() {
                 <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/>
 
                 <input className="form-control" placeholder="Paste Link Here" type="text" onChange={(e) => setLink(e.target.value)}/>
-                <h3>Select recipe main ingredient:</h3>
-                <input className="form-control" type="text" onChange={(e) => setIngredient(e.target.value)}/>
-                <button className="buttonRegister" type="submit">Submit</button>
 
+                <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
+                    <option value="0">Select main ingredient:</option>
+                    <option value="1">Meat</option>
+                    <option value="2">Chicken</option>
+                    <option value="3">Fish</option>
+                    <option value="4">Vegetarian</option>
+                    <option value="5">Vegan</option>
+                </select>
+                <div className="cardButton">
+                <button className="buttonPost" type="submit">
+                    <span className="vis">Post it</span>
+                    <span className="invis">Done</span>
+                </button></div>
             </form>
-
-
         </div>
+            <div className="cardButton">
+            <Link to="/home"><button className="buttonLogin">Home</button></Link>
+            </div>
         </div>
     );
 }

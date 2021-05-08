@@ -44,16 +44,20 @@ export default function Profile() {
                         <ProfilePicCurrent />
                         <h2>{user.name}</h2>
                     </div>
+
                     
                     <div className="foodIdBox">
                         <h2>foodpref</h2>
                         <FoodIdCurrent />
                     </div>
 
+
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>
                         <p>Your pic ID is {user.profileId}</p>
+
                         <p>Your food ID is {user.foodId}</p>
+
                         <Link to="/profile/follower">Followers</Link>
                     </div>
                 </div>

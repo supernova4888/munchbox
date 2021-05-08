@@ -23,7 +23,7 @@
 
 .recipeImage {
     max-width: 64px;
-    border-radius: 50%;
+    border-radius: 30%;
     box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
 }
 
@@ -35,7 +35,7 @@
 .recipeImageMedium {
     max-width: 100%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 30%;
     box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
 }
 
@@ -47,7 +47,7 @@
 .recipeImageLarge {
     max-width: 100%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 30%;
     box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
 }
 
@@ -57,13 +57,19 @@
 }
 
 .recipePostedBy {
-    display: flex;
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
     align-items:center;
 }
 
 .userProfilePicSmall {
     max-width: 48px;
-    height: auto;
+    height: 48px;
+    border-radius: 50%;
+}
+.ingredientPicSmall {
+    max-width: 48px;
+    height: 48px;
     border-radius: 50%;
 }
 
@@ -93,4 +99,14 @@
     align-items: center;
     justify-items: center;
     margin-bottom: 24px;
+}
+select {
+    color: #3B362B;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: 'Oxygen';
 }
