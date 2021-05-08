@@ -16,7 +16,7 @@ import FollowerPage from "./pages/FollowerPage";
 import UserFollowerPage from "./pages/UserFollowerPage";
 import NavbarGuest from "./components/NavbarGuest.jsx";
 import ReviewPage from "./pages/review/review";
-
+import SearchResults from "./pages/SearchResults";
 
 
 export default function App() {
@@ -48,6 +48,7 @@ export default function App() {
             <LogoutButton onLogout={() => Auth.logout()} />
             <Switch>
                     <Route exact component={HomePage} path="/home" />
+                    <Route exact component={SearchResults} path="/results/:query" />
                 <Route exact component={ReviewPage} path="/review/:id" />
                     <Route exact component={PostPage} path="/post" />
                     <Route exact component={ProfilePage} path="/profile" />

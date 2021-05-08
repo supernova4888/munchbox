@@ -98,11 +98,11 @@ export default function PostPage() {
 
                 <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
                     <option value="0">Select main ingredient:</option>
-                    <option value="1">Meat</option>
-                    <option value="2">Chicken</option>
-                    <option value="3">Fish</option>
-                    <option value="4">Vegetarian</option>
-                    <option value="5">Vegan</option>
+                    <option value="Meat">Meat</option>
+                    <option value="Chicken">Chicken</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
                 </select>
                 <div className="cardButton">
                 <button className="buttonPost" type="submit">
