@@ -51,6 +51,7 @@ export default function App() {
                     <Route exact component={ReviewPage} path="/review/:id" />
                     <Route exact component={PostPage} path="/post" />
                     <Route exact component={ProfilePage} path="/profile" />
+                    <Route component={SearchResults} path="/results/:query" />
                     <Route exact component={SpinnerPage} path="/spinner" />
                     <Route exact component={FollowerPage} path="/profile/follower"/>
                     <Route exact component={UserFollowerPage} path="/profile/follower/youfollow"/>

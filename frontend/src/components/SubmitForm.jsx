@@ -55,7 +55,7 @@ export default function SubmitForm({cloudURL}) {
                     <option value="Vegetarian">Vegetarian</option>
                     <option value="Vegan">Vegan</option>
                 </select>
-                
+
                 <button className="buttonPost"type="submit"><span className="vis">Post It</span><span className="invis">Done</span></button>
             </form>
 
