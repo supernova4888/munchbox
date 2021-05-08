@@ -45,11 +45,15 @@ export default function SubmitForm({cloudURL}) {
                 <h3>Select recipe main ingredient:</h3>
 
                 <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
-                    <option value="N/A">Select main ingredient:</option>
-                    <option value="1">Meat</option>
-                    <option value="2">Veg</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                    <option>Select main ingredient:</option>
+                    <option value="Beef">Beef</option>
+                    <option value="Veal">Veal</option>
+                    <option value="Pork">Pork</option>
+                    <option value="Lamb & Mutton">Lamb & Mutton</option>
+                    <option value="Poultry">Poultry</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
                 </select>
 
                 <button className="buttonRegister" type="submit">Submit</button>

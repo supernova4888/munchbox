@@ -10,7 +10,7 @@ export default function RecipeCardMedium({ recipePost }) {
             <div className="recipeImageBox">
                 {/* <img className="recipeImageMedium" src={recipeImageGeneral}/> */}
                 {/* // this is working. Check at home is img is fetched and formatted*/}
-                <Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
+                {/*<Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>*/}
             </div>
             <div className="recipeTitleBox">{recipePost.title}</div>
             <div className="recipePostedBy">
