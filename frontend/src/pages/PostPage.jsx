@@ -2,19 +2,10 @@ import React from "react";
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
-import RecipeCardMedium from "../components/RecipeCardMedium";
-import RecipePostApi from "../api/RecipePostApi";
 import SubmitForm from "../components/SubmitForm";
 
 
 export default function PostPage() {
-
-// PostPage:
-// 1. get img upload
-// 2. get img cloud URL + upload img button
-// 3. Call Form and pass cloud URL as props
-// 4. inside Form you take cloud URL + user input and then submit button
-// 5.   - still inside Form i post to the back end
 
 const [imageURL, setImageURL] = useState("");
 const [imageSelected, setImageSelected] = useState("");
@@ -45,69 +36,21 @@ const uploadImage = (e) => {
     const postToCloud = async() => {
         try {
             if (imageURL !== null) {
-              const response = await Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", imageURL);
+                const response = await Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", imageURL);
 
-// Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url)
-//         });
+// Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", formData).then((response) => {setImageURL(response.data.url) });
 
-              setImageURL(response.data.url);
-              //await axios will send a response
-              console.log("received response from cloud");
-              console.log(response.data.url);
-              console.log(imageURL);
-              //simulate the event object so its doesn’t clash with handleChange
-              // TODO: understand this one?
-            //   uploadImg({
-            //     target: {
-            //       name: 'imageURL',
-            //       value: response.data.url,
-            //     },
-            //   });
+                setImageURL(response.data.url);
+                //await axios will send a response
+                console.log("received response from cloud");
+                console.log(response.data.url);
+                console.log(imageURL);
             }
-          } catch (error) {
+        } catch (error) {
             console.log(error);
-          }
+        }
     }
 
-    // const [recipes, setRecipes] = useState([]);
-    // const [title, setTitle] = useState("");
-    // const [link, setLink] = useState("");
-    // // TODO: add dropdown menu to choose pre-defined ingredient
-    // const [ingredient, setIngredient] = useState ("");
-    // const [imageURL, setImageURL] = useRecoilState(recipeImgState);
-
-    // useEffect(() => {
-    //     RecipePostApi.getAllRecipes()
-    //     .then((response) => setRecipes(response.json))
-    //     .catch((err) => console.log(err));
-    //     }, []);
-
-    
-
-    // async function createRecipe (event) {
-    //     event.preventDefault();
-    //     console.log("inside createRecipe function");
-    //     const newRecipe = {
-    //         title: title,
-    //         body: link,
-    //         imgURL: imageURL,
-    //         mainIngredient: ingredient
-    //     }
-    //     console.log(newRecipe);
-    //     try {
-    //         const response = await RecipePostApi.createRecipe(newRecipe);
-    //         console.log(response.data);
-    //         setRecipes(response.data);
-    //     } catch (e) {
-    //         console.error(e);
-    //     }
-    // }
-    
-    // const recipeList = recipes.map((recipe) => {
-    //     return <RecipeCardMedium key= {recipe.id} recipe ={recipe} />
-    // })
-    
-    
     // Check that info was send correctly? no empty fields ?
     // id, imageString, title, recipe link, ingredient !=== nonull
 
@@ -129,8 +72,7 @@ const uploadImage = (e) => {
             <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
         
 
-            {/* Send imageURL as props */}
-            {/* <SubmitForm cloudImgURL={imageURL}/> */}
+            {/* Sending imageURL as props to RecipeCardMedium*/}
             <SubmitForm cloudURL={imageURL}/>
 
             </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import RecipePostApi from "../api/RecipePostApi";
-import { Image } from "cloudinary-react";
 
 export default function SubmitForm({cloudURL}) {
 
@@ -47,7 +46,14 @@ export default function SubmitForm({cloudURL}) {
                 <input className="form-control" placeholder="Paste Link Here" type="text" onChange={(e) => setLink(e.target.value)}/>
 
                 <h3>Select recipe main ingredient:</h3>
-                <input className="form-control" type="text" onChange={(e) => setIngredient(e.target.value)}/>
+                
+                <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
+                    <option value="N/A">Select main ingredient:</option>
+                    <option value="1">Meat</option>
+                    <option value="2">Veg</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
 
                 <button className="buttonRegister" type="submit">Submit</button>
 
