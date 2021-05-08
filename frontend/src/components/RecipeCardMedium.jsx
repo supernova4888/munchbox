@@ -6,7 +6,8 @@ export default function RecipeCardMedium({ recipePost }) {
     return (
         <div className="recipeCardMedium">
             <div className="recipeImageBox">
-                <img className="recipeImageMedium" src={recipeImageGeneral}/>
+                {/* <img className="recipeImageMedium" src={recipeImageGeneral}/> */}
+                <img className="recipeImageMedium" src={recipePost.imgURL}/>
             </div>
             <div className="recipeTitleBox">{recipePost.title}</div>
             <div className="recipePostedBy">
