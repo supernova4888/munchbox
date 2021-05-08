@@ -18,19 +18,19 @@ export default function FoodIdCurrent() {
 
     return (
         <div>
-            {user.foodId === "1" && (
+            {user.foodId === "Red Meat" && (
                 <img className="profileFood" src={meat} />
             )}
-            {user.foodId === "2" && (
+            {user.foodId === "White Meat" && (
                 <img className="profileFood" src={chicken} />
             )}
-            {user.foodId === "3" && (
+            {user.foodId === "Fish" && (
                 <img className="profileFood" src={fish} />
             )}
-            {user.foodId === "4" && (
+            {user.foodId === "Vegetarian" && (
                 <img className="profileFood" src={egg} />
             )}
-            {user.foodId === "5" && (
+            {user.foodId === "Vegan" && (
                 <img className="profileFood" src={carrot} />
             )}
         </div>
