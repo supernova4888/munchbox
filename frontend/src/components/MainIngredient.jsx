@@ -8,10 +8,10 @@ export default function MainIngredientPic({ recipePost }) {
     
     return (
         <div>
-            {recipePost.mainIngredient === "Meat" && (
+            {recipePost.mainIngredient === "Red Meat" && (
                 <img className="ingredientPicSmall" src={meat} />
             )}
-            {recipePost.mainIngredient === "Chicken" && (
+            {recipePost.mainIngredient === "White Meat" && (
                 <img className="ingredientPicSmall" src={chicken} />
             )}
             {recipePost.mainIngredient === "Fish" && (

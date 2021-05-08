@@ -98,8 +98,8 @@ export default function PostPage() {
 
                 <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
                     <option value="0">Select main ingredient:</option>
-                    <option value="Meat">Meat</option>
-                    <option value="Chicken">Chicken</option>
+                    <option value="Red Meat">Red Meat</option>
+                    <option value="White Meat">White Meat</option>
                     <option value="Fish">Fish</option>
                     <option value="Vegetarian">Vegetarian</option>
                     <option value="Vegan">Vegan</option>

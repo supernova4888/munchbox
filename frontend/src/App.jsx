@@ -33,9 +33,8 @@ export default function App() {
             <Switch>
                 <Route exact component={WelcomePage} path="/" />
                 <Route component={HomePage} path="/home" />
-                <Route component={PostPage} path="/post" />
-
                 <Route component={SpinnerPage} path="/spinner" />
+                <Route component={SearchResults} path="/results/:query" />
                 <Route component={LoginPage} path="/login" />
                 <Route component={RegisterPage} path="/register" />
             </Switch>
@@ -49,7 +48,7 @@ export default function App() {
             <Switch>
                     <Route exact component={HomePage} path="/home" />
                     <Route exact component={SearchResults} path="/results/:query" />
-                <Route exact component={ReviewPage} path="/review/:id" />
+                    <Route exact component={ReviewPage} path="/review/:id" />
                     <Route exact component={PostPage} path="/post" />
                     <Route exact component={ProfilePage} path="/profile" />
                     <Route exact component={SpinnerPage} path="/spinner" />

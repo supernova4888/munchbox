@@ -121,7 +121,10 @@ select {
 .buttonPost:focus .invis {
     display: block;
 }
-
+form {
+    text-align: center;
+    font-weight: bolder;
+}
 @media (min-width: 1px) {
     body {
         margin-bottom: 60px;
