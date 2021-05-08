@@ -1,0 +1,143 @@
+/* profile pic selection buttons */
+.buttonProfilePic1 {
+    background: url('../resources/profilepics/profilepic200px-01.jpg');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonProfilePic2 {
+    background: url('../resources/profilepics/profilepic200px-02.jpg');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonProfilePic3 {
+    background: url('../resources/profilepics/profilepic200px-03.jpg');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonProfilePic4 {
+    background: url('../resources/profilepics/profilepic200px-04.jpg');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonProfilePic5 {
+    background: url('../resources/profilepics/profilepic200px-05.jpg');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonProfilePic1:focus {
+    border: 5px solid var(--color-pink);
+}
+.buttonProfilePic2:focus {
+    border: 5px solid var(--color-pink);
+}
+.buttonProfilePic3:focus {
+    border: 5px solid var(--color-pink);
+}
+.buttonProfilePic4:focus {
+    border: 5px solid var(--color-pink);
+}
+.buttonProfilePic5:focus {
+    border: 5px solid var(--color-pink);
+}
+
+/* foodId selection buttons */
+.buttonFoodPic1 {
+    background: url('../resources/ingredients/meat-filled.png');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonFoodPic2 {
+    background: url('../resources/ingredients/chicken-filled.png');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonFoodPic3 {
+    background: url('../resources/ingredients/fish-filled.png');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonFoodPic4 {
+    background: url('../resources/ingredients/egg-filled.png');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonFoodPic5 {
+    background: url('../resources/ingredients/carrot-filled.png');
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.buttonFoodPic1:focus {
+    border: 5px solid var(--color-pink);
+}
+.buttonFoodPic2:focus {
+    border: 5px solid var(--color-pink);
+}
+.buttonFoodPic3:focus {
+    border: 5px solid var(--color-pink);
+}
+.buttonFoodPic4:focus {
+    border: 5px solid var(--color-pink);
+}
+.buttonFoodPic5:focus {
+    border: 5px solid var(--color-pink);
+}
+
+@media (min-width: 600px) {
+    .buttonFoodPic1:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonFoodPic2:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonFoodPic3:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonFoodPic4:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonFoodPic5:hover {
+        border: 5px solid var(--color-pinklight);
+
+    }
+
+}
