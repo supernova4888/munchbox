@@ -8,7 +8,7 @@ import UserApi from "../api/UserApi";
 import ProfilePicCurrent from "../components/ProfilePic";
 import FoodIdCurrent from "../components/FoodIdCurrent";
 import MyPostedRecipes from "../components/MyPostedRecipes";
-
+import ReviewCardSmall from "../components/ReviewCardSmall";
 
 // this page brings all the components for the user profile and renders it
 // import FoodPref
@@ -65,6 +65,7 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
+            <ReviewCardSmall />
         </div>
     )
 }
