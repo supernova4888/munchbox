@@ -36,15 +36,8 @@ export default function SearchResults({ match }) {
           </h1>
         </Link>
 
-      {/* Search options */}
-
           <h1>Results for <u>{query.toLowerCase()}</u> recipes</h1>
 
-        <button onClick={() => setSortKey("mainIngredient")}>
-          MainIngredient
-        </button>
-
-      {/* Content */}
       <div className="recipeContainer">{RecipeCardsArray}</div>
 
       </div>
