@@ -27,6 +27,9 @@ public class Review {
         @Column(nullable = false)
         private String UserName;
 
+        @Column(nullable = false)
+        private String profileId;
+
         @ManyToOne
         @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
         @JsonIdentityReference(alwaysAsId = true)
@@ -73,6 +76,14 @@ public class Review {
 
         public void setUserName(String userName) {
             UserName = userName;
+        }
+
+        public String getProfileId() {
+            return profileId;
+        }
+
+        public void setProfileId(String profileId) {
+            this.profileId = profileId;
         }
 }
 

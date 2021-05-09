@@ -39,7 +39,9 @@ public class ReviewController {
         RecipePost recipePost = recipePostRepository.findById(postId).orElseThrow(ResourceNotFoundException::new);
         String userEmail = principal.getName();
         String userName = userRepository.findByEmail(userEmail).getName();
+        String profileId = userRepository.findByEmail(userEmail).getProfileId();
         review.setUserName(userName);
+        review.setProfileId(profileId);
         review.setPosts(recipePost);
         return ResponseEntity.status(HttpStatus.CREATED).body(reviewService.createReview(review));
     }
