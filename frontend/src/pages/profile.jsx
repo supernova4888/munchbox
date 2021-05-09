@@ -65,6 +65,7 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
+            Here is example of a small review card:
             <ReviewCardSmall />
         </div>
     )
