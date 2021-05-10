@@ -7,8 +7,8 @@ import FollowerPage from './FollowerPage';
 import UserApi from "../api/UserApi";
 import ProfilePicCurrent from "../components/ProfilePic";
 import FoodIdCurrent from "../components/FoodIdCurrent";
-
-
+import MyPostedRecipes from "../components/MyPostedRecipes";
+import ReviewCardSmall from "../components/ReviewCardSmall";
 
 // this page brings all the components for the user profile and renders it
 // import FoodPref
@@ -59,9 +59,14 @@ export default function Profile() {
                         <p>Your food ID is {user.foodId}</p>
 
                         <Link to="/profile/follower">Followers</Link>
+                        
+                        <h3>Here are your posted recipes (current:All recipes)</h3>
+                        <MyPostedRecipes user={user}/>
                     </div>
                 </div>
             </div>
+            Here is example of a small review card:
+            <ReviewCardSmall />
         </div>
     )
 }

@@ -52,3 +52,13 @@ body {
 .Comments{
     display: block;
 }
+.reviewTitleBox {
+    padding-left: 8px;
+    display: grid;
+}
+.reviewSectionTitle{
+    font-weight: bolder;
+}
+.reviewSectionStars{
+    color: var(--color-pink);
+}

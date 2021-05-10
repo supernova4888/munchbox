@@ -1,6 +1,7 @@
 import React from "react";
 import recipeImageGeneral from "../resources/recipe-03.jpg"
 import sampleProfile from "../resources/profilepic200px-05.jpg";
+import ProfilePicRecipe from "./ProfilePicRecipe";
 
 export default function RecipeCardLarge({ recipePost }) {
 
@@ -8,7 +9,7 @@ export default function RecipeCardLarge({ recipePost }) {
         <div className="recipeCardLarge">
             <div className="userPosterContainer">
                 <div className="postedBy">Posted by: </div>
-                <img className="userProfilePicSmall" src={sampleProfile}/>
+                <ProfilePicRecipe recipePost={recipePost}/>
                 <div className="userNameSmall">{recipePost.userName}</div>
             </div>
             <div className="recipeImageBox">

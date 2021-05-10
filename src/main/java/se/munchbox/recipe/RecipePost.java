@@ -26,6 +26,8 @@ public class RecipePost {
         @Column(nullable = false)
         private String UserName;
         @Column(nullable = false)
+        private String profileId;
+        @Column(nullable = false)
         private String imgURL;
         @Column(nullable = false)
         private String mainIngredient;
@@ -84,6 +86,13 @@ public class RecipePost {
             this.reviews = reviews;
         }
 
+    public String getProfileId() {
+        return profileId;
+    }
+
+    public void setProfileId(String profileId) {
+        this.profileId = profileId;
+    }
 
     public String getTitle() {
         return title;
