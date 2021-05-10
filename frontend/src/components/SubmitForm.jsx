@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import RecipePostApi from "../api/RecipePostApi";
-import PopUp from "../components/PopUp";
 import Popup from "reactjs-popup";
 
 export default function SubmitForm({cloudURL}) {
@@ -10,7 +9,6 @@ export default function SubmitForm({cloudURL}) {
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
     const [ingredient, setIngredient] = useState ("");
-    // const [popupState, setpopupState] = useState (false);
 
     useEffect(() => {
         RecipePostApi.getAllRecipes()
