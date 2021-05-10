@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import RecipePostApi from "../api/RecipePostApi";
+import PopUp from "../components/PopUp";
+import Popup from "reactjs-popup";
 
 export default function SubmitForm({cloudURL}) {
 
@@ -8,6 +10,7 @@ export default function SubmitForm({cloudURL}) {
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
     const [ingredient, setIngredient] = useState ("");
+    // const [popupState, setpopupState] = useState (false);
 
     useEffect(() => {
         RecipePostApi.getAllRecipes()
@@ -49,14 +52,26 @@ export default function SubmitForm({cloudURL}) {
                     <option value="Beef">Beef</option>
                     <option value="Veal">Veal</option>
                     <option value="Pork">Pork</option>
-                    <option value="Lamb & Mutton">Lamb & Mutton</option>
+                    <option value="Lamb and Mutton">Lamb and Mutton</option>
                     <option value="Poultry">Poultry</option>
                     <option value="Seafood">Seafood</option>
                     <option value="Vegetarian">Vegetarian</option>
                     <option value="Vegan">Vegan</option>
                 </select>
 
-                <button className="buttonPost"type="submit"><span className="vis">Post It</span><span className="invis">Done</span></button>
+                <Popup trigger={
+                <button className="buttonPost"type="submit"> Post It</button>} modal nested>
+                    {close => (
+                        <div className="modal">
+                        <button className="close" onClick={close}> &times;  
+                        </button>
+                        <div className="content">
+                        {' '}
+                        🎉 Recipe has been sucessfully added! 🎉
+                        </div>
+                        </div>)}
+                </Popup>
+    
             </form>
 
         </div>
