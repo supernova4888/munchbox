@@ -49,7 +49,7 @@ export default function SubmitForm({cloudURL}) {
                     <option value="Beef">Beef</option>
                     <option value="Veal">Veal</option>
                     <option value="Pork">Pork</option>
-                    <option value="Lamb & Mutton">Lamb & Mutton</option>
+                    <option value="Lamb and Mutton">Lamb and Mutton</option>
                     <option value="Poultry">Poultry</option>
                     <option value="Seafood">Seafood</option>
                     <option value="Vegetarian">Vegetarian</option>
