@@ -11,7 +11,7 @@ const [imageURL, setImageURL] = useState("");
 const [imageSelected, setImageSelected] = useState("");
 
 const uploadImage = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         // constructs the formData
         // const imageFile = e[0];
         const formData = new FormData()
