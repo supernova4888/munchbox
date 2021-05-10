@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import RecipePostApi from "../api/RecipePostApi";
 import PopUp from "../components/PopUp";
+import Popup from "reactjs-popup";
 
 export default function SubmitForm({cloudURL}) {
 
@@ -9,13 +10,7 @@ export default function SubmitForm({cloudURL}) {
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
     const [ingredient, setIngredient] = useState ("");
-    const [popupState, setpopupState] = useState (false);
-
-    togglePop = () => {
-    this.setpopupState({
-        popupState: !this.state.seen
-    });
-    }; 
+    // const [popupState, setpopupState] = useState (false);
 
     useEffect(() => {
         RecipePostApi.getAllRecipes()
@@ -64,14 +59,20 @@ export default function SubmitForm({cloudURL}) {
                     <option value="Vegan">Vegan</option>
                 </select>
 
-                <div className="btn" onClick={this.togglePop}>
+                <Popup trigger={
                 <button className="buttonPost"type="submit">
-                <span className="vis">Post It</span><span className="invis">Done</span>
-                </button>
-                </div>
-
-                {this.state.seen ? <PopUp toogle={this.togglePop} /> : null}
-
+                <span className="vis">Post It</span><span className="invis">Done</span></button>} modal nested>
+                    {close => (
+                        <div className="modal">
+                        <button className="close" onClick={close}> &times;  
+                        </button>
+                        <div className="content">
+                        {' '}
+                        Testing the pop up library! 
+                        </div>
+                        </div>)}
+                </Popup>
+    
             </form>
 
         </div>
