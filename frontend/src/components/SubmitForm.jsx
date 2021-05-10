@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import RecipePostApi from "../api/RecipePostApi";
+import PopUp from "../components/PopUp";
 
 export default function SubmitForm({cloudURL}) {
 
@@ -8,6 +9,13 @@ export default function SubmitForm({cloudURL}) {
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
     const [ingredient, setIngredient] = useState ("");
+    const [popupState, setpopupState] = useState (false);
+
+    togglePop = () => {
+    this.setpopupState({
+        popupState: !this.state.seen
+    });
+    }; 
 
     useEffect(() => {
         RecipePostApi.getAllRecipes()
@@ -56,9 +64,13 @@ export default function SubmitForm({cloudURL}) {
                     <option value="Vegan">Vegan</option>
                 </select>
 
+                <div className="btn" onClick={this.togglePop}>
                 <button className="buttonPost"type="submit">
                 <span className="vis">Post It</span><span className="invis">Done</span>
                 </button>
+                </div>
+
+                {this.state.seen ? <PopUp toogle={this.togglePop} /> : null}
 
             </form>
 
