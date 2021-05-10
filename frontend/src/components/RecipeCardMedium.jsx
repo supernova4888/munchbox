@@ -4,16 +4,18 @@ import sampleProfile from "../resources/profilepics/profilepic200px-06.jpg";
 import { Link } from "react-router-dom";
 import MainIngredient from "./MainIngredient";
 import ProfilePicRecipe from "./ProfilePicRecipe";
+import { Image } from "cloudinary-react";
 
 export default function RecipeCardMedium({ recipePost }) {
+
+    console.log(recipePost.imgURL);
 
     return (
         <div className="recipeCardMedium">
             <div className="recipeImageBox">
                 <Link to={{pathname: `/review/${recipePost.id}`,}}>
-                <img className="recipeImageMedium" src={recipeImageGeneral}/>
-                {/* // this is working. Check at home is img is fetched and formatted*/}
-                {/*<Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>*/}
+                {/* <img className="recipeImageMedium" src={recipeImageGeneral}/> */}
+                <Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
                 </Link>
             </div>
             <div className="recipeTitleBox">{recipePost.title}</div>
