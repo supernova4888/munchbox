@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Image } from "cloudinary-react";
 import SubmitForm from "../components/SubmitForm";
 
-
 export default function PostPage() {
 
 const [imageURL, setImageURL] = useState("");
@@ -26,7 +25,7 @@ const uploadImage = (e) => {
 
     useEffect(()=> {
         postToCloud();
-       //to fire postToCloude after the image has been uploaded uploadimg()
+       //to fire postToCloud after the image has been uploaded uploadimg()
     },[imageURL]);
 
     const postToCloud = async() => {
@@ -46,18 +45,17 @@ const uploadImage = (e) => {
 
     return (
         <div className="pageBody">
-            <h1>PostPage - Add a new recipe</h1>
-            <p>You are on the post page now.</p>
+            <h1>Add a new recipe</h1>
 
             <div className="card">
 
-            <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
-            <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
-        
+                <input type="file" onChange={(e) => setImageSelected(e.target.files[0])}/>
+                <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
+            </div>
 
+            <div className="card">
             {/* Sending imageURL as props to RecipeCardMedium*/}
             <SubmitForm cloudURL={imageURL}/>
-
             </div>
         </div>
     );
