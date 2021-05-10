@@ -60,15 +60,14 @@ export default function SubmitForm({cloudURL}) {
                 </select>
 
                 <Popup trigger={
-                <button className="buttonPost"type="submit">
-                <span className="vis">Post It</span><span className="invis">Done</span></button>} modal nested>
+                <button className="buttonPost"type="submit"> Post It</button>} modal nested>
                     {close => (
                         <div className="modal">
                         <button className="close" onClick={close}> &times;  
                         </button>
                         <div className="content">
                         {' '}
-                        Recipe has been sucessfully added! 
+                        🎉 Recipe has been sucessfully added! 🎉
                         </div>
                         </div>)}
                 </Popup>

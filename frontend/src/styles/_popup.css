@@ -1,11 +1,11 @@
 .popup-content {
   margin: auto;
-  background: #FAEEA9;
+  background: #ffffff;
   width: 50%;
   padding: 5px;
 }
 .popup-arrow {
-  color: rgb(255, 255, 255);
+  color: #6A425C;
 }
 [role='tooltip'].popup-content {
   width: 200px;
