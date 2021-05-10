@@ -1,13 +1,13 @@
 //eslint-disable no-undef 
-import React, { useState, useEffect } from "react";
-import FollowerApi from "../api/FollowerApi" ;
+/* import React, { useState, useEffect } from "react";
+import FollowerApi from "../api/FollowerApi" ; */
 //import UserCard from "./UserCard";
 //import pluspurple from "../resources/mobile_navbar/pluspurple.png"
 
-export default function CreateFollower({user}){
+/* export default function CreateFollower({user}){
 
 const[follower, setFollower] = useState([]);
-const [userName, setUserName] = useState([]);
+const [userName, setUserName] = useState([]); */
 
                 /* function createFollower(){
                     //if(body === "")
@@ -28,7 +28,7 @@ const [userName, setUserName] = useState([]);
             .catch((err) => console.error(err));
     }, []);  */
 
-    async function createFollower (event) {
+    /* async function createFollower (event) {
         event.preventDefault();
         console.log("inside createFollower function");
         const newFollower = {
@@ -55,4 +55,4 @@ const [userName, setUserName] = useState([]);
             </form>
         </div>
  )
-}  
+}   */
