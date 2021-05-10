@@ -3,6 +3,7 @@ import UserApi from "../api/UserApi";
 /* import FollowerApi from "../api/FollowerApi";
 import CreateFollower from "../components/CreateFollower" */
 
+
 import UserCard from "../components/UserCard";
 
 export default function FollowerPage() {
@@ -27,6 +28,8 @@ return (
         <h1>Followers</h1>
         <div className = "followerContainer">
             <h2 className="followerSuggestion">Suggestions to Follow</h2>
+            
+
                 {UsersArray}
         </div>
     </div>
