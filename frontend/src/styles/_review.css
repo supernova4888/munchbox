@@ -10,7 +10,7 @@ button {
     color: var(--color-pink);
 }
 .off {
-    color: var(--color-offwhite);
+    color: var(--color-greyshadow);
 }
 .svgIconExit{
     max-width: 25px;

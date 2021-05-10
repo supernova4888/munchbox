@@ -19,6 +19,7 @@ import UserFollowerPage from "./pages/UserFollowerPage";
 import NavbarGuest from "./components/NavbarGuest.jsx";
 import ReviewPage from "./pages/review/review";
 import SearchResults from "./pages/SearchResults";
+import SavedRecipes from "./pages/review/SavedRecipes";
 
 
 export default function App() {
@@ -54,6 +55,7 @@ export default function App() {
                     <Route component={SearchResults} path="/results/:query" />
                     <Route exact component={SpinnerPage} path="/spinner" />
                     <Route exact component={FollowerPage} path="/profile/follower"/>
+                    {/*<Route exact component={SavedRecipes} path="/profile/savedRecipes"/>*/}
                     <Route exact component={UserFollowerPage} path="/profile/follower/youfollow"/>
                 </Switch>
         </BrowserRouter>

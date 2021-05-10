@@ -1,48 +1,34 @@
+/*
+
 import React, { useEffect, useState } from "react";
-
 import RecipePostApi from "../../api/RecipePostApi";
-import {useParams} from "react-router";
+import UserCard from "../../components/UserCard";
+import UserApi from "../../api/UserApi";
+import RecipeCardLarge from "../../components/RecipeCardLarge";
 
 
+export default function SavedRecipes(){
+    nst [recipe, setRecipe] = useState([]);
 
 
-export default function  SavedRecipes() {
-    const [recipes, setRecipes] = useState([]);
-    const {id} = useParams();
-    const [rating, setRating] = useState(0);
-    const [title, SetTitle] = useState("");
+    const RecipeArray = recipe.map((user) => (
+        <RecipeCardLarge key={recipe.id} user={user}/>
+    ));
 
-    async function getAllRecipe(recipePost) {
-        try {
-            const response = await RecipePostApi.getAllRecipes(recipePost);
-            const recipe = response.data;
-            const newRecipe = recipes.concat(recipe);
-
-            setRecipes(newRecipe);
-        } catch (e) {
-            console.error(e);
-        }
-    }
     useEffect(() => {
-        RecipePostApi.getRecipeById(id)
-            .then(({data}) => setRecipes(data))
+        RecipePostApi.getAllRecipes()
+            .then(({data}) => setRecipe(data))
             .catch((err) => console.error(err));
-    }, [setRecipes]);
+    }, [setRecipe]);
 
 
-    return(
-        <div>
-            <div className="User-profile">
+    return(co
+        <div className="savedRecipes">
 
-
-                <div> {recipes.title}</div>
-                <div>{recipes.image}</div>
-                <div className="recipeContainer">
-                    <p>My Rating is {rating}</p>
-
-                </div>
-
+                {RecipeArray}
             </div>
+        </div>
 
-    )
-}
+
+    );
+}*/

@@ -65,8 +65,9 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-            Here is example of a small review card:
-            <ReviewCardSmall />
+            <Link to="/profile/SavedRecipes"><h3>Saved Recipes </h3></Link>
+
+
         </div>
     )
 }
