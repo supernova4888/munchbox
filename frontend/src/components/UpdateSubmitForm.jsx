@@ -1,8 +1,14 @@
 import React from 'react'
+import { useState } from "react";
 import Popup from "reactjs-popup";
 import { useForm } from "react-hook-form";
 
 export default function UpdateSubmitForm({preloadedValues}) {
+
+    const [recipes, setRecipes] = useState([]);
+    const [title, setTitle] = useState("");
+    const [link, setLink] = useState("");
+    const [ingredient, setIngredient] = useState ("");
 
     const {register, handleSubmit} = useForm({
         defaultValues: preloadedValues
@@ -22,6 +28,8 @@ export default function UpdateSubmitForm({preloadedValues}) {
             <form className="updateRecipeForm" onSubmit={handleSubmit(onSubmit)}>
 
                 {/* create display img, pass data to an img component. Then allow for change/new img upload in that image component */}
+
+                {/* TODO need to add a "name" property in each <input> */}
 
                 <input className="form-control" ref={register} onChange={(e) => setTitle(e.target.value)}/>
 
@@ -54,7 +62,7 @@ export default function UpdateSubmitForm({preloadedValues}) {
                         </div>
                         </div>)}
                 </Popup>
-    
+         </form>
             
         </div>
     )

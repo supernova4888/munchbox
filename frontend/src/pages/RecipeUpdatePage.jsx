@@ -1,13 +1,15 @@
 import React from 'react'
 import UpdateSubmitForm from "../components/UpdateSubmitForm";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import RecipePostApi from "../api/RecipePostApi";
 import Updatebutton from "../resources/images/UpdateButton.png";
+import { Link, useParams } from "react-router-dom";
 
 
 export default function RecipeUpdatePage() {
-    
-    const [data , setData] = useState(null)
+
+  const [data , setData] = useState(null)
+    const {id} = useParams();
     
     // Miss: getting the id from the user clicking from the ReviewPage (icon)
 
@@ -18,12 +20,10 @@ export default function RecipeUpdatePage() {
         fetchData()
     }, [])
 
-    return (
 
-        <Link> 
-        <button> Updatebutton </button>
-        </Link>
-        
-        data ? <UpdateSubmitForm preloadedValues={data}/> : <div>Loading...</div>
+    return (
+        <div>
+        <p>you ar in Recipe Update page</p>
+        </div>
     )
 }
