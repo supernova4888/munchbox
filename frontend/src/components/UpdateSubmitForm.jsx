@@ -4,14 +4,15 @@ import { useForm } from "react-hook-form";
 
 export default function UpdateSubmitForm({preloadedValues}) {
 
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit} = useForm({
+        defaultValues: preloadedValues
+    });
 
     const onSubmit = (data) => {
         alert(JSON.stringify(data));
     }
 
-    
-
+    // api Update submission to the back end
 
     return (
         <div>
