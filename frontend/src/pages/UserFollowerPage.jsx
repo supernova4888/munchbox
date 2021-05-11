@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from "react";
 import FollowerApi from "../api/FollowerApi";
-import FollowerCard from "../components/FollowerCard";
+import UserFollowerCard from "../components/UserFollowerCard";
+import UserApi from "../api/UserApi"
 
-export default function UserFollowerPage({user}) {
+export default function UserFollowerPage() {
     const [follower, setFollower] = useState([]);
-    
-const UserfollowArray = follower.map((follower) => (
-        <FollowerCard key={follower.id} follower={follower}/>
+    const[currentUser, setCurrentUser] = useState([]);
+
+    const UserfollowArray = follower.map((followers) => (
+        <UserFollowerCard key={followers.id} followers={followers}/>
 ));
 
 useEffect(() => {
-    FollowerApi.listAllFollowers(user.id)
-    .then(({ data }) => setFollower(data))
-    .catch((err) => console.error(err));
-}, [setFollower]);
+    UserApi.getCurrentUser()
+      .then(({ data }) => {
+        setCurrentUser(data.id);
+        console.log(data.id)
+      })
+      .catch((err) => console.error(err));
+  }, [setCurrentUser]);
+
+  useEffect(() => {
+    FollowerApi.listAllFollowers(currentUser)
+      .then(({ data }) => {
+        setFollower(data);
+        console.log(data)
+      })
+      .catch((err) => console.error(err));
+  }, [setFollower]);
 
 
 return (

@@ -9,23 +9,23 @@ export default function FollowerCard() {
     const[follower, setFollower] = useState([]);
 
 
-  useEffect(() => {
+   useEffect(() => {
     UserApi.getCurrentUser()
       .then(({ data }) => {
         setCurrentUser(data.id);
         console.log(data.id)
       })
       .catch((err) => console.error(err));
-  }, [setCurrentUser]);
+  }, [setCurrentUser]); 
 
-  useEffect(() => {
+/*   useEffect(() => {
     FollowerApi.listAllFollowers(currentUser)
       .then(({ data }) => {
         setFollower(data);
         console.log(data)
       })
       .catch((err) => console.error(err));
-  }, [setFollower]);
+  }, [setFollower]); */
 
 
   // HandlerFunction (current User)

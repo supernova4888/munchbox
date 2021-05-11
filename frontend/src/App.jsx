@@ -12,8 +12,8 @@ import Navbar from "./components/Navbar.jsx";
 import RegisterPage from "./pages/registerpage.jsx";
 import LoginPage from "./pages/loginpage.jsx";
 import LogoutButton from "./components/LogoutButton";
-import FollowerPage from "./pages/FollowerPage";
-import UserFollowerPage from "./pages/UserFollowerPage";
+import FollowerPage from "./pages/followerPage";
+import UserFollowerPage from "./pages/userFollowerPage";
 
 
 export default function App() {

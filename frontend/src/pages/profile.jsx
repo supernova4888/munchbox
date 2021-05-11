@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import FoodPref from '../components/FoodPref'
-import Follower from "./FollowerPage";
+import Follower from "./followerPage";
 import { Link } from "react-router-dom";
-import FollowerPage from './FollowerPage';
-import UserFollowerPage from "./UserFollowerPage";
+import FollowerPage from './followerPage';
+import UserFollower from "./userFollowerPage";
 
 
 
@@ -29,9 +29,8 @@ export default function Profile() {
             <h2>Followers</h2> 
             </Link> 
             <Link to="/profile/youfollow">
-            <h2>UserFollowerPage</h2> 
+            <h2>UserFollowers</h2> 
             </Link> 
-            
         </div>
     )
 }
