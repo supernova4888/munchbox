@@ -2,6 +2,7 @@ import React from 'react'
 import UpdateSubmitForm from "../components/UpdateSubmitForm";
 import { useEffect } from "react";
 import RecipePostApi from "../api/RecipePostApi";
+import Updatebutton from "../resources/images/UpdateButton.png";
 
 
 export default function RecipeUpdatePage() {
@@ -18,6 +19,11 @@ export default function RecipeUpdatePage() {
     }, [])
 
     return (
+
+        <Link> 
+        <button> Updatebutton </button>
+        </Link>
+        
         data ? <UpdateSubmitForm preloadedValues={data}/> : <div>Loading...</div>
     )
 }
