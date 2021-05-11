@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function RecipeUpdatePage() {
+export default function UpdateSubmitForm() {
     return (
         <div>
             
