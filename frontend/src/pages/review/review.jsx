@@ -71,7 +71,7 @@ export default function ReviewPage() {
 
                     <form className="recipeForm" onSubmit={createReview}>
                         <StarRating onChangeRating ={changeRating} rating={rating} />
-                        <input className="form-control" placeholder="Write your comment here" type="text" onChange={(e) => setBody(e.target.value)}/>
+                        <textarea className="form-control" placeholder="Write your comment here" onChange={(e) => setBody(e.target.value)}/>
                         <button className="buttonRegister" type="submit">Save Review </button>
                     </form>
                 </div>
