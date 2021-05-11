@@ -19,6 +19,7 @@ import UserFollowerPage from "./pages/UserFollowerPage";
 import NavbarGuest from "./components/NavbarGuest.jsx";
 import ReviewPage from "./pages/review/review";
 import SearchResults from "./pages/SearchResults";
+import RecipeUpdatePage from "./pages/RecipeUpdatePage";
 
 
 export default function App() {
@@ -55,6 +56,8 @@ export default function App() {
                     <Route exact component={SpinnerPage} path="/spinner" />
                     <Route exact component={FollowerPage} path="/profile/follower"/>
                     <Route exact component={UserFollowerPage} path="/profile/follower/youfollow"/>
+                    {/* todo Test if this works */}
+                    <Route exact component={RecipeUpdatePage} path="/review/:id/update" />
                 </Switch>
         </BrowserRouter>
     );
