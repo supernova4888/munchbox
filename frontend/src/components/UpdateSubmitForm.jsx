@@ -10,6 +10,7 @@ export default function UpdateSubmitForm({preloadedValues}) {
 
     const onSubmit = (data) => {
         alert(JSON.stringify(data));
+        // instead of alert, here it should be the update submissioon to the backend
     }
 
     // api Update submission to the back end
@@ -20,12 +21,15 @@ export default function UpdateSubmitForm({preloadedValues}) {
 
             <form className="updateRecipeForm" onSubmit={handleSubmit(onSubmit)}>
 
+                {/* create display img, pass data to an img component. Then allow for change/new img upload in that image component */}
+
                 <input className="form-control" ref={register} onChange={(e) => setTitle(e.target.value)}/>
 
                 <input className="form-control" ref={register} onChange={(e) => setLink(e.target.value)}/>
 
                 <h3>Select recipe main ingredient:</h3>
 
+                {/* not sure if this works with UserForm? */}
                 <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
                     <option>Select main ingredient:</option>
                     <option value="Beef">Beef</option>

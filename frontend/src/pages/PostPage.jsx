@@ -54,7 +54,6 @@ const uploadImage = (e) => {
             </div>
 
             <div className="card">
-            {/* Sending imageURL as props to RecipeCardMedium*/}
             <SubmitForm cloudURL={imageURL}/>
             </div>
         </div>
