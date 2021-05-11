@@ -25,20 +25,25 @@ export default function UpdateSubmitForm({preloadedValues}) {
         <div>
              <h3>Add recipe details </h3>
 
+            <img src={register} alt="#"/>
+
+            {/* this didnt work */}
+            {/* <Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/> */}
+
+
             <form className="updateRecipeForm" onSubmit={handleSubmit(onSubmit)}>
 
                 {/* create display img, pass data to an img component. Then allow for change/new img upload in that image component */}
 
-                {/* TODO need to add a "name" property in each <input> */}
 
-                <input className="form-control" ref={register} onChange={(e) => setTitle(e.target.value)}/>
+                <input className="form-control" ref={register} type="text" name="title" onChange={(e) => setTitle(e.target.value)}/>
 
-                <input className="form-control" ref={register} onChange={(e) => setLink(e.target.value)}/>
+                <input className="form-control" ref={register} type="text" name="recipelink" onChange={(e) => setLink(e.target.value)}/>
 
                 <h3>Select recipe main ingredient:</h3>
 
                 {/* not sure if this works with UserForm? */}
-                <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
+                <select id = "dropdown" ref={register} name="ingredient" onChange={(e) => setIngredient(e.target.value)}>
                     <option>Select main ingredient:</option>
                     <option value="Beef">Beef</option>
                     <option value="Veal">Veal</option>
