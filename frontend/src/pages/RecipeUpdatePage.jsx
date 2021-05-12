@@ -16,30 +16,47 @@ const {id} = useParams();
 
     // recipe data is here, but i can't retrieve it
     // ? why sometimes the useEffect loads and sometimes not?
-    const preloadedValues = {
-        title: "lala"
-       
-    }
+    
+    
+    // const preloadedValues = {
+    //     recipes
+    // }
+
+    // console.log(preloadedValues);
+    console.log(recipes.title);
 
     //  body: recipes.,
     //         imgURL: cloudURL,
     //         mainIngredient: ingredien
 
-    const {register, handleSubmit} = useForm({
-        defaultValues: preloadedValues
-    });
+    // const {register, handleSubmit} = useForm({
+    //     defaultValues: {title: recipes?.title}
+    // });
 
-    const onSubmit = (recipes) => {
-        alert(JSON.stringify(recipes));
-    };
+    // const onSubmit = (recipes) => {
+    //     alert(JSON.stringify(recipes));
+    // };
+
+    const handleChange = e => {
+        const {name, value} = e.target;
+
+        setRecipes({...recipes,[name]: value})
+    }
 
     useEffect(() => {
             RecipePostApi.getRecipeById(id)
                 .then(({data}) => setRecipes(data))
                 .catch((err) => console.error(err));
                 console.log(recipes);
-        }, [setRecipes]);
+        }, []);
 
+
+    const Input = ({ label, register, required }) => (
+  <>
+    <label>{label}</label>
+    <input {...register(label, { required })} />
+  </>
+);
     return (
         <div>
         <p>You are in Recipe Update page</p>
@@ -47,14 +64,24 @@ const {id} = useParams();
         {/* <UpdateSubmitForm preloadedValues={data} /> */}
         {/* button to edit img */}
 
-        <form className="updateRecipeForm" onSubmit={handleSubmit(onSubmit)}>
+        <form className="updateRecipeForm" >
 
                 {/* create display img, pass data to an img component. Then allow for change/new img upload in that image component */}
+            <input value={recipes?.body} name="body" onChange={handleChange} />
+            <input value={recipes?.title} name="title" onChange={handleChange}/>
+            <input value={recipes?.imgURL} name="imgURL" onChange={handleChange}/>
+            <img src={recipes?.imgURL} alt="recipe" />
 
+    
+             {/* <Input label="First Name" register={register} required />
 
-                <input {...register('title')} type="text" />
-                <input {...register('recipeurl')} type="text" />
-                <input {...register('imgURL')} type="text" />
+                <input value={recipes?.title} />
+
+                <input {...register("recipes.title")} type="text" />
+                <input {...register("recipes.body")} type="text" />
+                <input {...register("recipes.imgURL")} type="text" />
+
+                <button className="buttonPost"type="submit"> Update Post </button> */}
         </form>
 
         </div>
