@@ -18,9 +18,10 @@ export default function NewFollowerForm({ onSubmit }) {
   return (
     <form>
       <div>
+        <h3>Enter the user name to follow</h3>
         <div>
-          <textarea
-            value={followUserName}
+          <input
+            type= "text" value={followUserName}
             onChange={(e) => setFollowUserName(e.target.value)}
           />
         </div>

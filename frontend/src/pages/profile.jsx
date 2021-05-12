@@ -1,14 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import FoodPref from '../components/FoodPref'
-import Follower from "./followerPage";
 import { Link } from "react-router-dom";
-import FollowerPage from './followerPage';
-import UserFollower from "./userFollowerPage";
+import FollowerPage from './FollowerPage';
+import UserFollower from "./UserFollowerPage";
 
 
 
-// this page brings all the components for the user profile and renders it
+// this page brings all the compoents for the user profile and renders it
 // import FoodPref
 
 
