@@ -11,7 +11,8 @@ const [foodId, setFoodId] = useState("Red Meat");
 return (
 <div className="card">
     <div className="card-body">
-        <img className="logoSmall" src={logo} /><h2>Sign Up</h2>
+        {/* <img className="logoSmall" src={logo} /> */}
+        <h2>Sign Up</h2>
         <div>
         <div className="form-group">
             <input
