@@ -47,7 +47,7 @@ export default function FollowerCard() {
       console.error(e);
     }
   }
-    
+   
     return (
         <div className = "followerCard_followerForm">
             <NewFollowerForm 

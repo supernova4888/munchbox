@@ -66,10 +66,12 @@ export default function UserFollowerPage() {
 
 
 return (
+
     <div>
         <h1 className= "user-followers--heading">People you Follow</h1>
         <br/>
         {UserfollowArray}
+
     </div>
 );
 }

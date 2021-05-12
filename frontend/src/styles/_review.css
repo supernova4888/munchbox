@@ -10,7 +10,7 @@ button {
     color: var(--color-pink);
 }
 .off {
-    color: var(--color-offwhite);
+    color: #a2a2a2;
 }
 .svgIconExit{
     max-width: 25px;
@@ -48,4 +48,17 @@ body {
     font-family: 'Oxygen', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+.Comments{
+    display: block;
+}
+.reviewTitleBox {
+    padding-left: 8px;
+    display: grid;
+}
+.reviewSectionTitle{
+    font-weight: bolder;
+}
+.reviewSectionStars{
+    color: var(--color-pink);
 }

@@ -1,61 +1,79 @@
 import React, { useEffect, useState } from "react";
-
-
-
-import ReviewApi from"../../api/ReviewApi";
+import {useParams} from "react-router";
 import StarRating from "../../components/StarRating";
-import cookie_monster from "../../resources/images/cookie_monster.jpeg"
 import RecipeCardLarge from "../../components/RecipeCardLarge";
-import ReviewCardLarge from "../../components/ReviewCardLarge";
-import recipeImageGeneral from "../../resources/recipe-03.jpg";
-import CommentBar from "../../components/CommentBar";
-import UpdateButton from "../../resources/images/UpdateButton.png"
 import "../../styles/_review.css";
+import RecipePostApi from "../../api/RecipePostApi";
+import ReviewApi from "../../api/ReviewApi";
 
-export default function ReviewPage(){
 
 
 
-    //Local state
-    /*const [reviews,setReviews]= useState([]);
-    //Methods
-    async function createReview(postData) {
+export default function ReviewPage() {
+
+    const [recipes, setRecipes] = useState([]);
+    const {id} = useParams();
+    const [body, setBody] = useState("");
+    const [rating, setRating] = useState(0);
+    const [UserName, SetUserName] = useState("");
+
+
+    function changeRating(rating) {
+        setRating(rating);
+    }
+
+    async function getAllRecipes(recipePost) {
         try {
-            const response = await ReviewApi.createReview(postData);
-            const reviews = response.data;
-            const newReview = posts.concat(reviews);
+            const response = await RecipePostApi.getAllRecipes(recipePost);
+            const recipe = response.data;
+            const newRecipe = recipes.concat(recipe);
 
-            setReviews(newReview);
+            setRecipes(newRecipe);
         } catch (e) {
             console.error(e);
         }
+    }
+    useEffect(() => {
+            RecipePostApi.getRecipeById(id)
+                .then(({data}) => setRecipes(data))
+                .catch((err) => console.error(err));
+        }, [setRecipes]);
 
-        async function deleteReview(reviews) {
-            try {
-                await ReviewApi.deleteReview(posts.id);
-                const newReviews = reviews.filter((p) => p.id !== post.id);
 
-                setReviews(newReviews);
-            } catch (e) {
-                console.error(e);
-            }
-        }*/
+//Function to save a review to backend
+    async function createReview (event) {
+        event.preventDefault();
+        console.log("inside createReview function");
+        const newReview = {
+
+            body: body,
+            rating :rating,
+            userName:UserName,
+        }
+        try {
+            const response = await ReviewApi.createReview(id,newReview);
+            console.log(response.data);
+            setRecipes(response.data);
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+
 
         return (
-            <div>
-                <div className="User-profile">
-                    <h4>Posted By:</h4>
-
-                    {/*<img className="UserImage" src={cookie_monster}/>*/}
-
+            <div className="pageBody">
+                <div className="card">
+                    <RecipeCardLarge recipePost={recipes} />
                 </div>
-                <div className="User-image"><ReviewCardLarge/></div>
-                <div className="review-ratings"><h5>MYRATING:</h5><StarRating/>
-                    <img  className="svgIconExit" src={UpdateButton}/>
-                </div>
-                <div className="Comments"><h5>COMMENTS:</h5>
-                    <CommentBar/>
-                    <img  className="svgIconExit" src={UpdateButton}/>
+
+                <div className="card">
+
+                    <form className="recipeForm" onSubmit={createReview}>
+                        <StarRating onChangeRating ={changeRating} rating={rating} />
+                        <textarea className="form-control" placeholder="Write your comment here" onChange={(e) => setBody(e.target.value)}/>
+                        <button className="buttonRegister" type="submit">Save Review </button>
+                    </form>
                 </div>
             </div>
         );

@@ -1,21 +1,25 @@
 import React from "react";
 import recipeImageGeneral from "../resources/recipe-03.jpg"
 import sampleProfile from "../resources/profilepic200px-05.jpg";
+import ProfilePicRecipe from "./ProfilePicRecipe";
+import { Image } from "cloudinary-react";
 
 export default function RecipeCardLarge({ recipePost }) {
+
     return (
         <div className="recipeCardLarge">
             <div className="userPosterContainer">
                 <div className="postedBy">Posted by: </div>
-                <img className="userProfilePicSmall" src={sampleProfile}/>
+                <ProfilePicRecipe recipePost={recipePost}/>
                 <div className="userNameSmall">{recipePost.userName}</div>
             </div>
-
             <div className="recipeImageBox">
-                <img className="recipeImageLarge" src={recipeImageGeneral}/>
+                <Image className="recipeImageLarge" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
             </div>
             <div className="recipeTitleBoxLg">{recipePost.title}</div>
-            <div className="recipeBody">{recipePost.body}</div>
+            <div className="recipeBody">
+                 <a href={recipePost.body} target="_blank"> {recipePost.body}</a>
+            </div>
 
         </div>
     );

@@ -1,0 +1,45 @@
+.profileMain {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
+
+}
+.profileBox {
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: center;
+    justify-items: left;
+}
+.profileImageBox {
+
+}
+
+.profileInfo {
+    text-align: left;
+    font-weight: bold;
+}
+.profileFood{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+.foodIdBox {
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    align-items: center;
+    justify-items: right;
+}
+
+.followCard{
+    max-width: 400px;
+    height: 125px;
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    align-items: center;
+    justify-items: right;
+    font-weight: bold;
+    font-size: 25px;
+}

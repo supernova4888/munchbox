@@ -3,24 +3,56 @@
     display: flex;
     justify-content: center;
 }
+.cardButton {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
 .card-body {
     width: 400px;
     border-radius: 8px;
     text-align: center;
     padding: 8px;
-
+    text-align: justify;
+    font-weight: bold;
 }
+
 .form-control {
     font-family: 'Oxygen', sans-serif;
     width: 90%;
     padding: 8px;
     font-size: 16px;
+    margin-bottom: 10px;
+}
+.input {
+    margin-bottom: 0 !important;
+}
+.recipeForm{
+    max-width: 500px;
+    text-align: center;
+
 }
 .form-group {
     font-weight: bolder;
     letter-spacing: 0.5px;
     margin-top: 8px;
     margin-bottom: 8px;
+}
+.buttonUpload{
+    background-color: var(--color-offwhite);
+    border: 2px solid var(--color-purple);
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 4px;
+    font-family: 'Oxygen', sans-serif;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: var(--color-purple);
+    width: 150px;
+    height: 30px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 .form-group-button {
     display: flex;
@@ -29,8 +61,24 @@
     margin-top: 16px;
     margin-bottom: 16px;
 }
+
+.abouttext-heading{
+    color: #6A425C;
+    text-align: center;
+    line-height: 150%;
+
+    }
+ul{
+    line-height: 200%;
+}    
+
+
 @media (min-width: 1px) {
     .imageBlockContainer {
+        display: flex;
+        justify-content: center;
+    }
+    .loginBlockContainer {
         display: flex;
         justify-content: center;
     }
@@ -82,5 +130,30 @@
     .logoText{
         max-width: 40%;
         margin-bottom: 60px;
+    }
+    .buttonUpload:hover {
+        background-color: var(--color-offwhitelight);
+        text-decoration: underline;
+    }
+
+    .loginBlockContainer {
+        display: flex;
+        justify-content: left;
+    }
+    .buttonProfilePic1:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic2:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic3:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic4:hover {
+        border: 5px solid var(--color-pinklight);
+    }
+    .buttonProfilePic5:hover {
+        border: 5px solid var(--color-pinklight);
+
     }
 }

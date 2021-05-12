@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserApi from "../api/UserApi";
+
 import UserCard from "../components/UserCard";
 import FollowerCard from "../components/FollowerCard";
 
@@ -26,7 +27,7 @@ return (
                 {UsersArray} 
             <FollowerCard/>    
     </div>
-        </div>
+    </div>
         
 );
 }

@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import FoodPref from '../components/FoodPref'
 import { Link } from "react-router-dom";
 import FollowerPage from './FollowerPage';
-import UserFollower from "./UserFollowerPage";
 
+import UserFollower from "./UserFollowerPage";
+import UserApi from "../api/UserApi";
+import ProfilePicCurrent from "../components/ProfilePic";
+import FoodIdCurrent from "../components/FoodIdCurrent";
+import MyPostedRecipes from "../components/MyPostedRecipes";
+import ReviewCardSmall from "../components/ReviewCardSmall";
+import followerImg from "../resources/profilepics/follower.png"
 
 
 // this page brings all the compoents for the user profile and renders it
@@ -20,16 +26,61 @@ import UserFollower from "./UserFollowerPage";
 //<FoodPref />
 
 export default function Profile() {
+    const [user, setUser] = useState([]);
+
+
+
+    useEffect(() => {
+       UserApi.getCurrentUser()
+            .then(({data}) => setUser(data))
+            .catch((err) => console.error(err));
+    }, [setUser]);
+
+
+
     return (
-        <div>
+        <div className="pageBody">
             <h1>ProfilePage</h1>
-            <p>You are on the profile page now.</p>
-            <Link to="/profile/follower">
-            <h2>Suggestions to follow</h2> 
-            </Link> 
-            <Link to="/profile/youfollow">
-            <h2>Followers</h2> 
-            </Link> 
+            <div className="card">
+                <div className="card-body">
+                    <div className="profileBox">
+                        <ProfilePicCurrent />
+                        <span>
+                        <h2>{user.name}</h2> 
+                        <h3>{user.email}</h3>
+                        </span>
+                    </div>
+
+                    
+                    <div className="foodIdBox">
+                        <h2>FoodPref</h2>
+                        <FoodIdCurrent />
+                    </div>
+                    <div className="followCard">
+                        <Link to="/profile/follower">Suggestions to Follow</Link>
+                   <Link to="/profile/youfollow">
+                   <h2>Followers</h2> 
+                   </Link>
+                         <img className="followerImg" src={followerImg} />
+
+                        
+                        </div>
+
+
+                    <div className="profileInfo">
+                        <p>Hello {user.name} !</p>
+                        
+
+                        <p>Your food preference is {user.foodId}</p>
+                        
+                        
+                        <h3>Here are your posted recipes (current:All recipes)</h3>
+                        <MyPostedRecipes user={user}/>
+                    </div>
+                </div>
+            </div>
+            Here is example of a small review card:
+            <ReviewCardSmall />
         </div>
     )
 }

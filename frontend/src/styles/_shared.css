@@ -11,6 +11,7 @@ body {
 .pageBody {
     padding: 8px;
 }
+/* purple */
 .buttonRegister {
     background-color: var(--color-purple);
     border: 2px solid var(--color-purple);
@@ -28,6 +29,7 @@ body {
     margin-right: 2px;
 
 }
+/* white */
 .buttonLogin {
     background-color: var(--color-offwhite);
     border: 2px solid var(--color-purple);
@@ -67,6 +69,62 @@ a {
     box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
 }
 
+.spinner {
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 300px;
+    margin-bottom: 16px;
+    margin-top: 24px;
+}
+
+
+select {
+    color: #3B362B;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: 'Oxygen';
+}
+
+
+.buttonPost {
+    background-color: var(--color-purple);
+    border: 2px solid var(--color-purple);
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 16px;
+    font-family: 'Oxygen', sans-serif;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: var(--color-offwhite);
+    width: 150px;
+    height: 50px;
+    margin-left: 2px;
+    margin-right: 2px;
+
+}
+.buttonPost .invis {
+    display: none;
+}
+.buttonPost .vis {
+    display: inline-block;
+}
+
+.buttonPost:focus .vis {
+    display: none;
+}
+.buttonPost:focus .invis {
+    display: block;
+}
+form {
+    text-align: center;
+    font-weight: bolder;
+}
 @media (min-width: 1px) {
     body {
         margin-bottom: 60px;
@@ -78,6 +136,11 @@ a {
         margin-left: 100px;
     }
     .buttonRegister:hover {
+        background-color: var(--color-purplemid);
+        border: 2px solid var(--color-purplemid);
+        text-decoration: underline;
+    }
+    .buttonPost:hover {
         background-color: var(--color-purplemid);
         border: 2px solid var(--color-purplemid);
         text-decoration: underline;
