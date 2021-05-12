@@ -10,13 +10,13 @@ export default function ReviewCardSmall({recipePost}) {
             <div className="reviewTitleBox">
                 <div className="reviewSectionTitle">{recipePost.imgURL}</div>
                 <div className="reviewSection">{recipePost.title}</div>
-                <div className="reviewSectionStars">
+               {/* <div className="reviewSectionStars">
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
-                </div>
+                </div>*/}
             </div>
 
         </div>

@@ -17,8 +17,8 @@ class RecipePostApi {
     deleteRecipe(id) {
         return Api.delete("/posts/" + id);
     }
-  CreateFavoriteRecipes() {
-      return Api.post("/user/{id}/posts/{id}");
+  createFavoriteRecipes(userId,postId) {
+      return Api.post(`/user/${userId}/posts/${postId}`);
   }
 }
 export default new RecipePostApi();

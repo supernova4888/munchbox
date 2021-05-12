@@ -8,13 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import java.util.Set;
 import java.util.HashSet;
 @Entity
 public class RecipePost {
 
 
-    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+    //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,8 +60,13 @@ public class RecipePost {
     @JoinColumn(nullable = false)
     private User user;
 
+
+
     @ManyToMany
 
+    @JsonIdentityReference(alwaysAsId = true)
+
+    @JsonIgnore
     private Set<User> favoritedUsers = new HashSet<>();
 
     public Long getId() {
