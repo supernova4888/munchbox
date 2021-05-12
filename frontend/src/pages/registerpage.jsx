@@ -4,6 +4,8 @@ import { Link, useHistory } from "react-router-dom";
 // Project files
 import RegisterForm from "./auth/RegisterForm";
 import Auth from "../services/Auth";
+import AboutInfo from "../components/AboutInfo";
+
 
 export default function RegisterPage() {
     let history = useHistory();
@@ -26,6 +28,7 @@ export default function RegisterPage() {
                     <i className="fas fa-arrow-circle-left"></i>
                 </h1>
             </Link>
+            <AboutInfo/>
         <RegisterForm onSubmit={register} />
         </div>
     );

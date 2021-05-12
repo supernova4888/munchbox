@@ -13,8 +13,10 @@
     border-radius: 8px;
     text-align: center;
     padding: 8px;
-
+    text-align: justify;
+    font-weight: bold;
 }
+
 .form-control {
     font-family: 'Oxygen', sans-serif;
     width: 90%;
@@ -59,6 +61,16 @@
     margin-top: 16px;
     margin-bottom: 16px;
 }
+
+.abouttext-heading{
+    color: #6A425C;
+    text-align: center;
+    line-height: 150%;
+
+    }
+ul{
+    line-height: 200%;
+}    
 
 
 @media (min-width: 1px) {
