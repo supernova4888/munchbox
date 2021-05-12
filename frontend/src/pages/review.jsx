@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import {useParams} from "react-router";
-import StarRating from "../../components/StarRating";
-import RecipeCardLarge from "../../components/RecipeCardLarge";
-import "../../styles/_review.css";
-import RecipePostApi from "../../api/RecipePostApi";
-import ReviewApi from "../../api/ReviewApi";
+import StarRating from "../components/StarRating";
+import RecipeCardLarge from "../components/RecipeCardLarge";
+import "../styles/_review.css";
+import RecipePostApi from "../api/RecipePostApi";
+import ReviewApi from "../api/ReviewApi";
 
 
 
@@ -21,7 +21,7 @@ export default function ReviewPage() {
     function changeRating(rating) {
         setRating(rating);
     }
-
+console.log(id);
     async function getAllRecipes(recipePost) {
         try {
             const response = await RecipePostApi.getAllRecipes(recipePost);

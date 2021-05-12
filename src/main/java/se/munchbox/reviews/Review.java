@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import se.munchbox.recipe.RecipePost;
-
+import se.munchbox.user.User;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.*;
@@ -37,6 +37,12 @@ public class Review {
         @JsonIgnore
         private RecipePost posts;
 
+        /*@ManyToOne
+        @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+        @JsonIdentityReference(alwaysAsId = true)
+        @JoinColumn(nullable = false)
+        @JsonIgnore
+        private User user;*/
 
         public void setId (Long id) {
             this.id = id;
@@ -85,6 +91,14 @@ public class Review {
         public void setProfileId(String profileId) {
             this.profileId = profileId;
         }
+
+    /*public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }*/
 }
 
 

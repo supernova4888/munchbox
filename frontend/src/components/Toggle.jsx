@@ -5,6 +5,8 @@ import "../styles/_review.css";
 export default function ToggleButton() {
     const [isToggled, setToggled] = useState(false);
     const toggleTrueFalse = () => setToggled(!isToggled);
+
+
     return (
         <div>
             <button className="logoutButton" onClick={toggleTrueFalse}>

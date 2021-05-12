@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import se.munchbox.auth.AuthService;
+import se.munchbox.recipe.RecipePost;
 
 import java.util.List;
 
@@ -32,5 +33,11 @@ public class UserController {
     @GetMapping("/{email}")
     public User getUserByMail(@PathVariable String email) {
         return userService.findUserByEmail(email);
+    }
+
+    @GetMapping("/{id}/posts")
+    public List<RecipePost> getAllRecipesByUserId(@PathVariable  Long id )
+    {
+        return userService.getAllRecipesByUserId(id);
     }
 }

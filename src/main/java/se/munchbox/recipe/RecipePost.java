@@ -2,11 +2,14 @@ package se.munchbox.recipe;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import se.munchbox.reviews.Review;
-
+import se.munchbox.user.User;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.Set;
+import java.util.HashSet;
 @Entity
 public class RecipePost {
 
@@ -51,8 +54,14 @@ public class RecipePost {
     @OneToMany(mappedBy= "posts", cascade = CascadeType.ALL)
         public List<Review> reviews = new ArrayList<>();
 
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn(nullable = false)
+    private User user;
 
+    @ManyToMany
 
+    private Set<User> favoritedUsers = new HashSet<>();
 
     public Long getId() {
             return id;
@@ -100,6 +109,22 @@ public class RecipePost {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Set<User> getFavoritedUsers() {
+        return favoritedUsers;
+    }
+
+    public void setFavoritedUsers(Set<User> favoritedUsers) {
+        this.favoritedUsers = favoritedUsers;
     }
 }
 

@@ -6,10 +6,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.munchbox.ResourceNotFoundException;
 import se.munchbox.user.UserRepository;
+ import se.munchbox.user.User;
+import se.munchbox.recipe.RecipePost;
+
 
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 public class RecipePostController {
@@ -59,6 +63,17 @@ public class RecipePostController {
         return new ResponseEntity<RecipePost>(HttpStatus.OK);
     }
 
+    @PostMapping("/users/{userId}/posts/{postId}")
+    public ResponseEntity<RecipePost> favoritisePost(@PathVariable Long userId, @PathVariable Long postId) {
+        User user = userRepository.findById(userId).get(); // orElseThrow
+        RecipePost post = recipePostRepository.findById(postId).get();
+
+        Set<User> users = post.getFavoritedUsers();
+        users.add(user);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(recipePostRepository.save(post));
+    }
+
     /**
      * Create a new recipe post
      * @param post New user-created recipe post
@@ -67,11 +82,13 @@ public class RecipePostController {
      */
     @PostMapping("/post")
     public ResponseEntity<RecipePost> createPost(@RequestBody RecipePost post, Principal principal) {
-        String userEmail = principal.getName();
+        post.setUser(userRepository.findByEmail(principal.getName()));
+
+        /*String userEmail = principal.getName();
         String userName = userRepository.findByEmail(userEmail).getName();
         String profileId = userRepository.findByEmail(userEmail).getProfileId();
         post.setUserName(userName);
-        post.setProfileId(profileId);
+        post.setProfileId(profileId);*/
         recipePostRepository.save(post);
         return ResponseEntity.status(HttpStatus.CREATED).body(post);
     }
@@ -86,7 +103,11 @@ public class RecipePostController {
         RecipePost post = recipePostRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
         return ResponseEntity.ok(post);
     }
-
+    /*@GetMapping("/post/{userId}")
+    public ResponseEntity<List<RecipePost>> listAllRecipes(@PathVariable Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(ResourceNotFoundException::new);
+        return ResponseEntity.ok(user.getRecipes());
+    }*/
 }
 
 

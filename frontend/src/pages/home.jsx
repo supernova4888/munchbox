@@ -4,34 +4,34 @@ import RecipePostApi from "../api/RecipePostApi";
 import { Link, useHistory } from "react-router-dom";
 
 export default function HomePage() {
-        //Const
-        const [query, setQuery] = useState("");
-        const [recipes, setRecipes] = useState([]);      
-        //property
-        const history = useHistory();
+    //Const
+    const [query, setQuery] = useState("");
+    const [recipes, setRecipes] = useState([]);
+    //property
+    const history = useHistory();
 
-        // Methods
-        function onSearch(event) {
+    // Methods
+    function onSearch(event) {
         event.preventDefault();
 
         history.push(`/results/${query}`);
-        }
-        useEffect(() => {
-                RecipePostApi.getAllRecipes()
-                    .then(({data}) => setRecipes(data))
-                    .catch((err) => console.error(err));
-        }, [setRecipes]);
+    }
+    useEffect(() => {
+        RecipePostApi.getAllRecipes()
+            .then(({data}) => setRecipes(data))
+            .catch((err) => console.error(err));
+    }, [setRecipes]);
 
-        const RecipesArray = recipes.map((recipePost) => (
+    const RecipesArray = recipes.map((recipePost) => (
 
         <RecipeCardMedium key={recipePost.id} recipePost={recipePost}/>
-        ));
-        // functions that selects the recipe by user click
+    ));
+    // functions that selects the recipe by user click
 
-return (
-    <div className="pageBody">
-        <h1>HomePage</h1>
-        <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
+    return (
+        <div className="pageBody">
+            <h1>HomePage</h1>
+            <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
 
             <div className="card">
                 <form onSubmit={onSearch}>
@@ -55,10 +55,10 @@ return (
             </div>
 
 
-        <div className="recipeContainer">
+            <div className="recipeContainer">
                 {RecipesArray}
 
+            </div>
         </div>
-    </div>
-)
+    )
 }

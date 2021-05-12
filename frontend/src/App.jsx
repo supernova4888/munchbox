@@ -17,10 +17,10 @@ import LogoutButton from "./components/LogoutButton";
 import FollowerPage from "./pages/FollowerPage";
 import UserFollowerPage from "./pages/UserFollowerPage";
 import NavbarGuest from "./components/NavbarGuest.jsx";
-import ReviewPage from "./pages/review/review";
+import ReviewPage from "./pages/review";
 import SearchResults from "./pages/SearchResults";
 
-import SavedRecipes from "./pages/review/SavedRecipes";
+import SavedRecipes from "./pages/SavedRecipes";
 
 
 export default function App() {

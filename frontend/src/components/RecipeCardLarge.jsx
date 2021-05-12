@@ -6,7 +6,14 @@ import ToggleButton from "./Toggle";
 import UpdateButton from ".././resources/images/UpdateButton.png";
 
 export default function RecipeCardLarge({ recipePost }) {
-
+    /*<ToggleButton
+        value={ self.state.value || false }
+        onToggle={(value) => {
+            self.setState({
+                value: !value,
+            })
+        }} />*/
+console.log("recipe", recipePost)
     return (
         <div className="recipeCardLarge">
             <div className="userPosterContainer">

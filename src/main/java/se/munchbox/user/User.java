@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.Length;
 import se.munchbox.followers.Followers;
 import se.munchbox.reviews.*;
 import se.munchbox.userPref.UserPreference;
-
+import se.munchbox.recipe.RecipePost;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -14,6 +14,9 @@ import javax.validation.constraints.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="account")
@@ -39,6 +42,12 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Followers> followers = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "favoritedUsers", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<RecipePost> favoritedPosts = new HashSet<>();
+
+    @OneToMany(mappedBy= "user", cascade = CascadeType.ALL)
+    public List<RecipePost> posts = new ArrayList<>();
     @Column
     private String profileId;
     
@@ -53,6 +62,7 @@ public class User {
         this.name = name;
         this.profileId = profileId;
         this.foodId = foodId;
+        this.posts=posts;
     }
 
     public Long getId() {
@@ -111,5 +121,25 @@ public class User {
 
     public void setFoodId(String foodId) {
         this.foodId = foodId;
+    }
+
+    public List<RecipePost> getPosts() {
+        return posts;
+    }
+
+    public Set<RecipePost> getFavoritedPosts() {
+        return favoritedPosts;
+    }
+
+    public void addFavoritedPost(RecipePost post) {
+        this.favoritedPosts.add(post);
+    }
+
+    public void setFavoritedPosts(Set<RecipePost> favoritedPosts) {
+        this.favoritedPosts = favoritedPosts;
+    }
+
+    public void setPosts(List<RecipePost> posts) {
+        this.posts = posts;
     }
 }

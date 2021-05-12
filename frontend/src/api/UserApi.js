@@ -9,5 +9,6 @@ getUserByMail(email) {
 getCurrentUser(){
     return Api.get("/users/me");
 }
+
 }
 export default new UserApi();

@@ -10,6 +10,7 @@ import FoodIdCurrent from "../components/FoodIdCurrent";
 import MyPostedRecipes from "../components/MyPostedRecipes";
 import ReviewCardSmall from "../components/ReviewCardSmall";
 
+
 // this page brings all the components for the user profile and renders it
 // import FoodPref
 
@@ -28,7 +29,7 @@ export default function Profile() {
 
 
     useEffect(() => {
-       UserApi.getCurrentUser()
+        UserApi.getCurrentUser()
             .then(({data}) => setUser(data))
             .catch((err) => console.error(err));
     }, [setUser]);
@@ -42,32 +43,39 @@ export default function Profile() {
                 <div className="card-body">
                     <div className="profileBox">
                         <ProfilePicCurrent />
-                        <h2>{user.name}</h2>
+                        <span>
+                        <h2>{user.name}</h2> 
+                        <h3>{user.email}</h3>
+                        </span>
                     </div>
 
-                    
+
                     <div className="foodIdBox">
-                        <h2>foodpref</h2>
+                        <h2>FoodPref</h2>
                         <FoodIdCurrent />
+                    </div>
+                    <div className="followCard">
+                        <Link to="/profile/follower">Followers</Link>
+
+
+
                     </div>
 
 
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>
-                        <p>Your pic ID is {user.profileId}</p>
 
-                        <p>Your food ID is {user.foodId}</p>
 
-                        <Link to="/profile/follower">Followers</Link>
-                        
+                        <p>Your food preference is {user.foodId}</p>
+
+
                         <h3>Here are your posted recipes (current:All recipes)</h3>
                         <MyPostedRecipes user={user}/>
                     </div>
                 </div>
             </div>
-            <Link to="/profile/SavedRecipes"><h3>Saved Recipes </h3></Link>
-
-
+            Here is example of a small review card:
+            <ReviewCardSmall />
         </div>
     )
 }
