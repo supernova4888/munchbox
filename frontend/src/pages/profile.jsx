@@ -25,10 +25,10 @@ export default function Profile() {
             <h1>ProfilePage</h1>
             <p>You are on the profile page now.</p>
             <Link to="/profile/follower">
-            <h2>Followers</h2> 
+            <h2>Suggestions to follow</h2> 
             </Link> 
             <Link to="/profile/youfollow">
-            <h2>UserFollowers</h2> 
+            <h2>Followers</h2> 
             </Link> 
         </div>
     )

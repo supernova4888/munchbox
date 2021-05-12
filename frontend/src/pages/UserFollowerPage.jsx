@@ -11,7 +11,20 @@ export default function UserFollowerPage() {
         <UserFollowerCard key={followers.id} followers={followers}/>
 ));
 
-useEffect(() => {
+
+
+/* useEffect(() =>{
+  getUser()
+     .then( FollowerApi.listAllFollowers(currentUser)
+      .then(({ data }) => {
+        setFollower(data);
+        console.log(data)
+      })
+      .catch((err) => console.error(err)));
+  }, [setFollower]);
+ */
+
+/* useEffect(() => {
     UserApi.getCurrentUser()
       .then(({ data }) => {
         setCurrentUser(data.id);
@@ -28,6 +41,28 @@ useEffect(() => {
       })
       .catch((err) => console.error(err));
   }, [setFollower]);
+ */
+ async function getUser(){
+  await UserApi.getCurrentUser()
+      .then(({ data }) => {
+        setCurrentUser(data.id);
+        //console.log(data.id)
+      })
+      .catch((err) => console.error(err));
+  }
+
+  async function listAllFollower(getCurrentUser){
+    await FollowerApi.listAllFollowers(currentUser)
+      .then(({ data }) => {
+        setFollower(data);
+        console.log(data)
+      })
+      .catch((err) => console.error(err));
+  } 
+  useEffect(() => {
+    getUser();
+  listAllFollower(currentUser);
+  });
 
 
 return (
