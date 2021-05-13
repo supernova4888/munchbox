@@ -1,7 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import Popup from "reactjs-popup";
-import { useForm } from "react-hook-form";
 import RecipePostApi from "../api/RecipePostApi";
 import { Link, useParams } from "react-router-dom";
 
@@ -13,7 +12,6 @@ export default function UpdateSubmitForm({cloudURL}) {
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
     const [ingredient, setIngredient] = useState ("");
-
     const {id} = useParams();
 
     const handleChange = e => {
@@ -22,14 +20,7 @@ export default function UpdateSubmitForm({cloudURL}) {
         console.log(recipes);
     }
 
-    const updateRecipeImg = (cloudURL) => {
-        console.log(cloudURL);
-    }
-
-    // imageUpload generates a new cloudURL
-    // could URL is here but i need to 'add' it to recipes
-
-
+    // retrieve first from BE, it has the imgURL already
     useEffect(() => {
             RecipePostApi.getRecipeById(id)
                 .then(({data}) => setRecipes(data))
@@ -58,13 +49,17 @@ export default function UpdateSubmitForm({cloudURL}) {
         }
     }
 
+
+
     return (
         <div>
             <h3>Edit recipe details </h3>
 
+            {imageURL}
+
             <form className="recipeForm" onSubmit={updateRecipe}>
 
-            <input className="form-control" value={recipes?.cloudURL} name="imgURL"/>
+            {/* <input className="form-control" value={recipes?.cloudURL} name="imgURL"/> */}
 
             <input className="form-control" value={recipes?.title} name="title" onChange={handleChange}/>
 
