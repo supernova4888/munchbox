@@ -23,6 +23,12 @@ export default function UpdateSubmitForm({cloudURL}) {
     // async issue - probably useEffect
     // useEffect or handleChange issue
 
+    useEffect(() => {
+            RecipePostApi.getRecipeById(id)
+                .then(({data}) => setRecipes(data))
+                .catch((err) => console.error(err));
+                console.log(recipes);
+        }, []);
 
     // const handleChangeImg = cloudURL => {
     //     const {name, value} = cloudURL;
@@ -61,8 +67,6 @@ export default function UpdateSubmitForm({cloudURL}) {
             <h3>Edit recipe details </h3>
 
             <p>{imageURL}</p>
-
-            {cloudURL}
 
             <form className="recipeForm" onSubmit={updateRecipe}>
 

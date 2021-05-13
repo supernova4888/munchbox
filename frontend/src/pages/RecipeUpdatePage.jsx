@@ -11,12 +11,12 @@ const [recipes, setRecipes] = useState([]);
 const [imageURL, setImageURL] = useState("");
 const {id} = useParams();
 
-useEffect(() => {
-            RecipePostApi.getRecipeById(id)
-                .then(({data}) => setRecipes(data))
-                .catch((err) => console.error(err));
-                console.log(recipes);
-        }, []);
+// useEffect(() => {
+//             RecipePostApi.getRecipeById(id)
+//                 .then(({data}) => setRecipes(data))
+//                 .catch((err) => console.error(err));
+//                 console.log(recipes);
+//         }, []);
     
     // TODO: fix icon linking from review to here
 
@@ -24,17 +24,9 @@ useEffect(() => {
         <div>
         <h3>You are in Recipe Update page</h3>
 
-        <p>test</p>
-        <img src={recipes?.imgURL} width="100px" />
-
         <p>Edit image</p>
 
         <ImageUploader setImage={setImageURL} />
-
-         {imageURL !== "" &&
-            // TODO: alignment - new css added 
-                <img className="recipeImageTwo" src={imageURL} alt="uploadedImage" />
-            }
 
         <UpdateSubmitForm cloudURL={imageURL}/>
 
