@@ -1,7 +1,6 @@
 import React from 'react'
 import UpdateSubmitForm from "../components/UpdateSubmitForm";
 import { useEffect, useState } from "react";
-import Updatebutton from "../resources/images/UpdateButton.png";
 import { Link, useParams } from "react-router-dom";
 import ImageUploader from "../components/ImageUploader";
 import RecipePostApi from '../api/RecipePostApi';
@@ -72,8 +71,7 @@ useEffect(() => {
             <input value={recipes?.imgURL} name="imgURL" onChange={handleChange}/>
 
 
-
-             {/* <Input label="First Name" register={register} required />
+            {/* <Input label="First Name" register={register} required />
 
                 <input value={recipes?.title} />
 
