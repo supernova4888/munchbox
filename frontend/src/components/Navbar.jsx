@@ -60,7 +60,7 @@ export default function Navbar() {
                         <img className="svgIcon" src={plate}/>
                         <div className="tooltip">
                             <img className="svgIconSide" src={plateW}/>
-                            <span className="tooltiptext">Post</span>
+                            <span className="tooltiptext">My Saved Recipes</span>
                         </div>
                     </Link>
                 </li>
