@@ -30,9 +30,23 @@ export default function UpdateSubmitForm({preloadedValues}) {
         }, []);
 
     // api Update submission to the back end
-    const updateRecipe = (e) => {
+    async function updateRecipe (event) {
+        event.preventDefault();
         console.log("inside update recipe");
         // put request to the back end
+            const updatedRecipe = {
+            title: title,
+            body: link,
+            imgURL: cloudURL,
+            mainIngredient: ingredient
+        }
+        try {
+            const response = await RecipePostApi.createRecipe(updatedRecipe);
+            console.log(response.data);
+            setRecipes(response.data);
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     return (
@@ -44,12 +58,13 @@ export default function UpdateSubmitForm({preloadedValues}) {
             <input className="form-control" value={recipes?.title} name="title" onChange={handleChange}/>
             <input className="form-control" value={recipes?.body} name="body" onChange={handleChange} />
         
-            <input className="form-control" value={recipes?.mainIngredient} name="title" />
+            {/* <input className="form-control" value={recipes?.mainIngredient} name="mainIngredient" onChange={handleChange}/> */}
 
-            <h3>Select recipe main ingredient:</h3>
+            <h3>Edit recipe main ingredient:</h3>
 
-                <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
-                    <option>{recipes?.mainIngredient}</option>
+                {/* <select id = "dropdown" value={recipes?.mainIngredient} onChange={(e) => setIngredient(e.target.value)}> */}
+                <select id = "dropdown" value={recipes?.mainIngredient} name="mainIngredient" onChange={handleChange}>
+                    <option>Select main ingredient:</option>
                     <option value="Beef">Beef</option>
                     <option value="Veal">Veal</option>
                     <option value="Pork">Pork</option>
@@ -61,7 +76,7 @@ export default function UpdateSubmitForm({preloadedValues}) {
                 </select>
 
                 <Popup trigger={
-                <button className="buttonPost"type="submit"> Post It</button>} modal nested>
+                <button className="buttonPost"type="submit"> Update Post</button>} modal nested>
                     {close => (
                         <div className="modal">
                         <button className="close" onClick={close}> &times;  
