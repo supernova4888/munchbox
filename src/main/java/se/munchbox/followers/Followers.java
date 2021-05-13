@@ -19,6 +19,10 @@ public class Followers {
     @Column(nullable = false)
     private String followUserName;
 
+    @Column
+    private String profileId;
+    
+
     @ManyToOne
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     @JsonIdentityReference(alwaysAsId = true)
@@ -28,6 +32,7 @@ public class Followers {
 
     public Followers(String followUserName) {
         this.followUserName = followUserName;
+        this.profileId = profileId;
     }
 
     public Followers() {
@@ -56,5 +61,13 @@ public class Followers {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getProfileId() {
+        return profileId;
+    }
+
+    public void setProfileId(String profileId) {
+        this.profileId = profileId;
     }
 }

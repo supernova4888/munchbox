@@ -10,7 +10,7 @@ import ProfilePicCurrent from "../components/ProfilePic";
 import FoodIdCurrent from "../components/FoodIdCurrent";
 import MyPostedRecipes from "../components/MyPostedRecipes";
 import ReviewCardSmall from "../components/ReviewCardSmall";
-import followerImg from "../resources/profilepics/follower.png"
+import followerImg from "../resources/profilepics/profileFollowIcon.png"
 
 
 // this page brings all the compoents for the user profile and renders it
@@ -31,7 +31,7 @@ export default function Profile() {
 
 
     useEffect(() => {
-       UserApi.getCurrentUser()
+    UserApi.getCurrentUser()
             .then(({data}) => setUser(data))
             .catch((err) => console.error(err));
     }, [setUser]);
@@ -58,14 +58,14 @@ export default function Profile() {
                     </div>
                     <div className="followCard">
                         <Link to="/profile/follower">Suggestions to Follow</Link>
-                   <Link to="/profile/youfollow">
-                   <h2>Followers</h2> 
-                   </Link>
-                         <img className="followerImg" src={followerImg} />
-
-                        
+                    
+                        <img className="followerImg" src={followerImg} />
+    
                         </div>
-
+                    <Link to="/profile/youfollow">
+                    <h2>Followers</h2> 
+                    </Link>
+                    <br/>
 
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>

@@ -8,7 +8,7 @@ export default function UserFollowerPage() {
     const[currentUser, setCurrentUser] = useState([]);
 
     const UserfollowArray = follower.map((followers) => (
-        <UserFollowerCard key={followers.id} followers={followers}/>
+        <UserFollowerCard key={followers.id}  followers={followers}/>
 ));
 
 
@@ -67,9 +67,8 @@ export default function UserFollowerPage() {
 
 return (
 
-    <div>
-        <h1 className= "user-followers--heading">People you Follow</h1>
-        <br/>
+    <div className="followerContainer">
+        <h1 className="followerSuggestion">People you Follow</h1>
         {UserfollowArray}
 
     </div>

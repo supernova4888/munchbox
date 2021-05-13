@@ -20,10 +20,9 @@ const UsersArray = user.map((user) => (
 
 return (
     <div>
-        <h1 className= "followers--heading">Followers</h1>
-        <p className="followers--title">Suggestions to Follow</p>
-        <br/>
-        <div className = "grid">
+        <h1>Followers</h1>
+        <div className = "followerContainer">
+            <h2 className="followerSuggestion">Suggestions to Follow</h2>
                 {UsersArray} 
             <FollowerCard/>    
     </div>

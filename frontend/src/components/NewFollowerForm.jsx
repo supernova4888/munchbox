@@ -2,19 +2,12 @@ import React from "react";
 
 export default function NewFollowerForm({ onSubmit }) {
   const [followUserName, setFollowUserName]= React.useState("");
-
   const handleSubmit = () => {
     onSubmit({
       followUserName: followUserName,
     });
-
-    // Clear the input field
     setFollowUserName("");
   };
-
-
-  
-
   return (
     <form>
       <div>
