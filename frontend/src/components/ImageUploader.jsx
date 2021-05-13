@@ -22,12 +22,10 @@ export default function ImageUploader({setImage}) {
     };
 
     useEffect(()=> {
-       
         if(flag){
             postToCloud();
         }
         return () => {setFlag(false)}
-  
     },[imageUrl]);
 
     const postToCloud = async() => {
