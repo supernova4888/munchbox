@@ -8,8 +8,6 @@ import { Image } from "cloudinary-react";
 
 export default function RecipeCardMedium({ recipePost }) {
 
-    console.log(recipePost.imgURL);
-
     return (
         <div className="recipeCardMedium">
             <div className="recipeImageBox">

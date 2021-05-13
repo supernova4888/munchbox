@@ -55,6 +55,7 @@ const [imageSelected, setImageSelected] = useState("");
                 <ImageUploader setImage={setImageURL} />
             </div>
             {imageURL !== "" &&
+            // TODO: alignment - new css added 
                 <img className="recipeImageTwo" src={imageURL} alt="uploadedImage" />
             }
             <div className="card">
