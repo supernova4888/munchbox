@@ -20,27 +20,34 @@ export default function UpdateSubmitForm({cloudURL}) {
         console.log(recipes);
     }
 
+    // async issue - probably useEffect
+    // useEffect or handleChange issue
+
+
+    // const handleChangeImg = cloudURL => {
+    //     const {name, value} = cloudURL;
+    //     setRecipes({...recipes,[imageURL]: cloudURL})
+    //     console.log(recipes);
+    // }
+
     // retrieve first from BE, it has the imgURL already
-    useEffect(() => {
-            RecipePostApi.getRecipeById(id)
-                .then(({data}) => setRecipes(data))
-                .catch((err) => console.error(err));
-                console.log(recipes);
-        }, []);
+
 
     // api Update submission to the back end
     async function updateRecipe (event) {
-        event.preventDefault();
+        // event.preventDefault();
         console.log("inside update recipe");
+        // handleChangeImg(cloudURL)
         // put request to the back end
         // maybe i only need the 'const recipes'
-        //     const updatedRecipe = {
-        //     title: title,
-        //     body: link,
-        //     imgURL: cloudURL,
-        //     mainIngredient: ingredient
-        // }
+            const updatedRecipee = {
+            title: title,
+            body: link,
+            imgURL: imageURL,
+            mainIngredient: ingredient
+        }
         try {
+            console.log(recipes);
             const response = await RecipePostApi.updateRecipe(id, recipes);
             console.log(response.data);
             setRecipes(response.data);

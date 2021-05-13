@@ -24,7 +24,8 @@ useEffect(() => {
         <div>
         <h3>You are in Recipe Update page</h3>
 
-        {/* <img src={recipes?.imgURL} width="100px" /> */}
+        <p>test</p>
+        <img src={recipes?.imgURL} width="100px" />
 
         <p>Edit image</p>
 
