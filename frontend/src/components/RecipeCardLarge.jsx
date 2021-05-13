@@ -17,7 +17,7 @@ export default function RecipeCardLarge({ recipePost }) {
                 <Image className="recipeImageLarge" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
             </div>
             <div className="recipeTitleBoxLg">{recipePost.title}</div>
-            <img className="UpdateButton" src={UpdateButton}/>
+            <img className="UpdateButton" width="40px" src={UpdateButton}/>
             <div className="recipeBody">
                  <a href={recipePost.body} target="_blank"> {recipePost.body}</a>
             </div>
