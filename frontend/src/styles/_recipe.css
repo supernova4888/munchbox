@@ -27,6 +27,14 @@
     box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
 }
 
+.recipeImageTwo {
+    width: 300px;
+    height: auto;
+    align-items: center;
+    border-radius: 30%;
+    box-shadow: 0.15rem 0.15rem 0.3rem var(--color-greyshadow);
+}
+
 .recipeCardMedium {
     display: block;
     max-width: 300px;

@@ -55,8 +55,7 @@ const [imageSelected, setImageSelected] = useState("");
                 <ImageUploader setImage={setImageURL} />
             </div>
             {imageURL !== "" &&
-                <img src={imageURL} alt="carrot" />
-            
+                <img className="recipeImageTwo" src={imageURL} alt="uploadedImage" />
             }
             <div className="card">
             <SubmitForm cloudURL={imageURL}/>
