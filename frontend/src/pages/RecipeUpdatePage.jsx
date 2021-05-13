@@ -20,38 +20,6 @@ useEffect(() => {
     
     // TODO: fix icon linking from review to here
 
-    //  body: recipes.,
-    //         imgURL: cloudURL,
-    //         mainIngredient: ingredien
-
-    // const {register, handleSubmit} = useForm({
-    //     defaultValues: {title: recipes?.title}
-    // });
-
-    // const onSubmit = (recipes) => {
-    //     alert(JSON.stringify(recipes));
-    // };
-
-    // const handleChange = e => {
-    //     const {name, value} = e.target;
-    //     setRecipes({...recipes,[name]: value})
-    // }
-
-    // useEffect(() => {
-    //         RecipePostApi.getRecipeById(id)
-    //             .then(({data}) => setRecipes(data))
-    //             .catch((err) => console.error(err));
-    //             console.log(recipes);
-    //     }, []);
-
-
-//     const Input = ({ label, register, required }) => (
-//   <>
-//     <label>{label}</label>
-//     <input {...register(label, { required })} />
-//   </>
-// );
-
     return (
         <div>
         <h3>You are in Recipe Update page</h3>

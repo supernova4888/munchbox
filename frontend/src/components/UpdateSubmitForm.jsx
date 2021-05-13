@@ -49,29 +49,24 @@ export default function UpdateSubmitForm({cloudURL}) {
         }
     }
 
-
-
     return (
         <div>
             <h3>Edit recipe details </h3>
 
-            {imageURL}
+            <p>{imageURL}</p>
+
+            {cloudURL}
 
             <form className="recipeForm" onSubmit={updateRecipe}>
-
-            {/* <input className="form-control" value={recipes?.cloudURL} name="imgURL"/> */}
 
             <input className="form-control" value={recipes?.title} name="title" onChange={handleChange}/>
 
             {/* <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/> */}
 
             <input className="form-control" value={recipes?.body} name="body" onChange={handleChange} />
-        
-            {/* <input className="form-control" value={recipes?.mainIngredient} name="mainIngredient" onChange={handleChange}/> */}
 
             <h3>Edit recipe main ingredient:</h3>
 
-                {/* <select id = "dropdown" value={recipes?.mainIngredient} onChange={(e) => setIngredient(e.target.value)}> */}
                 <select id = "dropdown" value={recipes?.mainIngredient} name="mainIngredient" onChange={handleChange}>
                     <option>Select main ingredient:</option>
                     <option value="Beef">Beef</option>
@@ -83,7 +78,6 @@ export default function UpdateSubmitForm({cloudURL}) {
                     <option value="Vegetarian">Vegetarian</option>
                     <option value="Vegan">Vegan</option>
                 </select>
-
                 <Popup trigger={
                 <button className="buttonPost"type="submit"> Update Post</button>} modal nested>
                     {close => (
@@ -96,9 +90,7 @@ export default function UpdateSubmitForm({cloudURL}) {
                         </div>
                         </div>)}
                 </Popup>
-    
             </form>
-            
         </div>
     )
 }
