@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
 import UserApi from "../api/UserApi";
-
 import UserCard from "../components/UserCard";
 import FollowerCard from "../components/FollowerCard";
 
 export default function FollowerPage() {
- 
+
 const [user, setUser] = useState([]);
 const UsersArray = user.map((user) => (
         <UserCard key={user.id} user={user}/>
     ));
     
- useEffect(() => {
+useEffect(() => {
     UserApi.getAllUsers()
     .then(({data}) => setUser(data))
     .catch((err) => console.error(err));
 }, [setUser]);
-
 
 return (
     <div>
@@ -26,8 +24,7 @@ return (
                 {UsersArray} 
             <FollowerCard/>    
     </div>
-    </div>
-        
+    </div>     
 );
 }
 

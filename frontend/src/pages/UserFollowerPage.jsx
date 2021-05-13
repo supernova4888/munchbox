@@ -6,43 +6,11 @@ import UserApi from "../api/UserApi"
 export default function UserFollowerPage() {
     const [follower, setFollower] = useState([]);
     const[currentUser, setCurrentUser] = useState([]);
-
     const UserfollowArray = follower.map((followers) => (
         <UserFollowerCard key={followers.id}  followers={followers}/>
 ));
 
-
-
-/* useEffect(() =>{
-  getUser()
-     .then( FollowerApi.listAllFollowers(currentUser)
-      .then(({ data }) => {
-        setFollower(data);
-        console.log(data)
-      })
-      .catch((err) => console.error(err)));
-  }, [setFollower]);
- */
-
-/* useEffect(() => {
-    UserApi.getCurrentUser()
-      .then(({ data }) => {
-        setCurrentUser(data.id);
-        console.log(data.id)
-      })
-      .catch((err) => console.error(err));
-  }, [setCurrentUser]);
-
-  useEffect(() => {
-    FollowerApi.listAllFollowers(currentUser)
-      .then(({ data }) => {
-        setFollower(data);
-        console.log(data)
-      })
-      .catch((err) => console.error(err));
-  }, [setFollower]);
- */
- async function getUser(){
+async function getUser(){
   await UserApi.getCurrentUser()
       .then(({ data }) => {
         setCurrentUser(data.id);
@@ -64,13 +32,10 @@ export default function UserFollowerPage() {
   listAllFollower(currentUser);
   });
 
-
 return (
-
     <div className="followerContainer">
         <h1 className="followerSuggestion">People you Follow</h1>
         {UserfollowArray}
-
     </div>
 );
 }

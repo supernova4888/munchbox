@@ -8,7 +8,6 @@ export default function FollowerCard() {
     const[currentUser, setCurrentUser] = useState({});
     const[follower, setFollower] = useState([]);
 
-
    useEffect(() => {
     UserApi.getCurrentUser()
       .then(({ data }) => {
@@ -18,20 +17,6 @@ export default function FollowerCard() {
       .catch((err) => console.error(err));
   }, [setCurrentUser]); 
 
-/*   useEffect(() => {
-    FollowerApi.listAllFollowers(currentUser)
-      .then(({ data }) => {
-        setFollower(data);
-        console.log(data)
-      })
-      .catch((err) => console.error(err));
-  }, [setFollower]); */
-
-
-  // HandlerFunction (current User)
-  //call createFollower(followUSerName)
-  //return currentUser, followuserName
-
   async function createFollower(followUserName) {
     console.log(currentUser);
     try {
@@ -40,7 +25,6 @@ export default function FollowerCard() {
       console.log(followUserName)
       const follow = response.data;
       const newFollower = follower.concat(follow);
-
       setFollower(newFollower);
       console.log("follow")
     } catch (e) {
@@ -53,7 +37,6 @@ export default function FollowerCard() {
             <NewFollowerForm 
              onSubmit={(followUserName) => createFollower(followUserName)}
             />           
-        </div>
-        
+        </div>    
     );
 }
