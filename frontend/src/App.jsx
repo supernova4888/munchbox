@@ -54,7 +54,7 @@ export default function App() {
                     <Route component={SearchResults} path="/results/:query" />
                     <Route exact component={SpinnerPage} path="/spinner" />
                     <Route exact component={FollowerPage} path="/profile/follower"/>
-                    <Route exact component={UserFollowerPage} path="/profile/follower/youfollow"/>
+                    <Route exact component={UserFollowerPage} path="/profile/youfollow"/>
                 </Switch>
         </BrowserRouter>
     );
