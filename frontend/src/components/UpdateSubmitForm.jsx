@@ -9,9 +9,9 @@ export default function UpdateSubmitForm({cloudURL}) {
 
     const [recipe, setRecipe] = useState([]);
     const [imageURL, setImageURL] = useState("");
-    const [title, setTitle] = useState("");
-    const [link, setLink] = useState("");
-    const [ingredient, setIngredient] = useState ("");
+    // const [title, setTitle] = useState("");
+    // const [link, setLink] = useState("");
+    // const [ingredient, setIngredient] = useState ("");
     const {id} = useParams();
 
     useEffect(() => {
@@ -21,9 +21,11 @@ export default function UpdateSubmitForm({cloudURL}) {
                 console.log(recipe);
         }, []);
 
-
+    const { title, body, mainIngredient, imgURL={cloudURL}} = recipe
+    
     async function handleChange (event) {
         event.preventDefault();
+        // destructuring
         const {name, value} = event.target;
         setRecipe({...recipe,[name]: value})
         console.log(recipe);
@@ -33,19 +35,10 @@ export default function UpdateSubmitForm({cloudURL}) {
     // useEffect or handleChange issue
 
 
-    // api Update submission to the back end
+    // error 500 ! REFACTOR THIS PART OF THE CODE TO DO A PUT REQUEST
     async function updateRecipe (event) {
         event.preventDefault();
         console.log("inside update recipe");
-        // handleChangeImg(cloudURL)
-        // put request to the back end
-        // maybe i only need the 'const recipes'
-        //     const updatedRecipee = {
-        //     title: title,
-        //     body: link,
-        //     imgURL: imageURL,
-        //     mainIngredient: ingredient
-        // }
         try {
             console.log(recipe);
             const response = await RecipePostApi.updateRecipe(id, recipe);

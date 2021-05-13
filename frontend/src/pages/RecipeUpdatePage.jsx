@@ -10,13 +10,6 @@ export default function RecipeUpdatePage() {
 const [recipes, setRecipes] = useState([]);
 const [imageURL, setImageURL] = useState("");
 const {id} = useParams();
-
-// useEffect(() => {
-//             RecipePostApi.getRecipeById(id)
-//                 .then(({data}) => setRecipes(data))
-//                 .catch((err) => console.error(err));
-//                 console.log(recipes);
-//         }, []);
     
     // TODO: fix icon linking from review to here
 
