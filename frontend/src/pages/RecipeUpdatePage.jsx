@@ -14,17 +14,6 @@ const {id} = useParams();
     
     // TODO: fix icon linking from review to here
 
-    // recipe data is here, but i can't retrieve it
-    // ? why sometimes the useEffect loads and sometimes not?
-    
-    
-    // const preloadedValues = {
-    //     recipes
-    // }
-
-    // console.log(preloadedValues);
-    console.log(recipes.title);
-
     //  body: recipes.,
     //         imgURL: cloudURL,
     //         mainIngredient: ingredien
@@ -37,42 +26,46 @@ const {id} = useParams();
     //     alert(JSON.stringify(recipes));
     // };
 
-    const handleChange = e => {
-        const {name, value} = e.target;
+    // const handleChange = e => {
+    //     const {name, value} = e.target;
+    //     setRecipes({...recipes,[name]: value})
+    // }
 
-        setRecipes({...recipes,[name]: value})
-    }
-
-    useEffect(() => {
-            RecipePostApi.getRecipeById(id)
-                .then(({data}) => setRecipes(data))
-                .catch((err) => console.error(err));
-                console.log(recipes);
-        }, []);
+    // useEffect(() => {
+    //         RecipePostApi.getRecipeById(id)
+    //             .then(({data}) => setRecipes(data))
+    //             .catch((err) => console.error(err));
+    //             console.log(recipes);
+    //     }, []);
 
 
-    const Input = ({ label, register, required }) => (
-  <>
-    <label>{label}</label>
-    <input {...register(label, { required })} />
-  </>
-);
+//     const Input = ({ label, register, required }) => (
+//   <>
+//     <label>{label}</label>
+//     <input {...register(label, { required })} />
+//   </>
+// );
+
     return (
         <div>
         <p>You are in Recipe Update page</p>
-        {/* broken */}
-        {/* <UpdateSubmitForm preloadedValues={data} /> */}
-        {/* button to edit img */}
 
-        <form className="updateRecipeForm" >
+
+        <UpdateSubmitForm />
+
+
+        {/* this didnt work */}
+            {/* <Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/> */}
+
+        {/* <form className="updateRecipeForm" > */}
 
                 {/* create display img, pass data to an img component. Then allow for change/new img upload in that image component */}
-            <input value={recipes?.body} name="body" onChange={handleChange} />
+            {/* <input value={recipes?.body} name="body" onChange={handleChange} />
             <input value={recipes?.title} name="title" onChange={handleChange}/>
             <input value={recipes?.imgURL} name="imgURL" onChange={handleChange}/>
-            <img src={recipes?.imgURL} alt="recipe" />
 
-    
+
+
              {/* <Input label="First Name" register={register} required />
 
                 <input value={recipes?.title} />
@@ -82,7 +75,7 @@ const {id} = useParams();
                 <input {...register("recipes.imgURL")} type="text" />
 
                 <button className="buttonPost"type="submit"> Update Post </button> */}
-        </form>
+        {/* </form> */}
 
         </div>
     )
