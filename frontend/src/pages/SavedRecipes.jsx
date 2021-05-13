@@ -3,7 +3,8 @@ import RecipePostApi from "../api/RecipePostApi";
 import ReviewCardSmall from "../components/ReviewCardSmall.jsx";
 import UserApi from "../api/UserApi";
 
-export default function MySavedRecipes(){
+
+export default function SavedRecipes(){
     const[recipes,setRecipes]= useState([]);
     const [user, setUser] = useState()
 

@@ -2,8 +2,9 @@ import React from "react";
 import recipeImageGeneral from "../resources/recipe-03.jpg"
 import sampleProfile from "../resources/profilepic200px-05.jpg";
 import ProfilePicRecipe from "./ProfilePicRecipe";
-import ToggleButton from "./Toggle";
+import { Image } from "cloudinary-react";
 import UpdateButton from ".././resources/images/UpdateButton.png";
+import ToggleButton from "./Toggle";
 
 export default function RecipeCardLarge({ recipePost }) {
     /*<ToggleButton
@@ -13,7 +14,7 @@ export default function RecipeCardLarge({ recipePost }) {
                 value: !value,
             })
         }} />*/
-console.log("recipe", recipePost)
+    console.log("recipe", recipePost)
     return (
         <div className="recipeCardLarge">
             <div className="userPosterContainer">
@@ -29,7 +30,7 @@ console.log("recipe", recipePost)
                 <img className="UpdateButton" src={UpdateButton}/></div>
 
             <div className="recipeBody">
-                 <a href={recipePost.body} target="_blank"> {recipePost.body}</a>
+                <a href={recipePost.body} target="_blank"> {recipePost.body}</a>
             </div>
 
         </div>
