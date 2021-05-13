@@ -5,9 +5,8 @@ import RecipeCardLarge from "../../components/RecipeCardLarge";
 import "../../styles/_review.css";
 import RecipePostApi from "../../api/RecipePostApi";
 import ReviewApi from "../../api/ReviewApi";
-
-
-
+import { Link } from "react-router-dom";
+// import Updatebutton from "../../resources/images/UpdateButton.png";
 
 export default function ReviewPage() {
 
@@ -16,7 +15,6 @@ export default function ReviewPage() {
     const [body, setBody] = useState("");
     const [rating, setRating] = useState(0);
     const [UserName, SetUserName] = useState("");
-
 
     function changeRating(rating) {
         setRating(rating);
@@ -65,6 +63,7 @@ export default function ReviewPage() {
             <div className="pageBody">
                 <div className="card">
                     <RecipeCardLarge recipePost={recipes} />
+                    <Link to={`/review/${id}/update`}> To Review </Link>
                 </div>
 
                 <div className="card">
