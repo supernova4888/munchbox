@@ -6,7 +6,7 @@ import RecipePostApi from "../api/RecipePostApi";
 import { Link, useParams } from "react-router-dom";
 
 
-export default function UpdateSubmitForm({preloadedValues}) {
+export default function UpdateSubmitForm({cloudURL}) {
 
     const [recipes, setRecipes] = useState([]);
     const [title, setTitle] = useState("");
@@ -41,7 +41,7 @@ export default function UpdateSubmitForm({preloadedValues}) {
             mainIngredient: ingredient
         }
         try {
-            const response = await RecipePostApi.createRecipe(updatedRecipe);
+            const response = await RecipePostApi.updateRecipe(id, updatedRecipe);
             console.log(response.data);
             setRecipes(response.data);
         } catch (e) {
