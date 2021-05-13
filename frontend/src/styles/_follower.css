@@ -38,8 +38,7 @@
     height: 35px;
 }
 
-/* FollowerCard */
 .followerCard{
-     display: flex;
-     align-items:center;
- }
+    display: flex;
+    align-items:center;
+}

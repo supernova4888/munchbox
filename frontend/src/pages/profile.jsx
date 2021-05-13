@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import FoodPref from '../components/FoodPref'
-import Follower from "./FollowerPage";
 import { Link } from "react-router-dom";
 import FollowerPage from './FollowerPage';
+
+import UserFollower from "./UserFollowerPage";
 import UserApi from "../api/UserApi";
 import ProfilePicCurrent from "../components/ProfilePic";
 import FoodIdCurrent from "../components/FoodIdCurrent";
 import MyPostedRecipes from "../components/MyPostedRecipes";
 import ReviewCardSmall from "../components/ReviewCardSmall";
-import followerImg from "../resources/profilepics/follower.png"
+import followerImg from "../resources/profilepics/profileFollowIcon.png"
 
-// this page brings all the components for the user profile and renders it
+
+// this page brings all the compoents for the user profile and renders it
 // import FoodPref
 
 
@@ -29,7 +31,7 @@ export default function Profile() {
 
 
     useEffect(() => {
-       UserApi.getCurrentUser()
+    UserApi.getCurrentUser()
             .then(({data}) => setUser(data))
             .catch((err) => console.error(err));
     }, [setUser]);
@@ -55,12 +57,15 @@ export default function Profile() {
                         <FoodIdCurrent />
                     </div>
                     <div className="followCard">
-                        <Link to="/profile/follower">Followers</Link>
-                         <img className="followerImg" src={followerImg} />
-
-                        
+                        <Link to="/profile/follower">Suggestions to Follow</Link>
+                    
+                        <img className="followerImg" src={followerImg} />
+    
                         </div>
-
+                    <Link to="/profile/youfollow">
+                    <h2>Followers</h2> 
+                    </Link>
+                    <br/>
 
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>
