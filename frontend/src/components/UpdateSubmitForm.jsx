@@ -19,6 +19,7 @@ export default function UpdateSubmitForm({preloadedValues}) {
     const handleChange = e => {
         const {name, value} = e.target;
         setRecipes({...recipes,[name]: value})
+        console.log(recipes);
     }
 
     useEffect(() => {
@@ -27,10 +28,11 @@ export default function UpdateSubmitForm({preloadedValues}) {
                 .catch((err) => console.error(err));
                 console.log(recipes);
         }, []);
-   
+
     // api Update submission to the back end
     const updateRecipe = (e) => {
         console.log("inside update recipe");
+        // put request to the back end
     }
 
     return (
@@ -39,13 +41,15 @@ export default function UpdateSubmitForm({preloadedValues}) {
 
             <form className="recipeForm" onSubmit={updateRecipe}>
 
-            <input className="form-control" value={recipes?.body} name="body" onChange={handleChange} />
             <input className="form-control" value={recipes?.title} name="title" onChange={handleChange}/>
+            <input className="form-control" value={recipes?.body} name="body" onChange={handleChange} />
+        
+            <input className="form-control" value={recipes?.mainIngredient} name="title" />
 
             <h3>Select recipe main ingredient:</h3>
 
                 <select id = "dropdown" onChange={(e) => setIngredient(e.target.value)}>
-                    <option>Select main ingredient:</option>
+                    <option>{recipes?.mainIngredient}</option>
                     <option value="Beef">Beef</option>
                     <option value="Veal">Veal</option>
                     <option value="Pork">Pork</option>
