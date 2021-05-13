@@ -9,18 +9,26 @@ import { Link, useParams } from "react-router-dom";
 export default function UpdateSubmitForm({cloudURL}) {
 
     const [recipes, setRecipes] = useState([]);
+    const [imageURL, setImageURL] = useState("");
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
     const [ingredient, setIngredient] = useState ("");
 
     const {id} = useParams();
 
-
     const handleChange = e => {
         const {name, value} = e.target;
         setRecipes({...recipes,[name]: value})
         console.log(recipes);
     }
+
+    const updateRecipeImg = (cloudURL) => {
+        console.log(cloudURL);
+    }
+
+    // imageUpload generates a new cloudURL
+    // could URL is here but i need to 'add' it to recipes
+
 
     useEffect(() => {
             RecipePostApi.getRecipeById(id)
@@ -34,14 +42,15 @@ export default function UpdateSubmitForm({cloudURL}) {
         event.preventDefault();
         console.log("inside update recipe");
         // put request to the back end
-            const updatedRecipe = {
-            title: title,
-            body: link,
-            imgURL: cloudURL,
-            mainIngredient: ingredient
-        }
+        // maybe i only need the 'const recipes'
+        //     const updatedRecipe = {
+        //     title: title,
+        //     body: link,
+        //     imgURL: cloudURL,
+        //     mainIngredient: ingredient
+        // }
         try {
-            const response = await RecipePostApi.updateRecipe(id, updatedRecipe);
+            const response = await RecipePostApi.updateRecipe(id, recipes);
             console.log(response.data);
             setRecipes(response.data);
         } catch (e) {
@@ -55,7 +64,12 @@ export default function UpdateSubmitForm({cloudURL}) {
 
             <form className="recipeForm" onSubmit={updateRecipe}>
 
+            <input className="form-control" value={recipes?.cloudURL} name="imgURL"/>
+
             <input className="form-control" value={recipes?.title} name="title" onChange={handleChange}/>
+
+            {/* <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/> */}
+
             <input className="form-control" value={recipes?.body} name="body" onChange={handleChange} />
         
             {/* <input className="form-control" value={recipes?.mainIngredient} name="mainIngredient" onChange={handleChange}/> */}
