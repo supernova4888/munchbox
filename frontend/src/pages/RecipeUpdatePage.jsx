@@ -1,16 +1,23 @@
 import React from 'react'
 import UpdateSubmitForm from "../components/UpdateSubmitForm";
 import { useEffect, useState } from "react";
-import RecipePostApi from "../api/RecipePostApi";
 import Updatebutton from "../resources/images/UpdateButton.png";
 import { Link, useParams } from "react-router-dom";
-import { useForm } from "react-hook-form";
-
+import ImageUploader from "../components/ImageUploader";
+import RecipePostApi from '../api/RecipePostApi';
 
 export default function RecipeUpdatePage() {
 
-const [recipes, setRecipes] = useState("");
+const [recipes, setRecipes] = useState([]);
+const [imageURL, setImageURL] = useState("");
 const {id} = useParams();
+
+useEffect(() => {
+            RecipePostApi.getRecipeById(id)
+                .then(({data}) => setRecipes(data))
+                .catch((err) => console.error(err));
+                console.log(recipes);
+        }, []);
     
     // TODO: fix icon linking from review to here
 
@@ -48,18 +55,18 @@ const {id} = useParams();
 
     return (
         <div>
-        <p>You are in Recipe Update page</p>
+        <h3>You are in Recipe Update page</h3>
 
+        <img src={recipes?.imgURL} width="100px" />
 
-        <UpdateSubmitForm />
+        <p>Edit image</p>
 
+        <ImageUploader setImage={setImageURL} />
 
-        {/* this didnt work */}
-            {/* <Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/> */}
+        <UpdateSubmitForm cloudURL={imageURL}/>
 
         {/* <form className="updateRecipeForm" > */}
 
-                {/* create display img, pass data to an img component. Then allow for change/new img upload in that image component */}
             {/* <input value={recipes?.body} name="body" onChange={handleChange} />
             <input value={recipes?.title} name="title" onChange={handleChange}/>
             <input value={recipes?.imgURL} name="imgURL" onChange={handleChange}/>
