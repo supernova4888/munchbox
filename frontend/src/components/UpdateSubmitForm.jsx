@@ -7,56 +7,50 @@ import { Link, useParams } from "react-router-dom";
 
 export default function UpdateSubmitForm({cloudURL}) {
 
-    const [recipes, setRecipes] = useState([]);
+    const [recipe, setRecipe] = useState([]);
     const [imageURL, setImageURL] = useState("");
     const [title, setTitle] = useState("");
     const [link, setLink] = useState("");
     const [ingredient, setIngredient] = useState ("");
     const {id} = useParams();
 
-    const handleChange = e => {
-        const {name, value} = e.target;
-        setRecipes({...recipes,[name]: value})
-        console.log(recipes);
+    useEffect(() => {
+            RecipePostApi.getRecipeById(id)
+                .then(({data}) => setRecipe(data))
+                .catch((err) => console.error(err));
+                console.log(recipe);
+        }, []);
+
+
+    async function handleChange (event) {
+        event.preventDefault();
+        const {name, value} = event.target;
+        setRecipe({...recipe,[name]: value})
+        console.log(recipe);
     }
 
     // async issue - probably useEffect
     // useEffect or handleChange issue
 
-    useEffect(() => {
-            RecipePostApi.getRecipeById(id)
-                .then(({data}) => setRecipes(data))
-                .catch((err) => console.error(err));
-                console.log(recipes);
-        }, []);
-
-    // const handleChangeImg = cloudURL => {
-    //     const {name, value} = cloudURL;
-    //     setRecipes({...recipes,[imageURL]: cloudURL})
-    //     console.log(recipes);
-    // }
-
-    // retrieve first from BE, it has the imgURL already
-
 
     // api Update submission to the back end
     async function updateRecipe (event) {
-        // event.preventDefault();
+        event.preventDefault();
         console.log("inside update recipe");
         // handleChangeImg(cloudURL)
         // put request to the back end
         // maybe i only need the 'const recipes'
-            const updatedRecipee = {
-            title: title,
-            body: link,
-            imgURL: imageURL,
-            mainIngredient: ingredient
-        }
+        //     const updatedRecipee = {
+        //     title: title,
+        //     body: link,
+        //     imgURL: imageURL,
+        //     mainIngredient: ingredient
+        // }
         try {
-            console.log(recipes);
-            const response = await RecipePostApi.updateRecipe(id, recipes);
+            console.log(recipe);
+            const response = await RecipePostApi.updateRecipe(id, recipe);
             console.log(response.data);
-            setRecipes(response.data);
+            setRecipe(response.data);
         } catch (e) {
             console.error(e);
         }
@@ -70,15 +64,13 @@ export default function UpdateSubmitForm({cloudURL}) {
 
             <form className="recipeForm" onSubmit={updateRecipe}>
 
-            <input className="form-control" value={recipes?.title} name="title" onChange={handleChange}/>
+            <input className="form-control" value={recipe?.title} name="title" onChange={handleChange}/>
 
-            {/* <input className="form-control" placeholder="Enter Recipe Title" type="text" onChange={(e) => setTitle(e.target.value)}/> */}
-
-            <input className="form-control" value={recipes?.body} name="body" onChange={handleChange} />
+            <input className="form-control" value={recipe?.body} name="body" onChange={handleChange} />
 
             <h3>Edit recipe main ingredient:</h3>
 
-                <select id = "dropdown" value={recipes?.mainIngredient} name="mainIngredient" onChange={handleChange}>
+                <select id = "dropdown" value={recipe?.mainIngredient} name="mainIngredient" onChange={handleChange}>
                     <option>Select main ingredient:</option>
                     <option value="Beef">Beef</option>
                     <option value="Veal">Veal</option>

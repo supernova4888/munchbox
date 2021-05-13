@@ -49,12 +49,10 @@ export default function ImageUploader({setImage}) {
             <input type="file" onChange={selectFile}/>
             <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
             
-            {/* <img src={recipes?.imgURL} width="100px" /> */}
+            {/* <img src={recipes?.imgURL} width="100px" />
 
-             {imageUrl !== "" &&
-            // TODO: alignment - new css added 
-                <img className="recipeImageTwo" src={imageUrl} alt="uploadedImage" />
-            }
+            {imageUrl !== "" && <img className="recipeImageTwo" src={imageUrl} alt="uploadedImage" />}  */}
+
         </div>
     )
 }
