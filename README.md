@@ -75,6 +75,9 @@ Filled plus symbol icon made by <a href="https://www.flaticon.com/authors/vector
 
 Toggle icon made by <a href="https://www.flaticon.com/authors/pixel-perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a></div>
 
+Following icon made by <a href="https://www.flaticon.com/authors/prosymbols">Prosymbols</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+
+
 ## Other Credits
 
 Font 'Oxygen' from <a href="https://fonts.google.com/specimen/Oxygen">Google Fonts</a>
