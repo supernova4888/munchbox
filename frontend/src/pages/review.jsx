@@ -21,17 +21,26 @@ export default function ReviewPage() {
         setRating(rating);
     }
 
+    useEffect(() => {
+        ReviewApi.getAllReviews(id)
+            .then(({data}) => setReviews(data))
+            .catch((err) => console.error(err));
+    }, [setReviews]);
+
     async function getAllReview(id) {
         try {
             const response = await ReviewApi.getAllReviews(id);
             const review = response.data;
-            const newReview = recipes.concat(review);
+            const newReview = reviews.concat(review);
 
             setReviews(newReview);
         } catch (e) {
             console.error(e);
         }
     }
+
+
+
     useEffect(() => {
             RecipePostApi.getRecipeById(id)
                 .then(({data}) => setRecipes(data))

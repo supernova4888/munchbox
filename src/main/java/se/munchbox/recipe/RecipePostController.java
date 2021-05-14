@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se.munchbox.ResourceNotFoundException;
 import se.munchbox.user.UserRepository;
+import se.munchbox.user.UserService;
 import se.munchbox.user.User;
 import se.munchbox.recipe.RecipePost;
 
@@ -19,13 +20,18 @@ import java.util.Set;
 public class RecipePostController {
     RecipePostRepository recipePostRepository;
     UserRepository userRepository;
+    UserService userService;
 
     @Autowired
-    public RecipePostController(RecipePostRepository recipePostRepository, UserRepository userRepository) {
+    public RecipePostController(RecipePostRepository recipePostRepository, UserRepository userRepository, UserService userService) {
         this.recipePostRepository = recipePostRepository;
         this.userRepository = userRepository;
-
+        this.userService = userService;
     }
+
+
+
+
 
     /**
      * List all recipe posts in database
@@ -103,11 +109,16 @@ public class RecipePostController {
         RecipePost post = recipePostRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
         return ResponseEntity.ok(post);
     }
-    /*@GetMapping("/post/{userId}")
-    public ResponseEntity<List<RecipePost>> listAllRecipes(@PathVariable Long userId) {
-        User user = userRepository.findById(userId).orElseThrow(ResourceNotFoundException::new);
-        return ResponseEntity.ok(user.getRecipes());
-    }*/
+    @GetMapping("/users/favorites")
+    public ResponseEntity<Set<RecipePost>> listFavoriteRecipes(Principal principal) {
+        String userEmail = principal.getName();
+        User user = userService.findUserByEmail(userEmail);
+
+        Set<RecipePost> favoritedPosts = user.getFavoritedPosts();
+
+
+        return ResponseEntity.ok(favoritedPosts);
+    }
 }
 
 

@@ -7,20 +7,45 @@ import UpdateButton from ".././resources/images/UpdateButton.png";
 import ToggleButton from "./Toggle";
 import {useParams} from "react-router";
 import RecipePostApi from "../api/RecipePostApi";
+import UserApi from "../api/UserApi";
 export default function RecipeCardLarge({ recipePost }) {
 
-    const[recipes,setRecipes]= useState([]);
-    const [user, setUser] = useState();
-    const {userId} = useParams();
-    const {postId} = useParams();
+    const[userId,setUserId]= useState({});
+    const[postId,setPostId]= useState({});
+    const[favorite,setFavorite]= useState([]);
+    const {id} = useParams();
 
     useEffect(() => {
-        RecipePostApi.createFavoriteRecipes(userId,postId)
-            .then(({data}) => setRecipes(data))
+        UserApi.getCurrentUser()
+            .then(({ data }) => {
+                setUserId(data.id);
+
+                console.log("user:" + data.id)
+            })
             .catch((err) => console.error(err));
+    }, [setUserId]);
 
-
-    }, [setRecipes]);
+    useEffect(() => {
+        RecipePostApi.getRecipeById(id)
+            .then(({ data }) => {
+                setPostId(data.id);
+                console.log("recipe:" + data.id)
+            })
+            .catch((err) => console.error(err));
+    }, [setPostId]);
+    async function createFavoriteRecipe() {
+        console.log("Favorite created")
+        try {
+            const response = await RecipePostApi.createFavoriteRecipes(userId,postId);
+            console.log("Favorite created succ")
+            const favoriteRecipe = response.data;
+            const newFavoriteRecipe = favorite.concat(favoriteRecipe);
+            setFavorite(newFavoriteRecipe);
+            console.log("favoriteRecipe")
+        } catch (e) {
+            console.error(e);
+        }
+    }
 
 
     return (
@@ -31,7 +56,7 @@ export default function RecipeCardLarge({ recipePost }) {
 
                 <div className="userNameSmall">{recipePost.userName}</div>
 
-                <div className="toggleButon" ><ToggleButton/></div>
+                <div className="toggleButon" ><ToggleButton onSubmit={() => createFavoriteRecipe()}/></div>
             </div>
             <div className="recipeImageBox">
                 <Image className="recipeImageLarge" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
