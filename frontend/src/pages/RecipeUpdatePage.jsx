@@ -9,8 +9,6 @@ export default function RecipeUpdatePage() {
 const [imageURL, setImageURL] = useState("");
 const {id} = useParams();
     
-    // TODO: fix icon linking from review to here
-
     return (
         <div>
         <h3>You are in Recipe Update page</h3>
