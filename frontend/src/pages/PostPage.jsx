@@ -7,7 +7,6 @@ import ImageUploader from "../components/ImageUploader";
 export default function PostPage() {
 
 const [imageURL, setImageURL] = useState("http://res.cloudinary.com/dt0zgbuyg/image/upload/v1620733872/munchbox/nefbqpkd0agoh7zzwixp.png");
-const [imageSelected, setImageSelected] = useState("");
 
     return (
         <div className="pageBody">
@@ -15,7 +14,7 @@ const [imageSelected, setImageSelected] = useState("");
 
             <div className="card">
 
-                <ImageUploader setImage={setImageURL} />
+            <ImageUploader setImage={setImageURL} />
             </div>
             {imageURL !== "" &&
             // TODO: alignment - new css added 

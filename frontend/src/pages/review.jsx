@@ -6,7 +6,7 @@ import "../styles/_review.css";
 import RecipePostApi from "../api/RecipePostApi";
 import ReviewApi from "../api/ReviewApi";
 import { Link } from "react-router-dom";
-// import Updatebutton from "../../resources/images/UpdateButton.png";
+import Updatebutton from "../../resources/images/UpdateButton.png";
 
 export default function ReviewPage() {
 
@@ -63,7 +63,7 @@ export default function ReviewPage() {
             <div className="pageBody">
                 <div className="card">
                     <RecipeCardLarge recipePost={recipes} />
-                    <Link to={`/review/${id}/update`}> To update </Link>
+                    <Link to={`/review/${id}/update`}> <img src={Updatebutton} alt="Edit a recipe post" width="60px"/> </Link>
                 </div>
 
                 <div className="card">
