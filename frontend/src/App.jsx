@@ -17,9 +17,12 @@ import LogoutButton from "./components/LogoutButton";
 import FollowerPage from "./pages/FollowerPage";
 import UserFollowerPage from "./pages/UserFollowerPage";
 import NavbarGuest from "./components/NavbarGuest.jsx";
-import ReviewPage from "./pages/review/review";
+import ReviewPage from "./pages/review";
 import SearchResults from "./pages/SearchResults";
 import RecipeUpdatePage from "./pages/RecipeUpdatePage";
+import MySavedRecipesPage from "./pages/MySavedRecipePage";
+
+
 
 
 export default function App() {
@@ -40,6 +43,7 @@ export default function App() {
                 <Route component={SearchResults} path="/results/:query" />
                 <Route component={LoginPage} path="/login" />
                 <Route component={RegisterPage} path="/register" />
+
             </Switch>
         </BrowserRouter>
     );
@@ -50,6 +54,7 @@ export default function App() {
                 <Switch>  
                     <Route exact component={HomePage} path="/home" />
                     <Route exact component={ReviewPage} path="/review/:id" />
+                    <Route exact component={MySavedRecipesPage} path="/MySavedRecipePage"/>
                     <Route exact component={PostPage} path="/post" />
                     <Route exact component={ProfilePage} path="/profile" />
                     <Route component={SearchResults} path="/results/:query" />
@@ -57,6 +62,7 @@ export default function App() {
                     <Route exact component={FollowerPage} path="/profile/follower"/>
                     <Route exact component={RecipeUpdatePage} path="/review/:id/update" />
                     <Route exact component={UserFollowerPage} path="/profile/youfollow"/>
+
                 </Switch>
         </BrowserRouter>
     );

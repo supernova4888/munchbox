@@ -40,10 +40,9 @@ export default function SpinnerPage() {
 
     return (
         <div className="pageBody">
-            <h1>SpinnerPage</h1>
             <div className="card">
                 <div className="card-body">
-                    <p>Wondering what you should cook for dinner?</p>
+                    <h1>Wondering what you should cook for dinner?</h1>
                     <button className="buttonLogin" onClick={handleClick}>spin</button>
                     <p>Recipe #{random}</p>
 

@@ -10,8 +10,8 @@ import ProfilePicCurrent from "../components/ProfilePic";
 import FoodIdCurrent from "../components/FoodIdCurrent";
 import MyPostedRecipes from "../components/MyPostedRecipes";
 import ReviewCardSmall from "../components/ReviewCardSmall";
-import followerImg from "../resources/profilepics/profileFollowIcon.png"
-
+import followerImg from "../resources/profilepics/follower.png"
+import following from "../resources/group-white.png";
 
 // this page brings all the compoents for the user profile and renders it
 // import FoodPref
@@ -27,20 +27,23 @@ import followerImg from "../resources/profilepics/profileFollowIcon.png"
 
 export default function Profile() {
     const [user, setUser] = useState([]);
-
+    const [status, setStatus] = useState(0) // 0 is loading, 1 is loaded, 2 error
 
 
     useEffect(() => {
     UserApi.getCurrentUser()
-            .then(({data}) => setUser(data))
+            .then(({data}) => {
+                setUser(data)
+                setStatus(1)
+            })
             .catch((err) => console.error(err));
-    }, [setUser]);
+    }, [setStatus,setUser]);
 
 
 
     return (
         <div className="pageBody">
-            <h1>ProfilePage</h1>
+            <h1>About Me</h1>
             <div className="card">
                 <div className="card-body">
                     <div className="profileBox">
@@ -53,15 +56,16 @@ export default function Profile() {
 
                     
                     <div className="foodIdBox">
-                        <h2>FoodPref</h2>
+                        <h2>{user.foodId}</h2>
                         <FoodIdCurrent />
                     </div>
-                    <div className="followCard">
-                        <Link to="/profile/follower">Suggestions to Follow</Link>
-                    
-                        <img className="followerImg" src={followerImg} />
-    
+
+                    <Link to="/profile/follower">
+                        <div className="foodIdBox">
+                            <h2>Following</h2>
+                            <img className="profileFollow" src={following} />
                         </div>
+                    </Link>
                     <Link to="/profile/youfollow">
                     <h2>Followers</h2> 
                     </Link>
@@ -69,18 +73,16 @@ export default function Profile() {
 
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>
-                        
-
                         <p>Your food preference is {user.foodId}</p>
-                        
-                        
-                        <h3>Here are your posted recipes (current:All recipes)</h3>
-                        <MyPostedRecipes user={user}/>
+
+                        {status === 0 && <p>Loading recipes...</p>}
+                        {status === 1 && <MyPostedRecipes user={user}/>}
+                        {/* ERROR here pls */}
                     </div>
                 </div>
             </div>
-            Here is example of a small review card:
-            <ReviewCardSmall />
+
+        {/* <ReviewCardSmall />*/}
         </div>
     )
 }

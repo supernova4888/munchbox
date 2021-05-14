@@ -30,8 +30,6 @@ export default function HomePage() {
 
 return (
     <div className="pageBody">
-        <h1>HomePage</h1>
-        <p>You are on the home page now. Below you'll see all recipes, with a sample image and sample user profile image.</p>
 
             <div className="card">
                 <form onSubmit={onSearch}>
