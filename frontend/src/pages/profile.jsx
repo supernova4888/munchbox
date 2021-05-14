@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import FoodPref from '../components/FoodPref'
-import Follower from "./FollowerPage";
 import { Link } from "react-router-dom";
 import FollowerPage from './FollowerPage';
+
+import UserFollower from "./UserFollowerPage";
 import UserApi from "../api/UserApi";
 import ProfilePicCurrent from "../components/ProfilePic";
 import FoodIdCurrent from "../components/FoodIdCurrent";
@@ -12,7 +13,7 @@ import ReviewCardSmall from "../components/ReviewCardSmall";
 import followerImg from "../resources/profilepics/follower.png"
 import following from "../resources/group-white.png";
 
-// this page brings all the components for the user profile and renders it
+// this page brings all the compoents for the user profile and renders it
 // import FoodPref
 
 
@@ -30,7 +31,7 @@ export default function Profile() {
 
 
     useEffect(() => {
-       UserApi.getCurrentUser()
+    UserApi.getCurrentUser()
             .then(({data}) => {
                 setUser(data)
                 setStatus(1)
@@ -65,6 +66,10 @@ export default function Profile() {
                             <img className="profileFollow" src={following} />
                         </div>
                     </Link>
+                    <Link to="/profile/youfollow">
+                    <h2>Followers</h2> 
+                    </Link>
+                    <br/>
 
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>
@@ -76,8 +81,8 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-            Here is example of a small review card:
-            <ReviewCardSmall />
+
+        {/* <ReviewCardSmall />*/}
         </div>
     )
 }

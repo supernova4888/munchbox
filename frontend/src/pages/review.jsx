@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {useParams} from "react-router";
-import StarRating from "../../components/StarRating";
-import RecipeCardLarge from "../../components/RecipeCardLarge";
-import "../../styles/_review.css";
-import RecipePostApi from "../../api/RecipePostApi";
-import ReviewApi from "../../api/ReviewApi";
-
-
-
+import StarRating from "../components/StarRating";
+import RecipeCardLarge from "../components/RecipeCardLarge";
+import "../styles/_review.css";
+import RecipePostApi from "../api/RecipePostApi";
+import ReviewApi from "../api/ReviewApi";
+import { Link } from "react-router-dom";
+// import Updatebutton from "../../resources/images/UpdateButton.png";
 
 export default function ReviewPage() {
 
@@ -17,14 +16,13 @@ export default function ReviewPage() {
     const [rating, setRating] = useState(0);
     const [UserName, SetUserName] = useState("");
 
-
     function changeRating(rating) {
         setRating(rating);
     }
 
     async function getAllRecipes(recipePost) {
         try {
-            const response = await RecipePostApi.getAllRecipes(recipePost);
+            const response = await ReviewApi.getAllReviews(recipePost);
             const recipe = response.data;
             const newRecipe = recipes.concat(recipe);
 
@@ -65,13 +63,14 @@ export default function ReviewPage() {
             <div className="pageBody">
                 <div className="card">
                     <RecipeCardLarge recipePost={recipes} />
+                    <Link to={`/review/${id}/update`}> To update </Link>
                 </div>
 
                 <div className="card">
 
                     <form className="recipeForm" onSubmit={createReview}>
                         <StarRating onChangeRating ={changeRating} rating={rating} />
-                        <input className="form-control" placeholder="Write your comment here" type="text" onChange={(e) => setBody(e.target.value)}/>
+                        <textarea className="form-control" placeholder="Write your comment here" onChange={(e) => setBody(e.target.value)}/>
                         <button className="buttonRegister" type="submit">Save Review </button>
                     </form>
                 </div>

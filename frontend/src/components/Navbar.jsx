@@ -56,11 +56,11 @@ export default function Navbar() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/post">
+                    <Link to="/MySavedRecipePage">
                         <img className="svgIcon" src={plate}/>
                         <div className="tooltip">
                             <img className="svgIconSide" src={plateW}/>
-                            <span className="tooltiptext">Post</span>
+                            <span className="tooltiptext">My Saved Recipes</span>
                         </div>
                     </Link>
                 </li>
