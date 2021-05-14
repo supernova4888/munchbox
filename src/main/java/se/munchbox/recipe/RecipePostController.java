@@ -84,11 +84,11 @@ public class RecipePostController {
     public ResponseEntity<RecipePost> createPost(@RequestBody RecipePost post, Principal principal) {
         post.setUser(userRepository.findByEmail(principal.getName()));
 
-        /*String userEmail = principal.getName();
+        String userEmail = principal.getName();
         String userName = userRepository.findByEmail(userEmail).getName();
         String profileId = userRepository.findByEmail(userEmail).getProfileId();
         post.setUserName(userName);
-        post.setProfileId(profileId);*/
+        post.setProfileId(profileId);
         recipePostRepository.save(post);
         return ResponseEntity.status(HttpStatus.CREATED).body(post);
     }
