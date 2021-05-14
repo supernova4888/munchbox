@@ -18,5 +18,15 @@ class RecipePostApi {
         return Api.delete("/posts/" + id);
     }
 
+    createFavoriteRecipes(userId,postId) {
+        console.log("Create recipes Api userId,postId " ,userId,postId);
+        return Api.post(`/users/${userId}/posts/${postId}`);
+    }
+
+    getFavoriteRecipes() {
+
+        return Api.get(`/users/favorites`);
+    }
+
 }
 export default new RecipePostApi();

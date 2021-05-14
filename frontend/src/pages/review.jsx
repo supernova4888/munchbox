@@ -10,6 +10,7 @@ import Updatebutton from "../../resources/images/UpdateButton.png";
 
 export default function ReviewPage() {
 
+    const [reviews, setReviews] = useState([]);
     const [recipes, setRecipes] = useState([]);
     const {id} = useParams();
     const [body, setBody] = useState("");
@@ -20,17 +21,26 @@ export default function ReviewPage() {
         setRating(rating);
     }
 
-    async function getAllRecipes(recipePost) {
-        try {
-            const response = await ReviewApi.getAllReviews(recipePost);
-            const recipe = response.data;
-            const newRecipe = recipes.concat(recipe);
+    useEffect(() => {
+        ReviewApi.getAllReviews(id)
+            .then(({data}) => setReviews(data))
+            .catch((err) => console.error(err));
+    }, [setReviews]);
 
-            setRecipes(newRecipe);
+    async function getAllReview(id) {
+        try {
+            const response = await ReviewApi.getAllReviews(id);
+            const review = response.data;
+            const newReview = reviews.concat(review);
+
+            setReviews(newReview);
         } catch (e) {
             console.error(e);
         }
     }
+
+
+
     useEffect(() => {
             RecipePostApi.getRecipeById(id)
                 .then(({data}) => setRecipes(data))
@@ -73,6 +83,7 @@ export default function ReviewPage() {
                         <textarea className="form-control" placeholder="Write your comment here" onChange={(e) => setBody(e.target.value)}/>
                         <button className="buttonRegister" type="submit">Save Review </button>
                     </form>
+                    <p>{getAllReview}</p>
                 </div>
             </div>
         );

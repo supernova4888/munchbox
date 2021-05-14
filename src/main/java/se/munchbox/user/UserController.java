@@ -33,4 +33,6 @@ public class UserController {
     public User getUserByMail(@PathVariable String email) {
         return userService.findUserByEmail(email);
     }
+
+
 }
