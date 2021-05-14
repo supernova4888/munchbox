@@ -1,9 +1,8 @@
 import React from 'react'
 import UpdateSubmitForm from "../components/UpdateSubmitForm";
-import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 import ImageUploader from "../components/ImageUploader";
-import RecipePostApi from '../api/RecipePostApi';
 
 export default function RecipeUpdatePage() {
 
@@ -12,19 +11,6 @@ const [imageURL, setImageURL] = useState("");
 const {id} = useParams();
     
     // TODO: fix icon linking from review to here
-
-    // 1. retrieve the item to update - OK
-    // 2. load the item:data in the form - OK
-    // 3. allow user to input changes - OK
-    //       a) img - OK
-    //       b) text - OK
-    // 4. save the changes in state
-    //      - img 
-    //      - text - OK
-    // 5. get @param "recipe id" of the one that needs updating
-    // 5. send the item:data to back end with changes (PUT)
-    // 6. display the current updated item
-    // 7. Fix links from recipe review
 
     return (
         <div>
