@@ -8,10 +8,6 @@ import { Link, useParams } from "react-router-dom";
 export default function UpdateSubmitForm({cloudURL}) {
 
     const [recipe, setRecipe] = useState([]);
-    const [imageURL, setImageURL] = useState("");
-    // const [title, setTitle] = useState("");
-    // const [link, setLink] = useState("");
-    // const [ingredient, setIngredient] = useState ("");
     const {id} = useParams();
 
     useEffect(() => {
@@ -21,8 +17,6 @@ export default function UpdateSubmitForm({cloudURL}) {
                 console.log(recipe);
         }, []);
 
-    // const { title, body, mainIngredient, imgURL={cloudURL}} = recipe
-
     async function handleChange (event) {
         event.preventDefault();
         // destructuring
@@ -31,32 +25,16 @@ export default function UpdateSubmitForm({cloudURL}) {
         console.log(recipe);
     }
 
-    // async issue - probably useEffect
-    // useEffect or handleChange issue
-    
-    // update the cloudURL into the recipe object
-
-    // first put request
-    // new  button "update image" ---> be a put request to update img
-    async function updateImage (event) {
-        event.preventDefault();
-        console.log("inside update IMAGE");
-        try {
-            const response = await RecipePostApi.updateRecipe(id, recipe);
-            console.log(response.data);
-            setRecipe(response.data);
-        } catch (e) {
-            console.error(e);
-        }
-    }
-
-    // second put request
     async function updateRecipe (event) {
         event.preventDefault();
+        console.log("recipe Eduardo", recipe);
+        console.log("recipe cloudURL", cloudURL);
         console.log("inside update recipe");
-        // setRecipe({...recipe, [recipe.imgURL]: imageURL})
+        // updating the variable
+        const editedRecipe = recipe
+        editedRecipe.imgURL = cloudURL
         try {
-            const response = await RecipePostApi.updateRecipe(id, recipe);
+            const response = await RecipePostApi.updateRecipe(id, editedRecipe);
             console.log(response.data);
             setRecipe(response.data);
         } catch (e) {
@@ -66,7 +44,6 @@ export default function UpdateSubmitForm({cloudURL}) {
 
     return (
         <div>
-            <button className="buttonPost" onClick={updateImage}>Update Image</button>
 
             <h3>Edit recipe details </h3>
 
