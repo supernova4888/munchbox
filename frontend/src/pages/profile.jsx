@@ -10,6 +10,7 @@ import FoodIdCurrent from "../components/FoodIdCurrent";
 import MyPostedRecipes from "../components/MyPostedRecipes";
 import ReviewCardSmall from "../components/ReviewCardSmall";
 import followerImg from "../resources/profilepics/follower.png"
+import following from "../resources/following.png";
 
 // this page brings all the components for the user profile and renders it
 // import FoodPref
@@ -51,21 +52,22 @@ export default function Profile() {
 
                     
                     <div className="foodIdBox">
-                        <h2>FoodPref</h2>
+                        <h2>{user.foodId}</h2>
                         <FoodIdCurrent />
                     </div>
-                    <div className="followCard">
-                        <Link to="/profile/follower">Followers</Link>
-                         <img className="followerImg" src={followerImg} />
 
-                        
+                    <Link to="/profile/follower">
+                        <div className="foodIdBox">
+                            <h2>Following</h2>
+                            <img className="profileFood" src={following} />
                         </div>
+                    </Link>
+
+
 
 
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>
-                        
-
                         <p>Your food preference is {user.foodId}</p>
                         
                         
