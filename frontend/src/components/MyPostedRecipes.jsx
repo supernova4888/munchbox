@@ -4,25 +4,16 @@ import RecipePostApi from "../api/RecipePostApi";
 
 export default function MyPostedRecipes({ user }) {
     const [recipes, setRecipes] = useState([]);
+
     console.log("user:", user)
     useEffect(() => {
         RecipePostApi.getAllRecipes()
             .then(({data}) => {
-                const filteredResults = data.filter((recipePost) => {
-                    console.log("filterA",recipePost.userName)
-                    console.log("filterB",user)
-                        recipePost.userName.match(user.name)
-                }
-
-                );
-                console.log("hello inside useffect")
-                console.log(user.name)
-                console.log(filteredResults)
+                const filteredResults = data.filter((recipePost) => recipePost.userName === user.name);
                 setRecipes(filteredResults)
             })
             .catch((err) => console.error(err));
     }, [user, setRecipes]);
-
 
     
     const RecipesArray = recipes.map((recipePost) => (

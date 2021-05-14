@@ -26,14 +26,17 @@ import following from "../resources/following.png";
 
 export default function Profile() {
     const [user, setUser] = useState([]);
-
+    const [status, setStatus] = useState(0) // 0 is loading, 1 is loaded, 2 error
 
 
     useEffect(() => {
        UserApi.getCurrentUser()
-            .then(({data}) => setUser(data))
+            .then(({data}) => {
+                setUser(data)
+                setStatus(1)
+            })
             .catch((err) => console.error(err));
-    }, [setUser]);
+    }, [setStatus,setUser]);
 
 
 
@@ -71,8 +74,10 @@ export default function Profile() {
                         <p>Your food preference is {user.foodId}</p>
                         
                         
-                        <h3>Here are your posted recipes (current:All recipes)</h3>
-                        <MyPostedRecipes user={user}/>
+                        <h3>Here are your posted recipes...</h3>
+                        {status === 0 && <p>Loading recipes...</p>}
+                        {status === 1 && <MyPostedRecipes user={user}/>}
+                        {/* ERROR here pls */}
                     </div>
                 </div>
             </div>
