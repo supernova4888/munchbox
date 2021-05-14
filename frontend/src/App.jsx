@@ -54,7 +54,7 @@ export default function App() {
                 <Switch>  
                     <Route exact component={HomePage} path="/home" />
                     <Route exact component={ReviewPage} path="/review/:id" />
-                    <Route  component={MySavedRecipesPage} path="/MySavedRecipesPage"/>
+                    <Route exact component={MySavedRecipesPage} path="/MySavedRecipePage"/>
                     <Route exact component={PostPage} path="/post" />
                     <Route exact component={ProfilePage} path="/profile" />
                     <Route component={SearchResults} path="/results/:query" />

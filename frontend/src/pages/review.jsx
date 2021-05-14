@@ -22,7 +22,7 @@ export default function ReviewPage() {
 
     async function getAllRecipes(recipePost) {
         try {
-            const response = await RecipePostApi.getAllRecipes(recipePost);
+            const response = await ReviewApi.getAllReviews(recipePost);
             const recipe = response.data;
             const newRecipe = recipes.concat(recipe);
 

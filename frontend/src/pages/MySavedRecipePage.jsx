@@ -37,7 +37,7 @@ export default function MySavedRecipesPage(){
     return (
 
         <div>{RecipesArray}
-            <p>Hello</p></div>
+            </div>
 
     );
 
