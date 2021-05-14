@@ -21,7 +21,7 @@ export default function UpdateSubmitForm({cloudURL}) {
                 console.log(recipe);
         }, []);
 
-    const { title, body, mainIngredient, imgURL={cloudURL}} = recipe
+    // const { title, body, mainIngredient, imgURL={cloudURL}} = recipe
     
     async function handleChange (event) {
         event.preventDefault();
@@ -36,6 +36,8 @@ export default function UpdateSubmitForm({cloudURL}) {
 
 
     // error 500 ! REFACTOR THIS PART OF THE CODE TO DO A PUT REQUEST
+    
+    // make sure the params are being sent in URL and recipe object
     async function updateRecipe (event) {
         event.preventDefault();
         console.log("inside update recipe");

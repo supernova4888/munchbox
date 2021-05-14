@@ -13,6 +13,13 @@ const {id} = useParams();
     
     // TODO: fix icon linking from review to here
 
+    // 1. retrieve the item to update - OK
+    // 2. load the item:data in the form - OK
+    // 3. allow user to input changes - OK
+    // 4. save the changes in state
+    // 5. send the item:data to back end with changes
+    // 6. display the current updated item
+
     return (
         <div>
         <h3>You are in Recipe Update page</h3>
