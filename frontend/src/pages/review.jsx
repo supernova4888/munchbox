@@ -6,7 +6,7 @@ import "../styles/_review.css";
 import RecipePostApi from "../api/RecipePostApi";
 import ReviewApi from "../api/ReviewApi";
 import { Link } from "react-router-dom";
-import Updatebutton from "../../resources/images/UpdateButton.png";
+import Updatebutton from "../resources/images/UpdateButton.png";
 
 export default function ReviewPage() {
 

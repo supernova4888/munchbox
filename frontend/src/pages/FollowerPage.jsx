@@ -12,28 +12,18 @@ const UsersArray = user.map((user) => (
     
 useEffect(() => {
     UserApi.getAllUsers()
-    .then(({data}) => {
-        const filteredResults = data.filter((userA) => userA.name !== user.name);
-        setUsers(filteredResults)
-    })
+    .then(({data}) => setUser(data))
     .catch((err) => console.error(err));
-}, [setUser,setUsers]);
-
-    const UsersArray = users.map((user) => (
-        <UserCard key={user.id} user={user}/>
-    ));
+}, [setUser]);
 
 return (
     <div>
         <h1>Followers</h1>
-        <div className="pageBody">
-            <div className = "followerContainer">
-                <h2 className="followerSuggestion">Suggestions to Follow</h2>
-                    {UsersArray} 
-                <FollowerCard/>    
-            </div>
-        </div> 
-    </div>    
+        <div className = "followerContainer">
+            <h2 className="followerSuggestion">Suggestions to Follow</h2>
+                {UsersArray} 
+            <FollowerCard/>    
+    </div>
+    </div>     
 );
 }
-
