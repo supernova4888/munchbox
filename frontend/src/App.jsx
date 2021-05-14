@@ -21,6 +21,8 @@ import ReviewPage from "./pages/review/review";
 import SearchResults from "./pages/SearchResults";
 import RecipeUpdatePage from "./pages/RecipeUpdatePage";
 
+import MySavedRecipesPage from "./pages/review/MySavedRecipesPage";
+
 
 export default function App() {
   // State
@@ -40,6 +42,7 @@ export default function App() {
                 <Route component={SearchResults} path="/results/:query" />
                 <Route component={LoginPage} path="/login" />
                 <Route component={RegisterPage} path="/register" />
+                <Route component={MySavedRecipesPage} path="/" />
             </Switch>
         </BrowserRouter>
     );
@@ -57,6 +60,7 @@ export default function App() {
                     <Route exact component={FollowerPage} path="/profile/follower"/>
                     <Route exact component={RecipeUpdatePage} path="/review/:id/update" />
                     <Route exact component={UserFollowerPage} path="/profile/youfollow"/>
+                    <Route exact component={MySavedRecipesPage} path="/MySavedRecipesPage"/>
                 </Switch>
         </BrowserRouter>
     );
