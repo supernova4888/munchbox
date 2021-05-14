@@ -6,7 +6,6 @@ import ImageUploader from "../components/ImageUploader";
 
 export default function RecipeUpdatePage() {
 
-const [recipes, setRecipes] = useState([]);
 const [imageURL, setImageURL] = useState("");
 const {id} = useParams();
     
