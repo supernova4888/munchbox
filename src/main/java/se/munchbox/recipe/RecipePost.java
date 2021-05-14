@@ -15,7 +15,7 @@ import java.util.HashSet;
 public class RecipePost {
 
 
-    //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

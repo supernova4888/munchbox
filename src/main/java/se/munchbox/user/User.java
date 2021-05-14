@@ -43,7 +43,7 @@ public class User {
     private List<Followers> followers = new ArrayList<>();
 
     @ManyToMany(mappedBy = "favoritedUsers", cascade = CascadeType.ALL)
-    @JsonIgnore
+
     private Set<RecipePost> favoritedPosts = new HashSet<>();
 
     @OneToMany(mappedBy= "user", cascade = CascadeType.ALL)

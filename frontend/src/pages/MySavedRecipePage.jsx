@@ -15,9 +15,7 @@ export default function MySavedRecipesPage(){
             .then(({data}) => setRecipes(data))
             .catch((err) => console.error(err));
 
-        UserApi.getCurrentUser()
-            .then(({data}) => setUser(data))
-            .catch((err) => console.error(err));
+
     }, [setRecipes]);
 
 
