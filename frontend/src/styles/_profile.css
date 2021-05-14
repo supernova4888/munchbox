@@ -25,6 +25,12 @@
     height: 90px;
     border-radius: 50%;
 }
+.profileFollow{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid var(--color-purple);
+}
 .foodIdBox {
     max-width: 400px;
     display: grid;
