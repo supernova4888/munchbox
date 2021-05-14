@@ -33,8 +33,13 @@ export default function UpdateSubmitForm({cloudURL}) {
 
     // async issue - probably useEffect
     // useEffect or handleChange issue
-    
 
+    // function updateImageLink (cloudURL) {
+    //     if (imageURL !== recipe.imageURL) {
+    //         setRecipe({...recipe, [recipe.imgURL]: imageURL})
+    //     }
+    //     console.log(recipe);
+    // }
 
     // error 500 ! REFACTOR THIS PART OF THE CODE TO DO A PUT REQUEST
     
@@ -42,8 +47,8 @@ export default function UpdateSubmitForm({cloudURL}) {
     async function updateRecipe (event) {
         event.preventDefault();
         console.log("inside update recipe");
+        // setRecipe({...recipe, [recipe.imgURL]: imageURL})
         try {
-            console.log(recipe);
             const response = await RecipePostApi.updateRecipe(id, recipe);
             console.log(response.data);
             setRecipe(response.data);

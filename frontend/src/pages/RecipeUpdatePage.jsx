@@ -19,7 +19,8 @@ const {id} = useParams();
     //       a) img - OK
     //       b) text - OK
     // 4. save the changes in state
-    //      - consider img and text
+    //      - img 
+    //      - text - OK
     // 5. get @param "recipe id" of the one that needs updating
     // 5. send the item:data to back end with changes (PUT)
     // 6. display the current updated item
@@ -34,24 +35,6 @@ const {id} = useParams();
         <ImageUploader setImage={setImageURL} />
 
         <UpdateSubmitForm cloudURL={imageURL}/>
-
-        {/* <form className="updateRecipeForm" > */}
-
-            {/* <input value={recipes?.body} name="body" onChange={handleChange} />
-            <input value={recipes?.title} name="title" onChange={handleChange}/>
-            <input value={recipes?.imgURL} name="imgURL" onChange={handleChange}/>
-
-
-            {/* <Input label="First Name" register={register} required />
-
-                <input value={recipes?.title} />
-
-                <input {...register("recipes.title")} type="text" />
-                <input {...register("recipes.body")} type="text" />
-                <input {...register("recipes.imgURL")} type="text" />
-
-                <button className="buttonPost"type="submit"> Update Post </button> */}
-        {/* </form> */}
 
         </div>
     )
