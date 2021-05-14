@@ -22,7 +22,7 @@ export default function UpdateSubmitForm({cloudURL}) {
         }, []);
 
     // const { title, body, mainIngredient, imgURL={cloudURL}} = recipe
-    
+
     async function handleChange (event) {
         event.preventDefault();
         // destructuring
@@ -33,6 +33,7 @@ export default function UpdateSubmitForm({cloudURL}) {
 
     // async issue - probably useEffect
     // useEffect or handleChange issue
+    
 
 
     // error 500 ! REFACTOR THIS PART OF THE CODE TO DO A PUT REQUEST

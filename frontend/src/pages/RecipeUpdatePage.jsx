@@ -16,9 +16,14 @@ const {id} = useParams();
     // 1. retrieve the item to update - OK
     // 2. load the item:data in the form - OK
     // 3. allow user to input changes - OK
+    //       a) img - OK
+    //       b) text - OK
     // 4. save the changes in state
-    // 5. send the item:data to back end with changes
+    //      - consider img and text
+    // 5. get @param "recipe id" of the one that needs updating
+    // 5. send the item:data to back end with changes (PUT)
     // 6. display the current updated item
+    // 7. Fix links from recipe review
 
     return (
         <div>
