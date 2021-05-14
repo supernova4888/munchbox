@@ -2,18 +2,19 @@ import React, { useState, useEffect } from "react";
 import RecipeCardSmall from "../components/RecipeCardSmall";
 import RecipePostApi from "../api/RecipePostApi";
 
-export default function MyPostedRecipes({match, user}) {
+export default function MyPostedRecipes({ user }) {
     const [recipes, setRecipes] = useState([]);
 
+    console.log("user:", user)
     useEffect(() => {
         RecipePostApi.getAllRecipes()
-            .then(({data}) => setRecipes(data))
+            .then(({data}) => {
+                const filteredResults = data.filter((recipePost) => recipePost.userName === user.name);
+                setRecipes(filteredResults)
+            })
             .catch((err) => console.error(err));
-    }, [setRecipes]);
+    }, [user, setRecipes]);
 
-    /*const filteredResults = recipes.filter((recipePost) =>
-        recipePost.username.match(user.name)
-    );*/
     
     const RecipesArray = recipes.map((recipePost) => (
 
@@ -23,7 +24,7 @@ export default function MyPostedRecipes({match, user}) {
     return (
         <div>
 
-            <p>{user.name}'s recipes</p>
+            <p>Your posted recipes :</p>
             {RecipesArray}
         </div>
     );
