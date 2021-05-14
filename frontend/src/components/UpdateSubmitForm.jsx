@@ -33,20 +33,22 @@ export default function UpdateSubmitForm({cloudURL}) {
 
     // async issue - probably useEffect
     // useEffect or handleChange issue
-
-    // function updateImageLink (cloudURL) {
-    //     if (imageURL !== recipe.imageURL) {
-    //         setRecipe({...recipe, [recipe.imgURL]: imageURL})
-    //     }
-    //     console.log(recipe);
-    // }
-
-    // make sure the params are being sent in URL and recipe object
-
+    
     // update the cloudURL into the recipe object
 
     // first put request
     // new  button "update image" ---> be a put request to update img
+    async function updateImage (event) {
+        event.preventDefault();
+        console.log("inside update IMAGE");
+        try {
+            const response = await RecipePostApi.updateRecipe(id, recipe);
+            console.log(response.data);
+            setRecipe(response.data);
+        } catch (e) {
+            console.error(e);
+        }
+    }
 
     // second put request
     async function updateRecipe (event) {
@@ -64,6 +66,8 @@ export default function UpdateSubmitForm({cloudURL}) {
 
     return (
         <div>
+            <button className="buttonPost" onClick={updateImage}>Update Image</button>
+
             <h3>Edit recipe details </h3>
 
             <form className="recipeForm" onSubmit={updateRecipe}>
