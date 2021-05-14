@@ -12,8 +12,9 @@ export default function RecipeCardLarge({ recipePost }) {
             <div className="userPosterContainer">
                 <div className="postedBy">Posted by: </div>
                 <ProfilePicRecipe recipePost={recipePost}/>
-                <div className="toggleButon"><ToggleButton/></div>
+
                 <div className="userNameSmall">{recipePost.userName}</div>
+                <div className="toggleButon" ><ToggleButton/></div>
             </div>
             <div className="recipeImageBox">
                 <Image className="recipeImageLarge" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>

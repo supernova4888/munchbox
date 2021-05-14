@@ -63,7 +63,7 @@ export default function ReviewPage() {
             <div className="pageBody">
                 <div className="card">
                     <RecipeCardLarge recipePost={recipes} />
-                    <Link to={`/review/${id}/update`}> To Review </Link>
+                    <Link to={`/review/${id}/update`}> To update </Link>
                 </div>
 
                 <div className="card">

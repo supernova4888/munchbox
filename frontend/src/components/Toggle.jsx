@@ -7,7 +7,7 @@ export default function ToggleButton() {
     return (
         <div>
             <button className="logoutButton" onClick={toggleTrueFalse}>
-                {isToggled ? <img className="toggleImg" src={toggleOn}/>:<img className="toggleImg" src={toggleOff}/>}
+                {isToggled ? <img className="toggleImg"  width="40px" src={toggleOn}/>:<img className="toggleImg" width="40px" src={toggleOff}/>}
             </button>
         </div>
     );
