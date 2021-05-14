@@ -8,20 +8,29 @@ import UserCard from "../components/UserCard";
 
 export default function FollowerPage() {
  
-const [user, setUser] = useState([]);
-const UsersArray = user.map((user) => (
-        <UserCard key={user.id} user={user}/>
-    ));
+const [users, setUsers] = useState([]);
+    const [user, setUser] = useState([]);
 
-
+    useEffect(() => {
+        UserApi.getCurrentUser()
+            .then(({data}) => {
+                setUser(data)
+            })
+            .catch((err) => console.error(err));
+    }, [setUser]);
 
  useEffect(() => {
     UserApi.getAllUsers()
-    .then(({data}) => setUser(data))
+    .then(({data}) => {
+        const filteredResults = data.filter((userA) => userA.name !== user.name);
+        setUsers(filteredResults)
+    })
     .catch((err) => console.error(err));
-}, [setUser]);
+}, [setUser,setUsers]);
 
-
+    const UsersArray = users.map((user) => (
+        <UserCard key={user.id} user={user}/>
+    ));
 
 return (
     <div className="pageBody">
