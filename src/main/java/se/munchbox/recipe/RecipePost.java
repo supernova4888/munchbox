@@ -64,8 +64,7 @@ public class RecipePost {
 
     @ManyToMany
 
-    @JsonIdentityReference(alwaysAsId = true)
-
+   @JsonIdentityReference(alwaysAsId = true)
     @JsonIgnore
     private Set<User> favoritedUsers = new HashSet<>();
 
