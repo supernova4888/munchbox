@@ -24,7 +24,7 @@ export default function MyPostedRecipes({ user }) {
     return (
         <div>
 
-            <p>{user.name}'s recipes</p>
+            <p>Your posted recipes :</p>
             {RecipesArray}
         </div>
     );

@@ -25,7 +25,6 @@ const UsersArray = user.map((user) => (
 
 return (
     <div className="pageBody">
-        <h1>Followers</h1>
         <div className = "followerContainer">
             <h2 className="followerSuggestion">Suggestions to Follow</h2>
             

@@ -125,6 +125,16 @@ form {
     text-align: center;
     font-weight: bolder;
 }
+
+.pageBody h1 {
+    text-align: center;
+}
+.pageBody a {
+    text-decoration: none;
+}
+.pageBody a:hover {
+    text-decoration: underline;
+}
 @media (min-width: 1px) {
     body {
         margin-bottom: 60px;

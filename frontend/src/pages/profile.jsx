@@ -42,7 +42,7 @@ export default function Profile() {
 
     return (
         <div className="pageBody">
-            <h1>ProfilePage</h1>
+            <h1>About Me</h1>
             <div className="card">
                 <div className="card-body">
                     <div className="profileBox">
@@ -66,15 +66,10 @@ export default function Profile() {
                         </div>
                     </Link>
 
-
-
-
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>
                         <p>Your food preference is {user.foodId}</p>
-                        
-                        
-                        <h3>Here are your posted recipes...</h3>
+
                         {status === 0 && <p>Loading recipes...</p>}
                         {status === 1 && <MyPostedRecipes user={user}/>}
                         {/* ERROR here pls */}
