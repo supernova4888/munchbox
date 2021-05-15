@@ -2,12 +2,24 @@
 
 # MunchBox
 MunchBox is an online platform for food lovers who want to exchange their ideas!
+It is a sleek multiplatform recipe manager, accessible on your Apple iOS or Android devices,on your tablet, laptop or desktop.
 
 # Brief Summary
-
+Cooking can be a hobby, a dreaded necessity or just a
+part of your routine, but no matter what your
+relationship with the kitchen is like, cooking
+takes time and effort. That’s where munchbox step in, offering step-by-step
+instructions to help you prepare a hearty home-made
+meal or curate a weekly meal plan that goes perfectly with your diet.
 
 # Features
-
+MunchBox is your very own personal recipe organiser.
+i)  Add your favourite recipes from websites, magazines or recipe books  all in one place.
+ii) Add the Food preference, allows individual users to save and view in their profile page.
+iii)Save, update and delete recipes already created.
+iv) Review and follow other users and their recipes.
+v)  Randomly choose a Recipe you want to try by using a Spinner.
+vi) Accessible on all of your devices, anytime.
 
 
 ## User Guide
