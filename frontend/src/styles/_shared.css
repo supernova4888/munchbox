@@ -141,6 +141,9 @@ form {
     body {
         margin-bottom: 60px;
     }
+    .pageBody{
+        padding: 0px;
+    }
 }
 
 @media (min-width: 600px) {
