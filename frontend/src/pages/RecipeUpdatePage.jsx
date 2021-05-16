@@ -7,13 +7,7 @@ import ImageUploader from "../components/ImageUploader";
 export default function RecipeUpdatePage() {
 
 const [imageURL, setImageURL] = useState("");
-const {id} = useParams();
 
-const showImage = 
-
-// this is empty
-console.log(imageURL);
-    
     return (
         <div className="pageBody">
             <h1>Edit Recipe </h1>
@@ -22,9 +16,10 @@ console.log(imageURL);
                 <div className="card-body">
 
                     <h3>Edit image</h3>
-
                     <ImageUploader setImage={setImageURL} />
-
+                        <div className="card">
+                        {imageURL !== "" && <img className="recipeImageTwo" src={imageURL} alt="uploadedImage" />}
+                        </div>
                     <UpdateSubmitForm cloudURL={imageURL}/>
                 </div>
             </div>
