@@ -8,6 +8,11 @@ export default function RecipeUpdatePage() {
 
 const [imageURL, setImageURL] = useState("");
 const {id} = useParams();
+
+const showImage = 
+
+// this is empty
+console.log(imageURL);
     
     return (
         <div className="pageBody">

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function ImageUploader({setImage}) {
     const [imageSelected, setImageSelected ] = useState("")
-    const [imageUrl, setImageUrl] = useState();
+    const [imageUrl, setImageUrl] = useState("http://res.cloudinary.com/dt0zgbuyg/image/upload/v1620733872/munchbox/nefbqpkd0agoh7zzwixp.png");
     const [flag, setFlag] = useState(false)
 
     const selectFile = (e) => {
@@ -47,10 +47,6 @@ export default function ImageUploader({setImage}) {
         <div className="card">
             <input type="file" onChange={selectFile}/>
             <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
-            
-            {/* <img src={recipes?.imgURL} width="100px" />
-
-            {imageUrl !== "" && <img className="recipeImageTwo" src={imageUrl} alt="uploadedImage" />}  */}
 
         </div>
     )
