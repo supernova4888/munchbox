@@ -112,3 +112,12 @@
     justify-items: center;
     margin-bottom: 24px;
 }
+
+@media (min-width: 1px) {
+    .recipeCard {
+        margin-left: 0px;
+        margin-right: 10px;
+        display: flex;
+        max-width: 280px;
+    }
+}

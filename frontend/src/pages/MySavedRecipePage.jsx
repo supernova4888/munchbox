@@ -22,7 +22,8 @@ export default function MySavedRecipesPage(){
     ));
 
     return (
-        <div>
+        <div className="pageBody">
+            <h1>My saved recipes</h1>
             {RecipeArray}
         </div>
     );

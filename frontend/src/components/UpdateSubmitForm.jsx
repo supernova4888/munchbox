@@ -27,7 +27,10 @@ export default function UpdateSubmitForm({cloudURL}) {
         event.preventDefault();
         // updating the variable
         const editedRecipe = recipe
-        editedRecipe.imgURL = cloudURL
+        if (cloudURL !== "") {
+            editedRecipe.imgURL = cloudURL
+        }
+        editedRecipe.imgURL = recipe.imgURL
         try {
             const response = await RecipePostApi.updateRecipe(id, editedRecipe);
             setRecipe(response.data);
