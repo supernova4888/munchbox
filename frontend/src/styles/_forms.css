@@ -74,6 +74,11 @@ ul{
 
 
 @media (min-width: 1px) {
+    .card-body{
+        width: 300px;
+        border-radius: 10px;
+        text-align: center;
+    }
     .imageBlockContainer {
         display: flex;
         justify-content: center;

@@ -33,7 +33,7 @@ return (
 
             <div className="card">
                 <form onSubmit={onSearch}>
-                    <span className="select">
+                    <div className="selectHome">
                         <select onChange={(e) => setQuery(e.target.value)}>
                             <option>Filter recipes by...</option>
                             <option value="Beef">Beef</option>
@@ -47,7 +47,7 @@ return (
                         </select>
                         <button className="buttonLogin" type="submit" value="Search">Go!</button>
                         {console.log("query :"+query)}
-                    </span>
+                    </div>
                 </form>
             </div>
 

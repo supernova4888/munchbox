@@ -84,7 +84,7 @@ a {
 select {
     color: #3B362B;
     display: inline;
-    margin-top: 70px;
+    margin-top: 10px;
     margin-right: auto;
     margin-left: auto;
     padding: 8px;
@@ -154,8 +154,8 @@ form {
         margin-bottom: 20px;
         padding: 11.5px;
     }
-    select {
-        margin-bottom: 15px;
+    .selectHome {
+        margin-top: 60px;
     }
 }
 
