@@ -83,7 +83,8 @@ a {
 
 select {
     color: #3B362B;
-    display: block;
+    display: inline;
+    margin-top: 70px;
     margin-right: auto;
     margin-left: auto;
     padding: 8px;
@@ -91,7 +92,6 @@ select {
     margin-bottom: 30px;
     font-family: 'Oxygen';
 }
-
 
 .buttonPost {
     background-color: var(--color-purple);
@@ -149,10 +149,10 @@ form {
         font-size: x-large;
     }
     .buttonLogin {
-        width: 80px;
+        width: 70px;
         height: auto;
-        margin-bottom: 15px;
-        padding: 15px;
+        margin-bottom: 20px;
+        padding: 11.5px;
     }
     select {
         margin-bottom: 15px;

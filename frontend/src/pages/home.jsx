@@ -33,22 +33,21 @@ return (
 
             <div className="card">
                 <form onSubmit={onSearch}>
-
-                    <p>Filter recipes by...</p>
-                    <select onChange={(e) => setQuery(e.target.value)}>
-                        <option>Choose...</option>
-                        <option value="Beef">Beef</option>
-                        <option value="Veal">Veal</option>
-                        <option value="Pork">Pork</option>
-                        <option value="Lamb and Mutton">Lamb and Mutton</option>
-                        <option value="Poultry">Poultry</option>
-                        <option value="Seafood">Seafood</option>
-                        <option value="Vegetarian">Vegetarian</option>
-                        <option value="Vegan">Vegan</option>
-                    </select>
-                    <button className="buttonLogin" type="submit" value="Search">Filter</button>
-                    {console.log("query :"+query)}
-
+                    <span className="select">
+                        <select onChange={(e) => setQuery(e.target.value)}>
+                            <option>Filter recipes by...</option>
+                            <option value="Beef">Beef</option>
+                            <option value="Veal">Veal</option>
+                            <option value="Pork">Pork</option>
+                            <option value="Lamb and Mutton">Lamb and Mutton</option>
+                            <option value="Poultry">Poultry</option>
+                            <option value="Seafood">Seafood</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                        </select>
+                        <button className="buttonLogin" type="submit" value="Search">Go!</button>
+                        {console.log("query :"+query)}
+                    </span>
                 </form>
             </div>
 
