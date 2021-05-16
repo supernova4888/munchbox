@@ -19,6 +19,9 @@
     font-weight: bold;
     padding: 8px;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    align-items: center;
 }
 
 .recipeImage {
@@ -103,7 +106,8 @@
 }
 
 .userPosterContainer {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 90px 50px 1fr 45px;
     align-items: center;
     justify-items: center;
     margin-bottom: 24px;

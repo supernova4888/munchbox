@@ -45,7 +45,7 @@ export default function ImageUploader({setImage}) {
     }
 
     return (
-        <div>
+        <div className="card">
             <input type="file" onChange={selectFile}/>
             <button className="buttonUpload" onClick={uploadImage}> Upload Image</button>
             

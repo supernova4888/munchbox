@@ -13,15 +13,15 @@ const [imageURL, setImageURL] = useState("http://res.cloudinary.com/dt0zgbuyg/im
             <h1>Add a new recipe</h1>
 
             <div className="card">
-
-            <ImageUploader setImage={setImageURL} />
-            </div>
-            {imageURL !== "" &&
-            // TODO: alignment - new css added 
-                <img className="recipeImageTwo" src={imageURL} alt="uploadedImage" />
-            }
-            <div className="card">
-            <SubmitForm cloudURL={imageURL}/>
+                <div className="card-body">
+                    <ImageUploader setImage={setImageURL} />
+                    <div className="card">
+                        {imageURL !== "" &&
+                        <img className="recipeImageTwo" src={imageURL} alt="uploadedImage" />
+                        }
+                    </div>
+                    <SubmitForm cloudURL={imageURL}/>
+                </div>
             </div>
         </div>
     );

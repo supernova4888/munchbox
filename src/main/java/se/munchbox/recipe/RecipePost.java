@@ -57,7 +57,7 @@ public class RecipePost {
 
     @ManyToOne
     @JsonIgnore
-    @JoinColumn(nullable = false)
+
     private User user;
 
 
