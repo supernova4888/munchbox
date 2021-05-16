@@ -148,12 +148,14 @@ form {
         margin-right: 55px;
         font-size: x-large;
     }
-
     .buttonLogin {
         width: 80px;
         height: auto;
         margin-bottom: 15px;
         padding: 15px;
+    }
+    select {
+        margin-bottom: 15px;
     }
 }
 
