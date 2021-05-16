@@ -144,6 +144,10 @@ form {
     .pageBody{
         padding: 0px;
     }
+    .pageBody h1 {
+        margin-right: 55px;
+        font-size: x-large;
+    }
 }
 
 @media (min-width: 600px) {
