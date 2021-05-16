@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
-import recipeImageGeneral from "../resources/recipe-03.jpg"
-import sampleProfile from "../resources/profilepic200px-05.jpg";
+import { Link } from "react-router-dom";
 import ProfilePicRecipe from "./ProfilePicRecipe";
 import { Image } from "cloudinary-react";
 import UpdateButton from ".././resources/images/UpdateButton.png";
@@ -46,7 +45,7 @@ export default function RecipeCardLarge({ recipePost }) {
             console.error(e);
         }
     }
-
+    const recipeLink = recipePost.body
 
     return (
         <div className="recipeCardLarge">
@@ -64,7 +63,7 @@ export default function RecipeCardLarge({ recipePost }) {
             <div className="recipeTitleBoxLg">{recipePost.title}</div>
             <img className="UpdateButton" width="40px" src={UpdateButton}/>
             <div className="recipeBody">
-                 <a href={recipePost.body} target="_blank"> {recipePost.body}</a>
+                 <Link to={{pathname:`http://${recipeLink}`}}  target="_blank" > {recipeLink}</Link>
             </div>
 
         </div>
