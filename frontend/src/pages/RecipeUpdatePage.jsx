@@ -10,15 +10,19 @@ const [imageURL, setImageURL] = useState("");
 const {id} = useParams();
     
     return (
-        <div>
-        <h3>You are in Recipe Update page</h3>
+        <div className="pageBody">
+            <h1>Edit Recipe </h1>
 
-        <p>Edit image</p>
+            <div className="card">
+                <div className="card-body">
 
-        <ImageUploader setImage={setImageURL} />
+                    <h3>Edit image</h3>
 
-        <UpdateSubmitForm cloudURL={imageURL}/>
+                    <ImageUploader setImage={setImageURL} />
 
+                    <UpdateSubmitForm cloudURL={imageURL}/>
+                </div>
+            </div>
         </div>
     )
 }

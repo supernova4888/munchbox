@@ -33,7 +33,6 @@ export default function ImageUploader({setImage}) {
             if (imageUrl !== null) {
                 const response = await Axios.post("https://api.cloudinary.com/v1_1/dt0zgbuyg/image/upload", imageUrl);
                 setImage(response.data.url);
-               // setImageUrl(response.data.url)
                 //await axios will send a response
                 console.log("received response from cloud");
                 console.log(response.data.url);
