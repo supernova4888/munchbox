@@ -106,7 +106,8 @@
 }
 
 .userPosterContainer {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 90px 50px 1fr 45px;
     align-items: center;
     justify-items: center;
     margin-bottom: 24px;
