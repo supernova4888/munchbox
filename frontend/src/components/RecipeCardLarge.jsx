@@ -7,6 +7,7 @@ import ToggleButton from "./Toggle";
 import {useParams} from "react-router";
 import RecipePostApi from "../api/RecipePostApi";
 import UserApi from "../api/UserApi";
+import Updatebutton from "../resources/images/UpdateButton.png";
 export default function RecipeCardLarge({ recipePost }) {
 
     const[userId,setUserId]= useState({});
@@ -55,14 +56,14 @@ export default function RecipeCardLarge({ recipePost }) {
 
                 <div className="userNameSmall">{recipePost.userName}</div>
 
-                <div className="toggleButon" ><ToggleButton onSubmit={() => createFavoriteRecipe()}/></div>
+                <div className="toggleButon" >Fav it!<ToggleButton onSubmit={() => createFavoriteRecipe()}/></div>
             </div>
             <div className="recipeImageBox">
                 <Image className="recipeImageLarge" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
             </div>
-            <div className="recipeTitleBoxLg">{recipePost.title}</div>
-            <img className="UpdateButton" width="40px" src={UpdateButton}/>
-            <div className="recipeBody">
+            <div className="recipeTitleBoxLg">{recipePost.title}
+            <Link to={`/review/${id}/update`}> <img src={Updatebutton} alt="Edit a recipe post" width="40px"/> </Link>
+        </div><div className="recipeBody">
                  <Link to={{pathname:`http://${recipeLink}`}}  target="_blank" > {recipeLink}</Link>
             </div>
 

@@ -19,6 +19,9 @@
     font-weight: bold;
     padding: 8px;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    align-items: center;
 }
 
 .recipeImage {
