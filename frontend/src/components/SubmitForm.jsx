@@ -65,7 +65,7 @@ export default function SubmitForm({cloudURL}) {
                         </button>
                         <div className="content">
                         {' '}
-                        🎉 Recipe has been sucessfully added! 🎉
+                        🎉 Recipe sucessfully added! 🎉
                         </div>
                         </div>)}
                 </Popup>
