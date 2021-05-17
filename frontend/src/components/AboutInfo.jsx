@@ -6,7 +6,7 @@ export default function AboutInfo() {
 return (
         <div className="card">
     <div className="card-body">
-        <img className="logoSmall" src={logo} alt= "logo image" />
+        <img className="logoSmall" src={logo} alt= "logo" />
         <div className="abouttext-heading">
         <h1>About munchbox</h1></div>
         <p>

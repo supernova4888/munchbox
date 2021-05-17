@@ -4,11 +4,10 @@ import FollowerApi from "../api/FollowerApi";
 import NewFollowerForm from "../components/NewFollowerForm";
 
 export default function FollowerCard() {
-    const [user, setUser] = useState({});
     const[currentUser, setCurrentUser] = useState({});
     const[follower, setFollower] = useState([]);
 
-   useEffect(() => {
+  useEffect(() => {
     UserApi.getCurrentUser()
       .then(({ data }) => {
         setCurrentUser(data.id);

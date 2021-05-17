@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 export default function UpdateSubmitForm({cloudURL}) {
 
-    const [recipe, setRecipe] = useState([]);
+    const [recipe, setRecipe] = useState({});
     const {id} = useParams();
 
     useEffect(() => {
