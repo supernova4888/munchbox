@@ -10,7 +10,7 @@ const [imageURL, setImageURL] = useState("http://res.cloudinary.com/dt0zgbuyg/im
 
     return (
         <div className="pageBody">
-            <h1>Add a new recipe</h1>
+            <h1>Add new recipe</h1>
 
             <div className="recipeCard">
                 <div className="card-body">
