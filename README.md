@@ -70,7 +70,8 @@ on your tablet, laptop or desktop.
 * Click on Register button to navigate to register page  as a first time user of the App.
 * Click on Login button to navigate to Login page if you are already a registered user.
 * Click on guest link if you want to view the app recipes.
-![MainPage](frontend/src/resources/ScreenShots/MainPage.png)
+
+![MainPage](frontend/src/resources/ScreenShots/MainPage.jpg)
 
 
 ## Register Page
@@ -82,7 +83,8 @@ on your tablet, laptop or desktop.
 
 ## Login Page
 * As a registered user, just enter your email and password in the Login box to navigate to home page.
-![LoginPage](frontend/src/resources/ScreenShots/LoginPage.png)
+
+![LoginPage](frontend/src/resources/ScreenShots/LoginPage.jpg)
 
 ## Home Page
 * This is the page where user can navigate to different pages in the app.
