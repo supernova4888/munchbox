@@ -167,6 +167,13 @@ form {
         margin-right: 55px;
         font-size: x-large;
     }
+    .pageBody h2 {
+        color: var(--color-purple);
+        font-size: large;
+        display: flex;
+        align-self: justify;
+    }
+
     .buttonLogin {
         width: 120px;
         height: auto;
