@@ -56,13 +56,16 @@ export default function RecipeCardLarge({ recipePost }) {
 
                 <div className="userNameSmall">{recipePost.userName}</div>
             </div>
-            <div className="card" ><ToggleButton onSubmit={() => createFavoriteRecipe()}/></div>
+            <div className="card" >
+                <ToggleButton onSubmit={() => createFavoriteRecipe()}/></div>
+
+
             <div className="recipeImageBox">
                 <Image className="recipeImageTwo" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
             </div>
             <div className="recipeTitleBoxLg">{recipePost.title}
             <Link to={`/review/${id}/update`}> <img src={Updatebutton} alt="Edit a recipe post" width="30px"/> </Link>
-            <Link to={{pathname:`http://${recipeLink}`}}  target="_blank" > {recipeLink}</Link>
+            <Link to={{pathname:`${recipeLink}`}}  target="_blank" > Recipe Link</Link>
             </div>
 
         </div>
