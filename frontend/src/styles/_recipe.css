@@ -53,6 +53,7 @@
 .recipeCardLarge {
     display: block;
     max-width: 300px;
+    padding-top: 55px;
 }
 
 .recipeImageLarge {

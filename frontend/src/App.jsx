@@ -1,6 +1,6 @@
 // NPM packages
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 
 
 // Project files
@@ -21,15 +21,24 @@ import ReviewPage from "./pages/review";
 import SearchResults from "./pages/SearchResults";
 import RecipeUpdatePage from "./pages/RecipeUpdatePage";
 import MySavedRecipesPage from "./pages/MySavedRecipePage";
-
-
-
+import MyPostedRecipes from "./components/MyPostedRecipes";
+import UserApi from "./api/UserApi";
 
 export default function App() {
   // State
     const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
+    const [user, setUser] = useState([]);
   // Constants
     Auth.bindLoggedInStateSetter(setLoggedIn);
+
+    useEffect(() => {
+        UserApi.getCurrentUser()
+                .then(({data}) => {
+                    setUser(data)
+                })
+                .catch((err) => console.error(err));
+        }, [setUser]);
+        
   // Components
 
     const guestRouter = (
@@ -61,8 +70,8 @@ export default function App() {
                     <Route exact component={SpinnerPage} path="/spinner" />
                     <Route exact component={FollowerPage} path="/profile/follower"/>
                     <Route exact component={RecipeUpdatePage} path="/review/:id/update" />
-                    <Route exact component={UserFollowerPage} path="/profile/youfollow"/>
-
+                    <Route exact component={UserFollowerPage} path="/profile/youfollow"/>                  
+                    <MyPostedRecipes user={user} path="/myRecipes"/>
                 </Switch>
         </BrowserRouter>
     );
