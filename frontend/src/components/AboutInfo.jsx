@@ -13,14 +13,9 @@ return (
             MunchBox is a sleek multiplatform recipe manager,
             accessible on iOS, Android, tablets and desktop devices.
             <br/>
-            Cooking can be a hobby, a dreaded necessity or just a
-            part of your routine, but no matter what your
-            relationship with the kitchen is like, cooking
-            takes time and effort. That’s where munchbox
-            step in, a single platform to keep your favorites recipes, detailed instruction or use Spinner to curate a weekly meal plan that goes perfectly
-            with your diet.</p>
+            Munchbox helps you save and track your favorite recipes, connect with friends and curate meals in a fun way with Spinner.</p>
             <div className="abouttext-heading">
-            <h2>Main Features of Beta Version</h2></div>
+            {/* <h2>Main Features of Beta Version</h2></div>
             <div className="features-list">
                 <h4>MunchBox is your very own personal recipe organiser.</h4>
             <ul>
@@ -31,7 +26,7 @@ return (
             <li>Follow other users and their recipes.</li>
             <li>Help you decide that to cook with Spinner</li>
             <li>Accessible on all of your devices, anytime.</li>
-            </ul> 
+            </ul>  */}
              <p className = "abouttext-heading"> Note: Guest Users can only view home page and use the Spinner</p>
             </div>
         </div>
