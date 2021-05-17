@@ -13,6 +13,8 @@ import se.munchbox.userPref.UserPreference;
 
 import java.util.List;
 
+
+
 @RestController
 public class FollowersController {
 
@@ -29,7 +31,11 @@ public class FollowersController {
         this.userRepository = userRepository;
         this.userService = userService;
     }
-
+    /**
+     * Create a new follower
+     * @param UserId used to create a follower
+     * @return Response created
+     */
     @PostMapping("/follow/{userId}")
     public ResponseEntity<Followers> createFollower(@PathVariable Long userId, @RequestBody Followers followers) {
         User userRepo = userRepository.findById(userId).orElseThrow(ResourceNotFoundException::new);
@@ -40,13 +46,21 @@ public class FollowersController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(followers);
     }
-
+    /**
+     * Get one follower by userid
+     * @param id The id of the user to get a follower.
+     * @return Response OK
+     */
     @GetMapping("/follow/{userId}")
     public ResponseEntity<List<Followers>> listAllFollowers(@PathVariable Long userId) {
         User user = userRepository.findById(userId).orElseThrow(ResourceNotFoundException::new);
         return ResponseEntity.ok(user.getFollowers());
     }
-
+    /**
+     * Delete a specific follower .
+     * @param id The id of the user to get a follower.
+     * @return Response OK
+     */
     @DeleteMapping("follow/{id}")
     public ResponseEntity<Followers> deleteFollower(@PathVariable Long id) {
         Followers followers = followersRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
