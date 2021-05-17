@@ -70,13 +70,14 @@ on your tablet, laptop or desktop.
 * Click on Register button to navigate to register page  as a first time user of the App.
 * Click on Login button to navigate to Login page if you are already a registered user.
 * Click on guest link if you want to view the app recipes.
-![MainPage](frontend/src/resources/ScreenShots/MainPage.png){:height="50%" width="50%"}
+![MainPage](frontend/src/resources/ScreenShots/MainPage.png)
 
 
 ## Register Page
 * Enter your name, email and password in the Sign Up box.
 * Choose your food preference and profile picture.
 * Click “Register” and you will be taken to the home page.
+
 ![RegisterPage](frontend/src/resources/ScreenShots/RegisterPage.jpg)
 
 ## Login Page
