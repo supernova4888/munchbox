@@ -82,6 +82,7 @@ ul{
     .imageBlockContainer {
         display: flex;
         justify-content: center;
+        
     }
     .loginBlockContainer {
         display: flex;
