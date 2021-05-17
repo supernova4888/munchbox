@@ -14,12 +14,12 @@ meal or curate a weekly meal plan that goes perfectly with your diet.
 
 # Features
 MunchBox is your very own personal recipe organiser.
-i)  Add your favourite recipes from websites, magazines or recipe books  all in one place.
-ii) Add the Food preference, allows individual users to save and view in their profile page.
-iii)Save, update and delete recipes already created.
-iv) Review and follow other users and their recipes.
-v)  Randomly choose a Recipe you want to try by using a Spinner.
-vi) Accessible on all of your devices, anytime.
+1.  Add your favourite recipes from websites, magazines or recipe books  all in one place.
+2.  Add the Food preference, allows individual users to save and view in their profile page.
+3.  Save, update and delete recipes already created.
+4.  Review and follow other users and their recipes.
+5.  Randomly choose a Recipe you want to try by using a Spinner.
+6.  Accessible on all of your devices, anytime.
 
 
 ## User Guide
