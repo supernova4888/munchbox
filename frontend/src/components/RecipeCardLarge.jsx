@@ -58,8 +58,6 @@ export default function RecipeCardLarge({ recipePost }) {
             </div>
             <div className="card" >
                 <ToggleButton onSubmit={() => createFavoriteRecipe()}/></div>
-
-
             <div className="recipeImageBox">
                 <Image className="recipeImageTwo" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
             </div>
