@@ -1,13 +1,13 @@
 import React from 'react'
 import { useEffect, useState } from "react";
-import Popup from "reactjs-popup";
+import { Popup } from "reactjs-popup";
 import RecipePostApi from "../api/RecipePostApi";
 import { useParams } from "react-router-dom";
 
 
 export default function UpdateSubmitForm({cloudURL}) {
 
-    const [recipe, setRecipe] = useState([]);
+    const [recipe, setRecipe] = useState({});
     const {id} = useParams();
 
     useEffect(() => {
@@ -45,10 +45,10 @@ export default function UpdateSubmitForm({cloudURL}) {
             <h3>Edit recipe details </h3>
 
             <form className="recipeForm" onSubmit={updateRecipe}>
-                <input className="form-control" value={recipe?.title} name="title" onChange={handleChange}/>
-                <input className="form-control" value={recipe?.body} name="body" onChange={handleChange} />
+                <input className="form-control" value={recipe.title} name="title" onChange={handleChange}/>
+                <input className="form-control" value={recipe.body} name="body" onChange={handleChange} />
                     <h3>Edit recipe main ingredient:</h3>
-                        <select id = "dropdown" value={recipe?.mainIngredient} name="mainIngredient" onChange={handleChange}>
+                        <select id = "dropdown" value={recipe.mainIngredient} name="mainIngredient" onChange={handleChange}>
                             <option>Select main ingredient:</option>
                             <option value="Beef">Beef</option>
                             <option value="Veal">Veal</option>
@@ -67,7 +67,7 @@ export default function UpdateSubmitForm({cloudURL}) {
                                     </button>
                                     <div className="content">
                                     {' '}
-                                    🎉 Recipe has been sucessfully updated! 🎉
+                                    🎉 Recipe sucessfully updated! 🎉
                                     </div>
                                     </div>)}
                         </Popup>

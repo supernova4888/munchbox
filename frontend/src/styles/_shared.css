@@ -71,9 +71,9 @@ a {
 
 .iconLink {
     margin-left: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 
 }
 
@@ -143,6 +143,7 @@ select {
 form {
     text-align: center;
     font-weight: bolder;
+    margin-top: 15px;
 }
 
 .pageBody h1 {
@@ -162,6 +163,7 @@ form {
         padding: 0px;
     }
     .pageBody h1 {
+        color: var(--color-purple);
         margin-right: 55px;
         font-size: x-large;
     }

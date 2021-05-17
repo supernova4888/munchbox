@@ -5,8 +5,8 @@
 }
 .cardButton {
     display: flex;
-    justify-content: center;
-    padding: 16px;
+    padding: 10px;
+    margin-top: 10px;
 }
 .card-body {
     width: 400px;

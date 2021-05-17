@@ -42,9 +42,9 @@ export default function SpinnerPage() {
         <div className="pageBody">
             <div className="card">
                 <div className="card-body">
-                    <h1>Wondering what you should cook for dinner?</h1>
+                    <h1>Spin to plan a meal!</h1>
                     <div className="spinner-button">
-                        <button className="buttonLogin" onClick={handleClick}>spin</button>
+                        <button className="buttonLogin" onClick={handleClick}>spin me</button>
                         <p>Recipe #{random}</p>
                         <button className="buttonLogin" onClick={showRandom}>show recipe</button>
                     </div>
