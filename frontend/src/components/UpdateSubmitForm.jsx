@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from "react";
-import Popup from "reactjs-popup";
+import { Popup } from "reactjs-popup";
 import RecipePostApi from "../api/RecipePostApi";
 import { useParams } from "react-router-dom";
 

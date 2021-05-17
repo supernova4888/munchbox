@@ -3,6 +3,7 @@ import {useParams} from "react-router";
 import StarRating from "../components/StarRating";
 import ReviewApi from "../api/ReviewApi";
 import { useEffect, useState } from "react";
+import { Popup } from "reactjs-popup";
 
 export default function SubmitReview() {
 
@@ -60,7 +61,18 @@ const [reviews, setReviews] = useState([]);
                     <form className="recipeForm" onSubmit={createReview}>
                         <StarRating onChangeRating ={changeRating} rating={rating} />
                         <textarea className="form-control" placeholder="Write your comment here" onChange={(e) => setBody(e.target.value)}/>
-                    <button className="buttonRegister" type="submit" > Save Review </button>
+
+                        <Popup trigger={<button className="buttonRegister" type="submit" > Save Review </button>} modal nested>
+                                {close => (
+                                    <div className="modal">
+                                    <button className="close" onClick={close}> &times;  
+                                    </button>
+                                    <div className="content">
+                                    {' '}
+                                    🎉 Recipe sucessfully reviewed! 🎉
+                                    </div>
+                                    </div>)}
+                        </Popup>
                     </form>
                 </div>
         </div>
