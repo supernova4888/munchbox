@@ -2,12 +2,24 @@
 
 # MunchBox
 MunchBox is an online platform for food lovers who want to exchange their ideas!
+It is a sleek multiplatform recipe manager, accessible on your Apple iOS or Android devices,on your tablet, laptop or desktop.
 
 # Brief Summary
-
+Cooking can be a hobby, a dreaded necessity or just a
+part of your routine, but no matter what your
+relationship with the kitchen is like, cooking
+takes time and effort. That’s where munchbox step in, offering step-by-step
+instructions to help you prepare a hearty home-made
+meal or curate a weekly meal plan that goes perfectly with your diet.
 
 # Features
-
+MunchBox is your very own personal recipe organiser.
+1.  Add your favourite recipes from websites, magazines or recipe books  all in one place.
+2.  Add the Food preference, allows individual users to save and view in their profile page.
+3.  Save, update and delete recipes already created.
+4.  Review and follow other users and their recipes.
+5.  Randomly choose a Recipe you want to try by using a Spinner.
+6.  Accessible on all of your devices, anytime.
 
 
 ## User Guide
@@ -20,10 +32,26 @@ The project uses ReactJS as the front-end framework. In order to run the front-e
 navigate into the front-end directory. 
 The application was built using react modules and components.
 
-Install all the dependencies with
-### `npm install`
+## Prerequisites
 
-Launch the app from the command line with
+i)  docker and docker-compose.
+ii) nodejs.
+
+## Starting the database
+
+In the root folder, run  docker-compose up
+
+## Starting the backend server
+
+Open the root folder and run ./gradlew bootRun
+
+## Starting the frontend development server
+
+The frontend application is in the directory frontend. From there, run
+### `npm install`
+to install all the dependencies needed for the project.
+
+Then start the frontend application by running
 ### `npm start`
 
 The "react-router-dom" was installed to allow routing between the pages using the command:
@@ -34,12 +62,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.
-
-
-# Local Installation
-
-
-
 
 # List Of Dependencies
 
@@ -85,3 +107,7 @@ Font 'Oxygen' from <a href="https://fonts.google.com/specimen/Oxygen">Google Fon
 Logo styling by <a href="https://hatchful.shopify.com/">Hatchful</a>
 
 Auth system adapted from SDA Mini Group Project skeleton <a href="https://github.com/softwaredevacademy/be-mini-group-project">on Github</a>
+
+## Q&A and issue tracking
+
+If you have any questions, feedback, or feature requests, don't hesitate to add an issue to the GitHub repo.
