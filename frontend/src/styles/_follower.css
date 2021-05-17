@@ -13,12 +13,17 @@
     text-align: center;
 }
 
+.followers{
+    text-align: center;
+}
+
 /* UserCard */
 .usercard{
     display: grid;
     grid-template-columns: 150px 1fr 50px;
     align-items:center;
     max-width: 400px;
+    padding-left: 80px;
 }
 
 .userFollowPicSmall {

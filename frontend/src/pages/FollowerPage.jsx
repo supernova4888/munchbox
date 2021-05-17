@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import UserApi from "../api/UserApi";
 import UserCard from "../components/UserCard";
 import FollowerCard from "../components/FollowerCard";
+import { Link } from "react-router-dom";
 
 export default function FollowerPage() {
 
@@ -35,8 +36,11 @@ return (
 
         <div className = "followerContainer">
             <h2 className="followerSuggestion">Suggestions to Follow</h2>
-                {UsersArray} 
-            <FollowerCard/>    
+            <FollowerCard/> 
+            {UsersArray} 
+            <Link to="/profile/youfollow">
+                    <h2 className="followers">I am following</h2> 
+                    </Link>
     </div>
     </div>     
 );

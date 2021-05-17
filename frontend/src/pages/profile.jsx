@@ -56,25 +56,20 @@ export default function Profile() {
 
                     
                     <div className="foodIdBox">
-                        <h2>{user.foodId}</h2>
                         <FoodIdCurrent />
+                        <h2>I Eat</h2>
                     </div>
 
                     <Link to="/profile/follower">
                         <div className="foodIdBox">
-                            <h2>Following</h2>
-                            <img className="profileFollow" src={following} />
+                        <img className="profileFollow" src={following} />
+                            <h2>I Follow</h2>
                         </div>
-                    </Link>
-                    <Link to="/profile/youfollow">
-                    <h2>Followers</h2> 
                     </Link>
                     <br/>
 
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>
-                        <p>Your food preference is {user.foodId}</p>
-
                         {status === 0 && <p>Loading recipes...</p>}
                         {status === 1 && <MyPostedRecipes user={user}/>}
                         {/* ERROR here pls */}

@@ -47,6 +47,23 @@ body {
     margin-right: 2px;
 
 }
+.buttonSubmit {
+    background-color: var(--color-offwhite);
+    border: 2px solid var(--color-purple);
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 16px;
+    font-family: 'Oxygen', sans-serif;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: var(--color-purple);
+    width: 150px;
+    height: 50px;
+    margin-left: 2px;
+    margin-right: 2px;
+
+}
 /* Back arrow icons on register/login pages */
 a {
     color: var(--color-purple);
@@ -160,8 +177,20 @@ form {
         margin-bottom: 20px;
         padding: 11.5px;
     }
+
+    .buttonSubmit {
+        width: 80px;
+        height: auto;
+        margin-bottom: -10px;
+        padding: 11.5px;
+    }
+
     .selectHome {
-        margin-top: 60px;
+        margin-top: 30px;
+    }
+    .selectProfile{
+        margin: 10px;
+        height: 30px;
     }
 }
 
@@ -180,6 +209,10 @@ form {
         text-decoration: underline;
     }
     .buttonLogin:hover {
+        background-color: var(--color-offwhitelight);   
+        text-decoration: underline;
+    }
+    .buttonSubmit:hover {
         background-color: var(--color-offwhitelight);
         text-decoration: underline;
     }
