@@ -24,7 +24,7 @@ MunchBox is your very own personal recipe organiser.
 
 ## User Guide
 To run the application locally, the user needs to clone the repository and install the support for NodeJS and Java.
-This application was developed using Intellij IDE(using Spring Web Framework) and VisualStudio Code.It is recommended 
+This application was developed using Intellij IDE(using Spring Web Framework) and VisualStudio Code. It is recommended 
 for the user to build the project using the gradle.build file, to ensure that all the dependencies are installed correctly.
 The database for the project is run using PostgreSQL inside a docker compose file.
 
@@ -70,20 +70,23 @@ on your tablet, laptop or desktop.
 * Click on Register button to navigate to register page  as a first time user of the App.
 * Click on Login button to navigate to Login page if you are already a registered user.
 * Click on guest link if you want to view the app recipes.
-![MainPage](frontend/src/resources/ScreenShots/MainPage.png)
+![MainPage](frontend/src/resources/ScreenShots/MainPage.png){:height="50%" width="50%"}
+
 
 ## Register Page
 * Enter your name, email and password in the Sign Up box.
 * Choose your food preference and profile picture.
 * Click “Register” and you will be taken to the home page.
-![RegisterPage](frontend/src/resources/ScreenShots/RegisterPage.png)
+![RegisterPage](frontend/src/resources/ScreenShots/RegisterPage.jpg)
 
 ## Login Page
 * As a registered user, just enter your email and password in the Login box to navigate to home page.
 ![LoginPage](frontend/src/resources/ScreenShots/LoginPage.png)
 
 ## Home Page
-* 
+* This is the page where user can navigate to different pages in the app.
+1. Profile page
+
 
 
 
