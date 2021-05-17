@@ -17,6 +17,18 @@
     font-weight: bold;
 }
 
+
+.recipe-body {
+    width: 400px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 8px;
+    text-align: justify;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
 .form-control {
     font-family: 'Oxygen', sans-serif;
     width: 90%;
