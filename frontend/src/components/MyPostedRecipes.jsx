@@ -22,9 +22,10 @@ export default function MyPostedRecipes({ user }) {
     ));
 
     return (
-        <div>
+        <div className="pageBody">
 
-            <p>Your posted recipes :</p>
+            <h1>My posted Recipes</h1>
+
             {RecipesArray}
         </div>
     );

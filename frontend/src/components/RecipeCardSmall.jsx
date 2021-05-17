@@ -5,14 +5,16 @@ import { Image } from "cloudinary-react";
 
 export default function RecipeCardSmall({ recipePost }) {
     return (
-        <div className="recipeCard">
-            <div className="recipeImageBox">
+        <div className="card">
+            <div className="card-body">
+            <div className="profileBox">
                 <Link to={{pathname: `/review/${recipePost.id}`,}}>
                 {/* <img className="recipeImage" src={sampleRecipe}/> */}
-                <Image className="recipeImage" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
+                <Image className="reviewSection" cloudName="dt0zgbuyg" publicId={recipePost.imgURL} width="60px"/>
                 </Link>
+                <h2>{recipePost.title}</h2>
             </div>
-            <div className="recipeTitleBox">{recipePost.title}</div>
+            </div>
         </div>
     );
 }

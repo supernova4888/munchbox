@@ -12,7 +12,7 @@ export default function NewFollowerForm({ onSubmit }) {
     <form>
       <div>
           <input className="selectProfile"
-            type= "text" value={followUserName} placeholder = "Enter the user name"
+            type= "text" value={followUserName} placeholder = "Enter user name"
             onChange={(e) => setFollowUserName(e.target.value)}
           />
           <button className="buttonSubmit" type="button" onClick={handleSubmit}>

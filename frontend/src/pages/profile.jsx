@@ -12,6 +12,7 @@ import MyPostedRecipes from "../components/MyPostedRecipes";
 import ReviewCardSmall from "../components/ReviewCardSmall";
 import followerImg from "../resources/profilepics/follower.png"
 import following from "../resources/group-white.png";
+import recipe from "../resources/profilepics/cooking.png"
 
 // this page brings all the compoents for the user profile and renders it
 // import FoodPref
@@ -57,23 +58,30 @@ export default function Profile() {
                     
                     <div className="foodIdBox">
                         <FoodIdCurrent />
-                        <h2>I Eat</h2>
+                        <h2>I Eat...</h2>
                     </div>
 
                     <Link to="/profile/follower">
                         <div className="foodIdBox">
                         <img className="profileFollow" src={following} />
-                            <h2>I Follow</h2>
+                            <h2>I Follow...</h2>
                         </div>
                     </Link>
                     <br/>
 
+                    <Link to="/myRecipes">
+                        <div className="foodIdBox">
+                        <img className="profileFollow" src={recipe} />
+                            <h2>I Posted...</h2>
+                        </div>
+                    </Link>
+{/* 
                     <div className="profileInfo">
                         <p>Hello {user.name} !</p>
                         {status === 0 && <p>Loading recipes...</p>}
-                        {status === 1 && <MyPostedRecipes user={user}/>}
+                        {status === 1 && <MyPostedRecipes user={user}/>} */}
                         {/* ERROR here pls */}
-                    </div>
+{/*                     </div> */}
                 </div>
             </div>
 
