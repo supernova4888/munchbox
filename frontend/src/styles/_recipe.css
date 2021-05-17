@@ -120,4 +120,13 @@
         display: flex;
         max-width: 280px;
     }
+    .userPosterContainer {
+    display: grid;
+    width: 200px;
+    grid-template-columns: 90px 50px 1fr;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 12px;
+    margin-top: 5px;
+}
 }
