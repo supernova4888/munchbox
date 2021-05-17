@@ -19,7 +19,6 @@ export default function RecipeCardLarge({ recipePost }) {
         UserApi.getCurrentUser()
             .then(({ data }) => {
                 setUserId(data.id);
-
                 console.log("user:" + data.id)
             })
             .catch((err) => console.error(err));
@@ -33,6 +32,7 @@ export default function RecipeCardLarge({ recipePost }) {
             })
             .catch((err) => console.error(err));
     }, [setPostId]);
+
     async function createFavoriteRecipe() {
         console.log("Favorite created")
         try {
