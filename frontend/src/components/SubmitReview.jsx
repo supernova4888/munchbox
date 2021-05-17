@@ -62,7 +62,6 @@ const [reviews, setReviews] = useState([]);
                         <textarea className="form-control" placeholder="Write your comment here" onChange={(e) => setBody(e.target.value)}/>
                     <button className="buttonRegister" type="submit" > Save Review </button>
                     </form>
-                    {/* <p>{getAllReview}</p> */}
                 </div>
         </div>
     )
