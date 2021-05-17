@@ -13,15 +13,16 @@ export default function RecipeCardMedium({ recipePost }) {
             <div className="recipeImageBox">
                 <Link to={{pathname: `/review/${recipePost.id}`,}}>
                 {/* <img className="recipeImageMedium" src={recipeImageGeneral}/> */}
-                <Image className="recipeImageMedium" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
+                <Image className="recipeImageTwo" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
                 </Link>
             </div>
-            <div className="recipeTitleBox">{recipePost.title}</div>
-            <div className="recipePostedBy">
+                <div className="recipeTitleBox">{recipePost.title}</div>
+                <Link to={{pathname:`${recipePost.body}`}}  target="_blank" > Recipe Link</Link>
+                <div className="card"></div>
+            <div className="recipeTitleBox">
+                <div className="postedBy">Posted by: </div>
                 <ProfilePicRecipe recipePost={recipePost}/>
                 <div className="userNameSmall">{recipePost.userName}</div>
-
-                
             </div>
         </div>
     );
