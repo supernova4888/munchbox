@@ -58,13 +58,13 @@ export default function Profile() {
                     
                     <div className="foodIdBox">
                         <FoodIdCurrent />
-                        <h2>I Eat...</h2>
+                        <h2>You Eat...</h2>
                     </div>
 
                     <Link to="/profile/follower">
                         <div className="foodIdBox">
                         <img className="profileFollow" src={following} />
-                            <h2>I Follow...</h2>
+                            <h2>You Follow...</h2>
                         </div>
                     </Link>
                     <br/>
@@ -72,7 +72,7 @@ export default function Profile() {
                     <Link to="/myRecipes">
                         <div className="foodIdBox">
                         <img className="profileFollow" src={recipe} />
-                            <h2>I Posted...</h2>
+                            <h2>You Posted...</h2>
                         </div>
                     </Link>
 {/* 
