@@ -62,9 +62,8 @@ export default function RecipeCardLarge({ recipePost }) {
                 <Image className="recipeImageTwo" cloudName="dt0zgbuyg" publicId={recipePost.imgURL}/>
             </div>
             <div className="recipeTitleBoxLg">{recipePost.title}
-            <Link to={`/review/${id}/update`}> <img src={Updatebutton} alt="Edit a recipe post" width="40px"/> </Link>
-        </div><div className="recipeBody">
-                 <Link to={{pathname:`http://${recipeLink}`}}  target="_blank" > {recipeLink}</Link>
+            <Link to={`/review/${id}/update`}> <img src={Updatebutton} alt="Edit a recipe post" width="30px"/> </Link>
+            <Link to={{pathname:`http://${recipeLink}`}}  target="_blank" > {recipeLink}</Link>
             </div>
 
         </div>
