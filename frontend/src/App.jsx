@@ -28,7 +28,6 @@ export default function App() {
   // State
     const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
     const [user, setUser] = useState([]);
-    const [status, setStatus] = useState(0) // 0 is loading, 1 is loaded, 2 error
   // Constants
     Auth.bindLoggedInStateSetter(setLoggedIn);
 
@@ -36,10 +35,9 @@ export default function App() {
         UserApi.getCurrentUser()
                 .then(({data}) => {
                     setUser(data)
-                    setStatus(1)
                 })
                 .catch((err) => console.error(err));
-        }, [setStatus,setUser]);
+        }, [setUser]);
         
   // Components
 
@@ -73,8 +71,7 @@ export default function App() {
                     <Route exact component={FollowerPage} path="/profile/follower"/>
                     <Route exact component={RecipeUpdatePage} path="/review/:id/update" />
                     <Route exact component={UserFollowerPage} path="/profile/youfollow"/>                  
-                        {status === 1 && <MyPostedRecipes user={user}/>}
-                        {status === 0 && <p>Loading recipes...</p>}
+                    <MyPostedRecipes user={user} path="/myRecipes"/>
                 </Switch>
         </BrowserRouter>
     );
