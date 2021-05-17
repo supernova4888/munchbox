@@ -30,8 +30,8 @@ export default function HomePage() {
 
 return (
     <div className="pageBody">
-
-            <div className="card">
+            <div className="pageBody">
+                <h1>Latest recipes...</h1>
                 <form onSubmit={onSearch}>
                     <div className="selectHome">
                         <select onChange={(e) => setQuery(e.target.value)}>
