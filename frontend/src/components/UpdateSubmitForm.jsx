@@ -45,13 +45,9 @@ export default function UpdateSubmitForm({cloudURL}) {
             <h3>Edit recipe details </h3>
 
             <form className="recipeForm" onSubmit={updateRecipe}>
-
                 <input className="form-control" value={recipe?.title} name="title" onChange={handleChange}/>
-
                 <input className="form-control" value={recipe?.body} name="body" onChange={handleChange} />
-
                     <h3>Edit recipe main ingredient:</h3>
-
                         <select id = "dropdown" value={recipe?.mainIngredient} name="mainIngredient" onChange={handleChange}>
                             <option>Select main ingredient:</option>
                             <option value="Beef">Beef</option>
