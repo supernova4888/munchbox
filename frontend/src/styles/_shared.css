@@ -163,6 +163,7 @@ form {
         padding: 0px;
     }
     .pageBody h1 {
+        color: var(--color-purple);
         margin-right: 55px;
         font-size: x-large;
     }
