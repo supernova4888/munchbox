@@ -14,7 +14,7 @@ body {
 /* purple */
 .buttonRegister {
     background-color: var(--color-purple);
-    border: 2px solid var(--color-purple);
+    border: 2px solid var(--color-nearlyblack);
     font-size: 12px;
     font-weight: bolder;
     letter-spacing: 1px;
@@ -149,7 +149,13 @@ form {
         font-size: x-large;
     }
     .buttonLogin {
-        width: 70px;
+        width: 120px;
+        height: auto;
+        margin-bottom: 20px;
+        padding: 11.5px;
+    }
+    .buttonRegister {
+        width: 120px;
         height: auto;
         margin-bottom: 20px;
         padding: 11.5px;
