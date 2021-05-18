@@ -34,7 +34,7 @@ return (
                 <h1>Latest recipes...</h1>
                 <form onSubmit={onSearch}>
                     <div className="selectHome">
-                        <select onChange={(e) => setQuery(e.target.value)}>
+                        <select className="selectHomeA" onChange={(e) => setQuery(e.target.value)}>
                             <option>Filter recipes by...</option>
                             <option value="Beef">Beef</option>
                             <option value="Veal">Veal</option>

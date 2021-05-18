@@ -173,7 +173,6 @@ form {
         display: flex;
         align-self: justify;
     }
-
     .buttonLoginA {
     background-color: var(--color-offwhite);
     border: 2px solid var(--color-purple);
@@ -187,10 +186,13 @@ form {
     color: var(--color-purple);
     width: 60px;
     height: 50px;
-    margin-left: 60px;
+    margin-left: 12px;
     margin-right: 2px;  
 }
-   
+    .selectHomeA {
+        width: 250px;
+        margin-left: 10px;
+    }
     .buttonRegister {
         width: 120px;
         height: auto;
@@ -207,6 +209,7 @@ form {
 
     .selectHome {
         margin-top: 30px;
+
     }
     .selectProfile{
         margin: 10px;

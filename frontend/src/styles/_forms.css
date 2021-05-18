@@ -89,6 +89,7 @@ ul{
     .card-body{
         width: 300px;
         border-radius: 10px;
+        margin-left: 17px;
         text-align: center;
     }
 
