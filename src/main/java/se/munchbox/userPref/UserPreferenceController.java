@@ -23,13 +23,22 @@ import java.security.Principal;
 
     public UserPreferenceController(){
     }
-
+        /**
+         * Get one userPreference by id
+         * @param id The id of the user to get a userPreference.
+         * @return Response OK
+         */
         @GetMapping("userPreference/{id}")
         public ResponseEntity<UserPreference> getByUserId(@PathVariable Long id){
         UserPreference userPreference = userPreferenceRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
         return ResponseEntity.ok(userPreference);
         }
-
+        /**
+         * Update a specific userPreference
+         * @param id The id of user
+         * @param updatedPost New user-preference update the old
+         * @return Response OK
+         */
         @PutMapping("userPreference/{id}")
         public ResponseEntity<UserPreference> updateUserPreference(@PathVariable Long id,@RequestBody UserPreference updatedUserPreference){
            userPreferenceRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
@@ -37,13 +46,23 @@ import java.security.Principal;
            UserPreference userPreference = userPreferenceRepository.save(updatedUserPreference);
             return ResponseEntity.ok(updatedUserPreference);
         }
-
+        /**
+         * Delete a userPreference .
+         *  @param id The id of the user to get a userPreference.
+         * @return Response OK
+         */
         @DeleteMapping("userPreference/{id}")
         public ResponseEntity<UserPreference> deleteUserPreference(@PathVariable Long id) {
             UserPreference userPreference = userPreferenceRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
             userPreferenceRepository.delete(userPreference);
             return new ResponseEntity<UserPreference>(HttpStatus.OK);
         }
+        /**
+         *Create a userPreference to a specific user by his ID.
+         * @param userPreference which a particular user has.
+         * @param principal User information
+         * @return status of the action
+         */
 
           @PostMapping("/userPreference")
           public ResponseEntity<UserPreference> createUserPreference(@RequestBody UserPreference userPreference,Principal principal){

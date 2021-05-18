@@ -18,17 +18,30 @@ public class UserController {
     @Autowired
     private AuthService authService;
 
+    /**
+     * Get All users.
+     * @return all users.
+     */
     @GetMapping("")
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
+    /**
+     * Get current user
+     * @param email id of the current user.
+     * @return current user.
+     */
     @GetMapping("/me")
     public User getCurrentUser() {
         String email=authService.getLoggedInUserEmail();
         return userService.findUserByEmail(email);
     }
-
+    /**
+     * Get current user
+     * @param email id of the current user.
+     * @return current user.
+     */
     @GetMapping("/{email}")
     public User getUserByMail(@PathVariable String email) {
         return userService.findUserByEmail(email);
