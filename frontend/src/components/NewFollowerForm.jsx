@@ -16,7 +16,7 @@ export default function NewFollowerForm({ onSubmit }) {
             onChange={(e) => setFollowUserName(e.target.value)}
           />
           <button className="buttonSubmit" type="button" onClick={handleSubmit}>
-          Submit
+          Follow
         </button>
       </div>
     </form>

@@ -21,24 +21,25 @@ import ReviewPage from "./pages/review";
 import SearchResults from "./pages/SearchResults";
 import RecipeUpdatePage from "./pages/RecipeUpdatePage";
 import MySavedRecipesPage from "./pages/MySavedRecipePage";
-import MyPostedRecipes from "./components/MyPostedRecipes";
-import UserApi from "./api/UserApi";
+//import MyPostedRecipes from "./components/MyPostedRecipes";
+//import UserApi from "./api/UserApi";
+import PostedRecipes from "./pages/postedRecipes";
 
 export default function App() {
   // State
     const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
-    const [user, setUser] = useState([]);
+    //const [user, setUser] = useState([]);
   // Constants
     Auth.bindLoggedInStateSetter(setLoggedIn);
 
-    useEffect(() => {
+    /* useEffect(() => {
         UserApi.getCurrentUser()
                 .then(({data}) => {
                     setUser(data)
                 })
                 .catch((err) => console.error(err));
         }, [setUser]);
-        
+         */
   // Components
 
     const guestRouter = (
@@ -71,7 +72,8 @@ export default function App() {
                     <Route exact component={FollowerPage} path="/profile/follower"/>
                     <Route exact component={RecipeUpdatePage} path="/review/:id/update" />
                     <Route exact component={UserFollowerPage} path="/profile/youfollow"/>                  
-                    <MyPostedRecipes user={user} path="/myRecipes"/>
+                    {/* <MyPostedRecipes user={user} path="/myRecipes"/> */}
+                    <Route exact component={PostedRecipes} path="/myRecipes"/>
                 </Switch>
         </BrowserRouter>
     );
