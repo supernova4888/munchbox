@@ -60,7 +60,6 @@ public class ReviewController {
 
     /**
      * update a review to a specific review by ID
-     *
      * @param reviewId      the id of the review
      * @param updatedReview the new review
      * @return status of the action
@@ -73,7 +72,6 @@ public class ReviewController {
 
     /**
      * deleting a review by ID
-     *
      * @param reviewId the id of the review
      */
     @DeleteMapping("/review/{reviewId}")
