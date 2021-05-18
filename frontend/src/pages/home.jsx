@@ -45,7 +45,7 @@ return (
                             <option value="Vegetarian">Vegetarian</option>
                             <option value="Vegan">Vegan</option>
                         </select>
-                        <button className="buttonLogin" type="submit" value="Search">Go!</button>
+                        <button className="buttonLoginA" type="submit" value="Search">Go!</button>
                         {console.log("query :"+query)}
                     </div>
                 </form>

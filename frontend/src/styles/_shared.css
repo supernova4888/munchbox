@@ -174,12 +174,23 @@ form {
         align-self: justify;
     }
 
-    .buttonLogin {
-        width: 120px;
-        height: auto;
-        margin-bottom: 20px;
-        padding: 11.5px;        
-    }
+    .buttonLoginA {
+    background-color: var(--color-offwhite);
+    border: 2px solid var(--color-purple);
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 16px;
+    font-family: 'Oxygen', sans-serif;
+    border-radius: 8px;
+    text-transform: uppercase;
+    color: var(--color-purple);
+    width: 60px;
+    height: 50px;
+    margin-left: 60px;
+    margin-right: 2px;  
+}
+   
     .buttonRegister {
         width: 120px;
         height: auto;
