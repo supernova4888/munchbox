@@ -87,13 +87,25 @@ on your tablet, laptop or desktop.
 ![LoginPage](frontend/src/resources/ScreenShots/LoginPage.jpg)
 
 ## Home Page
-* This is the page where user can navigate to different pages in the app.
-1. Profile page
+This is the page where user can navigate to several other pages which has main features in the app.
+* User can view all the recipes posted in the app and can also filter the recipes according to his/her food preferences.
+* From Home page the user can navigate to the following pages:
+
+### 1. Profile page 
+
+This page displays About me info and also has links to:
+ - You Follow page: Here user can choose another user to follow.
+ - You Posted page: Here user can view his/her posted recipes.
 
 
+### 2. Page to add new recipes
 
 
-# Class Diagram
+### 3. Spinner page
+
+
+### 4. Page to view saved recipes
+
 
 # Authors
 
